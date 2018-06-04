@@ -8,7 +8,5 @@
         <class name = "Runner.MainRunner"/>
     </classes>
 </test>
-
-
 </suite>
 
