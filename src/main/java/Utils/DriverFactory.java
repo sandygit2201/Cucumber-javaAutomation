@@ -9,6 +9,7 @@ import org.openqa.selenium.support.PageFactory;
 import pageObjects.Issue_Page;
 import pageObjects.EnterField_page;
 import pageObjects.Login_page;
+import pageObjects.comments_page;
 
 import java.io.FileInputStream;
 import java.util.Properties;
@@ -20,6 +21,8 @@ public class DriverFactory {
     public static Login_page login_page;
     public static Issue_Page addIssuePage;
     public static EnterField_page enterFieldSteps;
+    public static comments_page addCommentsPage;
+
 
 
     public WebDriver getDriver() {
@@ -72,6 +75,7 @@ public class DriverFactory {
             login_page = PageFactory.initElements(driver, Login_page.class);
             enterFieldSteps = PageFactory.initElements(driver, EnterField_page.class);
             addIssuePage = PageFactory.initElements(driver, Issue_Page.class);
+            addCommentsPage = PageFactory.initElements(driver, comments_page.class);
         }
 
         return driver;
