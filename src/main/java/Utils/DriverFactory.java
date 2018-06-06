@@ -17,7 +17,7 @@ public class DriverFactory {
     public static WebDriver driver;
     public static Login_page login_page;
     public static Issue_Page addIssuePage;
-    public static EnterField_page enterFieldSteps;
+    public static access_field_page accessField;
     public static comments_page addCommentsPage;
     public static photo_upload_page photo_upload;
     public static area_select_page select_area;
@@ -72,7 +72,7 @@ public class DriverFactory {
         {
             driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
             login_page = PageFactory.initElements(driver, Login_page.class);
-            enterFieldSteps = PageFactory.initElements(driver, EnterField_page.class);
+            accessField = PageFactory.initElements(driver, access_field_page.class);
             addIssuePage = PageFactory.initElements(driver, Issue_Page.class);
             addCommentsPage = PageFactory.initElements(driver, comments_page.class);
             photo_upload = PageFactory.initElements(driver, photo_upload_page.class);
