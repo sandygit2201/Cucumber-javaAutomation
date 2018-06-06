@@ -20,7 +20,7 @@ public class EnterField_page extends BasePage {
     WebElement field;
     public @FindBy(id = "nav-bar-FIELD-FIELD-ISSUES")
     WebElement issues;
-    public @FindBy(xpath = "/html/body/div/fm-app/div[3]/div/div/div/div/daily-summary-notifications-ftux/div/div[2]/div/div[1]")
+    public @FindBy(xpath = "// *[contains (@class, 'cross')]")
     WebElement FTUX;
 
 

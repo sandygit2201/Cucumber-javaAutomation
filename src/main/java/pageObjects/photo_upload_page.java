@@ -19,7 +19,7 @@ public class photo_upload_page extends BasePage {
             "/div/daily-summary-notifications-ftux/div/div[2]/div/div[1]")
     WebElement FTUX;
 
-    public @FindBy(xpath = "/html/body/div/fm-app/div[3]/div/div/div/div/div[2]/div/div[2]/ul/div[2]")
+    public @FindBy(xpath = "// *[contains (@class, 'close-btn')]")
     WebElement buttoncloseArea;
 
 

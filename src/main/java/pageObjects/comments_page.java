@@ -12,7 +12,7 @@ import java.io.IOException;
 public class comments_page extends BasePage {
 
 
-    public @FindBy(xpath = "//*[@id=\"content\"]")
+    public @FindBy(xpath = "// *[contains (@placeholder, 'Add a comment')]")
     WebElement textfield_comments;
 
     public @FindBy(xpath = "// *[contains (@class, 'post-comment')]")
@@ -21,10 +21,10 @@ public class comments_page extends BasePage {
     public @FindBy(className = "cancel-comment")
     WebElement button_cancel;
 
-    public @FindBy(xpath = "/html/body/div/fm-app/div[3]/div/div/div/div/daily-summary-notifications-ftux/div/div[2]/div/div[1]")
+    public @FindBy(xpath = "// *[contains (@class, 'cross')]")
     WebElement FTUX;
 
-    public @FindBy(xpath = "/html/body/div/fm-app/div[3]/div/div/div/div/div[2]/div/div[2]/ul/div[2]")
+    public @FindBy(xpath = "// *[contains (@class, 'close-btn')]")
     WebElement buttoncloseArea;
 
 
@@ -43,12 +43,14 @@ public class comments_page extends BasePage {
     }
 
     public comments_page findcommentTextbox() throws Exception {
+        Thread.sleep(1000);
         waitAndClickElement(textfield_comments);
         sendKeysToWebElement(textfield_comments, "Test Comments");
         return new comments_page();
     }
 
     public comments_page postComment() throws Exception {
+        Thread.sleep(1000);
         waitAndClickElement(button_post);
         return new comments_page();
     }
