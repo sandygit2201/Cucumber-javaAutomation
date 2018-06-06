@@ -20,6 +20,7 @@ public class DriverFactory {
     public static EnterField_page enterFieldSteps;
     public static comments_page addCommentsPage;
     public static photo_upload_page photo_upload;
+    public static area_select_page select_area;
 
 
 
@@ -75,6 +76,7 @@ public class DriverFactory {
             addIssuePage = PageFactory.initElements(driver, Issue_Page.class);
             addCommentsPage = PageFactory.initElements(driver, comments_page.class);
             photo_upload = PageFactory.initElements(driver, photo_upload_page.class);
+            select_area = PageFactory.initElements(driver, area_select_page.class);
 
         }
 
