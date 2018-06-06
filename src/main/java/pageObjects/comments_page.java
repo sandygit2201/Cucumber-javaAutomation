@@ -15,7 +15,7 @@ public class comments_page extends BasePage {
     public @FindBy(xpath = "//*[@id=\"content\"]")
     WebElement textfield_comments;
 
-    public @FindBy(xpath = "/html/body/div[1]/fm-app/div[3]/div/div/div/div/div[3]/div/div/div/div/div[3]/div/div/div/div/div[2]/div[6]/aui-collapsible-section/div/div/aui-collapsible-section-body/div/div/div/add-comment/section/div[2]/button[1]")
+    public @FindBy(xpath = "// *[contains (@class, 'post-comment')]")
     WebElement button_post;
 
     public @FindBy(className = "cancel-comment")
