@@ -6,10 +6,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.PageFactory;
-import pageObjects.Issue_Page;
-import pageObjects.EnterField_page;
-import pageObjects.Login_page;
-import pageObjects.comments_page;
+import pageObjects.*;
 
 import java.io.FileInputStream;
 import java.util.Properties;
@@ -22,6 +19,7 @@ public class DriverFactory {
     public static Issue_Page addIssuePage;
     public static EnterField_page enterFieldSteps;
     public static comments_page addCommentsPage;
+    public static photo_upload_page photo_upload;
 
 
 
@@ -76,6 +74,8 @@ public class DriverFactory {
             enterFieldSteps = PageFactory.initElements(driver, EnterField_page.class);
             addIssuePage = PageFactory.initElements(driver, Issue_Page.class);
             addCommentsPage = PageFactory.initElements(driver, comments_page.class);
+            photo_upload = PageFactory.initElements(driver, photo_upload_page.class);
+
         }
 
         return driver;

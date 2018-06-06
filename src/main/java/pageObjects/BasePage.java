@@ -31,6 +31,7 @@ public class BasePage extends DriverFactory {
 
 
 
+
 //    public void checkIDispresent (String string) {
 //        if(driver.findElements(By.id("string")).size() != 0){
 //            System.out.println("Element is Present");
