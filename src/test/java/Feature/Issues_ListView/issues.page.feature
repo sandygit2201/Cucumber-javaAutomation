@@ -16,7 +16,7 @@ Feature: Access Field
 #    Given I see the Issue page
 #    When I select an area from the dropdown
 #    Then I should see the Issues for that area
-@AddIssue
+
   Scenario: Add an Issue
     Given User navigates to Field
     And User enters a valid username
