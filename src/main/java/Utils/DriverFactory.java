@@ -22,6 +22,7 @@ public class DriverFactory {
     public static photo_upload_page photo_upload;
     public static area_select_page select_area;
     public static status_change_page status_change;
+    public static select_inspection_page select_inspection;
 
 
     public WebDriver getDriver() {
@@ -78,6 +79,7 @@ public class DriverFactory {
             photo_upload = PageFactory.initElements(driver, photo_upload_page.class);
             select_area = PageFactory.initElements(driver, area_select_page.class);
             status_change = PageFactory.initElements(driver, status_change_page.class);
+            select_inspection = PageFactory.initElements(driver, select_inspection_page.class);
 
         }
 

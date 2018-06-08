@@ -9,22 +9,8 @@ Feature: Access Field module inside Aconex
     Then User should be taken to the homepage
 
 
- Scenario: : Enter Field-Issues
+  Scenario: : Enter Field-Issues
 
-    When User clicks on Field-Issues
-    Then User should see the Issues page
-
-
-
-
-#  Scenario: : Enter Field-Inspections
-#
-#    When User clicks on Field-Inspections
-#    Then User should see the Inspection page
-
-
-
-
-
-
-
+    Given User clicks on Field-Inspection
+    Then I should close the CL area selector
+    Then User should see the Inspection page
