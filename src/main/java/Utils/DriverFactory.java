@@ -7,6 +7,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.PageFactory;
 import pageObjects.*;
+import pageObjects.Issues_ListView_Page.*;
 
 import java.io.FileInputStream;
 import java.util.Properties;

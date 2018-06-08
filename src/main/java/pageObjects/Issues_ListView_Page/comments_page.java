@@ -1,10 +1,9 @@
-package pageObjects;
+package pageObjects.Issues_ListView_Page;
 
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.internal.Coordinates;
-import org.openqa.selenium.interactions.internal.Locatable;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.JavascriptExecutor;
+import pageObjects.BasePage;
 
 
 import java.io.IOException;

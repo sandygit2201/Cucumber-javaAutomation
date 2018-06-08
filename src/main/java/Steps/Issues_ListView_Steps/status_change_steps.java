@@ -1,4 +1,4 @@
-package Steps;
+package Steps.Issues_ListView_Steps;
 
 import cucumber.api.PendingException;
 import cucumber.api.java.en.Given;

@@ -1,8 +1,9 @@
-package pageObjects;
+package pageObjects.Issues_ListView_Page;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
+import pageObjects.BasePage;
 
 import java.io.IOException;
 
