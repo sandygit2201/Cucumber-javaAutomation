@@ -1,7 +1,8 @@
-package pageObjects;
+package pageObjects.Inspections;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import pageObjects.BasePage;
 
 import java.io.IOException;
 
@@ -41,12 +42,7 @@ public class select_inspection_page extends BasePage {
     }
 
     public select_inspection_page assertInspectionPage() throws Exception {
-        if (assertInspection.isDisplayed()) {
-
-            System.out.println("User landed on Inspection page");
-        } else {
-            System.out.println("User did not land on Inspection page");
-        }
+        assertInspection.isDisplayed();
         return new select_inspection_page();
     }
 

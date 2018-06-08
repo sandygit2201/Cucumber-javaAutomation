@@ -35,13 +35,8 @@ public class enter_settings_page extends BasePage {
 
         driver.switchTo().frame("main");
         Thread.sleep(5000);
+        assertFieldSettingPage.isDisplayed();
 
-        if (assertFieldSettingPage.isDisplayed()) {
-
-            System.out.println("User landed on Settings page");
-        } else {
-            System.out.println("User did not land on Settings page");
-        }
         return new enter_settings_page();
     }
 }
