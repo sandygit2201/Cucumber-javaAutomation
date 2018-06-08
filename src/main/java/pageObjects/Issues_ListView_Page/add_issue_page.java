@@ -34,14 +34,13 @@ public class add_issue_page extends BasePage {
 
 
     public add_issue_page iEnterIssueType() throws Exception {
-
         System.out.println("selected issue type");
         return new add_issue_page();
     }
 
 
     public add_issue_page iEnterIssueDesc() throws Exception {
-        sendKeysToWebElement(textfield_Desc, "New Issue Desc");
+        sendKeysToWebElement(textfield_Desc, "Automation Test");
         return new add_issue_page();
     }
 
@@ -52,7 +51,7 @@ public class add_issue_page extends BasePage {
     }
 
     public add_issue_page verifyIssueSaved() throws Exception {
-        Assert.assertEquals("New Issue Desc", "New Issue Desc");
+        Assert.assertEquals("Automation Test", "Automation Test");
         return new add_issue_page();
     }
 

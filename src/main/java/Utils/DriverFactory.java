@@ -7,6 +7,8 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.PageFactory;
 import pageObjects.*;
+import pageObjects.Field_Settings_Page.enter_settings_page;
+import pageObjects.Inspections.select_inspection_page;
 import pageObjects.Issues_ListView_Page.*;
 
 import java.io.FileInputStream;
@@ -24,6 +26,7 @@ public class DriverFactory {
     public static area_select_page select_area;
     public static status_change_page status_change;
     public static select_inspection_page select_inspection;
+    public static enter_settings_page enter_settings;
 
 
     public WebDriver getDriver() {
@@ -81,6 +84,7 @@ public class DriverFactory {
             select_area = PageFactory.initElements(driver, area_select_page.class);
             status_change = PageFactory.initElements(driver, status_change_page.class);
             select_inspection = PageFactory.initElements(driver, select_inspection_page.class);
+            enter_settings = PageFactory.initElements(driver, enter_settings_page.class);
 
         }
 
