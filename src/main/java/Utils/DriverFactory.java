@@ -21,7 +21,7 @@ public class DriverFactory {
     public static comments_page addCommentsPage;
     public static photo_upload_page photo_upload;
     public static area_select_page select_area;
-
+    public static status_change_page status_change;
 
 
     public WebDriver getDriver() {
@@ -55,7 +55,7 @@ public class DriverFactory {
 
                     if (null == driver) {
                         System.setProperty("webdriver.chrome.driver", Constant.CHROME_DRIVER_DIRECTORY);
-                         driver = new ChromeDriver();
+                        driver = new ChromeDriver();
 
                     }
                     break;
@@ -77,6 +77,7 @@ public class DriverFactory {
             addCommentsPage = PageFactory.initElements(driver, comments_page.class);
             photo_upload = PageFactory.initElements(driver, photo_upload_page.class);
             select_area = PageFactory.initElements(driver, area_select_page.class);
+            status_change = PageFactory.initElements(driver, status_change_page.class);
 
         }
 

@@ -7,9 +7,12 @@ import java.io.IOException;
 
 public class Login_page extends BasePage {
 
-    public @FindBy(id = "userName") WebElement textfield_UserName;
-    public @FindBy(id = "password") WebElement textfield_Password;
-    public @FindBy(id = "login") WebElement button_Login;
+    public @FindBy(id = "userName")
+    WebElement textfield_UserName;
+    public @FindBy(id = "password")
+    WebElement textfield_Password;
+    public @FindBy(id = "login")
+    WebElement button_Login;
 
 
     public Login_page() throws IOException {
@@ -37,7 +40,7 @@ public class Login_page extends BasePage {
 
 
     public Login_page clickLoginButton() throws Exception {
-      waitAndClickElement(button_Login);
+        waitAndClickElement(button_Login);
         return new Login_page();
 
 

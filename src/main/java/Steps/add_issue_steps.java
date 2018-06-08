@@ -10,8 +10,7 @@ import java.io.IOException;
 
 import static Utils.DriverFactory.addIssue;
 
-public class add_issue_steps  {
-
+public class add_issue_steps {
 
 
     @Given("^I click on Add Issue button$")
