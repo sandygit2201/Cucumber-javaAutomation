@@ -1,7 +1,8 @@
-package pageObjects;
+package pageObjects.Babylon_page;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import pageObjects.BasePage;
 
 import java.io.IOException;
 
@@ -19,27 +20,27 @@ public class login_page extends BasePage {
         super();
     }
 
-    public pageObjects.login_page getloginPage() throws IOException {
+    public login_page getloginPage() throws IOException {
         getDriver().get("https://apiprod.aconex.com/Logon");
         return new login_page();
 
     }
 
-    public pageObjects.login_page enterUsername(String userName) throws Exception {
+    public login_page enterUsername(String userName) throws Exception {
         waitAndClickElement(textfield_UserName);
         sendKeysToWebElement(textfield_UserName, userName);
         return new login_page();
     }
 
 
-    public pageObjects.login_page enterPassword(String password) throws Exception {
+    public login_page enterPassword(String password) throws Exception {
         waitAndClickElement(textfield_Password);
         sendKeysToWebElement(textfield_Password, password);
         return new login_page();
     }
 
 
-    public pageObjects.login_page clickLoginButton() throws Exception {
+    public login_page clickLoginButton() throws Exception {
         waitAndClickElement(button_Login);
         return new login_page();
 

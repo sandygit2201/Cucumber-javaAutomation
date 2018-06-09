@@ -6,9 +6,9 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.PageFactory;
-import pageObjects.*;
 import pageObjects.Field_Settings_Page.access_sections_page;
 import pageObjects.Field_Settings_Page.enter_settings_page;
+import pageObjects.Field_general_Page.access_field_page;
 import pageObjects.Inspections.create_checklist_page;
 import pageObjects.Inspections.select_inspection_page;
 import pageObjects.Issues_ListView_Page.*;
@@ -20,7 +20,7 @@ import java.util.concurrent.TimeUnit;
 public class DriverFactory {
 
     public static WebDriver driver;
-    public static pageObjects.login_page login_page;
+    public static pageObjects.Babylon_page.login_page login_page;
     public static add_issue_page addIssue;
     public static access_field_page accessField;
     public static comments_page addCommentsPage;
@@ -81,7 +81,7 @@ public class DriverFactory {
 
         {
             driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
-            login_page = PageFactory.initElements(driver, pageObjects.login_page.class);
+            login_page = PageFactory.initElements(driver, pageObjects.Babylon_page.login_page.class);
             accessField = PageFactory.initElements(driver, access_field_page.class);
             addIssue = PageFactory.initElements(driver, add_issue_page.class);
             addCommentsPage = PageFactory.initElements(driver, comments_page.class);

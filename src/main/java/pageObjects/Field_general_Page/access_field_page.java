@@ -1,7 +1,8 @@
-package pageObjects;
+package pageObjects.Field_general_Page;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import pageObjects.BasePage;
 
 import java.io.IOException;
 
