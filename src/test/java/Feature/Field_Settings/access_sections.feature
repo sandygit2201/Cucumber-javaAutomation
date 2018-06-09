@@ -11,7 +11,7 @@ Feature: As a ADMIN, user should be ale to acess all the sections in the setting
     Then I should be taken to Settings page
 
     Scenario: Access Template section
-#      Run browser in ful screen
+#      Run browser in full screen
       Given I click on Templates
       Then I should see the FTUX and close it
       Then I should see the Templates section

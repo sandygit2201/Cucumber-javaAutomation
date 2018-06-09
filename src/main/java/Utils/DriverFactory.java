@@ -9,6 +9,7 @@ import org.openqa.selenium.support.PageFactory;
 import pageObjects.*;
 import pageObjects.Field_Settings_Page.access_sections_page;
 import pageObjects.Field_Settings_Page.enter_settings_page;
+import pageObjects.Inspections.create_checklist_page;
 import pageObjects.Inspections.select_inspection_page;
 import pageObjects.Issues_ListView_Page.*;
 
@@ -29,7 +30,7 @@ public class DriverFactory {
     public static select_inspection_page select_inspection;
     public static enter_settings_page enter_settings;
     public static access_sections_page access_sections;
-
+    public static create_checklist_page create_checklist;
 
     public WebDriver getDriver() {
 
@@ -63,6 +64,8 @@ public class DriverFactory {
                     if (null == driver) {
                         System.setProperty("webdriver.chrome.driver", Constant.CHROME_DRIVER_DIRECTORY);
                         driver = new ChromeDriver();
+//                        driver.manage().window().fullscreen();
+
 
                     }
                     break;
@@ -88,6 +91,7 @@ public class DriverFactory {
             select_inspection = PageFactory.initElements(driver, select_inspection_page.class);
             enter_settings = PageFactory.initElements(driver, enter_settings_page.class);
             access_sections = PageFactory.initElements(driver, access_sections_page.class);
+            create_checklist = PageFactory.initElements(driver, create_checklist_page.class);
 
         }
 

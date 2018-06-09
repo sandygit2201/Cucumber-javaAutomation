@@ -1,6 +1,5 @@
-package Steps.Settings_Steps;
+package Steps.Field_Settings_Steps;
 
-import cucumber.api.PendingException;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 
