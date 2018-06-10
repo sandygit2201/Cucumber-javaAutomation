@@ -1,3 +1,4 @@
+@sanity
 Feature: Log into Apiprod
   Existing user should be able to log into account using existing credentials
 
