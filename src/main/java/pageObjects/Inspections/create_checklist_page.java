@@ -42,6 +42,7 @@ public class create_checklist_page extends BasePage {
     public @FindBy(xpath = "//BUTTON[@class='primary inline-button add-item ng-binding'][text()='Add']\n")
     WebElement buttonAddItem;
 
+
     public @FindBy(xpath = " //BUTTON[@class='publish-button primary ng-binding'][text()='Publish']\n")
     WebElement buttonPublish;
 

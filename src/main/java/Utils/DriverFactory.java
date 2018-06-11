@@ -64,7 +64,7 @@ public class DriverFactory {
                     if (null == driver) {
                         System.setProperty("webdriver.chrome.driver", Constant.CHROME_DRIVER_DIRECTORY);
                         driver = new ChromeDriver();
-//                        driver.manage().window().fullscreen();
+                        driver.manage().window().fullscreen();
 
 
                     }
