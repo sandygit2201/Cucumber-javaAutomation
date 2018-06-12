@@ -22,6 +22,6 @@ Feature: User should be able to interact in Your Organization section
 
   Scenario: Changing user roles
     Given I click on the role of an user
-    Then I shuould see the available user roles
+    Then I should see the available user roles
     When I select a user role
     Then the user role for the user should be changed
