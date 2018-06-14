@@ -46,7 +46,7 @@ public class BasePage extends DriverFactory {
     public void waitAndClickElement(WebElement element) throws InterruptedException {
         boolean clicked = false;
         int attempts = 0;
-        while (!clicked && attempts < 10) {
+        while (!clicked && attempts < 20) {
             try {
                 this.wait.until(ExpectedConditions.elementToBeClickable(element)).click();
                 System.out.println("Successfully clicked on the WebElement: " + "<" + element.toString() + ">");
