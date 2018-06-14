@@ -19,7 +19,7 @@ Feature: User should be able to create a checklist
         Then I should see the checklist create page
         And I add the title
         And I enter the description
-#        Then I select a Category
+        Then I select a Category
         And I enter a item
         And I select a type
         And I click on Add button
