@@ -12,7 +12,7 @@ public class status_change_page extends BasePage {
         super();
     }
 
-    public @FindBy (xpath = "//div[@class='selected-item-icon']/following-sibling::span[text()='Open' and @class='ng-binding']\n")
+    public @FindBy (css = "div.status-selector.ng-isolate-scope > div > div > span")
     WebElement icon_Status;
     public @FindBy (xpath = "//STRONG[@class='ng-binding'][text()='Ready to inspect']")
     WebElement icon_RTI;
@@ -24,13 +24,11 @@ public class status_change_page extends BasePage {
 
 
     public status_change_page closeArea () throws Exception {
-
         waitAndClickElement( dropdown_areaclose);
         return new status_change_page();
     }
 
     public status_change_page clickOnStatus () throws Exception {
-        Thread.sleep(1500);
         waitAndClickElement(icon_Status);
         return new status_change_page();
     }

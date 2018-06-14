@@ -12,13 +12,14 @@ public class add_issue_page extends BasePage {
 
     public @FindBy(className = "add-issue")
     WebElement button_Add;
-    public @FindBy(className = "new-issue-title")
-    WebElement data_NewIssue;
-    public @FindBy(xpath = "/html/body/div[6]/input[1]")
+    public @FindBy(xpath = "//SPAN[@ng-hide='$select.isEmpty()'][text()='Building']/self::SPAN")
     WebElement textfield_IssueType;
+    public @FindBy(xpath = "//DIV[@ng-bind-html='item.name | issueTypeI18n | highlight: $select.search'][text()='Defect']")
+    WebElement textfield_SelectIssueType;
+
     public @FindBy(xpath = "// *[contains (@uib-typeahead, 'description for')]")
     WebElement textfield_Desc;
-    public @FindBy(xpath = "// *[contains (@ng-click, 'NewIssueCtrl.save()')]")
+    public @FindBy(css = ".primary> span")
     WebElement button_Save;
 
 
@@ -34,7 +35,9 @@ public class add_issue_page extends BasePage {
 
 
     public add_issue_page iEnterIssueType() throws Exception {
-        System.out.println("selected issue type");
+        waitAndClickElement(textfield_IssueType);
+        waitAndClickElement(textfield_SelectIssueType);
+
         return new add_issue_page();
     }
 
@@ -47,6 +50,7 @@ public class add_issue_page extends BasePage {
 
     public add_issue_page clickOnSaveButton() throws Exception {
         waitAndClickElement(button_Save);
+        Thread.sleep(100);
         return new add_issue_page();
     }
 
