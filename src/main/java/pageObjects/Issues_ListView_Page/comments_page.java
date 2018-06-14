@@ -11,10 +11,10 @@ import java.io.IOException;
 public class comments_page extends BasePage {
 
 
-    public @FindBy(xpath = "// *[contains (@placeholder, 'Add a comment')]")
+    public @FindBy(xpath = "//SPAN[@class='ng-binding ng-scope'][text()='COMMENTS']/../../../..//TEXTAREA[@id='content']")
     WebElement textfield_comments;
 
-    public @FindBy(xpath = "// *[contains (@class, 'post-comment')]")
+    public @FindBy(css = "div.actions.ng-scope > button.post-comment.auiButton.ng-binding")
     WebElement button_post;
 
     public @FindBy(className = "cancel-comment")
@@ -37,12 +37,12 @@ public class comments_page extends BasePage {
         driver.switchTo().frame("main");
         waitAndClickElement(FTUX);
         waitAndClickElement(buttoncloseArea);
-        ((JavascriptExecutor) driver).executeScript("window.scrollBy(0,250)", "");
+        ((JavascriptExecutor) driver).executeScript("window.scrollBy(0,350)", "");
         return new comments_page();
     }
 
     public comments_page findcommentTextbox() throws Exception {
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         waitAndClickElement(textfield_comments);
         sendKeysToWebElement(textfield_comments, "Test Comments");
         return new comments_page();
