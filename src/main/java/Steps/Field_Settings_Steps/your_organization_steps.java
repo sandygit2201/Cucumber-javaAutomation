@@ -33,5 +33,36 @@ public class your_organization_steps {
         your_org.assertUserRemoved();
     }
 
-    //-------------------------------------------------------------------------
+    //----------------------Change role of an User----------------
+
+    @Given("^I am an Inspector$")
+    public void iAmAnInspector() throws Throwable {
+        your_org.assertCurrentRole();
+    }
+
+
+    @When("^I click on the role of an Inspector$")
+    public void iClickOnTheRoleOfAnUser() throws Throwable {
+        your_org.clickonUserRole();
+    }
+
+    @Then("^I should see the available user roles$")
+    public void iShouldSeeTheAvailableUserRoles() throws Throwable {
+        your_org.viewRoleOptions();
+    }
+
+    @When("^I select a user role$")
+    public void iSelectAUserRole() throws Throwable {
+        your_org.selectRole();
+    }
+
+    @Then("^the user role for the user should be changed$")
+    public void theUserRoleForTheUserShouldBeChanged() throws Throwable {
+        your_org.assertRoleChange();
+
+    }
+
+
+//    -------------------------------------------------------------------------------
+
 }
