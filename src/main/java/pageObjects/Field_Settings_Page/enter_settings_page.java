@@ -36,7 +36,6 @@ public class enter_settings_page extends BasePage {
         driver.switchTo().frame("main");
         Thread.sleep(1000);
         assertFieldSettingPage.isDisplayed();
-
         return new enter_settings_page();
     }
 }

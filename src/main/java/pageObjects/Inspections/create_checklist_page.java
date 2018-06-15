@@ -27,8 +27,7 @@ public class create_checklist_page extends BasePage {
     public @FindBy(css = "fieldset > input")
     WebElement textTitle;
 
-    public @FindBy(xpath = "//TEXTAREA[@class='template-description form-control ng-pristine ng-untouched " +
-            "ng-valid ng-empty ng-valid-maxlength']")
+    public @FindBy(css = "fieldset > textarea")
     WebElement textDesc;
 
     public @FindBy(css = " span > span.ui-select-match-text.pull-left")
@@ -48,11 +47,11 @@ public class create_checklist_page extends BasePage {
             "/..//STRONG[@class='ng-binding'][text()='Text']")
     WebElement textSelectType;
 
-    public @FindBy(xpath = "//BUTTON[@class='primary inline-button add-item ng-binding'][text()='Add']\n")
+    public @FindBy(css = "div:nth-child(1) > button[type=\"submit\"]")
     WebElement buttonAddItem;
 
 
-    public @FindBy(xpath = " //BUTTON[@class='publish-button primary ng-binding'][text()='Publish']\n")
+    public @FindBy(css = "div > button[type=\"button\"].publish-button.primary.ng-binding")
     WebElement buttonPublish;
 
 
@@ -64,6 +63,7 @@ public class create_checklist_page extends BasePage {
     public create_checklist_page clickChecklist() throws Exception {
 
         waitAndClickElement(optionChecklist);
+        Thread.sleep(1000);
         return new create_checklist_page();
 
     }
@@ -77,7 +77,7 @@ public class create_checklist_page extends BasePage {
     public create_checklist_page addTitle() throws Exception {
 
         waitAndClickElement(textTitle);
-        sendKeysToWebElement(textTitle, "Automation Test");
+        sendKeysToWebElement(textTitle, "Automation Test1");
         return new create_checklist_page();
 
     }
