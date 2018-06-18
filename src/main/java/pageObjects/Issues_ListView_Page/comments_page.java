@@ -11,7 +11,7 @@ import java.io.IOException;
 public class comments_page extends BasePage {
 
 
-    public @FindBy(xpath = "//SPAN[@class='ng-binding ng-scope'][text()='COMMENTS']/../../../..//TEXTAREA[@id='content']")
+    public @FindBy(css = "textarea#content")
     WebElement textfield_comments;
 
     public @FindBy(css = "div.actions.ng-scope > button.post-comment.auiButton.ng-binding")
@@ -37,20 +37,18 @@ public class comments_page extends BasePage {
         driver.switchTo().frame("main");
         waitAndClickElement(FTUX);
         waitAndClickElement(buttoncloseArea);
-        ((JavascriptExecutor) driver).executeScript("window.scrollBy(0,350)", "");
         return new comments_page();
     }
 
     public comments_page findcommentTextbox() throws Exception {
+        clickOnElementUsingCustomTimeout(textfield_comments,driver,1000);
         Thread.sleep(2000);
-        waitAndClickElement(textfield_comments);
         sendKeysToWebElement(textfield_comments, "Test Comments");
         return new comments_page();
     }
 
     public comments_page postComment() throws Exception {
-        Thread.sleep(1000);
-        waitAndClickElement(button_post);
+        clickOnElementUsingCustomTimeout(button_post,driver,1000);
         return new comments_page();
     }
 
