@@ -22,6 +22,10 @@ public class add_issue_page extends BasePage {
     public @FindBy(css = ".primary> span")
     WebElement button_Save;
 
+    public @FindBy(xpath = "//DIV[@class='auiMessage success']//DIV[@class='auiMessage-content ng-binding'][text()='Issue captured']")
+    WebElement growler;
+
+
 
     public add_issue_page() throws IOException {
         super();
@@ -50,12 +54,12 @@ public class add_issue_page extends BasePage {
 
     public add_issue_page clickOnSaveButton() throws Exception {
         waitAndClickElement(button_Save);
-        Thread.sleep(100);
+        Thread.sleep(1000);
         return new add_issue_page();
     }
 
     public add_issue_page verifyIssueSaved() throws Exception {
-        Assert.assertEquals("Automation Test", "Automation Test");
+        growler.isDisplayed();
         return new add_issue_page();
     }
 
