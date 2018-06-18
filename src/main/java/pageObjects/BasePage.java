@@ -3,6 +3,8 @@ package pageObjects;
 import java.awt.AWTException;
 import java.io.IOException;
 import java.util.List;
+
+import org.apache.commons.lang.RandomStringUtils;
 import org.junit.Assert;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
@@ -31,14 +33,19 @@ public class BasePage extends DriverFactory {
 
 
 
+    /**********************************************************************************
+     **DATA GENERATION
+     **********************************************************************************/
 
-//    public void checkIDispresent (String string) {
-//        if(driver.findElements(By.id("string")).size() != 0){
-//            System.out.println("Element is Present");
-//        }else{
-//            System.out.println("Element is Absent");
-//        }
-//    }
+    public String genUniqueInt() {
+        return RandomStringUtils.random(10, "123456890 ");
+    }
+
+    /**********************************************************************************/
+    /**********************************************************************************/
+
+
+
 
     /**********************************************************************************
      **CLICK METHODS

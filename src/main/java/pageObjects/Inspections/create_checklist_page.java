@@ -1,6 +1,5 @@
 package pageObjects.Inspections;
 
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import pageObjects.BasePage;
@@ -55,6 +54,7 @@ public class create_checklist_page extends BasePage {
     WebElement buttonPublish;
 
 
+
     public create_checklist_page clickAddTemplate() throws Exception {
         waitAndClickElement(buttonAddTemplate);
         return new create_checklist_page();
@@ -74,18 +74,19 @@ public class create_checklist_page extends BasePage {
 
     }
 
-    public create_checklist_page addTitle() throws Exception {
 
+    public create_checklist_page addTitle() throws Exception {
         waitAndClickElement(textTitle);
-        sendKeysToWebElement(textTitle, "Automation Test1");
+        sendKeysToWebElement(textTitle, "Checklist_Title_Test " + genUniqueInt());
         return new create_checklist_page();
 
     }
 
+
     public create_checklist_page addDesc() throws Exception {
 
         waitAndClickElement(textDesc);
-        sendKeysToWebElement(textDesc, "Automation Test");
+        sendKeysToWebElement(textDesc, "Checklist_Description_Test " + genUniqueInt());
         return new create_checklist_page();
 
     }
@@ -95,7 +96,6 @@ public class create_checklist_page extends BasePage {
 
         waitAndClickElement(clickCategory);
         waitAndClickElement(automationCategory);
-//        Thread.sleep(1000);
         return new create_checklist_page();
     }
 

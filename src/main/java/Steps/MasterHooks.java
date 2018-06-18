@@ -7,11 +7,14 @@ import cucumber.api.java.Before;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 
+
 public class MasterHooks extends DriverFactory {
+
 
     @Before
     public void setup() {
         driver = getDriver();
+
 
     }
 
