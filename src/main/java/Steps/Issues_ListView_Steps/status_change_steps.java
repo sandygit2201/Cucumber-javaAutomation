@@ -12,8 +12,9 @@ public class status_change_steps {
 
     @Then("^I should close the area selector$")
     public void iShouldCloseTheAreaSelector() throws Throwable {
-status_change.closeArea();
+        status_change.closeArea();
     }
+
     @Given("^I find an Open Issue$")
     public void iFindAnOpenIssue() throws Throwable {
         Assert.assertEquals("Open", "Open");

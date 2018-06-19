@@ -13,6 +13,7 @@ Feature: Access Field module inside Aconex
 
     When User clicks on Field-Issues
     Then User should see the Issues page
+  Then I should close the area selector
 
 
 

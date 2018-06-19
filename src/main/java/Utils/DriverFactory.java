@@ -33,6 +33,7 @@ public class DriverFactory {
     public static access_sections_page access_sections;
     public static create_checklist_page create_checklist;
     public static your_organization_page your_org;
+    public static issues_filters_page issues_filters;
 
     public WebDriver getDriver() {
 
@@ -95,6 +96,7 @@ public class DriverFactory {
             access_sections = PageFactory.initElements(driver, access_sections_page.class);
             create_checklist = PageFactory.initElements(driver, create_checklist_page.class);
             your_org = PageFactory.initElements(driver, your_organization_page.class);
+            issues_filters = PageFactory.initElements(driver, issues_filters_page.class);
 
         }
 

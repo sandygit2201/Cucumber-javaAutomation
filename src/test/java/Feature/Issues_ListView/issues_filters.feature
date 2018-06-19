@@ -1,5 +1,4 @@
-Feature: Change Issue status
-
+Feature: Toggle Issues filters
 
   Background:
     Given User navigates to Field
@@ -9,12 +8,9 @@ Feature: Change Issue status
     Then User should be taken to the homepage
     When User clicks on Field-Issues
     Then User should see the Issues page
-    Then I should close the FTUX
+    And I should close the FTUX
     Then I should close the area selector
 
-  Scenario: User should be able to change the status of an Issue from Open to RTI
-#    The first issue in the list page should be in Open
-    Given I find an Open Issue
-    When I tap on the status
-    When I click on RTI
-    Then the status should be changed
+  Scenario: Filter Open Issues
+    When I select Open status
+    Then I should see Issues that are Open
