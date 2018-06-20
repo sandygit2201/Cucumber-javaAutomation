@@ -20,7 +20,7 @@ Feature: User should be able to interact in Your Organization section
 #    When I select the user from the drop down
 #    Then the user should be added to my Org
 #
-@Test
+
   Scenario: Changing user roles
 #    test test user should be inspector
 

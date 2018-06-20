@@ -3,6 +3,7 @@ package pageObjects.Babylon_page;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import pageObjects.BasePage;
+import sun.jvm.hotspot.utilities.Assert;
 
 import java.io.IOException;
 
@@ -14,6 +15,10 @@ public class login_page extends BasePage {
     WebElement textfield_Password;
     public @FindBy(id = "login")
     WebElement button_Login;
+    public @FindBy(css = "a#logoff")
+    WebElement assert_LoginSuccess;
+    public @FindBy(css = "form[name=\"sll\"] div.logon-messages > ul > li > div:nth-child(1) > div")
+    WebElement assert_LoginFailure;
 
 
     public login_page() throws IOException {
@@ -42,6 +47,18 @@ public class login_page extends BasePage {
 
     public login_page clickLoginButton() throws Exception {
         waitAndClickElement(button_Login);
+        return new login_page();
+    }
+
+    public login_page assertLoginSuccess(String arg0) throws Exception {
+        WaitUntilWebElementIsVisible(assert_LoginSuccess);
+        org.testng.Assert.assertEquals(assert_LoginSuccess.getText(), arg0);
+        return new login_page();
+    }
+
+    public login_page assertLoginFailure(String arg1) throws Exception {
+        WaitUntilWebElementIsVisible(assert_LoginFailure);
+        org.testng.Assert.assertEquals(assert_LoginFailure.getText(), arg1);
         return new login_page();
 
 
