@@ -14,3 +14,21 @@ Feature: Toggle Issues filters
   Scenario: Filter Open Issues
     When I select Open status
     Then I should see Issues that are Open
+
+  Scenario: Filter Ready to Inspect Issues
+    When I select Ready to Inspect status
+    Then I should see Issues that are Ready to Inspect
+
+  Scenario: Filter In Dispute Issues
+    When I select In Dispute status
+    Then I should see Issues that are In Dispute
+
+  Scenario: Filter Closed Issues
+    When I select Closed status
+    Then I should see Issues that are Closed
+
+
+  Scenario: Filter Work Done Issues
+    When I select Work Done status
+    Then I should see Issues that are Work Done
+
