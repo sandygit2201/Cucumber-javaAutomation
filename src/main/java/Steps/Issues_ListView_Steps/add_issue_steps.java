@@ -52,8 +52,12 @@ public class add_issue_steps {
 
     @Then("^Issue types should be displayed alphabetically$")
     public void issueTypesShouldBeDisplayedAlphabetically() throws Throwable {
-
         addIssue.assertIssueTypeOrder();
 
+    }
+
+    @And("^I select a due date$")
+    public void iSelectADueDate() throws Throwable {
+        addIssue.selectDueDate();
     }
 }

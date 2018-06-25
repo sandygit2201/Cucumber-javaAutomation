@@ -11,18 +11,17 @@ Feature: Add issue
     Then User should see the Issues page
     Then I should close the FTUX
 
-
+  
   Scenario: Add an Issue
 
     Given I click on Add Issue button
     Then I should see the New Issue pane
     And I enter the Issue type
     And I enter the Issue description
+      #Select due date for next month
+    And I select a due date
     When I click on Save button
     Then the Issue should be saved
-
-
-  @Test
 
   Scenario: Issue type is sorted Alphabetically
 
@@ -30,6 +29,8 @@ Feature: Add issue
     Then I should see the New Issue pane
     Then I click on Issue type
     Then Issue types should be displayed alphabetically
+
+
 
 
 

@@ -28,6 +28,15 @@ public class add_issue_page extends BasePage {
     public @FindBy(xpath = "//DIV[@class='auiMessage success']//DIV[@class='auiMessage-content ng-binding'][text()='Issue captured']")
     WebElement growler;
 
+    public @FindBy(css = "div:nth-child(2) > div > div > div > span > button > i")
+    WebElement icon_dueDate;
+
+    public @FindBy(css = "th:nth-child(3) > button[type=\"button\"] > i")
+    WebElement icon_nextMonth;
+
+    public @FindBy(css = "tr:nth-child(3) > td:nth-child(2) > button[type=\"button\"] > span")
+    WebElement numeral_dateRandom;
+
 
 
     public add_issue_page() throws IOException {
@@ -77,6 +86,15 @@ public class add_issue_page extends BasePage {
 
         return new add_issue_page();
 
+    }
+
+
+    public add_issue_page selectDueDate() throws Exception {
+        waitAndClickElement(icon_dueDate);
+        waitAndClickElement(icon_nextMonth);
+        waitAndClickElement(numeral_dateRandom);
+
+        return new add_issue_page();
     }
 
 }
