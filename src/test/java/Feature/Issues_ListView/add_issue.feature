@@ -11,13 +11,14 @@ Feature: Add issue
     Then User should see the Issues page
     Then I should close the FTUX
 
-  
-  Scenario: Add an Issue
+
+  Scenario: Add an Issues by giving custom values
 
     Given I click on Add Issue button
     Then I should see the New Issue pane
     And I enter the Issue type
     And I enter the Issue description
+    And I add a location detail
       #Select due date for next month
     And I select a due date
     When I click on Save button

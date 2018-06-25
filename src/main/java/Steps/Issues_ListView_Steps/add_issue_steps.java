@@ -60,4 +60,9 @@ public class add_issue_steps {
     public void iSelectADueDate() throws Throwable {
         addIssue.selectDueDate();
     }
+
+    @And("^I add a location detail$")
+    public void iAddALocationDetail() throws Throwable {
+addIssue.addLocation();
+    }
 }

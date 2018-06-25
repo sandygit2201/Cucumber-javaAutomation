@@ -37,6 +37,8 @@ public class add_issue_page extends BasePage {
     public @FindBy(css = "tr:nth-child(3) > td:nth-child(2) > button[type=\"button\"] > span")
     WebElement numeral_dateRandom;
 
+    public @FindBy(css = "div:nth-child(5) > div > input")
+    WebElement textfield_Location;
 
 
     public add_issue_page() throws IOException {
@@ -71,6 +73,7 @@ public class add_issue_page extends BasePage {
     }
 
     public add_issue_page verifyIssueSaved() throws Exception {
+        Thread.sleep(100);
         growler.isDisplayed();
         return new add_issue_page();
     }
@@ -97,6 +100,11 @@ public class add_issue_page extends BasePage {
         return new add_issue_page();
     }
 
+
+    public add_issue_page addLocation() throws Exception {
+        sendKeysToWebElement(textfield_Location, "Automation Location");
+        return new add_issue_page();
+    }
 }
 
 
