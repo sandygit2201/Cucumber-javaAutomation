@@ -2,6 +2,7 @@ package pageObjects;
 
 import java.awt.AWTException;
 import java.io.IOException;
+import java.util.LinkedList;
 import java.util.List;
 
 import org.apache.commons.lang.RandomStringUtils;
@@ -30,7 +31,33 @@ public class BasePage extends DriverFactory {
         this.wait = new WebDriverWait(driver, 15);
         jsExecutor = ((JavascriptExecutor) driver);
     }
+    /**********************************************************************************
+     **CHECK SORT FOR DROP DOWNS
+     **********************************************************************************/
 
+    public static boolean ValidateSort(LinkedList<String> DropDownValues)
+    {
+        String prev=""; // empty string
+        for (final String cur: DropDownValues)
+        {
+            if (cur.compareTo(prev) < 0)
+            {
+                return false;
+            }
+            prev=cur;
+        }
+        return true;
+    }
+
+    protected boolean CheckSorting(String xpathExpression) {
+        List<WebElement> DropDownValues = new LinkedList<>(driver.findElements(By.xpath(xpathExpression)));
+        LinkedList<String> DropDown = new LinkedList<String>();
+        for (int i = 0; i < DropDownValues.size(); i++) {
+//            System.out.println(DropDownValues.get(i).getText());
+            DropDown.add(DropDownValues.get(i).getText());
+        }
+        return ValidateSort(DropDown);
+    }
 
 
     /**********************************************************************************
@@ -366,6 +393,8 @@ public class BasePage extends DriverFactory {
             Assert.fail("Unable to close the popup, Exception: " + e.getMessage());
         }
     }
+
+
     /**********************************************************************************/
     /**********************************************************************************/
 }

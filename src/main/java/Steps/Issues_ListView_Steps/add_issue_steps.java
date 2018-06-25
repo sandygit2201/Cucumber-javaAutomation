@@ -1,5 +1,6 @@
 package Steps.Issues_ListView_Steps;
 
+import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -43,4 +44,16 @@ public class add_issue_steps {
         addIssue.verifyIssueSaved();
     }
 
+    @Then("^I click on Issue type$")
+    public void iClickOnIssueType() throws Throwable {
+        addIssue.clickOnIssueType();
+
+    }
+
+    @Then("^Issue types should be displayed alphabetically$")
+    public void issueTypesShouldBeDisplayedAlphabetically() throws Throwable {
+
+        addIssue.assertIssueTypeOrder();
+
+    }
 }

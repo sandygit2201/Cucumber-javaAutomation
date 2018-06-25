@@ -8,6 +8,7 @@ import pageObjects.BasePage;
 
 import java.io.IOException;
 import java.util.List;
+
 @SuppressWarnings("Duplicates")
 
 
@@ -92,6 +93,7 @@ public class issues_filters_page extends BasePage {
         }
         return new issues_filters_page();
     }
+
     public issues_filters_page assertInDisputeFilter() throws Exception {
         List<WebElement> lstItems = driver.findElements(By.xpath("//div[@class='issue-status-group']//span"));
         for (WebElement eleItem : lstItems) {
@@ -99,6 +101,7 @@ public class issues_filters_page extends BasePage {
         }
         return new issues_filters_page();
     }
+
     public issues_filters_page assertClosedFilter() throws Exception {
         List<WebElement> lstItems = driver.findElements(By.xpath("//div[@class='issue-status-group']//span"));
         for (WebElement eleItem : lstItems) {
@@ -106,6 +109,7 @@ public class issues_filters_page extends BasePage {
         }
         return new issues_filters_page();
     }
+
     public issues_filters_page assertWorkDoneFilter() throws Exception {
         List<WebElement> lstItems = driver.findElements(By.xpath("//div[@class='issue-status-group']//span"));
         for (WebElement eleItem : lstItems) {
@@ -113,7 +117,6 @@ public class issues_filters_page extends BasePage {
         }
         return new issues_filters_page();
     }
-
-    }
+}
 
 

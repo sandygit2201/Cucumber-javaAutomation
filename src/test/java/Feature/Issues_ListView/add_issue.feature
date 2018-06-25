@@ -22,4 +22,15 @@ Feature: Add issue
     Then the Issue should be saved
 
 
+  @Test
+
+  Scenario: Issue type is sorted Alphabetically
+
+    Given I click on Add Issue button
+    Then I should see the New Issue pane
+    Then I click on Issue type
+    Then Issue types should be displayed alphabetically
+
+
+
 

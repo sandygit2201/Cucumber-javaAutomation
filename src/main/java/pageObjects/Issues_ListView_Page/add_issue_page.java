@@ -1,11 +1,13 @@
 package pageObjects.Issues_ListView_Page;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.testng.Assert;
 import pageObjects.BasePage;
 
 import java.io.IOException;
+import java.util.LinkedList;
+import java.util.List;
 
 public class add_issue_page extends BasePage {
 
@@ -19,6 +21,7 @@ public class add_issue_page extends BasePage {
 
     public @FindBy(xpath = "// *[contains (@uib-typeahead, 'description for')]")
     WebElement textfield_Desc;
+
     public @FindBy(css = ".primary> span")
     WebElement button_Save;
 
@@ -63,6 +66,20 @@ public class add_issue_page extends BasePage {
         return new add_issue_page();
     }
 
+    public add_issue_page clickOnIssueType() throws Exception {
+        waitAndClickElement(textfield_IssueType);
+        return new add_issue_page();
+    }
+
+    public add_issue_page assertIssueTypeOrder() throws Exception {
+
+        boolean CheckOrder = CheckSorting("(//INPUT[@type='search'])[4]/following-sibling::UL");
+
+        return new add_issue_page();
+
+    }
+
 }
+
 
 
