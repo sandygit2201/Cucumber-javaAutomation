@@ -34,6 +34,22 @@ public class add_issue_steps {
         addIssue.iEnterIssueDesc();
     }
 
+    @And("^I select a Issue type$")
+    public void iSelectAIssueType() throws Throwable {
+        addIssue.Dropdown_selectIssueType();
+    }
+
+    @And("^I select a Issue description$")
+    public void iSelectAIssueDescription() throws Throwable {
+        addIssue.Dropdown_selectIssueDesc();
+
+    }
+
+    @And("^I select a location detail$")
+    public void iSelectALocationDetail() throws Throwable {
+        addIssue.Dropdown_selectLocation();
+    }
+
     @When("^I click on Save button$")
     public void iClickOnSaveButton() throws Throwable {
         addIssue.clickOnSaveButton();
@@ -63,6 +79,8 @@ public class add_issue_steps {
 
     @And("^I add a location detail$")
     public void iAddALocationDetail() throws Throwable {
-addIssue.addLocation();
+        addIssue.addLocation();
     }
+
+
 }

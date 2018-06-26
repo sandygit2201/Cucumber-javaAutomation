@@ -40,6 +40,15 @@ public class add_issue_page extends BasePage {
     public @FindBy(css = "div:nth-child(5) > div > input")
     WebElement textfield_Location;
 
+    public @FindBy(css = "div#ui-select-choices-row-0-5 div")
+    WebElement dropdown_IssueType;
+
+    public @FindBy(xpath = "//A[@href=''][text()='AH- Internet not working']")
+    WebElement dropdown_IssueDesc;
+
+    public @FindBy(xpath = "//A[@href=''][text()='East']")
+    WebElement dropdown_Location;
+
 
     public add_issue_page() throws IOException {
         super();
@@ -84,19 +93,15 @@ public class add_issue_page extends BasePage {
     }
 
     public add_issue_page assertIssueTypeOrder() throws Exception {
-
         boolean CheckOrder = CheckSorting("(//INPUT[@type='search'])[4]/following-sibling::UL");
-
         return new add_issue_page();
 
     }
-
 
     public add_issue_page selectDueDate() throws Exception {
         waitAndClickElement(icon_dueDate);
         waitAndClickElement(icon_nextMonth);
         waitAndClickElement(numeral_dateRandom);
-
         return new add_issue_page();
     }
 
@@ -105,6 +110,25 @@ public class add_issue_page extends BasePage {
         sendKeysToWebElement(textfield_Location, "Automation Location");
         return new add_issue_page();
     }
+
+    public add_issue_page Dropdown_selectIssueType() throws Exception {
+        waitAndClickElement(textfield_IssueType);
+        waitAndClickElement(dropdown_IssueType);
+        return new add_issue_page();
+    }
+
+    public add_issue_page Dropdown_selectIssueDesc() throws Exception {
+        waitAndClickElement(textfield_Desc);
+        waitAndClickElement(dropdown_IssueDesc);
+        return new add_issue_page();
+    }
+
+    public add_issue_page Dropdown_selectLocation() throws Exception {
+        waitAndClickElement(textfield_Location);
+        waitAndClickElement(dropdown_Location);
+        return new add_issue_page();
+    }
+
 }
 
 

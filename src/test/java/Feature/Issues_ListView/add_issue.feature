@@ -24,6 +24,20 @@ Feature: Add issue
     When I click on Save button
     Then the Issue should be saved
 
+
+  Scenario: Add an Issues by selecting dropdown values
+
+    Given I click on Add Issue button
+    Then I should see the New Issue pane
+    And I select a Issue type
+    And I select a Issue description
+    And I select a location detail
+    #Select due date for next month
+    And I select a due date
+    When I click on Save button
+    Then the Issue should be saved
+
+
   Scenario: Issue type is sorted Alphabetically
 
     Given I click on Add Issue button
