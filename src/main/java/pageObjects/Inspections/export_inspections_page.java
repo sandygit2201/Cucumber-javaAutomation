@@ -6,7 +6,6 @@ import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
 import pageObjects.BasePage;
 
-import java.io.File;
 import java.io.IOException;
 
 public class export_inspections_page extends BasePage {
@@ -37,7 +36,7 @@ public class export_inspections_page extends BasePage {
 
         waitAndClickElement(button_Export);
         Thread.sleep(200);
-        waitUntilPreLoadElementDissapears (By.className("fm-app > div:nth-child(4) > div > div > div") );
+        waitUntilPreLoadElementDissapears(By.className("fm-app > div:nth-child(4) > div > div > div"));
         return new export_inspections_page();
 
     }
@@ -49,9 +48,6 @@ public class export_inspections_page extends BasePage {
         return new export_inspections_page();
 
     }
-
-
-
 
 
 }
