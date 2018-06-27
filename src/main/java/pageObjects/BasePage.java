@@ -1,6 +1,7 @@
 package pageObjects;
 
 import java.awt.AWTException;
+import java.io.File;
 import java.io.IOException;
 import java.util.LinkedList;
 import java.util.List;
@@ -31,6 +32,24 @@ public class BasePage extends DriverFactory {
         this.wait = new WebDriverWait(driver, 15);
         jsExecutor = ((JavascriptExecutor) driver);
     }
+
+    /**********************************************************************************
+     **VERIFY IF FILE IS DOWNLOADED USING FILENAME
+     **********************************************************************************/
+
+    public boolean isFileDownloaded(String downloadPath, String fileName) {
+
+        boolean flag = false;
+        File dir = new File(downloadPath);
+        File[] dir_contents = dir.listFiles();
+        for (int i = 0; i < dir_contents.length; i++) {
+            if (dir_contents[i].getName().equals(fileName))
+                return flag=true;
+        }
+
+        return flag;
+    }
+
     /**********************************************************************************
      **CHECK SORT FOR DROP DOWNS
      **********************************************************************************/

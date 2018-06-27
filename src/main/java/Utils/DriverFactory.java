@@ -11,6 +11,7 @@ import pageObjects.Field_Settings_Page.enter_settings_page;
 import pageObjects.Field_Settings_Page.your_organization_page;
 import pageObjects.Field_general_Page.access_field_page;
 import pageObjects.Inspections.create_checklist_page;
+import pageObjects.Inspections.export_inspections_page;
 import pageObjects.Inspections.select_inspection_page;
 import pageObjects.Issues_ListView_Page.*;
 
@@ -34,6 +35,7 @@ public class DriverFactory {
     public static create_checklist_page create_checklist;
     public static your_organization_page your_org;
     public static issues_filters_page issues_filters;
+    public static export_inspections_page export_inspections;
 
     public WebDriver getDriver() {
 
@@ -97,6 +99,7 @@ public class DriverFactory {
             create_checklist = PageFactory.initElements(driver, create_checklist_page.class);
             your_org = PageFactory.initElements(driver, your_organization_page.class);
             issues_filters = PageFactory.initElements(driver, issues_filters_page.class);
+            export_inspections = PageFactory.initElements(driver, export_inspections_page.class);
 
         }
 
