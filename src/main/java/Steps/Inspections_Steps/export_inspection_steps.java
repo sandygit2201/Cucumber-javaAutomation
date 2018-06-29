@@ -23,4 +23,9 @@ public class export_inspection_steps {
     public void theChecklistReportShouldBeDownloaded() throws Throwable {
         export_inspections.verifyFileDownload();
     }
+
+    @Then("^I should verify$")
+    public void iShouldVerify() throws Throwable {
+        export_inspections.verifyPDFContent("Test");
+    }
 }
