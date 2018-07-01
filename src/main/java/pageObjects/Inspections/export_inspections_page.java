@@ -1,12 +1,8 @@
 package pageObjects.Inspections;
 
-import org.apache.pdfbox.cos.COSDocument;
-import org.apache.pdfbox.io.RandomAccessRead;
-import org.apache.pdfbox.pdfparser.PDFParser;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.util.PDFTextStripper;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
@@ -14,7 +10,6 @@ import pageObjects.BasePage;
 
 import java.io.*;
 import java.io.File;
-
 
 
 public class export_inspections_page extends BasePage {
@@ -64,16 +59,7 @@ public class export_inspections_page extends BasePage {
 
     public boolean verifyPDFContent(String SearchText) throws IOException {
 
-        File dir = new File("/Users/mohand/Downloads/");
-        File[] files = dir.listFiles((dir1, name) ->  name.endsWith("Automation_BigTurnip_290618.pdf"));
-        PDDocument doc = PDDocument.load(files[0]);
-        PDFTextStripper pdfStripper = new PDFTextStripper();
-        String text = pdfStripper.getText(doc);
-        doc.close();
-        System.out.println(text);
-        System.out.println(SearchText);
-        Assert.assertTrue(text.contains(SearchText));
-        return text.contains(SearchText);
+        return VerifyPdfContent(SearchText);
 
     }
 
