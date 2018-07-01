@@ -8,4 +8,7 @@ public class Constant {
 
     public final static String CHROME_DRIVER_DIRECTORY = System.getProperty("user.dir") + "/src/test/java/Resources/chromedriver";
 
+    public final static String PDF_DOWNLOAD_DIRECTORY = System.getProperty("user.home") +"/Downloads/";
+
+
 }
