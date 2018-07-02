@@ -1,6 +1,7 @@
 package Steps.Inspections_Steps;
 
 import cucumber.api.PendingException;
+import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -24,8 +25,10 @@ public class export_inspection_steps {
         export_inspections.verifyFileDownload();
     }
 
-    @Then("^I should verify$")
+    @Then("^the PDF content should match with the Web app$")
     public void iShouldVerify() throws Throwable {
-        export_inspections.verifyPDFContent("Test");
+        export_inspections.verifyPDFContent("Item 1");
     }
+
+
 }

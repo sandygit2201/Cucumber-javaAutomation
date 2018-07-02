@@ -17,4 +17,4 @@ Feature: Export a valid Inspection
     When I click on the Export button
     #Check download folder for a PDF named <whatever>
     Then the checklist report should be downloaded
-    Then I should verify
+    And the PDF content should match with the Web app

@@ -1,11 +1,14 @@
 package pageObjects.Inspections;
 
+import Utils.Constant;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.util.PDFTextStripper;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterTest;
 import pageObjects.BasePage;
 
 import java.io.*;
@@ -19,9 +22,6 @@ public class export_inspections_page extends BasePage {
     }
 
 
-//    public @FindBy(css = "li.ng-scope.ng-isolate-scope.selected-checklist > div > div > div")
-//    WebElement select_Checklist;
-
     public @FindBy(xpath = "(//DIV[@class='title ng-binding'][text()='Automation'][text()='Automation'])")
     WebElement select_Checklist;
 
@@ -34,7 +34,7 @@ public class export_inspections_page extends BasePage {
 
     public export_inspections_page selectChecklist() throws Exception {
         Thread.sleep(1000);
-        clickOnElementUsingCustomTimeout(select_Checklist, driver, 5000);
+        clickOnElementUsingCustomTimeout(select_Checklist, driver, 10000);
         return new export_inspections_page();
 
     }
