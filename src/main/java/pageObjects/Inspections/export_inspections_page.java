@@ -28,9 +28,6 @@ public class export_inspections_page extends BasePage {
     public @FindBy(css = "div.checklist-details-export-pdf.col-md-6.no-padding.ng-isolate-scope > button")
     WebElement button_Export;
 
-    public @FindBy(css = "fm-app > div:nth-child(4) > div > div > div")
-    WebElement loading_Growler;
-
 
     public export_inspections_page selectChecklist() throws Exception {
         Thread.sleep(1000);
@@ -49,7 +46,7 @@ public class export_inspections_page extends BasePage {
     }
 
     public export_inspections_page verifyFileDownload() throws Exception {
-        String downloadPath = "/Users/mohand/Downloads";
+        String downloadPath = Constant.PDF_DOWNLOAD_DIRECTORY;
         Assert.assertTrue(isFileDownloaded(downloadPath, "Automation"),
                 "Failed to download Expected document");
         return new export_inspections_page();
@@ -60,7 +57,6 @@ public class export_inspections_page extends BasePage {
     public boolean verifyPDFContent(String SearchText) throws IOException {
 
         return VerifyPdfContent(SearchText);
-
     }
 
 

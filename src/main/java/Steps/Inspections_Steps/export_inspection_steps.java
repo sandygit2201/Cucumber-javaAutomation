@@ -27,7 +27,7 @@ public class export_inspection_steps {
 
     @Then("^the PDF content should match with the Web app$")
     public void iShouldVerify() throws Throwable {
-        export_inspections.verifyPDFContent("Item 1");
+        export_inspections.verifyPDFContent("Test");
     }
 
 
