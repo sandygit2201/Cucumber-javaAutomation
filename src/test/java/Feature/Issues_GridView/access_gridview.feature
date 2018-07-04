@@ -12,7 +12,7 @@ Feature: Issue Grid View
     Then I should close the area selector
     And the page loader should disappear
 
-    Scenario: Accessing the issues grid view page
+  Scenario: Accessing the issues grid view page
 
-      When User click on grid view button
-      Then User should see the grid view
+    When User click on grid view button
+    Then User should see the grid view

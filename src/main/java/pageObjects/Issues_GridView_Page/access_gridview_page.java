@@ -30,7 +30,6 @@ public class access_gridview_page extends BasePage {
 
     }
     public access_gridview_page verifytheGridView() throws InterruptedException, IOException {
-//        WaitUntilWebElementIsVisible(button_EditMode);
         button_EditMode.isDisplayed();
         return new access_gridview_page();
 
