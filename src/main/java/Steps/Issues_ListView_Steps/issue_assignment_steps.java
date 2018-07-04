@@ -49,8 +49,25 @@ public class issue_assignment_steps {
         issue_assignment.assignToUserWhenAddingIssue();
     }
 
-    @And("^the Issue should be assigned to that User$")
+    @Then("^the Issue should be assigned to that User$")
     public void theIssueShouldBeAssignedToThatUser() throws Throwable {
         issue_assignment.assertIssueAssignmentToUserWhileCreatingIssue();
+    }
+
+
+    @Then("^the Issue should be assigned to that User which I selected$")
+    public void theIssueShouldBeAssignedToThatUserWhichISelected() throws Throwable {
+        issue_assignment.assertIssueAssignmentToUserWhileCreatingIssue();
+    }
+
+    @And("^I select a Org from the list$")
+    public void iSelectAOrgFromTheList() throws Throwable {
+        issue_assignment.assignToOrgWhenAddingIssue();
+    }
+
+
+    @Then("^the Issue should be assigned to that Org which I selected$")
+    public void theIssueShouldBeAssignedToThatOrgWhichISelected() throws Throwable {
+        issue_assignment.assertIssueAssignmentToOrgWhileCreatingIssue();
     }
 }

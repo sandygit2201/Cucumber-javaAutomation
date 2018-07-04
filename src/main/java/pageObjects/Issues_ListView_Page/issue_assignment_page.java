@@ -51,6 +51,10 @@ public class issue_assignment_page extends BasePage {
             "highlight: $select.search'][text()='test test']")
     WebElement assignToUserWhileAddingIssue;
 
+    public @FindBy(xpath = "(//INPUT[@type='search'])[4]/..//DIV[@ng-bind-html='item.name " +
+            "| highlight: $select.search'][text()='Majestic Builders']")
+    WebElement assignToOrgWhileAddingIssue;
+
 
     public issue_assignment_page selectIssue() throws Exception {
         waitAndClickElement(selectIssue);
@@ -108,8 +112,19 @@ public class issue_assignment_page extends BasePage {
         return new issue_assignment_page();
     }
 
+    public issue_assignment_page assignToOrgWhenAddingIssue() throws Exception {
+        waitAndClickElement(assignToOrgWhileAddingIssue);
+        return new issue_assignment_page();
+    }
 
+    public issue_assignment_page assertIssueAssignmentToOrgWhileCreatingIssue() throws Exception {
+        waitAndClickElement(button_refresh);
+        waitAndClickElement(selectIssue);
+        Assert.assertTrue(assertAssignmentToOrg.isDisplayed());
+        return new issue_assignment_page();
+    }
 }
+
 
 
 
