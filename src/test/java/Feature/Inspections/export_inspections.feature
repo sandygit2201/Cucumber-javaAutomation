@@ -10,7 +10,6 @@ Feature: Export a valid Inspection
     Then I should close the CL area selector
     Then User should see the Inspection page
 
-  @Test
   Scenario: Export checklist PDF report
     #Click on CL named Automation
     Given I select the first checklist
