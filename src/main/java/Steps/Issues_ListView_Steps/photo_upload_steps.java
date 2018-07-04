@@ -26,4 +26,6 @@ public class photo_upload_steps {
     public void theAddedPhotoShouldBeVisible() throws Throwable {
         System.out.println("Photo uploaded is complete");
     }
+
+
 }

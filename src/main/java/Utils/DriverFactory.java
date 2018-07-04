@@ -6,6 +6,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.PageFactory;
+import pageObjects.Babylon_page.logout_page;
 import pageObjects.Field_Settings_Page.access_sections_page;
 import pageObjects.Field_Settings_Page.enter_settings_page;
 import pageObjects.Field_Settings_Page.your_organization_page;
@@ -13,6 +14,7 @@ import pageObjects.Field_general_Page.access_field_page;
 import pageObjects.Inspections.create_checklist_page;
 import pageObjects.Inspections.export_inspections_page;
 import pageObjects.Inspections.select_inspection_page;
+import pageObjects.Issues_GridView_Page.access_gridview_page;
 import pageObjects.Issues_ListView_Page.*;
 
 import java.io.FileInputStream;
@@ -37,6 +39,8 @@ public class DriverFactory {
     public static issues_filters_page issues_filters;
     public static export_inspections_page export_inspections;
     public static issue_assignment_page issue_assignment;
+    public static access_gridview_page  access_gridview;
+    public static logout_page logout;
 
     public WebDriver getDriver() {
 
@@ -102,6 +106,8 @@ public class DriverFactory {
             issues_filters = PageFactory.initElements(driver, issues_filters_page.class);
             export_inspections = PageFactory.initElements(driver, export_inspections_page.class);
             issue_assignment = PageFactory.initElements(driver, issue_assignment_page.class);
+            access_gridview = PageFactory.initElements(driver, access_gridview_page.class);
+            logout = PageFactory.initElements(driver, logout_page.class);
 
         }
 
