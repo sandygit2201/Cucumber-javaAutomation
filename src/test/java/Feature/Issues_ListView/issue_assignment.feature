@@ -15,23 +15,29 @@ Feature: Assign Issues within your Org and other Org
   Scenario: Assign Issues within your Org for an Issue
     Given I select an Issue
     When the Issue is not assigned to anyone
+#    test test user
     And I click on it and select an User from my org
     Then the Issue should be assigned to the User
 
-  @Test
+
   Scenario: Assign Issues to other Org for an Issue
     Given I select an Issue
     When the Issue is not assigned to anyone
+#    Majestic builders
     And I click on it and select an Org
     Then the Issue should be assigned to that Org
 
-#  Scenario: Assign Issues within your Org while creating an Issue
-#
-#
-#    Given I click on Add Issue button
-#    Then I should see the New Issue pane
-#    When I click on Save button
-#    Then the Issue should be saved
+  @Test
+  Scenario: Assign Issues within your Org while creating an Issue
+
+    Given I click on Add Issue button
+    Then I should see the New Issue pane
+    And I enter the Issue description
+    And I click on Assign to field
+    And I select a User from the list
+    When I click on Save button
+    Then the Issue should be saved
+    And the Issue should be assigned to that User
 #
 #  Scenario: Assign Issues to other Org while creating an Issue
 #

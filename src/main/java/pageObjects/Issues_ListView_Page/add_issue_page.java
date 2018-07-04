@@ -56,6 +56,7 @@ public class add_issue_page extends BasePage {
 
 
     public add_issue_page clickOnAddButton() throws IOException, InterruptedException {
+        waitUntilPreLoadElementDissapears(By.cssSelector("fm-app > div:nth-child(4) > div > div > div"));
         waitAndClickElement(button_Add);
         return new add_issue_page();
     }

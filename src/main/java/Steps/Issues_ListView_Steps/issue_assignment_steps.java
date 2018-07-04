@@ -1,5 +1,6 @@
 package Steps.Issues_ListView_Steps;
 
+import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -36,5 +37,20 @@ public class issue_assignment_steps {
     @Then("^the Issue should be assigned to that Org$")
     public void theIssueShouldBeAssignedToThatOrg() throws Throwable {
         issue_assignment.assertIssueAssignmentToOrg();
+    }
+
+    @And("^I click on Assign to field$")
+    public void iClickOnAssignToField() throws Throwable {
+        issue_assignment.clickAssignTo();
+    }
+
+    @And("^I select a User from the list$")
+    public void iSelectAUserFromTheList() throws Throwable {
+        issue_assignment.assignToUserWhenAddingIssue();
+    }
+
+    @And("^the Issue should be assigned to that User$")
+    public void theIssueShouldBeAssignedToThatUser() throws Throwable {
+        issue_assignment.assertIssueAssignmentToUserWhileCreatingIssue();
     }
 }

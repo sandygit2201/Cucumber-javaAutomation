@@ -20,23 +20,36 @@ public class issue_assignment_page extends BasePage {
     public @FindBy(xpath = "(//DIV[@class='issues-list-item clearfix'])[1]")
     WebElement selectIssue;
 
-    public @FindBy(css = "div.organization > div.ng-scope > fm-issue-edit-field > div > div > div > div.text.help-text > span")
+    public @FindBy(css = "div.organization > div.ng-scope > fm-issue-edit-field > div " +
+            "> div > div > div.text.help-text > span")
     WebElement issueNotAssigned;
 
-    public @FindBy(xpath = "//INPUT[@type='search']/..//DIV[@ng-bind-html='item.name | highlight: $select.search'][text()='test test']")
+    public @FindBy(xpath = "//INPUT[@type='search']/..//DIV[@ng-bind-html='item.name " +
+            "| highlight: $select.search'][text()='test test']")
     WebElement AssignToUser;
 
-    public @FindBy(xpath = "//INPUT[@type='search']/..//DIV[@ng-bind-html='item.name | highlight: $select.search'][text()='Majestic Builders']")
+    public @FindBy(xpath = "//INPUT[@type='search']/..//DIV[@ng-bind-html='item.name " +
+            "| highlight: $select.search'][text()='Majestic Builders']")
     WebElement AssignToOrg;
 
     public @FindBy(xpath = "(//SPAN[@class='ng-binding'][text()='test test'][text()='test test'])[2]/../../../../../../../../..")
     WebElement assertAssignmentToUser;
 
-    public @FindBy(xpath = "(//SPAN[@class='ng-binding'][text()='Majestic Builders'][text()='Majestic Builders'])[8]/../../../../../../..")
+    public @FindBy(xpath = "(//SPAN[@class='ng-binding'][text()='Majestic Builders']" +
+            "[text()='Majestic Builders'])[8]/../../../../../../..")
     WebElement assertAssignmentToOrg;
 
     public @FindBy(css = "div.auiToolbar-left > div.refresh-issues")
     WebElement button_refresh;
+
+    public @FindBy(css = "div:nth-child(3) > aui-collapsible-section > div >" +
+            " div > aui-collapsible-section-body > div > div > div:nth-child(1) >" +
+            " div > div > div > div > span")
+    WebElement dropdown_AssignTo;
+
+    public @FindBy(xpath = "(//INPUT[@type='search'])[4]/..//DIV[@ng-bind-html='item.name | " +
+            "highlight: $select.search'][text()='test test']")
+    WebElement assignToUserWhileAddingIssue;
 
 
     public issue_assignment_page selectIssue() throws Exception {
@@ -76,6 +89,25 @@ public class issue_assignment_page extends BasePage {
         Assert.assertTrue(assertAssignmentToOrg.isDisplayed());
         return new issue_assignment_page();
     }
+
+
+    public issue_assignment_page clickAssignTo() throws Exception {
+        waitAndClickElement(dropdown_AssignTo);
+        return new issue_assignment_page();
+    }
+
+    public issue_assignment_page assignToUserWhenAddingIssue() throws Exception {
+        waitAndClickElement(assignToUserWhileAddingIssue);
+        return new issue_assignment_page();
+    }
+
+    public issue_assignment_page assertIssueAssignmentToUserWhileCreatingIssue() throws Exception {
+        waitAndClickElement(button_refresh);
+        waitAndClickElement(selectIssue);
+        Assert.assertTrue(assertAssignmentToUser.isDisplayed());
+        return new issue_assignment_page();
+    }
+
 
 }
 
