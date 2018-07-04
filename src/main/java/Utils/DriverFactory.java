@@ -36,6 +36,7 @@ public class DriverFactory {
     public static your_organization_page your_org;
     public static issues_filters_page issues_filters;
     public static export_inspections_page export_inspections;
+    public static issue_assignment_page issue_assignment;
 
     public WebDriver getDriver() {
 
@@ -100,6 +101,7 @@ public class DriverFactory {
             your_org = PageFactory.initElements(driver, your_organization_page.class);
             issues_filters = PageFactory.initElements(driver, issues_filters_page.class);
             export_inspections = PageFactory.initElements(driver, export_inspections_page.class);
+            issue_assignment = PageFactory.initElements(driver, issue_assignment_page.class);
 
         }
 
