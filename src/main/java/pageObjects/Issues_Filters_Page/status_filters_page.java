@@ -1,4 +1,4 @@
-package pageObjects.Issues_ListView_Page;
+package pageObjects.Issues_Filters_Page;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -12,10 +12,10 @@ import java.util.List;
 @SuppressWarnings("Duplicates")
 
 
-public class issues_filters_page extends BasePage {
+public class status_filters_page extends BasePage {
 
 
-    public issues_filters_page() throws IOException {
+    public status_filters_page() throws IOException {
         super();
     }
 
@@ -38,84 +38,84 @@ public class issues_filters_page extends BasePage {
     WebElement button_Refresh;
 
 
-    public issues_filters_page clickOnOpenStatus() throws Exception {
+    public status_filters_page clickOnOpenStatus() throws Exception {
         clickOnElementUsingCustomTimeout(filter_open, driver, 1000);
         Thread.sleep(2000);
         clickOnElementUsingCustomTimeout(button_Refresh, driver, 2000);
         Thread.sleep(2000);
-        return new issues_filters_page();
+        return new status_filters_page();
     }
 
-    public issues_filters_page clickOnReadyToInspectStatus() throws Exception {
+    public status_filters_page clickOnReadyToInspectStatus() throws Exception {
         clickOnElementUsingCustomTimeout(filter_readyToinspect, driver, 1000);
         Thread.sleep(2000);
         clickOnElementUsingCustomTimeout(button_Refresh, driver, 2000);
         Thread.sleep(2000);
-        return new issues_filters_page();
+        return new status_filters_page();
     }
 
-    public issues_filters_page clickOnInDisputeStatus() throws Exception {
+    public status_filters_page clickOnInDisputeStatus() throws Exception {
         clickOnElementUsingCustomTimeout(filter_inDispute, driver, 1000);
         Thread.sleep(2000);
         clickOnElementUsingCustomTimeout(button_Refresh, driver, 2000);
         Thread.sleep(2000);
-        return new issues_filters_page();
+        return new status_filters_page();
     }
 
-    public issues_filters_page clickOnClosedStatus() throws Exception {
+    public status_filters_page clickOnClosedStatus() throws Exception {
         clickOnElementUsingCustomTimeout(filter_closed, driver, 1000);
         Thread.sleep(2000);
         clickOnElementUsingCustomTimeout(button_Refresh, driver, 2000);
         Thread.sleep(2000);
-        return new issues_filters_page();
+        return new status_filters_page();
     }
 
-    public issues_filters_page clickOnWorkDoneStatus() throws Exception {
+    public status_filters_page clickOnWorkDoneStatus() throws Exception {
         clickOnElementUsingCustomTimeout(filter_workDone, driver, 1000);
         Thread.sleep(2000);
         clickOnElementUsingCustomTimeout(button_Refresh, driver, 2000);
         Thread.sleep(2000);
-        return new issues_filters_page();
+        return new status_filters_page();
     }
 
-    public issues_filters_page assertOpenFilter() throws Exception {
+    public status_filters_page assertOpenFilter() throws Exception {
         List<WebElement> lstItems = driver.findElements(By.xpath("//div[@class='issue-status-group']//span"));
         for (WebElement eleItem : lstItems) {
             Assert.assertEquals(eleItem.getText(), "OPEN");
         }
-        return new issues_filters_page();
+        return new status_filters_page();
     }
 
-    public issues_filters_page assertReadtoInspectFilter() throws Exception {
+    public status_filters_page assertReadtoInspectFilter() throws Exception {
         List<WebElement> lstItems = driver.findElements(By.xpath("//div[@class='issue-status-group']//span"));
         for (WebElement eleItem : lstItems) {
             Assert.assertEquals(eleItem.getText(), "READY TO INSPECT");
         }
-        return new issues_filters_page();
+        return new status_filters_page();
     }
 
-    public issues_filters_page assertInDisputeFilter() throws Exception {
+    public status_filters_page assertInDisputeFilter() throws Exception {
         List<WebElement> lstItems = driver.findElements(By.xpath("//div[@class='issue-status-group']//span"));
         for (WebElement eleItem : lstItems) {
             Assert.assertEquals(eleItem.getText(), "IN DISPUTE");
         }
-        return new issues_filters_page();
+        return new status_filters_page();
     }
 
-    public issues_filters_page assertClosedFilter() throws Exception {
+    public status_filters_page assertClosedFilter() throws Exception {
         List<WebElement> lstItems = driver.findElements(By.xpath("//div[@class='issue-status-group']//span"));
         for (WebElement eleItem : lstItems) {
             Assert.assertEquals(eleItem.getText(), "CLOSED");
         }
-        return new issues_filters_page();
+        return new status_filters_page();
     }
 
-    public issues_filters_page assertWorkDoneFilter() throws Exception {
+    public status_filters_page assertWorkDoneFilter() throws Exception {
         List<WebElement> lstItems = driver.findElements(By.xpath("//div[@class='issue-status-group']//span"));
         for (WebElement eleItem : lstItems) {
             Assert.assertEquals(eleItem.getText(), "WORK DONE");
         }
-        return new issues_filters_page();
+        return new status_filters_page();
     }
 }
 

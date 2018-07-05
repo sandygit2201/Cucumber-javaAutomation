@@ -1,4 +1,4 @@
-package Steps.Issues_ListView_Steps;
+package Steps.Issues_Filters_Page;
 
 import cucumber.api.PendingException;
 import cucumber.api.java.en.Then;
@@ -6,7 +6,7 @@ import cucumber.api.java.en.When;
 
 import static Utils.DriverFactory.issues_filters;
 
-public class issues_filters_steps {
+public class status_filters_steps {
     @When("^I select Open status$")
     public void iSelectOpenStatus() throws Throwable {
         issues_filters.clickOnOpenStatus();

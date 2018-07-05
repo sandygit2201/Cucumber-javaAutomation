@@ -14,6 +14,7 @@ import pageObjects.Field_general_Page.access_field_page;
 import pageObjects.Inspections.create_checklist_page;
 import pageObjects.Inspections.export_inspections_page;
 import pageObjects.Inspections.select_inspection_page;
+import pageObjects.Issues_Filters_Page.status_filters_page;
 import pageObjects.Issues_GridView_Page.access_gridview_page;
 import pageObjects.Issues_ListView_Page.*;
 
@@ -36,7 +37,7 @@ public class DriverFactory {
     public static access_sections_page access_sections;
     public static create_checklist_page create_checklist;
     public static your_organization_page your_org;
-    public static issues_filters_page issues_filters;
+    public static status_filters_page issues_filters;
     public static export_inspections_page export_inspections;
     public static issue_assignment_page issue_assignment;
     public static access_gridview_page  access_gridview;
@@ -103,7 +104,7 @@ public class DriverFactory {
             access_sections = PageFactory.initElements(driver, access_sections_page.class);
             create_checklist = PageFactory.initElements(driver, create_checklist_page.class);
             your_org = PageFactory.initElements(driver, your_organization_page.class);
-            issues_filters = PageFactory.initElements(driver, issues_filters_page.class);
+            issues_filters = PageFactory.initElements(driver, status_filters_page.class);
             export_inspections = PageFactory.initElements(driver, export_inspections_page.class);
             issue_assignment = PageFactory.initElements(driver, issue_assignment_page.class);
             access_gridview = PageFactory.initElements(driver, access_gridview_page.class);
