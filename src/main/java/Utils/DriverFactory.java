@@ -7,6 +7,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.PageFactory;
 import pageObjects.Babylon_page.logout_page;
+import pageObjects.Babylon_page.switch_project_page;
 import pageObjects.Field_Settings_Page.access_sections_page;
 import pageObjects.Field_Settings_Page.enter_settings_page;
 import pageObjects.Field_Settings_Page.your_organization_page;
@@ -42,6 +43,7 @@ public class DriverFactory {
     public static issue_assignment_page issue_assignment;
     public static access_gridview_page  access_gridview;
     public static logout_page logout;
+    public static switch_project_page switch_project;
 
     public WebDriver getDriver() {
 
@@ -109,7 +111,7 @@ public class DriverFactory {
             issue_assignment = PageFactory.initElements(driver, issue_assignment_page.class);
             access_gridview = PageFactory.initElements(driver, access_gridview_page.class);
             logout = PageFactory.initElements(driver, logout_page.class);
-
+            switch_project = PageFactory.initElements(driver, switch_project_page.class);
         }
 
         return driver;
