@@ -12,11 +12,12 @@ Feature: Selecting area
     And I select Web automation project
     Then I should be taken to that project
     When User clicks on Field-Issues
-    Then User should see the issues page
+    And I should close the FTUX
+
 
 
   Scenario: User should be able to select an area after successful login
-    When the area drop down appears
+    Given the area drop down appears
     And I click on an area
     Then I should be taken to that area
 

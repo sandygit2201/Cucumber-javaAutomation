@@ -12,21 +12,22 @@ public class area_select_page extends BasePage {
         super();
     }
 
-    public @FindBy (xpath = "// *[contains (@data-areaid, '271341877551153748')]")
-    WebElement area879;
+    public @FindBy(xpath = "// *[contains (@data-areaid, '271341877551153756')]")
+    WebElement areaBLOCKA;
     public @FindBy(xpath = "// *[contains (@class, 'cross')]")
     WebElement FTUX;
+    public @FindBy(xpath = "//DIV[@class='scrollable-content']")
+    WebElement assertAreaDropDown;
 
 
-    public area_select_page areaDropDown() throws Exception {
-        driver.switchTo().frame("main");
-        waitAndClickElement(FTUX);
+    public area_select_page assertAreaDropDown() throws Exception {
+        assertAreaDropDown.isDisplayed();
         return new area_select_page();
     }
 
 
     public area_select_page selectArea() throws Exception {
-        waitAndClickElement(area879);
+        waitAndClickElement(areaBLOCKA);
         return new area_select_page();
     }
 
