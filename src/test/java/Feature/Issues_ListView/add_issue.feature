@@ -8,7 +8,7 @@ Feature: Add issue
     When User clicks on the login button
     Then User should be taken to the homepage
     When User clicks on Field-Issues
-    Then User should see the Issues page
+    Then User should see the issues page
     Then I should close the FTUX
 
 

@@ -32,6 +32,7 @@ public class DriverFactory {
     public static comments_page addCommentsPage;
     public static photo_upload_page photo_upload;
     public static area_select_page select_area;
+    public static issuesSearchPage issuesSearch;
     public static status_change_page status_change;
     public static select_inspection_page select_inspection;
     public static enter_settings_page enter_settings;
@@ -112,6 +113,7 @@ public class DriverFactory {
             access_gridview = PageFactory.initElements(driver, access_gridview_page.class);
             logout = PageFactory.initElements(driver, logout_page.class);
             switch_project = PageFactory.initElements(driver, switch_project_page.class);
+            issuesSearch = PageFactory.initElements(driver, issuesSearchPage.class);
         }
 
         return driver;
