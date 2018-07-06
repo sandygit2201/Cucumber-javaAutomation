@@ -16,7 +16,7 @@ public class add_issue_page extends BasePage {
     public @FindBy(css = "div:nth-child(1) > div > div > div > span > span.ui-select-match-text.pull-left")
     WebElement textfield_IssueType;
 
-    public @FindBy(xpath = "(//INPUT[@type='search'])[2]/..//DIV[@ng-bind-html='item.name | issueTypeI18n | highlight: $select.search'][text()='Automation']")
+    public @FindBy(xpath = "(//INPUT[@type='search'])[3]/..//DIV[@ng-bind-html='item.name | issueTypeI18n | highlight: $select.search'][text()='Automation']")
     WebElement textfield_AutomationIssueType;
 
     public @FindBy(xpath = "// *[contains (@uib-typeahead, 'description for')]")

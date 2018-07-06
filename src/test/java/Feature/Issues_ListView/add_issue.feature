@@ -14,7 +14,6 @@ Feature: Add issue
     Then I should close the FTUX
     Then User should see the issues page
 
-
   Scenario: Add an Issues by giving custom values
 
     Given I click on Add Issue button
