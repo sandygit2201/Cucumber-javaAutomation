@@ -3,6 +3,8 @@ package pageObjects.Inspections;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import pageObjects.BasePage;
+import sun.jvm.hotspot.utilities.Assert;
+
 
 import java.io.IOException;
 
@@ -53,6 +55,8 @@ public class create_checklist_page extends BasePage {
     public @FindBy(css = "div > button[type=\"button\"].publish-button.primary.ng-binding")
     WebElement buttonPublish;
 
+    public @FindBy(css = "div.right-growler.ng-scope > div > div > div")
+    WebElement assertChecklistCreation;
 
 
     public create_checklist_page clickAddTemplate() throws Exception {
@@ -127,5 +131,11 @@ public class create_checklist_page extends BasePage {
 
     }
 
+    public create_checklist_page assertChecklistCreation() throws Exception {
+        WaitUntilWebElementIsVisible(assertChecklistCreation);
+        org.testng.Assert.assertEquals(assertChecklistCreation.getText(), "Checklist template has been saved successfully.");
+        return new create_checklist_page();
+
+    }
 
 }

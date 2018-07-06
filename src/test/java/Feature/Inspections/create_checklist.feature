@@ -6,11 +6,14 @@ Feature: User should be able to create a checklist
     And User enters a valid password
     When User clicks on the login button
     Then User should be taken to the homepage
+      Given I click on the project list
+      And I select Web automation project
+      Then I should be taken to that project
     Given I click on Field-Settings
     Then I should be taken to Settings page
 #      Run browser in full screen
     Given I click on Templates
-      Then I should see the FTUX and close it
+#      Then I should see the FTUX and close it
       Then I should see the Templates section
 
       Scenario: Create a valid checklist
