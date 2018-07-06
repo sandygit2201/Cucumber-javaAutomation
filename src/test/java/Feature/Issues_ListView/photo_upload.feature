@@ -6,8 +6,11 @@ Feature: Adding comments to an Issue
     And User enters a valid password
     When User clicks on the login button
     Then User should be taken to the homepage
+    Given I click on the project list
+    And I select Web automation project
+    Then I should be taken to that project
     When User clicks on Field-Issues
-    Then User should see the Issues page
+    Then User should see the issues page
 
   Scenario: Field user should be able to add photo to an existing issue
 

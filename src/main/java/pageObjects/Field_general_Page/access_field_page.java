@@ -29,7 +29,6 @@ public class access_field_page extends BasePage {
     WebElement assert_IssuesPage;
 
 
-
     public access_field_page() throws IOException {
         super();
     }
@@ -71,7 +70,8 @@ public class access_field_page extends BasePage {
     }
 
     public access_field_page assertIssuesPage() throws Exception {
-        Assert.assertEquals(assert_IssuesPage.getText(),"Issues");
+        Thread.sleep(1000);
+        Assert.assertEquals(assert_IssuesPage.getText(), "Issues");
         return new access_field_page();
     }
 

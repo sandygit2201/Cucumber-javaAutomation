@@ -7,9 +7,12 @@ Feature: Add issue
     And User enters a valid password
     When User clicks on the login button
     Then User should be taken to the homepage
+    Given I click on the project list
+    And I select Web automation project
+    Then I should be taken to that project
     When User clicks on Field-Issues
-    Then User should see the Issues page
     Then I should close the FTUX
+    Then User should see the issues page
 
 
   Scenario: Add an Issues by giving custom values
@@ -23,7 +26,6 @@ Feature: Add issue
     And I select a due date
     When I click on Save button
     Then the Issue should be saved
-
 
   Scenario: Add an Issues by selecting dropdown values
 
