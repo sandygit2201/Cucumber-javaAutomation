@@ -64,7 +64,7 @@ public class create_checklist_steps {
 
     @Then("^the checklist should be created$")
     public void theChecklistShouldBeCreated() throws Throwable {
-        System.out.println("Use growler for assertion");
+        create_checklist.assertChecklistCreation();
     }
 
 }

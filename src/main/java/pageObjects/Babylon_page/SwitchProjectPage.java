@@ -7,9 +7,9 @@ import pageObjects.BasePage;
 
 import java.io.IOException;
 
-public class switch_project_page extends BasePage {
+public class SwitchProjectPage extends BasePage {
 
-    public switch_project_page() throws IOException {
+    public SwitchProjectPage() throws IOException {
         super();
     }
 
@@ -21,19 +21,19 @@ public class switch_project_page extends BasePage {
 
 
 
-    public switch_project_page clickProjectSelector() throws InterruptedException, IOException {
+    public SwitchProjectPage clickProjectSelector() throws InterruptedException, IOException {
         waitAndClickElement(Project_selector);
-        return new switch_project_page();
+        return new SwitchProjectPage();
     }
 
-    public switch_project_page selectMyProject() throws InterruptedException, IOException {
+    public SwitchProjectPage selectMyProject() throws InterruptedException, IOException {
         waitAndClickElement(MyProject);
-        return new switch_project_page();
+        return new SwitchProjectPage();
     }
 
-    public switch_project_page AssertMyProject() throws InterruptedException, IOException {
+    public SwitchProjectPage AssertMyProject() throws InterruptedException, IOException {
         Assert.assertEquals(Project_selector.getText(),"Web automation");
-        return new switch_project_page();
+        return new SwitchProjectPage();
     }
 
 

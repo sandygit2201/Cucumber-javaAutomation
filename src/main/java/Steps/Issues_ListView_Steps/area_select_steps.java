@@ -1,15 +1,15 @@
 package Steps.Issues_ListView_Steps;
 
 import cucumber.api.java.en.And;
+import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
-import cucumber.api.java.en.When;
 
 import static Utils.DriverFactory.select_area;
 
 public class area_select_steps {
-    @When("^the area drop down appears$")
+    @Given("^the area drop down appears$")
     public void theAreaDropDownAppears() throws Throwable {
-        select_area.areaDropDown();
+        select_area.assertAreaDropDown();
     }
 
     @And("^I click on an area$")

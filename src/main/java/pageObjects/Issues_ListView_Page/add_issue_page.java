@@ -6,18 +6,18 @@ import org.openqa.selenium.support.FindBy;
 import pageObjects.BasePage;
 
 import java.io.IOException;
-import java.util.LinkedList;
-import java.util.List;
 
 public class add_issue_page extends BasePage {
 
 
     public @FindBy(className = "add-issue")
     WebElement button_Add;
-    public @FindBy(xpath = "//SPAN[@ng-hide='$select.isEmpty()'][text()='Building']/self::SPAN")
+
+    public @FindBy(css = "div:nth-child(1) > div > div > div > span > span.ui-select-match-text.pull-left")
     WebElement textfield_IssueType;
-    public @FindBy(xpath = "//DIV[@ng-bind-html='item.name | issueTypeI18n | highlight: $select.search'][text()='Defect']")
-    WebElement textfield_SelectIssueType;
+
+    public @FindBy(xpath = "(//INPUT[@type='search'])[3]/..//DIV[@ng-bind-html='item.name | issueTypeI18n | highlight: $select.search'][text()='Automation']")
+    WebElement textfield_AutomationIssueType;
 
     public @FindBy(xpath = "// *[contains (@uib-typeahead, 'description for')]")
     WebElement textfield_Desc;
@@ -43,10 +43,10 @@ public class add_issue_page extends BasePage {
     public @FindBy(css = "div#ui-select-choices-row-0-5 div")
     WebElement dropdown_IssueType;
 
-    public @FindBy(xpath = "//A[@href=''][text()='AH- Internet not working']")
+    public @FindBy(xpath = "//A[@href=''][text()='Issue Description  - Automation']")
     WebElement dropdown_IssueDesc;
 
-    public @FindBy(xpath = "//A[@href=''][text()='East']")
+    public @FindBy(xpath = "//A[@href=''][text()='Automation - East']")
     WebElement dropdown_Location;
 
 
@@ -64,8 +64,7 @@ public class add_issue_page extends BasePage {
 
     public add_issue_page iEnterIssueType() throws Exception {
         waitAndClickElement(textfield_IssueType);
-        waitAndClickElement(textfield_SelectIssueType);
-
+        waitAndClickElement(textfield_AutomationIssueType);
         return new add_issue_page();
     }
 

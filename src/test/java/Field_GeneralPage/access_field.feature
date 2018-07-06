@@ -9,20 +9,14 @@ Feature: Access Field module inside Aconex
     Then User should be taken to the homepage
 
 
- Scenario: : Enter Field-Issues
+  Scenario: : Enter Field-Issues
 
     When User clicks on Field-Issues
-   And I should close the FTUX
-   And I should close the area selector
+    And I should close the FTUX
+    And I should close the area selector
     Then User should see the issues page
 
 
-
-
-#  Scenario: : Enter Field-Inspections
-#
-#    When User clicks on Field-Inspections
-#    Then User should see the Inspection page
 
 
 
