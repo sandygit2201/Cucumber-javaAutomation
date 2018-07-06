@@ -2,6 +2,7 @@ package pageObjects.Field_general_Page;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.testng.Assert;
 import pageObjects.BasePage;
 
 import java.io.IOException;
@@ -23,6 +24,10 @@ public class access_field_page extends BasePage {
     WebElement issues;
     public @FindBy(xpath = "// *[contains (@class, 'cross')]")
     WebElement FTUX;
+
+    public @FindBy(css = "div > div.auiToolbar-header.ng-binding")
+    WebElement assert_IssuesPage;
+
 
 
     public access_field_page() throws IOException {
@@ -54,16 +59,19 @@ public class access_field_page extends BasePage {
     }
 
     public access_field_page selectIssues() throws Exception {
-
         waitAndClickElement(field);
         waitAndClickElement(issues);
-
         return new access_field_page();
     }
 
     public access_field_page closeFTUX() throws Exception {
         driver.switchTo().frame("main");
         waitAndClickElement(FTUX);
+        return new access_field_page();
+    }
+
+    public access_field_page assertIssuesPage() throws Exception {
+        Assert.assertEquals(assert_IssuesPage.getText(),"Issues");
         return new access_field_page();
     }
 

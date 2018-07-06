@@ -31,9 +31,9 @@ public class access_field_steps extends DriverFactory {
 
     }
 
-    @Then("^User should see the Issues page$")
+    @Then("^User should see the issues page$")
     public void userShouldSeeTheIssuesPage() throws Throwable {
-        System.out.println("Issue page verified");
+accessField.assertIssuesPage();
     }
 
     @Then("^I should close the FTUX$")
