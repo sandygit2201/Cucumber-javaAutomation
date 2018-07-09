@@ -23,13 +23,7 @@ import pageobjects.inspections.SelectInspectionPage;
 import pageobjects.issuesfilterspage.ProjectFieldFiltersPage;
 import pageobjects.issuesfilterspage.StatusFiltersPage;
 import pageobjects.issuesgridviewpage.AccessGridviewPage;
-import pageobjects.issueslistviewpage.AddIssuePage;
-import pageobjects.issueslistviewpage.AreaSelectPage;
-import pageobjects.issueslistviewpage.CommentsPage;
-import pageobjects.issueslistviewpage.IssueAssignmentPage;
-import pageobjects.issueslistviewpage.IssuesSearchPage;
-import pageobjects.issueslistviewpage.PhotoUploadPage;
-import pageobjects.issueslistviewpage.StatusChangePage;
+import pageobjects.issueslistviewpage.*;
 
 public class DriverFactory {
 
@@ -54,6 +48,7 @@ public class DriverFactory {
     public static LogoutPage logout;
     public static SwitchProjectPage switch_project;
     public static ProjectFieldFiltersPage projectfield_filter;
+    public static CustomFieldPage selectCustomField;
 
     public WebDriver getDriver() {
 
@@ -124,6 +119,7 @@ public class DriverFactory {
             issuesSearch = PageFactory.initElements(driver, IssuesSearchPage.class);
             switch_project = PageFactory.initElements(driver, SwitchProjectPage.class);
             projectfield_filter = PageFactory.initElements(driver, ProjectFieldFiltersPage.class);
+            selectCustomField = PageFactory.initElements(driver, CustomFieldPage.class);
 
         }
 
