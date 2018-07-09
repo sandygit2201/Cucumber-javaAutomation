@@ -1,50 +1,57 @@
 package Utils;
 
 
+import java.io.FileInputStream;
+import java.util.Properties;
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.PageFactory;
-import pageObjects.Babylon_page.logout_page;
-import pageObjects.Babylon_page.SwitchProjectPage;
-import pageObjects.Field_Settings_Page.access_sections_page;
-import pageObjects.Field_Settings_Page.enter_settings_page;
-import pageObjects.Field_Settings_Page.your_organization_page;
-import pageObjects.Field_general_Page.access_field_page;
-import pageObjects.Inspections.create_checklist_page;
-import pageObjects.Inspections.export_inspections_page;
-import pageObjects.Inspections.select_inspection_page;
-import pageObjects.Issues_Filters_Page.ProjectFieldFiltersPage;
-import pageObjects.Issues_Filters_Page.status_filters_page;
-import pageObjects.Issues_GridView_Page.access_gridview_page;
-import pageObjects.Issues_ListView_Page.*;
-
-import java.io.FileInputStream;
-import java.util.Properties;
-import java.util.concurrent.TimeUnit;
+import pageobjects.babylonpage.LoginPage;
+import pageobjects.babylonpage.LogoutPage;
+import pageobjects.babylonpage.SwitchProjectPage;
+import pageobjects.fieldgeneralpage.AccessFieldPage;
+import pageobjects.fieldsettingspage.AccessSectionsPage;
+import pageobjects.fieldsettingspage.EnterSettingsPage;
+import pageobjects.fieldsettingspage.YourOrganizationPage;
+import pageobjects.inspections.CreateChecklistPage;
+import pageobjects.inspections.ExportInspectionsPage;
+import pageobjects.inspections.SelectInspectionPage;
+import pageobjects.issuesfilterspage.ProjectFieldFiltersPage;
+import pageobjects.issuesfilterspage.StatusFiltersPage;
+import pageobjects.issuesgridviewpage.AccessGridviewPage;
+import pageobjects.issueslistviewpage.AddIssuePage;
+import pageobjects.issueslistviewpage.AreaSelectPage;
+import pageobjects.issueslistviewpage.CommentsPage;
+import pageobjects.issueslistviewpage.IssueAssignmentPage;
+import pageobjects.issueslistviewpage.IssuesSearchPage;
+import pageobjects.issueslistviewpage.PhotoUploadPage;
+import pageobjects.issueslistviewpage.StatusChangePage;
 
 public class DriverFactory {
 
     public static WebDriver driver;
-    public static pageObjects.Babylon_page.login_page login_page;
-    public static add_issue_page addIssue;
-    public static access_field_page accessField;
-    public static comments_page addCommentsPage;
-    public static photo_upload_page photo_upload;
-    public static area_select_page select_area;
-    public static issuesSearchPage issuesSearch;
-    public static status_change_page status_change;
-    public static select_inspection_page select_inspection;
-    public static enter_settings_page enter_settings;
-    public static access_sections_page access_sections;
-    public static create_checklist_page create_checklist;
-    public static your_organization_page your_org;
-    public static status_filters_page issues_filters;
-    public static export_inspections_page export_inspections;
-    public static issue_assignment_page issue_assignment;
-    public static access_gridview_page  access_gridview;
-    public static logout_page logout;
+    public static LoginPage login_page;
+    public static AddIssuePage addIssue;
+    public static AccessFieldPage accessField;
+    public static CommentsPage addCommentsPage;
+    public static PhotoUploadPage photo_upload;
+    public static AreaSelectPage select_area;
+    public static IssuesSearchPage issuesSearch;
+    public static StatusChangePage status_change;
+    public static SelectInspectionPage select_inspection;
+    public static EnterSettingsPage enter_settings;
+    public static AccessSectionsPage access_sections;
+    public static CreateChecklistPage create_checklist;
+    public static YourOrganizationPage your_org;
+    public static StatusFiltersPage issues_filters;
+    public static ExportInspectionsPage export_inspections;
+    public static IssueAssignmentPage issue_assignment;
+    public static AccessGridviewPage access_gridview;
+    public static LogoutPage logout;
     public static SwitchProjectPage switch_project;
     public static ProjectFieldFiltersPage projectfield_filter;
 
@@ -97,24 +104,24 @@ public class DriverFactory {
 
         {
             driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
-            login_page = PageFactory.initElements(driver, pageObjects.Babylon_page.login_page.class);
-            accessField = PageFactory.initElements(driver, access_field_page.class);
-            addIssue = PageFactory.initElements(driver, add_issue_page.class);
-            addCommentsPage = PageFactory.initElements(driver, comments_page.class);
-            photo_upload = PageFactory.initElements(driver, photo_upload_page.class);
-            select_area = PageFactory.initElements(driver, area_select_page.class);
-            status_change = PageFactory.initElements(driver, status_change_page.class);
-            select_inspection = PageFactory.initElements(driver, select_inspection_page.class);
-            enter_settings = PageFactory.initElements(driver, enter_settings_page.class);
-            access_sections = PageFactory.initElements(driver, access_sections_page.class);
-            create_checklist = PageFactory.initElements(driver, create_checklist_page.class);
-            your_org = PageFactory.initElements(driver, your_organization_page.class);
-            issues_filters = PageFactory.initElements(driver, status_filters_page.class);
-            export_inspections = PageFactory.initElements(driver, export_inspections_page.class);
-            issue_assignment = PageFactory.initElements(driver, issue_assignment_page.class);
-            access_gridview = PageFactory.initElements(driver, access_gridview_page.class);
-            logout = PageFactory.initElements(driver, logout_page.class);
-            issuesSearch = PageFactory.initElements(driver, issuesSearchPage.class);
+            login_page = PageFactory.initElements(driver, LoginPage.class);
+            accessField = PageFactory.initElements(driver, AccessFieldPage.class);
+            addIssue = PageFactory.initElements(driver, AddIssuePage.class);
+            addCommentsPage = PageFactory.initElements(driver, CommentsPage.class);
+            photo_upload = PageFactory.initElements(driver, PhotoUploadPage.class);
+            select_area = PageFactory.initElements(driver, AreaSelectPage.class);
+            status_change = PageFactory.initElements(driver, StatusChangePage.class);
+            select_inspection = PageFactory.initElements(driver, SelectInspectionPage.class);
+            enter_settings = PageFactory.initElements(driver, EnterSettingsPage.class);
+            access_sections = PageFactory.initElements(driver, AccessSectionsPage.class);
+            create_checklist = PageFactory.initElements(driver, CreateChecklistPage.class);
+            your_org = PageFactory.initElements(driver, YourOrganizationPage.class);
+            issues_filters = PageFactory.initElements(driver, StatusFiltersPage.class);
+            export_inspections = PageFactory.initElements(driver, ExportInspectionsPage.class);
+            issue_assignment = PageFactory.initElements(driver, IssueAssignmentPage.class);
+            access_gridview = PageFactory.initElements(driver, AccessGridviewPage.class);
+            logout = PageFactory.initElements(driver, LogoutPage.class);
+            issuesSearch = PageFactory.initElements(driver, IssuesSearchPage.class);
             switch_project = PageFactory.initElements(driver, SwitchProjectPage.class);
             projectfield_filter = PageFactory.initElements(driver, ProjectFieldFiltersPage.class);
 
