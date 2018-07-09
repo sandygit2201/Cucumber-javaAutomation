@@ -54,6 +54,7 @@ public class DriverFactory {
     public static LogoutPage logout;
     public static SwitchProjectPage switch_project;
     public static ProjectFieldFiltersPage projectfield_filter;
+    public static customFieldPage selectCustomField;
 
     public WebDriver getDriver() {
 
@@ -124,6 +125,7 @@ public class DriverFactory {
             issuesSearch = PageFactory.initElements(driver, IssuesSearchPage.class);
             switch_project = PageFactory.initElements(driver, SwitchProjectPage.class);
             projectfield_filter = PageFactory.initElements(driver, ProjectFieldFiltersPage.class);
+            selectCustomField = PageFactory.initElements(driver, customFieldPage.class);
 
         }
 
