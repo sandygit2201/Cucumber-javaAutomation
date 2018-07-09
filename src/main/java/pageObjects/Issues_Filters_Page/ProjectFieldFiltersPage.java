@@ -7,6 +7,8 @@ import org.testng.Assert;
 import pageObjects.BasePage;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ProjectFieldFiltersPage extends BasePage {
 
@@ -32,11 +34,10 @@ public class ProjectFieldFiltersPage extends BasePage {
     public @FindBy(css = "fm-app > div:nth-child(4) > div > div > div")
     WebElement loader_PageLoader;
 
-    public @FindBy(css = "div.extra-details.ng-scope > aui-collapsible-section > div >" +
-            " div > aui-collapsible-section-header > div > span:nth-child(2) > span")
+    public @FindBy(xpath = "(//SPAN[@class='auiIcon auiCollapsibleSection-headerArrow chevronRight'])[1]")
     WebElement extraDetailsSection;
 
-    public @FindBy(xpath = "(//DIV[@class='text'])[2]")
+    public @FindBy(xpath = "(//DIV[@class='readonly-view ng-scope'])[5]")
     WebElement assertFirstValue;
 
 
@@ -73,11 +74,20 @@ public class ProjectFieldFiltersPage extends BasePage {
     }
 
     public ProjectFieldFiltersPage assertProjectFieldFilterResult() throws Exception {
-
-        waitAndClickElement(extraDetailsSection);
-        Assert.assertEquals(assertFirstValue.getText(), "High");
+        List<WebElement> lstItems = driver.findElements(By.xpath("//DIV[@class='issues-list-item clearfix']/self::DIV"));
+        for (WebElement eleItem : lstItems) {
+            waitAndClickElement(eleItem);
+            waitAndClickElement(extraDetailsSection);
+            Assert.assertEquals(assertFirstValue.getText(), "High");
+        }
         return new ProjectFieldFiltersPage();
+
     }
-
-
 }
+
+
+
+
+
+
+
