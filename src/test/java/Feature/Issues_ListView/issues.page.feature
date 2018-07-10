@@ -31,7 +31,7 @@ Feature: Access Field
     Then I should close the FTUX
     Given I click on Add Issue button
     Then I should see the New Issue pane
-    And I enter the Issue type
+    And I select the Issue type
     And I enter the Issue description
     When I click on Save button
     Then the Issue should be saved

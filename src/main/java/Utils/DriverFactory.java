@@ -10,26 +10,28 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.PageFactory;
-import pageobjects.babylonpage.LoginPage;
-import pageobjects.babylonpage.LogoutPage;
-import pageobjects.babylonpage.SwitchProjectPage;
-import pageobjects.fieldgeneralpage.AccessFieldPage;
-import pageobjects.fieldsettingspage.AccessSectionsPage;
-import pageobjects.fieldsettingspage.EnterSettingsPage;
-import pageobjects.fieldsettingspage.YourOrganizationPage;
-import pageobjects.inspections.CreateChecklistPage;
-import pageobjects.inspections.ExportInspectionsPage;
-import pageobjects.inspections.SelectInspectionPage;
-import pageobjects.issuesfilterspage.ProjectFieldFiltersPage;
-import pageobjects.issuesfilterspage.StatusFiltersPage;
-import pageobjects.issuesgridviewpage.AccessGridViewPage;
-import pageobjects.issueslistviewpage.AddIssuePage;
-import pageobjects.issueslistviewpage.AreaSelectPage;
-import pageobjects.issueslistviewpage.CommentsPage;
-import pageobjects.issueslistviewpage.IssueAssignmentPage;
-import pageobjects.issueslistviewpage.IssuesSearchPage;
-import pageobjects.issueslistviewpage.PhotoUploadPage;
-import pageobjects.issueslistviewpage.StatusChangePage;
+
+import pageobjects.Babylon_Page.LoginPage;
+import pageobjects.Babylon_Page.LogoutPage;
+import pageobjects.Babylon_Page.SwitchProjectPage;
+import pageobjects.FieldGeneral_Page.AccessFieldPage;
+import pageobjects.FieldSettings_Page.AccessSectionsPage;
+import pageobjects.FieldSettings_Page.EnterSettingsPage;
+import pageobjects.FieldSettings_Page.YourOrganizationPage;
+import pageobjects.Inspections_Page.CreateChecklistPage;
+import pageobjects.Inspections_Page.ExportInspectionsPage;
+import pageobjects.Inspections_Page.SelectInspectionPage;
+import pageobjects.IssuesFilters_Page.ProjectFieldFiltersPage;
+import pageobjects.IssuesFilters_Page.StatusFiltersPage;
+import pageobjects.IssuesListView_Page.AddIssuePage;
+import pageobjects.IssuesListView_Page.AreaSelectPage;
+import pageobjects.IssuesListView_Page.CommentsPage;
+import pageobjects.IssuesListView_Page.IssueAssignmentPage;
+import pageobjects.IssuesListView_Page.IssuesSearchPage;
+import pageobjects.IssuesListView_Page.PhotoUploadPage;
+import pageobjects.IssuesListView_Page.StatusChangePage;
+import pageobjects.IssuesGridView_Page.AccessGridViewPage;
+import pageobjects.IssuesListView_Page.*;
 
 public class DriverFactory {
 
@@ -54,6 +56,8 @@ public class DriverFactory {
     public static LogoutPage logout;
     public static SwitchProjectPage switchProject;
     public static ProjectFieldFiltersPage projectfield_filter;
+    public static CustomFieldPage selectCustomField;
+
 
     public WebDriver getDriver() {
 
@@ -124,6 +128,7 @@ public class DriverFactory {
             issuesSearch = PageFactory.initElements(driver, IssuesSearchPage.class);
             switchProject = PageFactory.initElements(driver, SwitchProjectPage.class);
             projectfield_filter = PageFactory.initElements(driver, ProjectFieldFiltersPage.class);
+            selectCustomField = PageFactory.initElements(driver, CustomFieldPage.class);
 
         }
 
