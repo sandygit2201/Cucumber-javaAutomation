@@ -8,7 +8,7 @@ import cucumber.api.java.en.When;
 public class AccessFieldSteps extends DriverFactory {
     @And("^User enters a valid username$")
     public void userEntersAValidUsername() throws Throwable {
-        accessField.enterUsername();
+        accessField.enterUserName();
 
     }
 

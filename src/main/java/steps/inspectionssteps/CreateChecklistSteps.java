@@ -31,7 +31,7 @@ public class CreateChecklistSteps {
 
     @And("^I enter the description$")
     public void iEnterTheDescription() throws Throwable {
-        create_checklist.addDesc();
+        create_checklist.addDescription();
     }
 
 

@@ -24,7 +24,7 @@ public class CommentsSteps {
 
     @Then("^the user should be able to add the comment$")
     public void theUserShouldBeAbleToAddTheComment() throws Throwable {
-        addCommentsPage.findcommentTextbox();
+        addCommentsPage.findCommentTextBox();
 
 
     }

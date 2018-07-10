@@ -27,23 +27,23 @@ public class AddIssueSteps {
 
     @And("^I enter the Issue description$")
     public void iEnterTheIssueDescription() throws Throwable {
-        addIssue.iEnterIssueDesc();
+        addIssue.iEnterIssueDescription();
     }
 
     @And("^I select a Issue type$")
     public void iSelectAIssueType() throws Throwable {
-        addIssue.Dropdown_selectIssueType();
+        addIssue.dropdownSelectIssueType();
     }
 
     @And("^I select a Issue description$")
     public void iSelectAIssueDescription() throws Throwable {
-        addIssue.Dropdown_selectIssueDesc();
+        addIssue.dropdownSelectIssueDescription();
 
     }
 
     @And("^I select a location detail$")
     public void iSelectALocationDetail() throws Throwable {
-        addIssue.Dropdown_selectLocation();
+        addIssue.dropdownSelectLocation();
     }
 
     @When("^I click on Save button$")

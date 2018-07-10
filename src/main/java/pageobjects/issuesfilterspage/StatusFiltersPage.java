@@ -20,60 +20,60 @@ public class StatusFiltersPage extends BasePage {
     }
 
     public @FindBy(xpath = "//SPAN[@class='ng-binding'][text()='Open']/preceding-sibling::INPUT")
-    WebElement filter_open;
+    WebElement filterOpen;
 
     public @FindBy(xpath = "//SPAN[@class='ng-binding'][text()='Ready to inspect']/preceding-sibling::INPUT")
-    WebElement filter_readyToinspect;
+    WebElement filterReadyToInspect;
 
     public @FindBy(xpath = "//SPAN[@class='ng-binding'][text()='In dispute']/preceding-sibling::INPUT")
-    WebElement filter_inDispute;
+    WebElement filterInDispute;
 
     public @FindBy(xpath = "//SPAN[@class='ng-binding'][text()='Closed']/preceding-sibling::INPUT")
-    WebElement filter_closed;
+    WebElement filterClosed;
 
     public @FindBy(xpath = "//SPAN[@class='ng-binding'][text()='Work done']/preceding-sibling::INPUT")
-    WebElement filter_workDone;
+    WebElement filterWorkDone;
 
     public @FindBy(css = "div.auiToolbar-left > div.refresh-issues")
-    WebElement button_Refresh;
+    WebElement buttonRefresh;
 
 
     public StatusFiltersPage clickOnOpenStatus() throws Exception {
-        clickOnElementUsingCustomTimeout(filter_open, driver, 1000);
+        clickOnElementUsingCustomTimeout(filterOpen, driver, 1000);
         Thread.sleep(2000);
-        clickOnElementUsingCustomTimeout(button_Refresh, driver, 2000);
+        clickOnElementUsingCustomTimeout(buttonRefresh, driver, 2000);
         Thread.sleep(2000);
         return new StatusFiltersPage();
     }
 
     public StatusFiltersPage clickOnReadyToInspectStatus() throws Exception {
-        clickOnElementUsingCustomTimeout(filter_readyToinspect, driver, 1000);
+        clickOnElementUsingCustomTimeout(filterReadyToInspect, driver, 1000);
         Thread.sleep(2000);
-        clickOnElementUsingCustomTimeout(button_Refresh, driver, 2000);
+        clickOnElementUsingCustomTimeout(buttonRefresh, driver, 2000);
         Thread.sleep(2000);
         return new StatusFiltersPage();
     }
 
     public StatusFiltersPage clickOnInDisputeStatus() throws Exception {
-        clickOnElementUsingCustomTimeout(filter_inDispute, driver, 1000);
+        clickOnElementUsingCustomTimeout(filterInDispute, driver, 1000);
         Thread.sleep(2000);
-        clickOnElementUsingCustomTimeout(button_Refresh, driver, 2000);
+        clickOnElementUsingCustomTimeout(buttonRefresh, driver, 2000);
         Thread.sleep(2000);
         return new StatusFiltersPage();
     }
 
     public StatusFiltersPage clickOnClosedStatus() throws Exception {
-        clickOnElementUsingCustomTimeout(filter_closed, driver, 1000);
+        clickOnElementUsingCustomTimeout(filterClosed, driver, 1000);
         Thread.sleep(2000);
-        clickOnElementUsingCustomTimeout(button_Refresh, driver, 2000);
+        clickOnElementUsingCustomTimeout(buttonRefresh, driver, 2000);
         Thread.sleep(2000);
         return new StatusFiltersPage();
     }
 
     public StatusFiltersPage clickOnWorkDoneStatus() throws Exception {
-        clickOnElementUsingCustomTimeout(filter_workDone, driver, 1000);
+        clickOnElementUsingCustomTimeout(filterWorkDone, driver, 1000);
         Thread.sleep(2000);
-        clickOnElementUsingCustomTimeout(button_Refresh, driver, 2000);
+        clickOnElementUsingCustomTimeout(buttonRefresh, driver, 2000);
         Thread.sleep(2000);
         return new StatusFiltersPage();
     }
@@ -86,7 +86,7 @@ public class StatusFiltersPage extends BasePage {
         return new StatusFiltersPage();
     }
 
-    public StatusFiltersPage assertReadtoInspectFilter() throws Exception {
+    public StatusFiltersPage assertReadyToInspectFilter() throws Exception {
         List<WebElement> lstItems = driver.findElements(By.xpath("//div[@class='issue-status-group']//span"));
         for (WebElement eleItem : lstItems) {
             Assert.assertEquals(eleItem.getText(), "READY TO INSPECT");

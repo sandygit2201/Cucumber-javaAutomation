@@ -10,19 +10,19 @@ public class CommentsPage extends BasePage {
 
 
     public @FindBy(css = "textarea#content")
-    WebElement textfield_comments;
+    WebElement textFieldComments;
 
     public @FindBy(css = "div.actions.ng-scope > button.post-comment.auiButton.ng-binding")
-    WebElement button_post;
+    WebElement buttonPost;
 
     public @FindBy(className = "cancel-comment")
-    WebElement button_cancel;
+    WebElement buttonCancel;
 
     public @FindBy(xpath = "// *[contains (@class, 'cross')]")
     WebElement FTUX;
 
     public @FindBy(xpath = "// *[contains (@class, 'close-btn')]")
-    WebElement buttoncloseArea;
+    WebElement buttonCloseArea;
 
 
     public CommentsPage() throws IOException {
@@ -34,19 +34,19 @@ public class CommentsPage extends BasePage {
     public CommentsPage switchFrame() throws Exception {
         driver.switchTo().frame("main");
         waitAndClickElement(FTUX);
-        waitAndClickElement(buttoncloseArea);
+        waitAndClickElement(buttonCloseArea);
         return new CommentsPage();
     }
 
-    public CommentsPage findcommentTextbox() throws Exception {
-        clickOnElementUsingCustomTimeout(textfield_comments,driver,1000);
+    public CommentsPage findCommentTextBox() throws Exception {
+        clickOnElementUsingCustomTimeout(textFieldComments,driver,1000);
         Thread.sleep(2000);
-        sendKeysToWebElement(textfield_comments, "Test Comments");
+        sendKeysToWebElement(textFieldComments, "Test Comments");
         return new CommentsPage();
     }
 
     public CommentsPage postComment() throws Exception {
-        clickOnElementUsingCustomTimeout(button_post,driver,1000);
+        clickOnElementUsingCustomTimeout(buttonPost,driver,1000);
         return new CommentsPage();
     }
 

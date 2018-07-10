@@ -23,7 +23,7 @@ public class StatusFiltersSteps {
 
     @Then("^I should see Issues that are Ready to Inspect$")
     public void iShouldSeeIssuesThatAreReadyToInspect() throws Throwable {
-        issues_filters.assertReadtoInspectFilter();
+        issues_filters.assertReadyToInspectFilter();
     }
 
     @When("^I select In Dispute status$")

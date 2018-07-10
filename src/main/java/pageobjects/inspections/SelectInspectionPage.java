@@ -17,7 +17,7 @@ public class SelectInspectionPage extends BasePage {
     public @FindBy(id = "nav-bar-FIELD-FIELD-CHECKLISTS")
     WebElement checklist;
     public @FindBy(xpath = "// *[contains (@class, 'close-btn')]")
-    WebElement buttoncloseArea;
+    WebElement buttonCloseArea;
     public @FindBy(xpath = "//DIV[@class='auiToolbar-header ng-binding'][text()='Inspections']")
     WebElement assertInspection;
 
@@ -37,7 +37,7 @@ public class SelectInspectionPage extends BasePage {
 
     public SelectInspectionPage closeArea() throws Exception {
         driver.switchTo().frame("main");
-        waitAndClickElement(buttoncloseArea);
+        waitAndClickElement(buttonCloseArea);
         return new SelectInspectionPage();
     }
 

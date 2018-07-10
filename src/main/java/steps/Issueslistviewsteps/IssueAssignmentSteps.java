@@ -20,7 +20,7 @@ public class IssueAssignmentSteps {
 
     @And("^I click on it and select an User from my org$")
     public void iClickOnItAndSelectAnUserFromMyOrg() throws Throwable {
-        issue_assignment.assignToUserinMyOrg();
+        issue_assignment.assignToUserInMyOrg();
     }
 
     @Then("^the Issue should be assigned to the User$")

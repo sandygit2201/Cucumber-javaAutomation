@@ -41,7 +41,7 @@ public class BasePage extends DriverFactory {
      **********************************************************************************/
 
 
-    public boolean VerifyPdfContent(String SearchText) throws IOException {
+    public boolean verifyPdfContent(String searchText) throws IOException {
         File dir = new File(Constant.PDF_DOWNLOAD_DIRECTORY);
         File[] files = dir.listFiles((dir1, name) ->  name.endsWith("Automation_BigTurnip_020718.pdf"));
         PDDocument report = PDDocument.load(files[0]);
@@ -49,9 +49,9 @@ public class BasePage extends DriverFactory {
         String text = pdfStripper.getText(report);
         report.close();
 //        System.out.println(text);
-//        System.out.println(SearchText);
-        org.testng.Assert.assertTrue(text.contains(SearchText));
-        return text.contains(SearchText);
+//        System.out.println(searchText);
+        org.testng.Assert.assertTrue(text.contains(searchText));
+        return text.contains(searchText);
 
     }
 
@@ -76,9 +76,9 @@ public class BasePage extends DriverFactory {
      **CHECK SORT FOR DROP DOWNS
      **********************************************************************************/
 
-    public static boolean ValidateSort(LinkedList<String> DropDownValues) {
+    public static boolean validateSort(LinkedList<String> dropDownValues) {
         String prev = ""; // empty string
-        for (final String cur : DropDownValues) {
+        for (final String cur : dropDownValues) {
             if (cur.compareTo(prev) < 0) {
                 return false;
             }
@@ -87,14 +87,14 @@ public class BasePage extends DriverFactory {
         return true;
     }
 
-    protected boolean CheckSorting(String xpathExpression) {
-        List<WebElement> DropDownValues = new LinkedList<>(driver.findElements(By.xpath(xpathExpression)));
+    protected boolean checkSorting(String xpathExpression) {
+        List<WebElement> dropDownValues = new LinkedList<>(driver.findElements(By.xpath(xpathExpression)));
         LinkedList<String> DropDown = new LinkedList<String>();
-        for (int i = 0; i < DropDownValues.size(); i++) {
-//            System.out.println(DropDownValues.get(i).getText());
-            DropDown.add(DropDownValues.get(i).getText());
+        for (int i = 0; i < dropDownValues.size(); i++) {
+//            System.out.println(dropDownValues.get(i).getText());
+            DropDown.add(dropDownValues.get(i).getText());
         }
-        return ValidateSort(DropDown);
+        return validateSort(DropDown);
     }
 
 
@@ -226,7 +226,7 @@ public class BasePage extends DriverFactory {
      **********************************************************************************/
     public void sendKeysToWebElement(WebElement element, String textToSend) throws Exception {
         try {
-            this.WaitUntilWebElementIsVisible(element);
+            this.waitUntilWebElementIsVisible(element);
             element.clear();
             element.sendKeys(textToSend);
             System.out.println("Successfully Sent the following keys: '" + textToSend + "' to element: " + "<" + element.toString() + ">");
@@ -266,7 +266,7 @@ public class BasePage extends DriverFactory {
         }
     }
 
-    public void waitAndclickElementUsingJS(WebElement element) {
+    public void waitAndClickElementUsingJS(WebElement element) {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         try {
             wait.until(ExpectedConditions.elementToBeClickable(element));
@@ -297,7 +297,7 @@ public class BasePage extends DriverFactory {
     /**********************************************************************************
      **WAIT METHODS
      **********************************************************************************/
-    public boolean WaitUntilWebElementIsVisible(WebElement element) {
+    public boolean waitUntilWebElementIsVisible(WebElement element) {
         try {
             this.wait.until(ExpectedConditions.visibilityOf(element));
             System.out.println("WebElement is visible using locator: " + "<" + element.toString() + ">");
@@ -309,7 +309,7 @@ public class BasePage extends DriverFactory {
         }
     }
 
-    public boolean WaitUntilWebElementIsVisibleUsingByLocator(By element) {
+    public boolean waitUntilWebElementIsVisibleUsingByLocator(By element) {
         try {
             this.wait.until(ExpectedConditions.visibilityOfElementLocated(element));
             System.out.println("Element is visible using By locator: " + "<" + element.toString() + ">");
@@ -333,7 +333,7 @@ public class BasePage extends DriverFactory {
     }
 
 
-    public boolean waitUntilPreLoadElementDissapears(By element) {
+    public boolean waitUntilPreLoadElementDisappears(By element) {
         return this.wait.until(ExpectedConditions.invisibilityOfElementLocated(element));
     }
 

@@ -49,7 +49,7 @@ public class YourOrganizationPage extends BasePage {
         return new YourOrganizationPage();
     }
 
-    public YourOrganizationPage assertYOurOrgPage() throws Exception {
+    public YourOrganizationPage assertYourOrgPage() throws Exception {
         assertYourOrgPage.isDisplayed();
         return new YourOrganizationPage();
     }
@@ -71,7 +71,7 @@ public class YourOrganizationPage extends BasePage {
         return new YourOrganizationPage();
     }
 
-    public YourOrganizationPage clickonUserRole() throws Exception {
+    public YourOrganizationPage clickOnUserRole() throws Exception {
         waitAndClickElement(clickOnRole);
         return new YourOrganizationPage();
     }

@@ -16,22 +16,22 @@ public class ProjectFieldFiltersPage extends BasePage {
     }
 
     public @FindBy(css = "div.custom-fields-filter-link.ng-scope > span")
-    WebElement filter_ExtraDetails;
+    WebElement filterExtraDetails;
 
     public @FindBy(css = "div.auiModal-header > h3")
-    WebElement modal_ExtraDetails;
+    WebElement modalExtraDetails;
 
     public @FindBy(css = "div.custom-fields-list > li.ng-binding.ng-scope.active")
-    WebElement select_FirstProjectField;
+    WebElement selectFirstProjectField;
 
     public @FindBy(css = "div:nth-child(1) > label > input")
-    WebElement checkbox_FirstValue;
+    WebElement checkboxFirstValue;
 
     public @FindBy(css = "div.auiModal-footer > button.auiButton.primary.default.apply.ng-binding")
-    WebElement button_Apply;
+    WebElement buttonApply;
 
     public @FindBy(css = "fm-app > div:nth-child(4) > div > div > div")
-    WebElement loader_PageLoader;
+    WebElement loaderPageLoader;
 
     public @FindBy(xpath = "(//SPAN[@class='auiIcon auiCollapsibleSection-headerArrow chevronRight'])[1]")
     WebElement extraDetailsSection;
@@ -41,34 +41,34 @@ public class ProjectFieldFiltersPage extends BasePage {
 
 
     public ProjectFieldFiltersPage clickOnExtraDetails() throws Exception {
-        waitAndClickElement(filter_ExtraDetails);
+        waitAndClickElement(filterExtraDetails);
         return new ProjectFieldFiltersPage();
     }
 
 
     public ProjectFieldFiltersPage viewExtraDetailsModal() throws Exception {
-        Assert.assertEquals(modal_ExtraDetails.getText(), "Extra details");
+        Assert.assertEquals(modalExtraDetails.getText(), "Extra details");
         return new ProjectFieldFiltersPage();
     }
 
     public ProjectFieldFiltersPage clickOnFirstProjectField() throws Exception {
-        waitAndClickElement(select_FirstProjectField);
+        waitAndClickElement(selectFirstProjectField);
         return new ProjectFieldFiltersPage();
     }
 
     public ProjectFieldFiltersPage selectFirstValue() throws Exception {
-        waitAndClickElement(checkbox_FirstValue);
+        waitAndClickElement(checkboxFirstValue);
         return new ProjectFieldFiltersPage();
     }
 
     public ProjectFieldFiltersPage clickApplyButton() throws Exception {
-        waitAndClickElement(button_Apply);
+        waitAndClickElement(buttonApply);
         return new ProjectFieldFiltersPage();
     }
 
     public ProjectFieldFiltersPage assertLoadingScreen() throws Exception {
-        loader_PageLoader.isDisplayed();
-        waitUntilPreLoadElementDissapears(By.cssSelector("fm-app > div:nth-child(4) > div > div > div"));
+        loaderPageLoader.isDisplayed();
+        waitUntilPreLoadElementDisappears(By.cssSelector("fm-app > div:nth-child(4) > div > div > div"));
         return new ProjectFieldFiltersPage();
     }
 

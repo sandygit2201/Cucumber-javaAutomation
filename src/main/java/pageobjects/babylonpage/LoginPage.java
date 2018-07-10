@@ -9,55 +9,55 @@ import pageobjects.BasePage;
 public class LoginPage extends BasePage {
 
     public @FindBy(id = "userName")
-    WebElement textfield_UserName;
+    WebElement textFieldUserName;
     public @FindBy(id = "password")
-    WebElement textfield_Password;
+    WebElement textFieldPassword;
     public @FindBy(id = "login")
-    WebElement button_Login;
+    WebElement buttonLogin;
     public @FindBy(css = "a#logoff")
-    WebElement assert_LoginSuccess;
+    WebElement assertLoginSuccess;
     public @FindBy(css = "form[name=\"sll\"] div.logon-messages > ul > li > div:nth-child(1) > div")
-    WebElement assert_LoginFailure;
+    WebElement assertLoginFailure;
 
 
     public LoginPage() throws IOException {
         super();
     }
 
-    public LoginPage getloginPage() throws IOException {
+    public LoginPage getLoginPage() throws IOException {
         getDriver().get("https://apiprod.aconex.com/Logon");
         return new LoginPage();
 
     }
 
-    public LoginPage enterUsername(String userName) throws Exception {
-        waitAndClickElement(textfield_UserName);
-        sendKeysToWebElement(textfield_UserName, userName);
+    public LoginPage enterUserName(String userName) throws Exception {
+        waitAndClickElement(textFieldUserName);
+        sendKeysToWebElement(textFieldUserName, userName);
         return new LoginPage();
     }
 
 
     public LoginPage enterPassword(String password) throws Exception {
-        waitAndClickElement(textfield_Password);
-        sendKeysToWebElement(textfield_Password, password);
+        waitAndClickElement(textFieldPassword);
+        sendKeysToWebElement(textFieldPassword, password);
         return new LoginPage();
     }
 
 
     public LoginPage clickLoginButton() throws Exception {
-        waitAndClickElement(button_Login);
+        waitAndClickElement(buttonLogin);
         return new LoginPage();
     }
 
     public LoginPage assertLoginSuccess(String arg0) throws Exception {
-        WaitUntilWebElementIsVisible(assert_LoginSuccess);
-        org.testng.Assert.assertEquals(assert_LoginSuccess.getText(), arg0);
+        waitUntilWebElementIsVisible(assertLoginSuccess);
+        org.testng.Assert.assertEquals(assertLoginSuccess.getText(), arg0);
         return new LoginPage();
     }
 
     public LoginPage assertLoginFailure(String arg1) throws Exception {
-        WaitUntilWebElementIsVisible(assert_LoginFailure);
-        org.testng.Assert.assertEquals(assert_LoginFailure.getText(), arg1);
+        waitUntilWebElementIsVisible(assertLoginFailure);
+        org.testng.Assert.assertEquals(assertLoginFailure.getText(), arg1);
         return new LoginPage();
 
 

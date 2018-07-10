@@ -18,24 +18,24 @@ public class ExportInspectionsPage extends BasePage {
 
 
     public @FindBy(xpath = "(//DIV[@class='title ng-binding'][text()='Automation'][text()='Automation'])")
-    WebElement select_Checklist;
+    WebElement selectChecklist;
 
     public @FindBy(css = "div.checklist-details-export-pdf.col-md-6.no-padding.ng-isolate-scope > button")
-    WebElement button_Export;
+    WebElement buttonExport;
 
 
     public ExportInspectionsPage selectChecklist() throws Exception {
         Thread.sleep(1000);
-        clickOnElementUsingCustomTimeout(select_Checklist, driver, 10000);
+        clickOnElementUsingCustomTimeout(selectChecklist, driver, 10000);
         return new ExportInspectionsPage();
 
     }
 
     public ExportInspectionsPage clickExport() throws Exception {
 
-        waitAndClickElement(button_Export);
+        waitAndClickElement(buttonExport);
         Thread.sleep(200);
-        waitUntilPreLoadElementDissapears(By.className("fm-app > div:nth-child(4) > div > div > div"));
+        waitUntilPreLoadElementDisappears(By.className("fm-app > div:nth-child(4) > div > div > div"));
         return new ExportInspectionsPage();
 
     }
@@ -51,7 +51,7 @@ public class ExportInspectionsPage extends BasePage {
 
     public boolean verifyPDFContent(String SearchText) throws IOException {
 
-        return VerifyPdfContent(SearchText);
+        return verifyPdfContent(SearchText);
     }
 
 

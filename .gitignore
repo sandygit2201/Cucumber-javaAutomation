@@ -4,3 +4,4 @@ target/
 *.iml
 CucumberFramework
 *out/
+field-web-automation/*

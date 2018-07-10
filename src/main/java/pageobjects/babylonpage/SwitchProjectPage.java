@@ -14,25 +14,25 @@ public class SwitchProjectPage extends BasePage {
     }
 
     public @FindBy(css = "div#nav span.nav-project > span")
-    WebElement Project_selector;
+    WebElement projectSelector;
 
     public @FindBy(xpath = "//SPAN[@class='projectChanger-container']/../../../../..//DIV[@id='projectChanger-1879048480']")
-    WebElement MyProject;
+    WebElement myProject;
 
 
 
     public SwitchProjectPage clickProjectSelector() throws InterruptedException, IOException {
-        waitAndClickElement(Project_selector);
+        waitAndClickElement(projectSelector);
         return new SwitchProjectPage();
     }
 
     public SwitchProjectPage selectMyProject() throws InterruptedException, IOException {
-        waitAndClickElement(MyProject);
+        waitAndClickElement(myProject);
         return new SwitchProjectPage();
     }
 
-    public SwitchProjectPage AssertMyProject() throws InterruptedException, IOException {
-        Assert.assertEquals(Project_selector.getText(),"Web automation");
+    public SwitchProjectPage assertMyProject() throws InterruptedException, IOException {
+        Assert.assertEquals(projectSelector.getText(),"Web automation");
         return new SwitchProjectPage();
     }
 

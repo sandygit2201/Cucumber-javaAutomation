@@ -22,7 +22,7 @@ import pageobjects.inspections.ExportInspectionsPage;
 import pageobjects.inspections.SelectInspectionPage;
 import pageobjects.issuesfilterspage.ProjectFieldFiltersPage;
 import pageobjects.issuesfilterspage.StatusFiltersPage;
-import pageobjects.issuesgridviewpage.AccessGridviewPage;
+import pageobjects.issuesgridviewpage.AccessGridViewPage;
 import pageobjects.issueslistviewpage.AddIssuePage;
 import pageobjects.issueslistviewpage.AreaSelectPage;
 import pageobjects.issueslistviewpage.CommentsPage;
@@ -50,9 +50,9 @@ public class DriverFactory {
     public static StatusFiltersPage issues_filters;
     public static ExportInspectionsPage export_inspections;
     public static IssueAssignmentPage issue_assignment;
-    public static AccessGridviewPage access_gridview;
+    public static AccessGridViewPage access_gridview;
     public static LogoutPage logout;
-    public static SwitchProjectPage switch_project;
+    public static SwitchProjectPage switchProject;
     public static ProjectFieldFiltersPage projectfield_filter;
 
     public WebDriver getDriver() {
@@ -119,10 +119,10 @@ public class DriverFactory {
             issues_filters = PageFactory.initElements(driver, StatusFiltersPage.class);
             export_inspections = PageFactory.initElements(driver, ExportInspectionsPage.class);
             issue_assignment = PageFactory.initElements(driver, IssueAssignmentPage.class);
-            access_gridview = PageFactory.initElements(driver, AccessGridviewPage.class);
+            access_gridview = PageFactory.initElements(driver, AccessGridViewPage.class);
             logout = PageFactory.initElements(driver, LogoutPage.class);
             issuesSearch = PageFactory.initElements(driver, IssuesSearchPage.class);
-            switch_project = PageFactory.initElements(driver, SwitchProjectPage.class);
+            switchProject = PageFactory.initElements(driver, SwitchProjectPage.class);
             projectfield_filter = PageFactory.initElements(driver, ProjectFieldFiltersPage.class);
 
         }

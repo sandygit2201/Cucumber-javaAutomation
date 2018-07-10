@@ -11,11 +11,11 @@ public class AccessFieldPage extends BasePage {
 
 
     public @FindBy(id = "userName")
-    WebElement textfield_UserName;
+    WebElement textFieldUserName;
     public @FindBy(id = "password")
-    WebElement textfield_Password;
+    WebElement textFieldPassword;
     public @FindBy(id = "login")
-    WebElement button_Login;
+    WebElement buttonLogin;
     public @FindBy(css = "nav-infoHolder")
     WebElement Acx;
     public @FindBy(className = "ic-FIELD")
@@ -26,29 +26,29 @@ public class AccessFieldPage extends BasePage {
     WebElement FTUX;
 
     public @FindBy(css = "div > div.auiToolbar-header.ng-binding")
-    WebElement assert_IssuesPage;
+    WebElement assertIssuesPage;
 
 
     public AccessFieldPage() throws IOException {
         super();
     }
 
-    public AccessFieldPage enterUsername() throws Exception {
-        waitAndClickElement(textfield_UserName);
-        sendKeysToWebElement(textfield_UserName, "mjenner");
+    public AccessFieldPage enterUserName() throws Exception {
+        waitAndClickElement(textFieldUserName);
+        sendKeysToWebElement(textFieldUserName, "mjenner");
         return new AccessFieldPage();
     }
 
 
     public AccessFieldPage enterPassword() throws Exception {
-        waitAndClickElement(textfield_Password);
-        sendKeysToWebElement(textfield_Password, "Auth3nt1c");
+        waitAndClickElement(textFieldPassword);
+        sendKeysToWebElement(textFieldPassword, "Auth3nt1c");
         return new AccessFieldPage();
     }
 
 
     public AccessFieldPage clickLoginButton() throws Exception {
-        waitAndClickElement(button_Login);
+        waitAndClickElement(buttonLogin);
         return new AccessFieldPage();
     }
 
@@ -71,7 +71,7 @@ public class AccessFieldPage extends BasePage {
 
     public AccessFieldPage assertIssuesPage() throws Exception {
         Thread.sleep(1000);
-        Assert.assertEquals(assert_IssuesPage.getText(), "Issues");
+        Assert.assertEquals(assertIssuesPage.getText(), "Issues");
         return new AccessFieldPage();
     }
 

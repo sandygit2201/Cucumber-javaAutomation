@@ -13,29 +13,29 @@ public class StatusChangePage extends BasePage {
     }
 
     public @FindBy (css = "div.status-selector.ng-isolate-scope > div > div > span")
-    WebElement icon_Status;
+    WebElement iconStatus;
     public @FindBy (xpath = "//STRONG[@class='ng-binding'][text()='Ready to inspect']")
-    WebElement icon_RTI;
+    WebElement iconReadyToInspect;
     public @FindBy (xpath = "    // *[contains (@class, 'close')]")
-    WebElement dropdown_areaclose;
+    WebElement dropdownAreaclose;
 
 
 
 
 
     public StatusChangePage closeArea () throws Exception {
-        waitAndClickElement( dropdown_areaclose);
+        waitAndClickElement(dropdownAreaclose);
         return new StatusChangePage();
     }
 
     public StatusChangePage clickOnStatus () throws Exception {
-        waitAndClickElement(icon_Status);
+        waitAndClickElement(iconStatus);
         return new StatusChangePage();
     }
 
-    public StatusChangePage clickOnRTI () throws Exception {
+    public StatusChangePage clickOnReadyToInspect() throws Exception {
 
-        waitAndClickElement(icon_RTI);
+        waitAndClickElement(iconReadyToInspect);
         return new StatusChangePage();
     }
 

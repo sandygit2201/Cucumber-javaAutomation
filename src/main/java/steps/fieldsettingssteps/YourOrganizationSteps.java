@@ -16,7 +16,7 @@ public class YourOrganizationSteps {
 
     @Then("^I should see the Your Organization section$")
     public void iShouldSeeTheYourOrganizationSection() throws Throwable {
-        your_org.assertYOurOrgPage();
+        your_org.assertYourOrgPage();
 
     }
 //----------------------To remove user from your organization----------------
@@ -42,7 +42,7 @@ public class YourOrganizationSteps {
 
     @When("^I click on the role of an Inspector$")
     public void iClickOnTheRoleOfAnUser() throws Throwable {
-        your_org.clickonUserRole();
+        your_org.clickOnUserRole();
     }
 
     @Then("^I should see the available user roles$")

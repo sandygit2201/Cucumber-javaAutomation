@@ -13,15 +13,14 @@ import java.io.IOException;
 public class PhotoUploadPage extends BasePage {
 
     public @FindBy(xpath = "// *[contains (@for, 'photo-attachment')]")
-
-
     WebElement addPhoto;
+
     public @FindBy(xpath = "/html/body/div/fm-app/div[3]/div/div/div" +
             "/div/daily-summary-notifications-ftux/div/div[2]/div/div[1]")
     WebElement FTUX;
 
     public @FindBy(xpath = "// *[contains (@class, 'close-btn')]")
-    WebElement buttoncloseArea;
+    WebElement buttonCloseArea;
 
 
     public @FindBy(xpath = "// *[contains (@ng-click, 'AttachmentUploadPreview.upload()')]")
@@ -33,11 +32,11 @@ public class PhotoUploadPage extends BasePage {
 
     }
 
-    public PhotoUploadPage clickOnAddphoto() throws Exception {
+    public PhotoUploadPage clickOnAddPhoto() throws Exception {
         driver.switchTo().frame("main");
 
         waitAndClickElement(FTUX);
-        waitAndClickElement(buttoncloseArea);
+        waitAndClickElement(buttonCloseArea);
         Thread.sleep(3000);
         waitAndClickElement(addPhoto);
         return new PhotoUploadPage();

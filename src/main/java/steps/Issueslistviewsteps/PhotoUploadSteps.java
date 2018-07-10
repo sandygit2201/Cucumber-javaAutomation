@@ -7,7 +7,7 @@ import static Utils.DriverFactory.photo_upload;
 public class PhotoUploadSteps {
     @Then("^the user should click on Add photos$")
     public void theUserShouldClickOnAddPhotos() throws Throwable {
-        photo_upload.clickOnAddphoto();
+        photo_upload.clickOnAddPhoto();
 
     }
 

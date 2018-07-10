@@ -26,11 +26,11 @@ public class IssueAssignmentPage extends BasePage {
 
     public @FindBy(xpath = "//INPUT[@type='search']/..//DIV[@ng-bind-html='item.name " +
             "| highlight: $select.search'][text()='test test']")
-    WebElement AssignToUser;
+    WebElement assignToUser;
 
     public @FindBy(xpath = "//INPUT[@type='search']/..//DIV[@ng-bind-html='item.name " +
             "| highlight: $select.search'][text()='Majestic Builders']")
-    WebElement AssignToOrg;
+    WebElement assignToOrg;
 
     public @FindBy(xpath = "(//SPAN[@class='ng-binding'][text()='test test'][text()='test test'])[2]/../../../../../../../../..")
     WebElement assertAssignmentToUser;
@@ -40,12 +40,12 @@ public class IssueAssignmentPage extends BasePage {
     WebElement assertAssignmentToOrg;
 
     public @FindBy(css = "div.auiToolbar-left > div.refresh-issues")
-    WebElement button_refresh;
+    WebElement buttonRefresh;
 
     public @FindBy(css = "div:nth-child(3) > aui-collapsible-section > div >" +
             " div > aui-collapsible-section-body > div > div > div:nth-child(1) >" +
             " div > div > div > div > span")
-    WebElement dropdown_AssignTo;
+    WebElement dropdownAssignTo;
 
     public @FindBy(xpath = "(//INPUT[@type='search'])[4]/..//DIV[@ng-bind-html='item.name | " +
             "highlight: $select.search'][text()='test test']")
@@ -67,11 +67,11 @@ public class IssueAssignmentPage extends BasePage {
     }
 
 
-    public IssueAssignmentPage assignToUserinMyOrg() throws Exception {
+    public IssueAssignmentPage assignToUserInMyOrg() throws Exception {
         waitAndClickElement(issueNotAssigned);
-        waitAndClickElement(AssignToUser);
-        waitAndClickElement(button_refresh);
-        waitUntilPreLoadElementDissapears(By.cssSelector("fm-app > div:nth-child(4) > div > div > div"));
+        waitAndClickElement(assignToUser);
+        waitAndClickElement(buttonRefresh);
+        waitUntilPreLoadElementDisappears(By.cssSelector("fm-app > div:nth-child(4) > div > div > div"));
         return new IssueAssignmentPage();
     }
 
@@ -83,9 +83,9 @@ public class IssueAssignmentPage extends BasePage {
 
     public IssueAssignmentPage assignToOrg() throws Exception {
         waitAndClickElement(issueNotAssigned);
-        waitAndClickElement(AssignToOrg);
-        waitAndClickElement(button_refresh);
-        waitUntilPreLoadElementDissapears(By.cssSelector("fm-app > div:nth-child(4) > div > div > div"));
+        waitAndClickElement(assignToOrg);
+        waitAndClickElement(buttonRefresh);
+        waitUntilPreLoadElementDisappears(By.cssSelector("fm-app > div:nth-child(4) > div > div > div"));
         return new IssueAssignmentPage();
     }
 
@@ -96,7 +96,7 @@ public class IssueAssignmentPage extends BasePage {
 
 
     public IssueAssignmentPage clickAssignTo() throws Exception {
-        waitAndClickElement(dropdown_AssignTo);
+        waitAndClickElement(dropdownAssignTo);
         return new IssueAssignmentPage();
     }
 
@@ -106,7 +106,7 @@ public class IssueAssignmentPage extends BasePage {
     }
 
     public IssueAssignmentPage assertIssueAssignmentToUserWhileCreatingIssue() throws Exception {
-        waitAndClickElement(button_refresh);
+        waitAndClickElement(buttonRefresh);
         waitAndClickElement(selectIssue);
         Assert.assertTrue(assertAssignmentToUser.isDisplayed());
         return new IssueAssignmentPage();
@@ -118,7 +118,7 @@ public class IssueAssignmentPage extends BasePage {
     }
 
     public IssueAssignmentPage assertIssueAssignmentToOrgWhileCreatingIssue() throws Exception {
-        waitAndClickElement(button_refresh);
+        waitAndClickElement(buttonRefresh);
         waitAndClickElement(selectIssue);
         Assert.assertTrue(assertAssignmentToOrg.isDisplayed());
         return new IssueAssignmentPage();

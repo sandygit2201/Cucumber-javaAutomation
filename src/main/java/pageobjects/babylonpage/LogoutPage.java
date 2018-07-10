@@ -12,21 +12,21 @@ public class LogoutPage extends BasePage {
     WebElement Logout;
 
     public @FindBy(className ="uiButton-label")
-    WebElement button_Login;
+    WebElement buttonLogin;
 
     public LogoutPage() throws IOException {
         super();
     }
 
-    public LogoutPage Clicklogut() throws InterruptedException, IOException {
+    public LogoutPage clickLogout() throws InterruptedException, IOException {
         driver.switchTo().defaultContent();
         waitAndClickElement(Logout);
         return new LogoutPage();
     }
 
-    public LogoutPage SuccessfulLogOut() throws InterruptedException, IOException{
-        WaitUntilWebElementIsVisible (button_Login);
-        button_Login.isDisplayed();
+    public LogoutPage successfulLogout() throws InterruptedException, IOException{
+        waitUntilWebElementIsVisible(buttonLogin);
+        buttonLogin.isDisplayed();
         return new LogoutPage();
     }
 }

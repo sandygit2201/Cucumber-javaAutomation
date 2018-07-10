@@ -9,11 +9,11 @@ public class LogoutSteps extends DriverFactory {
 
     @When("^user clicks on logout link$")
     public void user_clicks_on_logout_link() throws Throwable {
-    logout.Clicklogut();
+    logout.clickLogout();
     }
 
     @Then("^user should be successfully logged out$")
     public void user_should_be_successfully_logged_out() throws Throwable {
-        logout.SuccessfulLogOut();
+        logout.successfulLogout();
     }
 }

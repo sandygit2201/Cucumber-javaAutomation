@@ -11,13 +11,13 @@ public class LoginSteps extends DriverFactory {
 
     @Given("^User navigates to Field$")
     public void user_navigates_to_Field() throws Throwable {
-        login_page.getloginPage();
+        login_page.getLoginPage();
     }
 
 
     @And("^User enters a \"([^\"]*)\" username$")
     public void userEntersAUsername(String userName) throws Throwable {
-        login_page.enterUsername(userName);
+        login_page.enterUserName(userName);
 
     }
 

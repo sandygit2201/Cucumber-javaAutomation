@@ -7,31 +7,31 @@ import pageobjects.BasePage;
 
 import java.io.IOException;
 
-public class AccessGridviewPage extends BasePage {
+public class AccessGridViewPage extends BasePage {
 
 
     public @FindBy(css = "div.display-mode > div.table-view-button")
-    WebElement button_GridView;
+    WebElement buttonGridView;
     public @FindBy(css = "div.auiToolbar-right.ng-scope > button")
-    WebElement button_EditMode;
+    WebElement buttonEditMode;
 
-    public AccessGridviewPage() throws IOException {
+    public AccessGridViewPage() throws IOException {
         super();
     }
 
-    public AccessGridviewPage preLoaderPage() throws InterruptedException, IOException {
-        waitUntilPreLoadElementDissapears(By.cssSelector("fm-app > div:nth-child(4) > div > div > div"));
-        return new AccessGridviewPage();
+    public AccessGridViewPage preLoaderPage() throws InterruptedException, IOException {
+        waitUntilPreLoadElementDisappears(By.cssSelector("fm-app > div:nth-child(4) > div > div > div"));
+        return new AccessGridViewPage();
     }
 
-    public AccessGridviewPage accessGridView() throws InterruptedException, IOException {
-        waitAndClickElement(button_GridView);
-        return new AccessGridviewPage();
+    public AccessGridViewPage accessGridView() throws InterruptedException, IOException {
+        waitAndClickElement(buttonGridView);
+        return new AccessGridViewPage();
 
     }
-    public AccessGridviewPage verifytheGridView() throws InterruptedException, IOException {
-        button_EditMode.isDisplayed();
-        return new AccessGridviewPage();
+    public AccessGridViewPage verifyGridView() throws InterruptedException, IOException {
+        buttonEditMode.isDisplayed();
+        return new AccessGridViewPage();
 
     }
 

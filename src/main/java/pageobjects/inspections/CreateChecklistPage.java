@@ -37,7 +37,7 @@ public class CreateChecklistPage extends BasePage {
     WebElement automationCategory;
 
     public @FindBy(id = "add-more-items")
-    WebElement textAdditem;
+    WebElement textAddItem;
 
     public @FindBy(css = "form > div:nth-child(1) > div > div > div")
     WebElement buttonSelectType;
@@ -85,7 +85,7 @@ public class CreateChecklistPage extends BasePage {
     }
 
 
-    public CreateChecklistPage addDesc() throws Exception {
+    public CreateChecklistPage addDescription() throws Exception {
 
         waitAndClickElement(textDesc);
         sendKeysToWebElement(textDesc, "Checklist_Description_Test " + genUniqueInt());
@@ -103,8 +103,8 @@ public class CreateChecklistPage extends BasePage {
 
 
     public CreateChecklistPage addItemText() throws Exception {
-        waitAndClickElement(textAdditem);
-        sendKeysToWebElement(textAdditem, "Automation Test");
+        waitAndClickElement(textAddItem);
+        sendKeysToWebElement(textAddItem, "Automation Test");
         return new CreateChecklistPage();
 
     }
@@ -130,7 +130,7 @@ public class CreateChecklistPage extends BasePage {
     }
 
     public CreateChecklistPage assertChecklistCreation() throws Exception {
-        WaitUntilWebElementIsVisible(assertChecklistCreation);
+        waitUntilWebElementIsVisible(assertChecklistCreation);
         org.testng.Assert.assertEquals(assertChecklistCreation.getText(), "Checklist template has been saved successfully.");
         return new CreateChecklistPage();
 

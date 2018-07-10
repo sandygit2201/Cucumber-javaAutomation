@@ -29,7 +29,7 @@ public class StatusChangeSteps {
 
     @When("^I click on RTI$")
     public void iClickOnRTI() throws Throwable {
-        status_change.clickOnRTI();
+        status_change.clickOnReadyToInspect();
     }
 
     @Then("^the status should be changed$")
