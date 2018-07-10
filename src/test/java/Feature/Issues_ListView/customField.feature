@@ -10,15 +10,17 @@ Feature: Interact with Custom Field
     And I select Web automation project
     Then I should be taken to that project
     When User clicks on Field-Issues
-    Then User should see the issues page
     Then I should close the FTUX
+    And I should close the area selector
     Then User should see the issues page
 
+
+  @Test
   Scenario: Adding Custom Field while creating issue
 
     Given I click on Add Issue button
     Then I should see the New Issue pane
-    And I select a Issue type
+    And I select the Issue type
     And I select a Issue description
     And I click on the first custom field
     And I select the value as High
@@ -27,13 +29,13 @@ Feature: Interact with Custom Field
     And I click on Refresh button
     Then the selected custom field value should be saved for that issue
 
-  Scenario: Selecting a custom field for an existing issue
-Given I select an Issue with custom field
-    And I click on Extra details collapsible header
-    Given there is no value selected
-    And I click on the custom field dropdown area
-    And I select the value as High
-    And I click on Refresh button
-    Then the value should be saved for that issue
+#  Scenario: Selecting a custom field for an existing issue
+#    Given I select an Issue with custom field
+#    And I click on Extra details collapsible header
+#    Given there is no value selected
+#    And I click on the custom field dropdown area
+#    And I select the value as High
+#    And I click on Refresh button
+#    Then the value should be saved for that issue
 
 
