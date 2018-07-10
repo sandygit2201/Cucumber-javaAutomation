@@ -10,20 +10,20 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.PageFactory;
-import pageobjects.babylonpage.LoginPage;
-import pageobjects.babylonpage.LogoutPage;
-import pageobjects.babylonpage.SwitchProjectPage;
-import pageobjects.fieldgeneralpage.AccessFieldPage;
-import pageobjects.fieldsettingspage.AccessSectionsPage;
-import pageobjects.fieldsettingspage.EnterSettingsPage;
-import pageobjects.fieldsettingspage.YourOrganizationPage;
-import pageobjects.inspections.CreateChecklistPage;
-import pageobjects.inspections.ExportInspectionsPage;
-import pageobjects.inspections.SelectInspectionPage;
-import pageobjects.issuesfilterspage.ProjectFieldFiltersPage;
-import pageobjects.issuesfilterspage.StatusFiltersPage;
-import pageobjects.issuesgridviewpage.AccessGridviewPage;
-import pageobjects.issueslistviewpage.*;
+import pageobjects.Babylon_Page.LoginPage;
+import pageobjects.Babylon_Page.LogoutPage;
+import pageobjects.Babylon_Page.SwitchProjectPage;
+import pageobjects.FieldGeneral_Page.AccessFieldPage;
+import pageobjects.FieldSettings_Page.AccessSectionsPage;
+import pageobjects.FieldSettings_Page.EnterSettingsPage;
+import pageobjects.FieldSettings_Page.YourOrganizationPage;
+import pageobjects.Inspections_Page.CreateChecklistPage;
+import pageobjects.Inspections_Page.ExportInspectionsPage;
+import pageobjects.Inspections_Page.SelectInspectionPage;
+import pageobjects.IssuesFilters_Page.ProjectFieldFiltersPage;
+import pageobjects.IssuesFilters_Page.StatusFiltersPage;
+import pageobjects.IssuesGridView_Page.AccessGridviewPage;
+import pageobjects.IssuesListView_Page.*;
 
 public class DriverFactory {
 
