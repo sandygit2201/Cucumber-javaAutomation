@@ -20,7 +20,7 @@ public class AddIssueSteps {
         org.testng.Assert.assertEquals("Issues", "Issues");
     }
 
-    @And("^I enter the Issue type$")
+    @And("^I select the Issue type$")
     public void iEnterTheIssueType() throws Throwable {
         addIssue.iEnterIssueType();
     }
@@ -30,10 +30,6 @@ public class AddIssueSteps {
         addIssue.iEnterIssueDesc();
     }
 
-    @And("^I select a Issue type$")
-    public void iSelectAIssueType() throws Throwable {
-        addIssue.Dropdown_selectIssueType();
-    }
 
     @And("^I select a Issue description$")
     public void iSelectAIssueDescription() throws Throwable {

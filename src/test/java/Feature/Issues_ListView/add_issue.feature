@@ -19,7 +19,7 @@ Feature: Add issue
 
     Given I click on Add Issue button
     Then I should see the New Issue pane
-    And I enter the Issue type
+    And I select the Issue type
     And I enter the Issue description
     And I add a location detail
       #Select due date for next month
@@ -31,7 +31,7 @@ Feature: Add issue
 
     Given I click on Add Issue button
     Then I should see the New Issue pane
-    And I select a Issue type
+    And I select the Issue type
     And I select a Issue description
     And I select a location detail
     #Select due date for next month

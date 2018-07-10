@@ -7,7 +7,7 @@ Feature: Toggle Issues filters
     When User clicks on the login button
     Then User should be taken to the homepage
     When User clicks on Field-Issues
-    Then User should see the Issues page
+    Then User should see the issues page
     And I should close the FTUX
     Then I should close the area selector
 

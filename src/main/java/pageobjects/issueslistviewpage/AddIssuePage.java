@@ -40,8 +40,6 @@ public class AddIssuePage extends BasePage {
     public @FindBy(css = "div:nth-child(5) > div > input")
     WebElement textfield_Location;
 
-    public @FindBy(css = "div#ui-select-choices-row-0-5 div")
-    WebElement dropdown_IssueType;
 
     public @FindBy(xpath = "//A[@href=''][text()='Issue Description  - Automation']")
     WebElement dropdown_IssueDesc;
@@ -111,11 +109,6 @@ public class AddIssuePage extends BasePage {
         return new AddIssuePage();
     }
 
-    public AddIssuePage Dropdown_selectIssueType() throws Exception {
-        waitAndClickElement(textfield_IssueType);
-        waitAndClickElement(dropdown_IssueType);
-        return new AddIssuePage();
-    }
 
     public AddIssuePage Dropdown_selectIssueDesc() throws Exception {
         waitAndClickElement(textfield_Desc);
