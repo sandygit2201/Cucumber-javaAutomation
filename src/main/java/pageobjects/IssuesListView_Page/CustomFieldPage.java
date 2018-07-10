@@ -46,7 +46,7 @@ public class CustomFieldPage extends BasePage {
 
     public CustomFieldPage ClickRefresh() throws InterruptedException, IOException {
         waitAndClickElement(button_Refresh);
-        waitUntilPreLoadElementDissapears(By.cssSelector("fm-app > div:nth-child(4) > div > div > div"));
+        waitUntilPreLoadElementDisappears(By.cssSelector("fm-app > div:nth-child(4) > div > div > div"));
         return new CustomFieldPage();
     }
 

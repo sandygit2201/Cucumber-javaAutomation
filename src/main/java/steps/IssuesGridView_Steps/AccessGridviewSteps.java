@@ -13,7 +13,7 @@ public class AccessGridviewSteps extends DriverFactory {
 
     @Then("^User should see the grid view$")
     public void userShouldSeeTheGridView() throws Throwable {
-        access_gridview.verifyGridView();
+        access_gridview.verifytheGridView();
     }
 
     @And("^the page loader should disappear$")

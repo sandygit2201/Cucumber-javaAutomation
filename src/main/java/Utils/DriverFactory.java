@@ -11,9 +11,9 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.PageFactory;
 
-import pageobjects.Babylon_Page.LoginPage;
-import pageobjects.Babylon_Page.LogoutPage;
-import pageobjects.Babylon_Page.SwitchProjectPage;
+import pageobjects.Babylon.LoginPage;
+import pageobjects.Babylon.LogoutPage;
+import pageobjects.Babylon.SwitchProjectPage;
 import pageobjects.FieldGeneral_Page.AccessFieldPage;
 import pageobjects.FieldSettings_Page.AccessSectionsPage;
 import pageobjects.FieldSettings_Page.EnterSettingsPage;

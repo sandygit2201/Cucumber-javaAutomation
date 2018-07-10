@@ -1,4 +1,4 @@
-package pageobjects.Babylon_Page;
+package pageobjects.Babylon;
 
 import java.io.IOException;
 
