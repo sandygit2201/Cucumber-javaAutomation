@@ -7,7 +7,9 @@ import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
 import pageobjects.BasePage;
 
+
 public class SwitchProjectPage extends BasePage {
+
 
     public SwitchProjectPage() throws IOException {
         super();
@@ -20,8 +22,8 @@ public class SwitchProjectPage extends BasePage {
     WebElement myProject;
 
 
-
     public SwitchProjectPage clickProjectSelector() throws InterruptedException, IOException {
+
         waitAndClickElement(projectSelector);
         return new SwitchProjectPage();
     }
@@ -32,16 +34,9 @@ public class SwitchProjectPage extends BasePage {
     }
 
     public SwitchProjectPage assertMyProject() throws InterruptedException, IOException {
-        Assert.assertEquals(projectSelector.getText(),"Web automation");
+        Assert.assertEquals(projectSelector.getText(), "Web automation");
         return new SwitchProjectPage();
     }
-
-
-
-
-
-
-
 
 
 }

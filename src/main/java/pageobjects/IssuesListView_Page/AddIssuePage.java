@@ -82,7 +82,7 @@ public class AddIssuePage extends BasePage {
     }
 
     public AddIssuePage verifyIssueSaved() throws Exception {
-        Thread.sleep(100);
+        waitUntilWebElementIsVisible(growler);
         growler.isDisplayed();
         return new AddIssuePage();
     }

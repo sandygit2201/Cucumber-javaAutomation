@@ -15,7 +15,6 @@ Feature: Interact with Custom Field
     Then User should see the issues page
 
 
-  @Test
   Scenario: Adding Custom Field while creating issue
 
     Given I click on Add Issue button

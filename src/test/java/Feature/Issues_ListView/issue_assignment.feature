@@ -10,26 +10,32 @@ Feature: Assign Issues within your Org and other Org
     And I select Web automation project
     Then I should be taken to that project
     When User clicks on Field-Issues
-    Then User should see the issues page
     Then I should close the FTUX
     Then I should close the area selector
+    Then User should see the issues page
 
 
   Scenario: Assign Issues within your Org for an Issue
+    Given I click on Add Issue button
+    Then I should see the New Issue pane
+    And I enter the Issue description
+    When I click on Save button
+    Then the Issue should be saved
     Given I select an Issue
     When the Issue is not assigned to anyone
-#    test test user
-    And I click on it and select an User from my org
+    And I click on it and select Automation User from my org
     Then the Issue should be assigned to the User
 
-
   Scenario: Assign Issues to other Org for an Issue
+    Given I click on Add Issue button
+    Then I should see the New Issue pane
+    And I enter the Issue description
+    When I click on Save button
+    Then the Issue should be saved
     Given I select an Issue
     When the Issue is not assigned to anyone
-#    Majestic builders
-    And I click on it and select an Org
+    And I click on it and select Majestic Builders
     Then the Issue should be assigned to that Org
-
 
   Scenario: Assign Issues within your Org while creating an Issue
 
@@ -37,7 +43,7 @@ Feature: Assign Issues within your Org and other Org
     Then I should see the New Issue pane
     And I enter the Issue description
     And I click on Assign to field
-    And I select a User from the list
+    And I select Automation User from the list
     When I click on Save button
     Then the Issue should be saved
     Then the Issue should be assigned to that User which I selected
@@ -48,9 +54,8 @@ Feature: Assign Issues within your Org and other Org
     Then I should see the New Issue pane
     And I enter the Issue description
     And I click on Assign to field
-    And I select a Org from the list
+    And I select Majestic Builders from the list
     When I click on Save button
     Then the Issue should be saved
-  #    Majestic Org
     Then the Issue should be assigned to that Org which I selected
 

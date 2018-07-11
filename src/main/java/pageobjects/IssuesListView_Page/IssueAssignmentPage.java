@@ -20,23 +20,22 @@ public class IssueAssignmentPage extends BasePage {
     public @FindBy(xpath = "(//DIV[@class='issues-list-item clearfix'])[1]")
     WebElement selectIssue;
 
-    public @FindBy(css = "div.organization > div.ng-scope > fm-issue-edit-field > div " +
-            "> div > div > div.text.help-text > span")
+    public @FindBy(css = "div.organization > div.ng-scope > fm-issue-edit-field > div > div > div > div.text.help-text > span")
     WebElement issueNotAssigned;
 
     public @FindBy(xpath = "//INPUT[@type='search']/..//DIV[@ng-bind-html='item.name " +
-            "| highlight: $select.search'][text()='test test']")
+            "| highlight: $select.search'][text()='Automation User']")
     WebElement assignToUser;
 
     public @FindBy(xpath = "//INPUT[@type='search']/..//DIV[@ng-bind-html='item.name " +
             "| highlight: $select.search'][text()='Majestic Builders']")
     WebElement assignToOrg;
 
-    public @FindBy(xpath = "(//SPAN[@class='ng-binding'][text()='test test'][text()='test test'])[2]/../../../../../../../../..")
+    public @FindBy(xpath = "//DIV[@class='title assigned-to-title ng-binding'][text()='Assigned to']/..//" +
+            "SPAN[@class='ng-binding'][text()='Automation User'][text()='Automation User']")
     WebElement assertAssignmentToUser;
 
-    public @FindBy(xpath = "(//SPAN[@class='ng-binding'][text()='Majestic Builders']" +
-            "[text()='Majestic Builders'])[8]/../../../../../../..")
+    public @FindBy(xpath = "//DIV[@class='header']//SPAN[@class='ng-binding'][text()='Majestic Builders'][text()='Majestic Builders']")
     WebElement assertAssignmentToOrg;
 
     public @FindBy(css = "div.auiToolbar-left > div.refresh-issues")
@@ -47,11 +46,11 @@ public class IssueAssignmentPage extends BasePage {
             " div > div > div > div > span")
     WebElement dropdownAssignTo;
 
-    public @FindBy(xpath = "(//INPUT[@type='search'])[4]/..//DIV[@ng-bind-html='item.name | " +
-            "highlight: $select.search'][text()='test test']")
+    public @FindBy(xpath = "(//INPUT[@type='search'])[3]/..//DIV[@ng-bind-html='item.name | " +
+            "highlight: $select.search'][text()='Automation User']")
     WebElement assignToUserWhileAddingIssue;
 
-    public @FindBy(xpath = "(//INPUT[@type='search'])[4]/..//DIV[@ng-bind-html='item.name " +
+    public @FindBy(xpath = "(//INPUT[@type='search'])[3]/..//DIV[@ng-bind-html='item.name " +
             "| highlight: $select.search'][text()='Majestic Builders']")
     WebElement assignToOrgWhileAddingIssue;
 
@@ -70,6 +69,7 @@ public class IssueAssignmentPage extends BasePage {
     public IssueAssignmentPage assignToUserInMyOrg() throws Exception {
         waitAndClickElement(issueNotAssigned);
         waitAndClickElement(assignToUser);
+        Thread.sleep(500);
         waitAndClickElement(buttonRefresh);
         waitUntilPreLoadElementDisappears(By.cssSelector("fm-app > div:nth-child(4) > div > div > div"));
         return new IssueAssignmentPage();
@@ -84,6 +84,7 @@ public class IssueAssignmentPage extends BasePage {
     public IssueAssignmentPage assignToOrg() throws Exception {
         waitAndClickElement(issueNotAssigned);
         waitAndClickElement(assignToOrg);
+        Thread.sleep(1000);
         waitAndClickElement(buttonRefresh);
         waitUntilPreLoadElementDisappears(By.cssSelector("fm-app > div:nth-child(4) > div > div > div"));
         return new IssueAssignmentPage();
@@ -107,6 +108,7 @@ public class IssueAssignmentPage extends BasePage {
 
     public IssueAssignmentPage assertIssueAssignmentToUserWhileCreatingIssue() throws Exception {
         waitAndClickElement(buttonRefresh);
+        waitUntilPreLoadElementDisappears(By.cssSelector("fm-app > div:nth-child(4) > div > div > div"));
         waitAndClickElement(selectIssue);
         Assert.assertTrue(assertAssignmentToUser.isDisplayed());
         return new IssueAssignmentPage();
@@ -119,6 +121,7 @@ public class IssueAssignmentPage extends BasePage {
 
     public IssueAssignmentPage assertIssueAssignmentToOrgWhileCreatingIssue() throws Exception {
         waitAndClickElement(buttonRefresh);
+        waitUntilPreLoadElementDisappears(By.cssSelector("fm-app > div:nth-child(4) > div > div > div"));
         waitAndClickElement(selectIssue);
         Assert.assertTrue(assertAssignmentToOrg.isDisplayed());
         return new IssueAssignmentPage();
