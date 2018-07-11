@@ -1,5 +1,6 @@
 package pageobjects.IssuesListView_Page;
 
+import gherkin.lexer.Th;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -33,6 +34,23 @@ public class CustomFieldPage extends BasePage {
     public @FindBy(xpath = "(//DIV[@class='readonly-view ng-scope'])[5]")
     WebElement assertFirstValue;
 
+    public @FindBy(xpath = "//*[@class='issues group']/child::li[1]")
+    WebElement clickFirstIssue;
+
+
+    public @FindBy(xpath = "//SPAN[@class='ng-binding ng-scope'][text()='Extra Details (1)']")
+    WebElement extraDetailCollapse;
+
+    public @FindBy(xpath = "//SPAN[@class='ng-binding'][text()='Select...']")
+    WebElement customFieldDropdown;
+
+    public @FindBy(xpath = "//DIV[@ng-bind-html='label | highlight: $select.search'][text()='High']")
+    WebElement selectHighfromDropDown;
+
+    public @FindBy(xpath = "(//DIV[@class='text'])[2]")
+    WebElement assertHighValue;
+
+
     public CustomFieldPage ClickOnFirstCustomField() throws InterruptedException, IOException {
         waitAndClickElement(FirstCustomField);
         return new CustomFieldPage();
@@ -57,4 +75,28 @@ public class CustomFieldPage extends BasePage {
         return new CustomFieldPage();
     }
 
+    public CustomFieldPage ClickonFirstIssue() throws InterruptedException, IOException {
+        waitAndClickElement(clickFirstIssue);
+        return new CustomFieldPage();
+    }
+
+    public CustomFieldPage ClickExtraDetailCollapseHeader() throws InterruptedException, IOException {
+
+        waitAndClickElement(extraDetailCollapse);
+        return new CustomFieldPage();
+    }
+
+    public CustomFieldPage SelectHighValueFromDropdown() throws InterruptedException, IOException {
+        waitAndClickElement(customFieldDropdown);
+        waitAndClickElement(selectHighfromDropDown);
+        return new CustomFieldPage();
+    }
+
+    public CustomFieldPage AssertCustomFieldforExistingIssue() throws InterruptedException, IOException {
+        waitAndClickElement(button_Refresh);
+        waitUntilPreLoadElementDissapears(By.cssSelector("fm-app > div:nth-child(4) > div > div > div"));
+        waitAndClickElement(extraDetailCollapse);
+        Assert.assertEquals(assertHighValue.getText(), "High");
+        return new CustomFieldPage();
+    }
 }
