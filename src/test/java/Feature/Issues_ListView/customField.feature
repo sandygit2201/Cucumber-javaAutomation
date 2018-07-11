@@ -28,13 +28,20 @@ Feature: Interact with Custom Field
     And I click on Refresh button
     Then the selected custom field value should be saved for that issue
 
-#  Scenario: Selecting a custom field for an existing issue
-#    Given I select an Issue with custom field
-#    And I click on Extra details collapsible header
-#    Given there is no value selected
-#    And I click on the custom field dropdown area
-#    And I select the value as High
-#    And I click on Refresh button
-#    Then the value should be saved for that issue
+
+  Scenario: Selecting a custom field for an existing issue
+
+    Given I click on Add Issue button
+    And I should see the New Issue pane
+    And I select the Issue type
+    And I select a Issue description
+    When I click on Save button
+    And the Issue should be saved
+    And I click on Refresh button
+    When user clicks on the first Issue
+    And I click on Extra Details Collapsible header
+    When I select value High from dropdown
+    And I click on Refresh button
+    Then User should verify the selected custom field value
 
 

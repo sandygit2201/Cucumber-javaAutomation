@@ -43,7 +43,7 @@ public class BasePage extends DriverFactory {
 
     public boolean verifyPdfContent(String searchText) throws IOException {
         File dir = new File(Constant.PDF_DOWNLOAD_DIRECTORY);
-        File[] files = dir.listFiles((dir1, name) ->  name.endsWith("Automation_BigTurnip_020718.pdf"));
+        File[] files = dir.listFiles((dir1, name) -> name.endsWith("Automation_BigTurnip_020718.pdf"));
         PDDocument report = PDDocument.load(files[0]);
         PDFTextStripper pdfStripper = new PDFTextStripper();
         String text = pdfStripper.getText(report);
