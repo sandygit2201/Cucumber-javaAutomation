@@ -16,16 +16,16 @@ public class CustomFieldPage extends BasePage {
 
 
     public @FindBy(xpath = "(//SPAN[@tabindex='-1'])[2]")
-    WebElement FirstCustomField;
+    WebElement firstCustomField;
 
     public @FindBy(xpath = "(//INPUT[@type='search'])[3]/..//DIV[@ng-bind-html='label | highlight: $select.search'][text()='High']")
-    WebElement DropDown_FirstValue;
+    WebElement dropDownFirstValue;
 
     public @FindBy(css = "div.auiToolbar-left > div.refresh-issues")
-    WebElement button_Refresh;
+    WebElement buttonRefresh;
 
     public @FindBy(xpath = "(//DIV[@class='issues-list-item clearfix'])[1]")
-    WebElement First_Issue;
+    WebElement firstIssue;
 
     public @FindBy(xpath = "(//SPAN[@class='auiIcon auiCollapsibleSection-headerArrow chevronRight'])[1]")
     WebElement extraDetailsSection;
@@ -33,25 +33,25 @@ public class CustomFieldPage extends BasePage {
     public @FindBy(xpath = "(//DIV[@class='readonly-view ng-scope'])[5]")
     WebElement assertFirstValue;
 
-    public CustomFieldPage ClickOnFirstCustomField() throws InterruptedException, IOException {
-        waitAndClickElement(FirstCustomField);
+    public CustomFieldPage clickOnFirstCustomField() throws InterruptedException, IOException {
+        waitAndClickElement(firstCustomField);
         return new CustomFieldPage();
     }
 
-    public CustomFieldPage ClickOnFirstDropdownValue() throws InterruptedException, IOException {
-        waitAndClickElement(DropDown_FirstValue);
+    public CustomFieldPage clickOnFirstDropdownValue() throws InterruptedException, IOException {
+        waitAndClickElement(dropDownFirstValue);
         return new CustomFieldPage();
     }
 
 
-    public CustomFieldPage ClickRefresh() throws InterruptedException, IOException {
-        waitAndClickElement(button_Refresh);
+    public CustomFieldPage clickRefresh() throws InterruptedException, IOException {
+        waitAndClickElement(buttonRefresh);
         waitUntilPreLoadElementDisappears(By.cssSelector("fm-app > div:nth-child(4) > div > div > div"));
         return new CustomFieldPage();
     }
 
-    public CustomFieldPage AssertCustomFieldWhileCreatingIssue() throws InterruptedException, IOException {
-        waitAndClickElement(First_Issue);
+    public CustomFieldPage assertCustomFieldWhileCreatingIssue() throws InterruptedException, IOException {
+        waitAndClickElement(firstIssue);
         waitAndClickElement(extraDetailsSection);
         Assert.assertEquals(assertFirstValue.getText(), "High");
         return new CustomFieldPage();
