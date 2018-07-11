@@ -10,6 +10,8 @@ Feature: Adding comments to an Issue
     And I select Web automation project
     Then I should be taken to that project
     When User clicks on Field-Issues
+    And I should close the FTUX
+    And I should close the area selector
     Then User should see the issues page
 
   Scenario: Field user should be able to add photo to an existing issue

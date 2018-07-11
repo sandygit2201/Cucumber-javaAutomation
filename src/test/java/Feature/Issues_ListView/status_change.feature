@@ -11,9 +11,9 @@ Feature: Change Issue status
     And I select Web automation project
     Then I should be taken to that project
     When User clicks on Field-Issues
-    Then User should see the issues page
     Then I should close the FTUX
     Then I should close the area selector
+    Then User should see the issues page
 
   Scenario: User should be able to change the status of an Issue from Open to RTI
 #    The first issue in the list page should be in Open
