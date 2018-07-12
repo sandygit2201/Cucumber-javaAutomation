@@ -50,10 +50,7 @@ public class CustomFieldPage extends BasePage {
     public @FindBy(xpath = "(//DIV[@class='text'])[2]")
     WebElement assertHighValue;
 
-//    public CustomFieldPage clickOnFirstCustomField() throws InterruptedException, IOException {
-//        waitAndClickElement(firstCustomField);
-//        return new CustomFieldPage();
-//    }
+
 
 
     public CustomFieldPage clickOnFirstCustomField() throws InterruptedException, IOException {
