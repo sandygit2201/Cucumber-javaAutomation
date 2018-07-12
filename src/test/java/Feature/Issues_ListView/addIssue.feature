@@ -11,7 +11,6 @@ Feature: Add issue
     And I select Web automation project
     Then I should be taken to that project
     When User clicks on Field-Issues
-    Then User should see the issues page
     Then I should close the FTUX
     Then User should see the issues page
 
@@ -22,6 +21,7 @@ Feature: Add issue
     And I select the Issue type
     And I enter the Issue description
     And I add a location detail
+
       #Select due date for next month
     And I select a due date
     When I click on Save button
@@ -46,6 +46,7 @@ Feature: Add issue
     Then I should see the New Issue pane
     Then I click on Issue type
     Then Issue types should be displayed alphabetically
+
 
 
 
