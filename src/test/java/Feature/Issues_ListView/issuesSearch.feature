@@ -19,3 +19,10 @@ Feature: User wants to search an item in the search field
       And User clicks on the search button
 #      Then User should be able to see searched item in the issues list view
 
+
+
+  @Test
+  Scenario: Search button enabled when User enters text
+    Given there is no text entered in the search field
+    When User enters a string in the issues search field
+    Then the search button should be enabled

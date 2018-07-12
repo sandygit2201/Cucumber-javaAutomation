@@ -22,7 +22,6 @@ Feature: Selecting area
     Then I should be taken to that area
 
 
-  @Test
   Scenario: Area displayed in New issue pane should match with the user selected area
     Given the area drop down appears
     And I click on BLOCK A area

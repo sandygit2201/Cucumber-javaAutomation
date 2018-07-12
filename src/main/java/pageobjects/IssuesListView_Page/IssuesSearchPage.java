@@ -6,7 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import pageobjects.BasePage;
 
-public class IssuesSearchPage extends BasePage{
+public class IssuesSearchPage extends BasePage {
 
 
     public IssuesSearchPage() throws IOException {
@@ -14,11 +14,11 @@ public class IssuesSearchPage extends BasePage{
         super();
     }
 
-    @FindBy(xpath = "/html/body/div[1]/fm-app/div[3]/div/div/div/div/div[3]/div/div/div/div/div[2]/div/div/div/div[1]/div[1]/issues-search/div/form/div/input")
+    @FindBy(xpath = "//INPUT[@class='search-input auiField-input large search-filter ng-pristine ng-untouched ng-valid ng-empty']")
     WebElement issuesSearchField;
 
-    @FindBy(xpath = "/html/body/div[1]/fm-app/div[3]/div/div/div/div/div[3]/div/div/div/div/div[2]/div/div/div/div[1]/div[1]/issues-search/div/form/button")
-    WebElement buttonSearch;
+    @FindBy(xpath = "//BUTTON[@class='auiButton ng-pristine ng-untouched ng-valid ng-binding ng-not-empty'][text()='Search']")
+    WebElement buttonSearchEnabled;
 
     public IssuesSearchPage clickSearchField() throws Exception {
         waitAndClickElement(issuesSearchField);
@@ -26,19 +26,24 @@ public class IssuesSearchPage extends BasePage{
     }
 
     public IssuesSearchPage enterString() throws Exception {
-
         sendKeysToWebElement(issuesSearchField, "TestString");
         return new IssuesSearchPage();
     }
 
     public IssuesSearchPage clickSearchButton() throws Exception {
-        waitAndClickElement(buttonSearch);
+        waitAndClickElement(buttonSearchEnabled);
         return new IssuesSearchPage();
     }
 
 
+    public IssuesSearchPage AssertSearchFieldIsBlank() throws Exception {
+        issuesSearchField.isDisplayed();
+        return new IssuesSearchPage();
+    }
 
-
-
+    public IssuesSearchPage AssertSearchButtonIsEnabled() throws Exception {
+        buttonSearchEnabled.isDisplayed();
+        return new IssuesSearchPage();
+    }
 
 }
