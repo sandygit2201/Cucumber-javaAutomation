@@ -94,6 +94,7 @@ public class CustomFieldPage extends BasePage {
         return new CustomFieldPage();
     }
 
+
     public CustomFieldPage assertCustomFieldForExistingIssue() throws InterruptedException, IOException {
         waitAndClickElement(buttonRefresh);
         waitUntilPreLoadElementDisappears(By.cssSelector("fm-app > div:nth-child(4) > div > div > div"));

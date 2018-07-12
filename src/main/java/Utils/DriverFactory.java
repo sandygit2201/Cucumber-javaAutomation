@@ -59,6 +59,8 @@ public class DriverFactory {
     public static ProjectFieldFiltersPage projectFieldFilter;
     public static CustomFieldPage selectCustomField;
     public static RefreshPage refreshButton;
+    public static EventLogPage checkEventLogValues;
+
 
 
     public WebDriver getDriver() {
@@ -131,6 +133,7 @@ public class DriverFactory {
             switchProject = PageFactory.initElements(driver, SwitchProjectPage.class);
             projectFieldFilter = PageFactory.initElements(driver, ProjectFieldFiltersPage.class);
             selectCustomField = PageFactory.initElements(driver, CustomFieldPage.class);
+            checkEventLogValues = PageFactory.initElements(driver, EventLogPage.class);
 
         }
 
