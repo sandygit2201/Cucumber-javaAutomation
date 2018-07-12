@@ -20,11 +20,11 @@ public class AreaSelectSteps {
 
     @Then("^I should be taken to that area$")
     public void iShouldBeTakenToThatArea() throws Throwable {
-        select_area.AssertUserSelectedArea();
+        selectArea.AssertUserSelectedArea();
     }
 
     @Then("^the area in new issue pane should match the user selected area$")
     public void theAreaInNewIssuePaneShouldMatchTheUserSelectedArea() throws Throwable {
-        select_area.AssertAreaInNewIssuePane();
+        selectArea.AssertAreaInNewIssuePane();
     }
 }
