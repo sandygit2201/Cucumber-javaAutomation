@@ -3,26 +3,26 @@ package steps.Inspections_Steps;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 
-import static Utils.DriverFactory.select_inspection;
+import static Utils.DriverFactory.selectInspection;
 
 public class select_inspection_steps {
 
     @Given("^User clicks on Field-Inspection$")
     public void userClicksOnFieldInspection() throws Throwable {
-        select_inspection.clickField();
-        select_inspection.clickInspections();
+        selectInspection.clickField();
+        selectInspection.clickInspections();
 
     }
 
     @Then("^I should close the CL area selector$")
     public void iShouldCloseTheCLAreaSelector() throws Throwable {
-        select_inspection.closeArea();
+        selectInspection.closeArea();
     }
 
     @Then("^User should see the Inspection page$")
     public void userShouldSeeTheInspectionPage() throws Throwable {
 
-        select_inspection.assertInspectionPage();
+        selectInspection.assertInspectionPage();
 
     }
 

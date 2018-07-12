@@ -8,16 +8,16 @@ import cucumber.api.java.en.When;
 public class AccessGridviewSteps extends DriverFactory {
     @When("^User click on grid view button$")
     public void userClickOnGridViewButton() throws Throwable {
-        access_gridview.accessGridView();
+        accessGridView.accessGridView();
     }
 
     @Then("^User should see the grid view$")
     public void userShouldSeeTheGridView() throws Throwable {
-        access_gridview.verifytheGridView();
+        accessGridView.verifytheGridView();
     }
 
     @And("^the page loader should disappear$")
     public void thePageLoadedShouldDisappear() throws Throwable {
-        access_gridview.preLoaderPage();
+        accessGridView.preLoaderPage();
     }
 }

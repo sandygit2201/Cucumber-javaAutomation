@@ -1,6 +1,6 @@
 package steps.FieldSetting_Steps;
 
-import static Utils.DriverFactory.enter_settings;
+import static Utils.DriverFactory.enterSettings;
 
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -8,12 +8,12 @@ import cucumber.api.java.en.Then;
 public class EnterSettingsSteps {
     @Given("^I click on Field-Settings$")
     public void iClickOnFieldSettings() throws Throwable {
-        enter_settings.clickFieldSettings();
+        enterSettings.clickFieldSettings();
     }
 
     @Then("^I should be taken to Settings page$")
     public void iShouldBeTakenToSettingsPage() throws Throwable {
-        enter_settings.assertSettingsPage();
+        enterSettings.assertSettingsPage();
 
     }
 }

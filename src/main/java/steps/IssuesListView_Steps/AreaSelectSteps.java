@@ -4,17 +4,17 @@ import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 
-import static Utils.DriverFactory.select_area;
+import static Utils.DriverFactory.selectArea;
 
 public class AreaSelectSteps {
     @Given("^the area drop down appears$")
     public void theAreaDropDownAppears() throws Throwable {
-        select_area.assertAreaDropDown();
+        selectArea.assertAreaDropDown();
     }
 
     @And("^I click on an area$")
     public void iClickOnAnArea() throws Throwable {
-        select_area.selectArea();
+        selectArea.selectArea();
     }
 
     @Then("^I should be taken to that area$")
