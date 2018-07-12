@@ -1,5 +1,6 @@
 package steps.IssuesListView_Steps;
 
+import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -12,13 +13,18 @@ public class AreaSelectSteps {
         selectArea.assertAreaDropDown();
     }
 
-    @And("^I click on an area$")
+    @And("^I click on BLOCK A area$")
     public void iClickOnAnArea() throws Throwable {
         selectArea.selectArea();
     }
 
     @Then("^I should be taken to that area$")
     public void iShouldBeTakenToThatArea() throws Throwable {
-        org.testng.Assert.assertEquals("Cabinet hinge broken", "Cabinet hinge broken");
+        select_area.AssertUserSelectedArea();
+    }
+
+    @Then("^the area in new issue pane should match the user selected area$")
+    public void theAreaInNewIssuePaneShouldMatchTheUserSelectedArea() throws Throwable {
+        select_area.AssertAreaInNewIssuePane();
     }
 }
