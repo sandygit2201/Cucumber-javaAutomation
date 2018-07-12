@@ -1,5 +1,6 @@
 package steps.IssuesListView_Steps;
 
+import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -79,4 +80,15 @@ public class AddIssueSteps {
     }
 
 
+    @When("^I click on the Cancel button$")
+    public void iClickOnTheCancelButton() throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        addIssue.cancelIssueButton();
+    }
+
+    @Then("^I should see the Add button$")
+    public void iShouldSeeTheAddButton() throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        addIssue.addButton();
+    }
 }

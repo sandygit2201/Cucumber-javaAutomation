@@ -49,6 +49,12 @@ public class AddIssuePage extends BasePage {
     public @FindBy(xpath = "//A[@href=''][text()='Automation - East']")
     WebElement dropdownLocation;
 
+    public @FindBy(xpath = "//*[@class=\"secondary ng-binding\"]")
+    WebElement cancelIssue;
+
+    public @FindBy(xpath = "//*[@class=\"auiButton primary add-issue ng-binding ng-scope\"]")
+    WebElement addButton;
+
 
     public AddIssuePage() throws IOException {
         super();
@@ -129,6 +135,21 @@ public class AddIssuePage extends BasePage {
         waitAndClickElement(dropdownLocation);
         return new AddIssuePage();
     }
+
+    public AddIssuePage cancelIssueButton() throws Exception{
+        waitAndClickElement(cancelIssue);
+        Thread.sleep(5000);
+        System.out.println("Cancel button clicked");
+       return new AddIssuePage();
+
+    }
+
+    public AddIssuePage addButton() throws Exception{
+        waitUntilWebElementIsVisible(addButton);
+        return new AddIssuePage();
+    }
+
+
 }
 
 

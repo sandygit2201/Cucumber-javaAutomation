@@ -60,8 +60,7 @@ public class DriverFactory {
     public static CustomFieldPage selectCustomField;
     public static RefreshPage refreshButton;
     public static EventLogPage checkEventLogValues;
-
-
+    public static AddIssuePage cancelIssueButton;
 
     public WebDriver getDriver() {
 
@@ -134,6 +133,7 @@ public class DriverFactory {
             projectFieldFilter = PageFactory.initElements(driver, ProjectFieldFiltersPage.class);
             selectCustomField = PageFactory.initElements(driver, CustomFieldPage.class);
             checkEventLogValues = PageFactory.initElements(driver, EventLogPage.class);
+            cancelIssueButton = PageFactory.initElements(driver, AddIssuePage.class);
 
         }
 

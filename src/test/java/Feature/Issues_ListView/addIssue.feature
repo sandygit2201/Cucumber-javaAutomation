@@ -22,7 +22,7 @@ Feature: Add issue
     And I enter the Issue description
     And I add a location detail
 
-      #Select due date for next month
+    #Select due date for next month
     And I select a due date
     When I click on Save button
     Then the Issue should be saved
@@ -46,6 +46,14 @@ Feature: Add issue
     Then I should see the New Issue pane
     Then I click on Issue type
     Then Issue types should be displayed alphabetically
+
+  Scenario: Cancel should undo the changes while adding details in the issue
+
+    Given I click on Add Issue button
+    When I click on the Cancel button
+    Then I should see the Add button
+
+
 
 
 
