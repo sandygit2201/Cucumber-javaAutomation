@@ -1,74 +1,73 @@
 package steps.IssuesListView_Steps;
 
-import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
-import static Utils.DriverFactory.issue_assignment;
+import static Utils.DriverFactory.issueAssignment;
 
 public class IssueAssignmentSteps {
     @Given("^I select an Issue$")
     public void iSelectAnIssue() throws Throwable {
-        issue_assignment.selectIssue();
+        issueAssignment.selectIssue();
     }
 
     @When("^the Issue is not assigned to anyone$")
     public void theIssueIsNotAssignedToAnyone() throws Throwable {
-        issue_assignment.checkIssueNotAssigned();
+        issueAssignment.checkIssueNotAssigned();
     }
 
     @And("^I click on it and select Automation User from my org$")
     public void iClickOnItAndSelectAnUserFromMyOrg() throws Throwable {
-        issue_assignment.assignToUserInMyOrg();
+        issueAssignment.assignToUserInMyOrg();
     }
 
     @Then("^the Issue should be assigned to the User$")
     public void theIssueShouldBeAssignedToTheUser() throws Throwable {
-        issue_assignment.assertIssueAssignmentToUser();
+        issueAssignment.assertIssueAssignmentToUser();
     }
 
     @And("^I click on it and select Majestic Builders$")
     public void iClickOnItAndSelectAnOrg() throws Throwable {
-        issue_assignment.assignToOrg();
+        issueAssignment.assignToOrg();
     }
 
     @Then("^the Issue should be assigned to that Org$")
     public void theIssueShouldBeAssignedToThatOrg() throws Throwable {
-        issue_assignment.assertIssueAssignmentToOrg();
+        issueAssignment.assertIssueAssignmentToOrg();
     }
 
     @And("^I click on Assign to field$")
     public void iClickOnAssignToField() throws Throwable {
-        issue_assignment.clickAssignTo();
+        issueAssignment.clickAssignTo();
     }
 
     @And("^I select Automation User from the list$")
     public void iSelectAUserFromTheList() throws Throwable {
-        issue_assignment.assignToUserWhenAddingIssue();
+        issueAssignment.assignToUserWhenAddingIssue();
     }
 
     @Then("^the Issue should be assigned to that User$")
     public void theIssueShouldBeAssignedToThatUser() throws Throwable {
-        issue_assignment.assertIssueAssignmentToUserWhileCreatingIssue();
+        issueAssignment.assertIssueAssignmentToUserWhileCreatingIssue();
     }
 
 
     @Then("^the Issue should be assigned to that User which I selected$")
     public void theIssueShouldBeAssignedToThatUserWhichISelected() throws Throwable {
-        issue_assignment.assertIssueAssignmentToUserWhileCreatingIssue();
+        issueAssignment.assertIssueAssignmentToUserWhileCreatingIssue();
     }
 
     @And("^I select Majestic Builders from the list$")
     public void iSelectAOrgFromTheList() throws Throwable {
-        issue_assignment.assignToOrgWhenAddingIssue();
+        issueAssignment.assignToOrgWhenAddingIssue();
     }
 
 
     @Then("^the Issue should be assigned to that Org which I selected$")
     public void theIssueShouldBeAssignedToThatOrgWhichISelected() throws Throwable {
-        issue_assignment.assertIssueAssignmentToOrgWhileCreatingIssue();
+        issueAssignment.assertIssueAssignmentToOrgWhileCreatingIssue();
     }
 
 

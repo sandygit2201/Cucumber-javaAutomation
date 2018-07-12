@@ -12,16 +12,22 @@ public class AccessFieldPage extends BasePage {
 
     public @FindBy(id = "userName")
     WebElement textFieldUserName;
+
     public @FindBy(id = "password")
     WebElement textFieldPassword;
+
     public @FindBy(id = "login")
     WebElement buttonLogin;
+
     public @FindBy(css = "nav-infoHolder")
     WebElement Acx;
+
     public @FindBy(className = "ic-FIELD")
     WebElement field;
+
     public @FindBy(id = "nav-bar-FIELD-FIELD-ISSUES")
     WebElement issues;
+
     public @FindBy(xpath = "// *[contains (@class, 'cross')]")
     WebElement FTUX;
 
