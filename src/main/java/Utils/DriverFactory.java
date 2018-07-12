@@ -134,7 +134,7 @@ public class DriverFactory {
             selectCustomField = PageFactory.initElements(driver, CustomFieldPage.class);
             checkEventLogValues = PageFactory.initElements(driver, EventLogPage.class);
             cancelIssueButton = PageFactory.initElements(driver, AddIssuePage.class);
-
+            refreshButton = PageFactory.initElements(driver, RefreshPage.class);
         }
 
         return driver;

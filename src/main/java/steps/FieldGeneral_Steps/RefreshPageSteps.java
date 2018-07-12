@@ -7,14 +7,12 @@ import cucumber.api.java.en.When;
 public class RefreshPageSteps extends DriverFactory {
 
     @When("^User clicks on Refresh button$")
-    public void user_clicks_on_Refresh_button() throws Throwable {
-
-
+    public void userClicksOnRefreshButton() throws Throwable {
+        refreshButton.clickOnRefreshButton();
     }
 
     @Then("^Issues page should be refreshed$")
-    public void issues_page_should_be_refreshed() throws Throwable {
-
-
+    public void issuesPageShouldBeRefreshed() throws Throwable {
+        refreshButton.verifyIssuePageRefresh();
     }
 }
