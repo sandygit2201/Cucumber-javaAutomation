@@ -138,9 +138,7 @@ public class AddIssuePage extends BasePage {
 
     public AddIssuePage cancelIssueButton() throws Exception{
         waitAndClickElement(cancelIssue);
-        Thread.sleep(5000);
-        System.out.println("Cancel button clicked");
-       return new AddIssuePage();
+        return new AddIssuePage();
 
     }
 
