@@ -9,7 +9,7 @@ import cucumber.api.java.en.When;
 import static Utils.DriverFactory.issuesSearch;
 
 public class IssuesSearchSteps {
-    
+
 
     @Given("^User clicks on the issues search field$")
     public void userClicksOnTheIssuesSearchField() throws Throwable {

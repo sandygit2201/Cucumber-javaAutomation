@@ -21,7 +21,6 @@ Feature: User wants to search an item in the search field
 
 
 
-  @Test
   Scenario: Search button enabled when User enters text
     Given there is no text entered in the search field
     When User enters a string in the issues search field
