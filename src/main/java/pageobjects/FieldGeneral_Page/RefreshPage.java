@@ -23,13 +23,4 @@ public class RefreshPage extends BasePage {
         waitAndClickElement(refreshButton);
         return new RefreshPage();
     }
-
-    public RefreshPage verifyIssuePageRefresh() throws Exception {
-        try {
-            Assert.assertTrue(verifyRefresh.getText().equalsIgnoreCase("Issues"));
-            return new RefreshPage();
-        } catch (AssertionError e) {
-            return new RefreshPage();
-        }
-    }
 }

@@ -17,4 +17,4 @@ Feature: Refresh Issues List view page
 
     Scenario: Click on Refresh button
       When User clicks on Refresh button
-      Then Issues page should be refreshed
+      Then I should see the loading screen

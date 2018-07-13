@@ -63,13 +63,9 @@ public class DriverFactory {
     public static AddIssuePage cancelIssueButton;
 
     public WebDriver getDriver() {
-
-
         try
 
         {
-
-
             Properties p = new Properties();
             FileInputStream fi = new FileInputStream(System.getProperty("user.dir") + "/src/main/java/properties/config.properties");
             p.load(fi);

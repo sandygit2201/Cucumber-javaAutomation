@@ -10,9 +10,4 @@ public class RefreshPageSteps extends DriverFactory {
     public void userClicksOnRefreshButton() throws Throwable {
         refreshButton.clickOnRefreshButton();
     }
-
-    @Then("^Issues page should be refreshed$")
-    public void issuesPageShouldBeRefreshed() throws Throwable {
-        refreshButton.verifyIssuePageRefresh();
-    }
 }
