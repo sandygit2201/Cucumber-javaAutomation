@@ -18,3 +18,4 @@ Feature: Refresh Issues List view page
     Scenario: Click on Refresh button
       When User clicks on Refresh button
       Then I should see the loading screen
+

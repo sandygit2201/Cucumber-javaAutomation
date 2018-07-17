@@ -33,6 +33,7 @@ import pageobjects.IssuesListView_Page.PhotoUploadPage;
 import pageobjects.IssuesListView_Page.StatusChangePage;
 import pageobjects.IssuesGridView_Page.AccessGridViewPage;
 import pageobjects.IssuesListView_Page.*;
+import pageobjects.SendMailPage.SendMailPage;
 
 public class DriverFactory {
 
@@ -61,6 +62,9 @@ public class DriverFactory {
     public static RefreshPage refreshButton;
     public static EventLogPage checkEventLogValues;
     public static AddIssuePage cancelIssueButton;
+    public static SendMailPage sendMail;
+
+
 
     public WebDriver getDriver() {
         try
@@ -131,6 +135,7 @@ public class DriverFactory {
             checkEventLogValues = PageFactory.initElements(driver, EventLogPage.class);
             cancelIssueButton = PageFactory.initElements(driver, AddIssuePage.class);
             refreshButton = PageFactory.initElements(driver, RefreshPage.class);
+            sendMail = PageFactory.initElements(driver, SendMailPage.class);
         }
 
         return driver;

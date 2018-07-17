@@ -14,17 +14,8 @@ Feature: User should be able to send Issues report though mail
     And I click on BLOCK E area
     Then I should close the area selector
     Then User should see the issues page
-    Given I click on Add Issue button
-    Then I should see the New Issue pane
-    And I enter the Issue description
-    When I click on Save button
-    Then the Issue should be saved
-    Given I select an Issue
-    When the Issue is not assigned to anyone
-    And I select Majestic Builders from the list
-    Then the Issue should be assigned to that Org which I selected
 
-  Scenario: User should be able to click on send mail when issues are assigned to other Org
+  Scenario: User should be able to send mail when there are assigned issues in an area
     Given I click on Refresh button
     Then the Send button should be enabled
     When I click on Send Button
@@ -32,7 +23,7 @@ Feature: User should be able to send Issues report though mail
     And the Send button should be disabled
     And I click on Mail type drop down
     And I select Variation mail type
-    Then the Send button should be enabled
+    Then the Send button in the modal should be enabled
     And when I click on Send button
     Then the Send mail modal should disappear
 
