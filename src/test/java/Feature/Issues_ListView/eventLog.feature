@@ -17,7 +17,7 @@ Feature: Event Log
     And I select a Issue type
     And I select a Issue description
 
-  Scenario: Verifying the captured by user for a new issue
+  Scenario: Verifying the "captured by" for a new issue
 
     Given I click on Save button
     And the Issue should be saved
@@ -29,3 +29,7 @@ Feature: Event Log
     And I should verify the captured user
 
 #    Scenario: Event log for verifying the status change
+    Given I click on Save button
+    And the Issue should be saved
+    And I click on Refresh button
+    And user clicks on the first Issue

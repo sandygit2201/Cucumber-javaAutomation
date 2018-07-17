@@ -22,6 +22,7 @@ import pageobjects.FieldSettings_Page.YourOrganizationPage;
 import pageobjects.Inspections_Page.CreateChecklistPage;
 import pageobjects.Inspections_Page.ExportInspectionsPage;
 import pageobjects.Inspections_Page.SelectInspectionPage;
+import pageobjects.IssuesFilters_Page.ClearAllFiltersPage;
 import pageobjects.IssuesFilters_Page.ProjectFieldFiltersPage;
 import pageobjects.IssuesFilters_Page.StatusFiltersPage;
 import pageobjects.IssuesListView_Page.AddIssuePage;
@@ -63,6 +64,7 @@ public class DriverFactory {
     public static EventLogPage checkEventLogValues;
     public static AddIssuePage cancelIssueButton;
     public static SendMailPage sendMail;
+    public static ClearAllFiltersPage clearAllFilter;
 
 
 
@@ -136,6 +138,7 @@ public class DriverFactory {
             cancelIssueButton = PageFactory.initElements(driver, AddIssuePage.class);
             refreshButton = PageFactory.initElements(driver, RefreshPage.class);
             sendMail = PageFactory.initElements(driver, SendMailPage.class);
+            clearAllFilter = PageFactory.initElements(driver, ClearAllFiltersPage.class);
         }
 
         return driver;
