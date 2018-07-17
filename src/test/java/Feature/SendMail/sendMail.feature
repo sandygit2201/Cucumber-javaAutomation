@@ -9,15 +9,15 @@ Feature: User should be able to send Issues report though mail
     Given I click on the project list
     And I select Web automation project
     Then I should be taken to that project
+
+
+  Scenario: User should be able to send mail when there are assigned issues in an area
     When User clicks on Field-Issues
     Then I should close the FTUX
     And I click on BLOCK E area
     Then I should close the area selector
     Then User should see the issues page
-
-  Scenario: User should be able to send mail when there are assigned issues in an area
-    Given I click on Refresh button
-    Then the Send button should be enabled
+    Given the Send button should be enabled
     When I click on Send Button
     Then I should see the Send mail modal
     And the Send button should be disabled
@@ -26,6 +26,17 @@ Feature: User should be able to send Issues report though mail
     Then the Send button in the modal should be enabled
     And when I click on Send button
     Then the Send mail modal should disappear
+@Test
+  Scenario: User should see the sent mail in Mail module
+    Given User clicks on Mail-Sent module
+    Then the user should land in the Mail module
+    And the user waits for Ten minutes
+    And the user selects today from the date column
+    And the user clicks the Search button
+    Then the user should see the mail with subject: Aconex Field Issues for BLOCK E
+    And the From should be Maurice Jenner
+    And the type should be Variation
+
 
 
 

@@ -2,6 +2,7 @@ package steps.SendMailSteps;
 
 import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
+import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
@@ -60,4 +61,43 @@ public class SendMailSteps {
     }
 
 
+    @Given("^User clicks on Mail-Sent module$")
+    public void userClicksOnMailSentModule() throws Throwable {
+        sendMail.navigateToMailSentFolder();
+    }
+
+    @Then("^the user should land in the Mail module$")
+    public void theUserShouldLandInTheMailModule() throws Throwable {
+        sendMail.assertMailModule();
+    }
+
+    @And("^the user waits for Ten minutes$")
+    public void theUserWaitsForMinutes() throws Throwable {
+        sendMail.waitForSometime();
+    }
+
+    @And("^the user selects today from the date column$")
+    public void theUserSortsTheDateFromRecentToOld() throws Throwable {
+        sendMail.selectDateToToday();
+    }
+
+    @And("^the user clicks the Search button$")
+    public void theUserClicksTheSearchButton() throws Throwable {
+        sendMail.clickSearchButton();
+    }
+
+    @Then("^the user should see the mail with subject: Aconex Field Issues for BLOCK E$")
+    public void theUserShouldSeeTheMailWithSubjectAconexFieldIssuesForBLOCKE() throws Throwable {
+        sendMail.assertMailSubject();
+    }
+
+    @And("^the From should be Maurice Jenner$")
+    public void theFromShouldBeMauriceJenner() throws Throwable {
+        sendMail.assertMailFromUser();
+    }
+
+    @And("^the type should be Variation$")
+    public void theTypeShouldBeVariation() throws Throwable {
+        sendMail.assertMailVariation();
+    }
 }
