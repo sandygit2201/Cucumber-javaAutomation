@@ -47,7 +47,7 @@ Feature: Add issue
     Then I click on Issue type
     Then Issue types should be displayed alphabetically
 
-  Scenario: Cancel should not save the field
+  Scenario: Cancel should not save the items entered in the add issue pane fields
 
     Given I click on Add Issue button
     Then I should see the New Issue pane
