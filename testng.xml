@@ -2,8 +2,8 @@
 
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
-<suite name = "Cucumber Framework">
-    <test name ="Cucumber Test" junit="true">
+<suite name="Cucumber Framework">
+    <test name="Cucumber Test">
     <classes>
         <class name = "Runner.MainRunner"/>
     </classes>
