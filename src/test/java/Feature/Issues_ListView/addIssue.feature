@@ -47,11 +47,14 @@ Feature: Add issue
     Then I click on Issue type
     Then Issue types should be displayed alphabetically
 
-  Scenario: Cancel should undo the changes while adding details in the issue
+  Scenario: Cancel should not save the field
 
     Given I click on Add Issue button
+    Then I should see the New Issue pane
+    And I select the Issue type
+    And I select a Issue description
     When I click on the Cancel button
-    Then I should see the Add button
+    Then I should see the Assigned To text
 
 
 

@@ -52,8 +52,8 @@ public class AddIssuePage extends BasePage {
     public @FindBy(xpath = "//*[@class=\"secondary ng-binding\"]")
     WebElement cancelIssue;
 
-    public @FindBy(xpath = "//*[@class=\"auiButton primary add-issue ng-binding ng-scope\"]")
-    WebElement addButton;
+    public @FindBy(xpath = "//*[@class=\"title assigned-to-title ng-binding\"]")
+    WebElement checkAssignedToField;
 
 
     public AddIssuePage() throws IOException {
@@ -143,8 +143,8 @@ public class AddIssuePage extends BasePage {
 
     }
 
-    public AddIssuePage addButton() throws Exception{
-        waitUntilWebElementIsVisible(addButton);
+    public AddIssuePage checkAssignedTo() throws Exception{
+        waitUntilWebElementIsVisible(checkAssignedToField);
         return new AddIssuePage();
     }
 
