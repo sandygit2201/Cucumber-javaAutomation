@@ -22,7 +22,7 @@ public class AddIssuePage extends BasePage {
     public @FindBy(xpath = "// *[contains (@uib-typeahead, 'description for')]")
     WebElement textFieldDescription;
 
-    public @FindBy(css = ".primary> span")
+    public @FindBy(xpath = "//SPAN[@class='ng-binding'][text()='Save']")
     WebElement buttonSave;
 
     public @FindBy(xpath = "//DIV[@class='auiMessage success']//DIV[@class='auiMessage-content ng-binding'][text()='Issue captured']")
@@ -82,6 +82,7 @@ public class AddIssuePage extends BasePage {
 
 
     public AddIssuePage clickOnSaveButton() throws Exception {
+        Thread.sleep(1000);
         waitAndClickElement(buttonSave);
         Thread.sleep(1000);
         return new AddIssuePage();
