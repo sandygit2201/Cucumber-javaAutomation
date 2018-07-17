@@ -7,20 +7,12 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions (
-
         features = {"src/test/java/Feature/"},
         glue = {"steps"},
         monochrome = true,
         tags = {"@Test"},
-        plugin = {"pretty", "html:field-web-automation/target/cucumber",
-                "json:target/cucumber",
-                "com.cucumber.listener.ExtentCucumberFormatter:target/report.html"}
-
-
+        plugin = {"pretty", "html:target/cucumber"}
 )
 
 public class MainRunner extends AbstractTestNGCucumberTests {
-
-
-
 }
