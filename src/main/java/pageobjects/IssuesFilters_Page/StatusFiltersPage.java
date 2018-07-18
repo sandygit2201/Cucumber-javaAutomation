@@ -40,41 +40,41 @@ public class StatusFiltersPage extends BasePage {
 
     public StatusFiltersPage clickOnOpenStatus() throws Exception {
         clickOnElementUsingCustomTimeout(filterOpen, driver, 1000);
-        Thread.sleep(2000);
+        waitUntilPreLoadElementDisappears(By.cssSelector("fm-app > div:nth-child(4) > div > div > div"));
         clickOnElementUsingCustomTimeout(buttonRefresh, driver, 2000);
-        Thread.sleep(2000);
+        waitUntilPreLoadElementDisappears(By.cssSelector("fm-app > div:nth-child(4) > div > div > div"));
         return new StatusFiltersPage();
     }
 
     public StatusFiltersPage clickOnReadyToInspectStatus() throws Exception {
         clickOnElementUsingCustomTimeout(filterReadyToInspect, driver, 1000);
-        Thread.sleep(2000);
+        waitUntilPreLoadElementDisappears(By.cssSelector("fm-app > div:nth-child(4) > div > div > div"));
         clickOnElementUsingCustomTimeout(buttonRefresh, driver, 2000);
-        Thread.sleep(2000);
+        waitUntilPreLoadElementDisappears(By.cssSelector("fm-app > div:nth-child(4) > div > div > div"));
         return new StatusFiltersPage();
     }
 
     public StatusFiltersPage clickOnInDisputeStatus() throws Exception {
         clickOnElementUsingCustomTimeout(filterInDispute, driver, 1000);
-        Thread.sleep(2000);
+        waitUntilPreLoadElementDisappears(By.cssSelector("fm-app > div:nth-child(4) > div > div > div"));
         clickOnElementUsingCustomTimeout(buttonRefresh, driver, 2000);
-        Thread.sleep(2000);
+        waitUntilPreLoadElementDisappears(By.cssSelector("fm-app > div:nth-child(4) > div > div > div"));
         return new StatusFiltersPage();
     }
 
     public StatusFiltersPage clickOnClosedStatus() throws Exception {
         clickOnElementUsingCustomTimeout(filterClosed, driver, 1000);
-        Thread.sleep(2000);
+        waitUntilPreLoadElementDisappears(By.cssSelector("fm-app > div:nth-child(4) > div > div > div"));
         clickOnElementUsingCustomTimeout(buttonRefresh, driver, 2000);
-        Thread.sleep(2000);
+        waitUntilPreLoadElementDisappears(By.cssSelector("fm-app > div:nth-child(4) > div > div > div"));
         return new StatusFiltersPage();
     }
 
     public StatusFiltersPage clickOnWorkDoneStatus() throws Exception {
         clickOnElementUsingCustomTimeout(filterWorkDone, driver, 1000);
-        Thread.sleep(2000);
+        waitUntilPreLoadElementDisappears(By.cssSelector("fm-app > div:nth-child(4) > div > div > div"));
         clickOnElementUsingCustomTimeout(buttonRefresh, driver, 2000);
-        Thread.sleep(2000);
+        waitUntilPreLoadElementDisappears(By.cssSelector("fm-app > div:nth-child(4) > div > div > div"));
         return new StatusFiltersPage();
     }
 
