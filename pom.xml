@@ -47,6 +47,28 @@
                     </execution>
                 </executions>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <version>1.6</version>
+                <executions>
+                    <execution>
+                        <id>process-test-classes</id>
+                        <phase>process-test-classes</phase>
+                        <configuration>
+                            <target>
+                                <chmod file="target/test-classes/drivers/linux64/chromedriver" perm="755"/>
+                                <chmod file="target/test-classes/drivers/linux64/geckodriver" perm="755"/>
+                                <chmod file="target/test-classes/drivers/mac64/chromedriver" perm="755"/>
+                                <chmod file="target/test-classes/drivers/mac64/geckodriver" perm="755"/>
+                            </target>
+                        </configuration>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
     </build>
 
@@ -73,7 +95,11 @@
             <version>1.2.5</version>
             <scope>test</scope>
         </dependency>
-
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.7</version>
+        </dependency>
 
         <!-- https://mvnrepository.com/artifact/info.cukes/cucumber-core -->
         <dependency>

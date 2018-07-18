@@ -2,7 +2,7 @@ Feature: Log into Babylon
 
   Multiple Valid and Invalid login scenarios
 
-
+  @Test
   Scenario Outline: Successful Babylon Login
 
     Given User navigates to Field

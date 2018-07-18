@@ -1,6 +1,7 @@
 package steps;
 
 import java.io.File;
+import java.io.IOException;
 
 import Utils.Constant;
 import Utils.DriverFactory;
@@ -15,7 +16,7 @@ public class MasterHooks extends DriverFactory {
 
 
     @Before
-    public void setup() {
+    public void setup() throws IOException {
         driver = getDriver();
 
 

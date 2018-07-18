@@ -26,7 +26,7 @@ Feature: User should be able to send Issues report though mail
     Then the Send button in the modal should be enabled
     And when I click on Send button
     Then the Send mail modal should disappear
-@Test
+
   Scenario: User should see the sent mail in Mail module
     Given User clicks on Mail-Sent module
     Then the user should land in the Mail module
