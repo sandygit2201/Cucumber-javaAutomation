@@ -3,6 +3,7 @@ package Utils;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.URL;
 import java.util.Objects;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
@@ -12,6 +13,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.PageFactory;
 import pageobjects.Babylon.LoginPage;
 import pageobjects.Babylon.LogoutPage;
@@ -28,10 +30,23 @@ import pageobjects.IssuesFilters_Page.ClearAllFiltersPage;
 import pageobjects.IssuesFilters_Page.ProjectFieldFiltersPage;
 import pageobjects.IssuesFilters_Page.StatusFiltersPage;
 import pageobjects.IssuesGridView_Page.AccessGridViewPage;
-import pageobjects.IssuesListView_Page.*;
+import pageobjects.IssuesListView_Page.AddIssuePage;
+import pageobjects.IssuesListView_Page.AreaSelectPage;
+import pageobjects.IssuesListView_Page.CommentsPage;
+import pageobjects.IssuesListView_Page.CustomFieldPage;
+import pageobjects.IssuesListView_Page.EventLogPage;
+import pageobjects.IssuesListView_Page.IssueAssignmentPage;
+import pageobjects.IssuesListView_Page.IssuesGroupByPage;
+import pageobjects.IssuesListView_Page.IssuesSearchPage;
+import pageobjects.IssuesListView_Page.PhotoUploadPage;
+import pageobjects.IssuesListView_Page.StatusChangePage;
 import pageobjects.SendMailPage.SendMailPage;
 
 public class DriverFactory {
+
+    private static final String HUB_URL = "http://localhost:4444/wd/hub";
+    private static final String DRIVER_ENV_VAR = "DRIVER";
+
 
     public static WebDriver driver;
     public static LoginPage login_page;
@@ -65,11 +80,7 @@ public class DriverFactory {
 
     public WebDriver getDriver() throws IOException {
         if(driver == null) {
-            Properties p = new Properties();
-            InputStream input = getClass().getClassLoader().getResourceAsStream("config.properties");
-            p.load(input);
-            String browserName = p.getProperty("browser");
-
+            String browserName = getDriverName();
             switch (browserName) {
                 case "firefox":
                     System.setProperty("webdriver.gecko.driver", getDriverExecutable("geckodriver"));
@@ -82,6 +93,12 @@ public class DriverFactory {
                     driver = new ChromeDriver();
                     driver.manage().window().fullscreen();
                     break;
+                case "grid-chrome":
+                    driver = new RemoteWebDriver(new URL(HUB_URL), DesiredCapabilities.chrome());
+                    break;
+                case "grid-firefox":
+                    driver = new RemoteWebDriver(new URL(HUB_URL), DesiredCapabilities.firefox());
+                    break;
                 default:
                     throw new RuntimeException("Unable to load browser for '"+browserName+"'");
             }
@@ -90,6 +107,18 @@ public class DriverFactory {
         }
 
         return driver;
+    }
+
+    private String getDriverName() throws IOException {
+        String envVar = System.getenv(DRIVER_ENV_VAR);
+        if(envVar != null) {
+            return envVar;
+        }
+
+        Properties p = new Properties();
+        InputStream input = getClass().getClassLoader().getResourceAsStream("config.properties");
+        p.load(input);
+        return p.getProperty("browser");
     }
 
     private String getDriverExecutable(String executable) {
