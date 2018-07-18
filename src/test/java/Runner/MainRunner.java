@@ -11,7 +11,7 @@ import org.junit.runner.RunWith;
         glue = {"steps"},
         monochrome = true,
         tags = {"@Test"},
-        plugin = {"pretty", "html:target/cucumber"}
+        plugin = {"pretty", "html:target/cucumber/html", "json:target/cucumber/cucumber.json"}
 )
 
 public class MainRunner extends AbstractTestNGCucumberTests {
