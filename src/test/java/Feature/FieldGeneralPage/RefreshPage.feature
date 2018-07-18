@@ -15,6 +15,18 @@ Feature: Refresh Issues List view page
     And I should close the area selector
     Then User should see the issues page
 
+  Scenario: Click on Refresh button after adding an Issue
+      Given I know the Issue count in Issues page
+      Then I click on Add Issue button
+      And I should see the New Issue pane
+      And I select the Issue type
+      And I select a Issue description
+      And I click on Save button in Issues pane
+      And Issue should be saved
+      When User clicks on Refresh button
+      Then I should see Issue number get updated
+
+
     Scenario: Click on Refresh button
       When User clicks on Refresh button
       Then I should see the loading screen
