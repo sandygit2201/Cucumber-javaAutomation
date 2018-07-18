@@ -37,7 +37,7 @@
                 <executions>
                     <execution>
                         <configuration>
-                            <configLocation>google_checks.xml</configLocation>
+                            <configLocation>qa-plugins/checkstyle/google_checks.xml</configLocation>
                             <encoding>UTF-8</encoding>
                             <violationSeverity>warning</violationSeverity>
                         </configuration>
