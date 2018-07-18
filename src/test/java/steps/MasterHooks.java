@@ -2,6 +2,7 @@ package steps;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Optional;
 
 import Utils.Constant;
 import Utils.DriverFactory;
@@ -45,10 +46,11 @@ public class MasterHooks extends DriverFactory {
 
     @After
     public static void clean() {
-        File dir = new File(Constant.PDF_DOWNLOAD_DIRECTORY);
-        for (File file : dir.listFiles((dir1, name) -> name.endsWith("SignTemplate_BigTurnip_290618.pdf"))) {
+        File downloadDir = new File(Constant.PDF_DOWNLOAD_DIRECTORY);
+        File[] files = Optional.ofNullable(downloadDir.listFiles((dir, name) -> name.endsWith("SignTemplate_BigTurnip_290618.pdf")))
+                .orElse(new File[]{});
+        for (File file : files) {
             file.delete();
         }
-        dir.delete();
     }
 }
