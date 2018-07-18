@@ -27,6 +27,7 @@ import pageobjects.Inspections_Page.CreateChecklistPage;
 import pageobjects.Inspections_Page.ExportInspectionsPage;
 import pageobjects.Inspections_Page.SelectInspectionPage;
 import pageobjects.IssuesFilters_Page.ClearAllFiltersPage;
+import pageobjects.IssuesFilters_Page.CollapseFiltersPage;
 import pageobjects.IssuesFilters_Page.ProjectFieldFiltersPage;
 import pageobjects.IssuesFilters_Page.StatusFiltersPage;
 import pageobjects.IssuesGridView_Page.AccessGridViewPage;
@@ -76,6 +77,7 @@ public class DriverFactory {
     public static SendMailPage sendMail;
     public static ClearAllFiltersPage clearAllFilter;
     public static IssuesGroupByPage issuesGroupBy;
+    public static CollapseFiltersPage filtercollapseicon;
 
 
     public WebDriver getDriver() throws IOException {
@@ -154,6 +156,8 @@ public class DriverFactory {
         sendMail = PageFactory.initElements(driver, SendMailPage.class);
         clearAllFilter = PageFactory.initElements(driver, ClearAllFiltersPage.class);
         issuesGroupBy = PageFactory.initElements(driver, IssuesGroupByPage.class);
+        filtercollapseicon = PageFactory.initElements(driver, CollapseFiltersPage.class);
+
     }
 
 }
