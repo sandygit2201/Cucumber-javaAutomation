@@ -100,4 +100,5 @@ public class SendMailSteps {
     public void theTypeShouldBeVariation() throws Throwable {
         sendMail.assertMailVariation();
     }
+
 }

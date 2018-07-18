@@ -28,15 +28,7 @@ import pageobjects.IssuesFilters_Page.ClearAllFiltersPage;
 import pageobjects.IssuesFilters_Page.ProjectFieldFiltersPage;
 import pageobjects.IssuesFilters_Page.StatusFiltersPage;
 import pageobjects.IssuesGridView_Page.AccessGridViewPage;
-import pageobjects.IssuesListView_Page.AddIssuePage;
-import pageobjects.IssuesListView_Page.AreaSelectPage;
-import pageobjects.IssuesListView_Page.CommentsPage;
-import pageobjects.IssuesListView_Page.CustomFieldPage;
-import pageobjects.IssuesListView_Page.EventLogPage;
-import pageobjects.IssuesListView_Page.IssueAssignmentPage;
-import pageobjects.IssuesListView_Page.IssuesSearchPage;
-import pageobjects.IssuesListView_Page.PhotoUploadPage;
-import pageobjects.IssuesListView_Page.StatusChangePage;
+import pageobjects.IssuesListView_Page.*;
 import pageobjects.SendMailPage.SendMailPage;
 
 public class DriverFactory {
@@ -68,6 +60,8 @@ public class DriverFactory {
     public static AddIssuePage cancelIssueButton;
     public static SendMailPage sendMail;
     public static ClearAllFiltersPage clearAllFilter;
+    public static IssuesGroupByPage issuesGroupBy;
+
 
     public WebDriver getDriver() throws IOException {
         if(driver == null) {
@@ -130,6 +124,7 @@ public class DriverFactory {
         refreshButton = PageFactory.initElements(driver, RefreshPage.class);
         sendMail = PageFactory.initElements(driver, SendMailPage.class);
         clearAllFilter = PageFactory.initElements(driver, ClearAllFiltersPage.class);
+        issuesGroupBy = PageFactory.initElements(driver, IssuesGroupByPage.class);
     }
 
 }
