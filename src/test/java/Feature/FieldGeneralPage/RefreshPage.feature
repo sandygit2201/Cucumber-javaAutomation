@@ -15,7 +15,8 @@ Feature: Refresh Issues List view page
     And I should close the area selector
     Then User should see the issues page
 
-  Scenario: Click on Refresh button after adding an Issue
+  Scenario: Click on
+  Refresh button after adding an Issue
       Given I know the Issue count in Issues page
       Then I click on Add Issue button
       And I should see the New Issue pane

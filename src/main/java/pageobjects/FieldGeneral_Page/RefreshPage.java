@@ -33,7 +33,6 @@ public class RefreshPage extends BasePage {
 
     public RefreshPage iKnowTheIssueCountInIssuesPage() throws Exception {
         preAddIssueCount = driver.findElement(By.cssSelector(".issue-number.ng-binding")).getText();
-        System.out.println("\n" + preAddIssueCount + "\n");
         return new RefreshPage();
     }
 
@@ -56,10 +55,8 @@ public class RefreshPage extends BasePage {
 
     public RefreshPage iShouldSeeIssueNumberUpdatedBy1() throws Exception {
         postAddIssueVal = driver.findElement(By.cssSelector(".issue-number.ng-binding")).getText();
-        System.out.println("\n" + postAddIssueVal + "\n");
         if (!preAddIssueCount.equals(postAddIssueVal))
         {
-            System.out.println("\n" + "Page refresh done!!" + "\n");
             return new RefreshPage();
         }
         else
