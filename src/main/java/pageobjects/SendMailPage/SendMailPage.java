@@ -1,10 +1,10 @@
 package pageobjects.SendMailPage;
 
+import java.io.IOException;
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import pageobjects.BasePage;
-
-import java.io.IOException;
 
 
 public class SendMailPage extends BasePage {
@@ -97,7 +97,6 @@ public class SendMailPage extends BasePage {
     }
 
     public SendMailPage clickOnMailTypeDropDown() throws Exception {
-        Thread.sleep(1000);
         waitAndClickElement(mailTypeDropDown);
         return new SendMailPage();
     }
@@ -138,7 +137,6 @@ public class SendMailPage extends BasePage {
     }
 
     public SendMailPage waitForSometime() throws Exception {
-        Thread.sleep(600000);
         return new SendMailPage();
     }
 
@@ -152,7 +150,6 @@ public class SendMailPage extends BasePage {
 
     public SendMailPage clickSearchButton() throws Exception {
         waitAndClickElement(buttonSearch);
-        Thread.sleep(1000);
         return new SendMailPage();
     }
 

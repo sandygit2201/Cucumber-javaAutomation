@@ -49,14 +49,14 @@ public class CommentsPage extends BasePage {
 
 
     public CommentsPage AddComments() throws Exception {
-        clickOnElementUsingCustomTimeout(textFieldComments, driver, 1000);
+        clickOnElementUsingCustomTimeout(textFieldComments, driver, 10);
         Thread.sleep(2000);
         sendKeysToWebElement(textFieldComments, "Test Comments");
         return new CommentsPage();
     }
 
     public CommentsPage postComment() throws Exception {
-        clickOnElementUsingCustomTimeout(buttonPost, driver, 1000);
+        clickOnElementUsingCustomTimeout(buttonPost, driver, 10);
         return new CommentsPage();
     }
 

@@ -1,13 +1,13 @@
 package pageobjects.Inspections_Page;
 
+import java.io.IOException;
+
 import Utils.Constant;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
 import pageobjects.BasePage;
-
-import java.io.*;
 
 
 public class ExportInspectionsPage extends BasePage {
@@ -26,7 +26,7 @@ public class ExportInspectionsPage extends BasePage {
 
     public ExportInspectionsPage selectChecklist() throws Exception {
         Thread.sleep(1000);
-        clickOnElementUsingCustomTimeout(selectChecklist, driver, 10000);
+        clickOnElementUsingCustomTimeout(selectChecklist, driver, 10);
         return new ExportInspectionsPage();
 
     }
