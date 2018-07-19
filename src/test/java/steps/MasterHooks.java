@@ -9,6 +9,7 @@ import Utils.DriverFactory;
 import cucumber.api.Scenario;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 
@@ -35,6 +36,9 @@ public class MasterHooks extends DriverFactory {
 
             if (driver != null) {
                 driver.manage().deleteAllCookies();
+                JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
+                jsExecutor.executeScript("window.localStorage && window.localStorage.clear()");
+                jsExecutor.executeScript("window.sessionStorage && window.sessionStorage.clear()");
             }
 
         } catch (Exception e) {
