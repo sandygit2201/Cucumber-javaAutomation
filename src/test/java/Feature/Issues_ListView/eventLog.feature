@@ -28,8 +28,4 @@ Feature: Event Log
     Then I should see the Event log modal
     And I should verify the captured user
 
-#    Scenario: Event log for verifying the status change
-    Given I click on Save button
-    And the Issue should be saved
-    And I click on Refresh button
-    And user clicks on the first Issue
+
