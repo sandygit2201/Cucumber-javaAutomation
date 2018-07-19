@@ -43,6 +43,7 @@ public class EventLogPage extends BasePage {
     }
 
     public EventLogPage AssertCapturedUser() throws InterruptedException, IOException {
+        waitUntilWebElementIsVisible(capturedUser);
         org.testng.Assert.assertEquals(capturedUser.getText(), "Maurice Jenner\nConglomo Corporation");
         return new EventLogPage();
     }
