@@ -15,10 +15,10 @@ Feature: Logout
 
   Scenario: User logs out after entering the Field
 
-    When User clicks on Field-Issues
-    Then User should see the issues page
-    Then I should close the FTUX
-    Then I should close the area selector
+    Given User clicks on Field-Issues
+    And I should close the FTUX
+    And User should see the issues page
+    And I should close the area selector
     And the page loader should disappear
     When user clicks on logout link
     Then user should be successfully logged out
