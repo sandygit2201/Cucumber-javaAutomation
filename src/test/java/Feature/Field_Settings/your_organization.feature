@@ -6,6 +6,10 @@ Feature: User should be able to interact in Your Organization section
     And User enters a valid password
     When User clicks on the login button
     Then User should be taken to the homepage
+    Given I click on the project list
+    And I select Web automation project
+    And I agree to Terms of Service Update if prompted
+    Then I should be taken to that project
     Given I click on Field-Settings
     Then I should be taken to Settings page
 

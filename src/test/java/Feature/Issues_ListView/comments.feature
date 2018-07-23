@@ -8,6 +8,7 @@ Feature: Adding comments to an Issue
     Then User should be taken to the homepage
     Given I click on the project list
     And I select Web automation project
+    And I agree to Terms of Service Update if prompted
     Then I should be taken to that project
     When User clicks on Field-Issues
     And I should close the FTUX

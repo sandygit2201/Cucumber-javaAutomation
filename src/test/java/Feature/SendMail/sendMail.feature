@@ -8,6 +8,7 @@ Feature: User should be able to send Issues report though mail
     Then User should be taken to the homepage
     Given I click on the project list
     And I select Web automation project
+    And I agree to Terms of Service Update if prompted
     Then I should be taken to that project
 
 

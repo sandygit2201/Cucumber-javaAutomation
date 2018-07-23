@@ -9,6 +9,7 @@ Feature: User should be able to perform groupby actions
     Then User should be taken to the homepage
     Given I click on the project list
     And I select Web automation project
+    And I agree to Terms of Service Update if prompted
     Then I should be taken to that project
     When User clicks on Field-Issues
     Then I should close the FTUX
