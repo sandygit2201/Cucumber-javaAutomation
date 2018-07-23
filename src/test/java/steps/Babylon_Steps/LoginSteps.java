@@ -41,7 +41,7 @@ public class LoginSteps extends DriverFactory {
     }
 
 
-    @Then ("^User should see the failure \"(.*)\"$" )
+    @Then("^User should see the failure \"(.*)\"$")
     public void user_should_see_the_failure(String arg1) throws Throwable {
         login_page.assertLoginFailureMessage(arg1);
     }

@@ -17,6 +17,12 @@ public class SwitchProjectSteps {
         switchProject.selectMyProject();
     }
 
+    @And("^I agree to Terms of Service Update if prompted$")
+    public void userAgressToTermsOfServiceUpdateIfPrompted() throws Throwable {
+        switchProject.checkForServiceUpdatePage();
+
+    }
+
     @Then("^I should be taken to that project$")
     public void iShouldBeTakenToThatProject() throws Throwable {
         switchProject.assertMyProject();
