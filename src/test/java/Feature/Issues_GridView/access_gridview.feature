@@ -10,8 +10,8 @@ Feature: Issue Grid View
     And I select Web automation project
     Then I should be taken to that project
     When User clicks on Field-Issues
-    Then User should see the issues page
     Then I should close the FTUX
+    Then User should see the issues page
     Then I should close the area selector
     And the page loader should disappear
 
