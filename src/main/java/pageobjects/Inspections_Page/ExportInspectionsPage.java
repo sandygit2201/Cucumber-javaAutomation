@@ -17,7 +17,7 @@ public class ExportInspectionsPage extends BasePage {
     }
 
 
-    public @FindBy(xpath = "(//DIV[@class='title ng-binding'][text()='Automation'][text()='Automation'])")
+    public @FindBy(xpath = "//DIV[@class='checklist-checklist clearfix edit-title-enabled ng-scope']//DIV[@class='title ng-binding'][text()='Automation Template']")
     WebElement selectChecklist;
 
     public @FindBy(css = "div.checklist-details-export-pdf.col-md-6.no-padding.ng-isolate-scope > button")
