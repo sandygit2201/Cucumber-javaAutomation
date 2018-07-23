@@ -7,6 +7,8 @@ services:
       - "4444:4444"
   chrome:
     image: selenium/node-chrome:3.13.0-argon
+    volumes:
+      - /dev/shm:/dev/shm
     depends_on:
       - selenium-hub
     environment:
@@ -14,6 +16,8 @@ services:
       - HUB_PORT=4444
   firefox:
     image: selenium/node-firefox:3.13.0-argon
+    volumes:
+      - /dev/shm:/dev/shm
     depends_on:
       - selenium-hub
     environment:

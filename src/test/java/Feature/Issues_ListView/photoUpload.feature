@@ -15,9 +15,6 @@ Feature: Attaching photo to an issue
     Then User should see the issues page
 
   Scenario: Field user should be able to add photo to an existing issue
-
     Given the user clicks on the first Issue
-    Then the user should click on Add photos
-    Then the user should select the photo
-    Then the user should click on upload button
+    And the user uploads a photo
     Then the added photo should be visible

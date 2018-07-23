@@ -13,6 +13,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.LocalFileDetector;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.PageFactory;
 import pageobjects.Babylon.LoginPage;
@@ -96,9 +97,11 @@ public class DriverFactory {
                     break;
                 case "grid-chrome":
                     driver = new RemoteWebDriver(new URL(HUB_URL), DesiredCapabilities.chrome());
+                    ((RemoteWebDriver) driver).setFileDetector(new LocalFileDetector());
                     break;
                 case "grid-firefox":
                     driver = new RemoteWebDriver(new URL(HUB_URL), DesiredCapabilities.firefox());
+                    ((RemoteWebDriver) driver).setFileDetector(new LocalFileDetector());
                     break;
                 default:
                     throw new RuntimeException("Unable to load browser for '"+browserName+"'");
