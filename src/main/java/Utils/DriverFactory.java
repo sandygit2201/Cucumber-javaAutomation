@@ -93,7 +93,6 @@ public class DriverFactory {
                 case "chrome":
                     System.setProperty("webdriver.chrome.driver", getDriverExecutable("chromedriver"));
                     driver = new ChromeDriver();
-                    driver.manage().window().fullscreen();
                     break;
                 case "grid-chrome":
                     driver = new RemoteWebDriver(new URL(HUB_URL), DesiredCapabilities.chrome());
@@ -104,6 +103,7 @@ public class DriverFactory {
                 default:
                     throw new RuntimeException("Unable to load browser for '"+browserName+"'");
             }
+            driver.manage().window().fullscreen();
             driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
             setupPages();
         }
