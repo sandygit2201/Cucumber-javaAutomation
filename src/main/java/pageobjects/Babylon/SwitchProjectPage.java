@@ -51,7 +51,7 @@ public class SwitchProjectPage extends BasePage {
             }
         } catch (Exception e) {
             {
-                System.out.println("Proceeding to Login");
+                System.out.println("Proceeding to switch project");
             }
         }
         return new SwitchProjectPage();
