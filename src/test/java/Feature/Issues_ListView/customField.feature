@@ -28,7 +28,6 @@ Feature: Interact with Custom Field
     And I click on Refresh button
     Then the selected custom field value should be saved for that issue
 
-
   Scenario: Selecting a custom field for an existing issue
 
     Given I click on Add Issue button

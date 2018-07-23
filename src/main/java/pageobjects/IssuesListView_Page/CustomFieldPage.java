@@ -51,8 +51,6 @@ public class CustomFieldPage extends BasePage {
     WebElement assertHighValue;
 
 
-
-
     public CustomFieldPage clickOnFirstCustomField() throws InterruptedException, IOException {
         waitAndClickElement(firstCustomField);
         return new CustomFieldPage();
@@ -89,7 +87,9 @@ public class CustomFieldPage extends BasePage {
     }
 
     public CustomFieldPage selectHighValueFromDropdown() throws InterruptedException, IOException {
+        waitUntilWebElementIsVisible(customFieldDropdown);
         waitAndClickElement(customFieldDropdown);
+        waitUntilWebElementIsVisible(selectHighfromDropDown);
         waitAndClickElement(selectHighfromDropDown);
         return new CustomFieldPage();
     }

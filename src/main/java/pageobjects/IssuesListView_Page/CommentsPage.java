@@ -38,6 +38,7 @@ public class CommentsPage extends BasePage {
 
 
     public CommentsPage ClickOnFirstIssue() throws Exception {
+        waitUntilWebElementIsVisible(ClickFirstIssue);
         waitAndClickElement(ClickFirstIssue);
         return new CommentsPage();
     }

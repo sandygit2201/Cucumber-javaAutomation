@@ -24,7 +24,6 @@ public class CommentsSteps {
     public void theUserShouldBeAbleToAddTheComment() throws Throwable {
         addCommentsPage.AddComments();
 
-
     }
 
     @When("^the user clicks on Post$")
