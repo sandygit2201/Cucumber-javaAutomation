@@ -1,4 +1,4 @@
-Feature: Adding comments to an Issue
+Feature: Attaching photo to an issue
 
   Background: User is logged in
     Given User navigates to Field
