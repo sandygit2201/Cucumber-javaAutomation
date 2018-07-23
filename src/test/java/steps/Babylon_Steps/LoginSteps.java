@@ -1,6 +1,7 @@
 package steps.Babylon_Steps;
 
 import Utils.DriverFactory;
+import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -36,14 +37,18 @@ public class LoginSteps extends DriverFactory {
 
     @Then("^User should see the \"([^\"]*)\"$")
     public void userShouldSeeThe(String arg0) throws Throwable {
-        login_page.assertLoginSuccess(arg0);
+        login_page.assertLoginSuccessMessage(arg0);
     }
 
 
-    @Then("^User should see the failure \"([^\"]*)\"$")
+    @Then ("^User should see the failure \"(.*)\"$" )
     public void user_should_see_the_failure(String arg1) throws Throwable {
-        login_page.assertLoginFailure(arg1);
+        login_page.assertLoginFailureMessage(arg1);
     }
 
 
+    @Then("^User should see the failure message$")
+    public void userShouldSeeTheFailureMessage() throws Throwable {
+        login_page.verifyLoginFailureMessage();
+    }
 }

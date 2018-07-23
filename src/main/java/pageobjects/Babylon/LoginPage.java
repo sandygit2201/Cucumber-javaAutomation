@@ -2,6 +2,7 @@ package pageobjects.Babylon;
 
 import java.io.IOException;
 
+import org.testng.*;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import pageobjects.BasePage;
@@ -49,17 +50,23 @@ public class LoginPage extends BasePage {
         return new LoginPage();
     }
 
-    public LoginPage assertLoginSuccess(String arg0) throws Exception {
+    public LoginPage assertLoginSuccessMessage(String arg0) throws Exception {
         waitUntilWebElementIsVisible(assertLoginSuccess);
         org.testng.Assert.assertEquals(assertLoginSuccess.getText(), arg0);
         return new LoginPage();
     }
 
-    public LoginPage assertLoginFailure(String arg1) throws Exception {
+    public LoginPage assertLoginFailureMessage(String arg1) throws Exception {
         waitUntilWebElementIsVisible(assertLoginFailure);
         org.testng.Assert.assertEquals(assertLoginFailure.getText(), arg1);
         return new LoginPage();
 
 
+    }
+
+    public LoginPage verifyLoginFailureMessage() throws Exception {
+        waitUntilWebElementIsVisible(assertLoginFailure);
+        Assert.assertTrue(assertLoginFailure.getText().contains("Your login name or password is incorrect."));
+        return new LoginPage();
     }
 }
