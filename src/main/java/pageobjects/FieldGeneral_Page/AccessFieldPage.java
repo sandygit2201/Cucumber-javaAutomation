@@ -2,6 +2,7 @@ package pageobjects.FieldGeneral_Page;
 
 import java.io.IOException;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
@@ -34,6 +35,9 @@ public class AccessFieldPage extends BasePage {
     public @FindBy(css = "div > div.auiToolbar-header.ng-binding")
     WebElement assertIssuesPage;
 
+    public @FindBy (className = "nav-userDetails")
+    WebElement getUserName;
+
 
     public AccessFieldPage() throws IOException {
         super();
@@ -53,13 +57,9 @@ public class AccessFieldPage extends BasePage {
     }
 
 
-    public AccessFieldPage clickLoginButton() throws Exception {
-        waitAndClickElement(buttonLogin);
-        return new AccessFieldPage();
-    }
-
-    public AccessFieldPage assertLogin() throws Exception {
-        System.out.println("Login done");
+    public AccessFieldPage verifyUserName() throws Exception {
+        waitUntilWebElementIsVisible(getUserName);
+        Assert.assertEquals(getUserName.getText(), "Mr Maurice Jenner");
         return new AccessFieldPage();
     }
 
@@ -76,9 +76,11 @@ public class AccessFieldPage extends BasePage {
     }
 
     public AccessFieldPage assertIssuesPage() throws Exception {
-        Thread.sleep(1000);
+        waitUntilPreLoadElementDisappears(By.cssSelector("fm-app > div:nth-child(4) > div > div > div"));
         Assert.assertEquals(assertIssuesPage.getText(), "Issues");
         return new AccessFieldPage();
     }
+
+
 
 }

@@ -20,7 +20,7 @@ public class AccessFieldSteps extends DriverFactory {
 
     @Then("^User should be taken to the homepage$")
     public void userShouldBeTakenToTheHomepage() throws Throwable {
-        accessField.assertLogin();
+        accessField.verifyUserName();
 
     }
 
