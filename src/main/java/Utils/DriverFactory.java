@@ -9,6 +9,7 @@ import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.lang3.SystemUtils;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -106,6 +107,7 @@ public class DriverFactory {
                 default:
                     throw new RuntimeException("Unable to load browser for '"+browserName+"'");
             }
+            driver.manage().window().setSize(new Dimension(1920, 1080));
             driver.manage().window().fullscreen();
             driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
             setupPages();
