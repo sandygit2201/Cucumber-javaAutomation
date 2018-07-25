@@ -61,6 +61,7 @@ public class IssueAssignmentPage extends BasePage {
     }
 
     public IssueAssignmentPage checkIssueNotAssigned() throws Exception {
+        waitUntilWebElementIsVisible(issueNotAssigned);
         issueNotAssigned.isDisplayed();
         return new IssueAssignmentPage();
     }
