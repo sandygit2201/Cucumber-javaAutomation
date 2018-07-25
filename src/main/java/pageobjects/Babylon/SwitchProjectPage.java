@@ -21,7 +21,7 @@ public class SwitchProjectPage extends BasePage {
     public @FindBy(xpath = "//SPAN[@class='projectChanger-container']/../../../../..//DIV[@id='projectChanger-1879048480']")
     WebElement myProject;
 
-    public @FindBy(xpath = "//H1[text()='Terms of Service Update']")
+    public @FindBy(css = "div#toolbar_left > h1")
     WebElement headingServiceUpdatePage;
 
     public @FindBy(xpath = "//INPUT[@id='acceptTermsOfService']")
@@ -46,6 +46,7 @@ public class SwitchProjectPage extends BasePage {
 
         try {
             if (headingServiceUpdatePage.isDisplayed()) {
+                driver.switchTo().frame("main");
                 waitAndClickElement(checkBoxAgree);
                 waitAndClickElement(buttonSubmit);
             }
