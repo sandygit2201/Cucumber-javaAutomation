@@ -84,6 +84,7 @@ public class CustomFieldPage extends BasePage {
     public CustomFieldPage clickExtraDetailCollapseHeader() throws InterruptedException, IOException {
 
         waitAndClickElement(extraDetailCollapse);
+        Thread.sleep(2000);
         return new CustomFieldPage();
     }
 
@@ -93,7 +94,6 @@ public class CustomFieldPage extends BasePage {
         waitAndClickElement(customFieldDropdown);
         waitUntilWebElementIsVisible(selectHighfromDropDown);
         waitAndClickElement(selectHighfromDropDown);
-        Thread.sleep(2000);
         return new CustomFieldPage();
     }
 
