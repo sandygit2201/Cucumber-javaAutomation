@@ -8,25 +8,25 @@ import pageobjects.BasePage;
 
 public class LogoutPage extends BasePage {
 
-    public @FindBy(css = "a#logoff")
-    WebElement Logout;
+    @FindBy(id = "logoff")
+    private WebElement logoutLink;
 
-    public @FindBy(className ="uiButton-label")
-    WebElement buttonLogin;
+    @FindBy(id ="btnLogin")
+    private WebElement loginButton;
 
     public LogoutPage() throws IOException {
         super();
     }
 
-    public LogoutPage clickLogout() throws InterruptedException, IOException {
+    public LogoutPage clickLogout() throws InterruptedException {
         driver.switchTo().defaultContent();
-        waitAndClickElement(Logout);
-        return new LogoutPage();
+        waitAndClickElement(logoutLink);
+        return this;
     }
 
-    public LogoutPage successfulLogout() throws InterruptedException, IOException{
-        waitUntilWebElementIsVisible(buttonLogin);
-        buttonLogin.isDisplayed();
-        return new LogoutPage();
+    public LogoutPage successfulLogout() {
+        waitUntilWebElementIsVisible(loginButton);
+        loginButton.isDisplayed();
+        return this;
     }
 }
