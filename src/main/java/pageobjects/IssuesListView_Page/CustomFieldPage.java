@@ -2,6 +2,7 @@ package pageobjects.IssuesListView_Page;
 
 import gherkin.lexer.Th;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
@@ -87,10 +88,12 @@ public class CustomFieldPage extends BasePage {
     }
 
     public CustomFieldPage selectHighValueFromDropdown() throws InterruptedException, IOException {
+
         waitUntilWebElementIsVisible(customFieldDropdown);
         waitAndClickElement(customFieldDropdown);
         waitUntilWebElementIsVisible(selectHighfromDropDown);
         waitAndClickElement(selectHighfromDropDown);
+        Thread.sleep(2000);
         return new CustomFieldPage();
     }
 
@@ -99,6 +102,7 @@ public class CustomFieldPage extends BasePage {
         waitAndClickElement(buttonRefresh);
         waitUntilPreLoadElementDisappears(By.cssSelector("fm-app > div:nth-child(4) > div > div > div"));
         waitAndClickElement(extraDetailCollapse);
+        waitUntilWebElementIsVisible(assertHighValue);
         Assert.assertEquals(assertHighValue.getText(), "High");
         return new CustomFieldPage();
     }
