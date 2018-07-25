@@ -9,6 +9,7 @@ services:
     image: selenium/node-chrome:3.13.0-argon
     volumes:
       - /dev/shm:/dev/shm
+      - /tmp/fieldwebautomation:/home/seluser/Downloads
     depends_on:
       - selenium-hub
     environment:
@@ -20,6 +21,7 @@ services:
     image: selenium/node-firefox:3.13.0-argon
     volumes:
       - /dev/shm:/dev/shm
+      - /tmp/fieldwebautomation:/home/seluser/Downloads
     depends_on:
       - selenium-hub
     environment:

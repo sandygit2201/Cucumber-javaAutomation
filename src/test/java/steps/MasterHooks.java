@@ -2,9 +2,12 @@ package steps;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.Optional;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.Arrays;
 
-import Utils.Constant;
+import Utils.Constants;
 import Utils.DriverFactory;
 import cucumber.api.Scenario;
 import cucumber.api.java.After;
@@ -20,8 +23,10 @@ public class MasterHooks extends DriverFactory {
     @Before
     public void setup() throws IOException {
         driver = getDriver();
-
-
+        Path downloadDir = Paths.get(Constants.DOWNLOAD_DIRECTORY);
+        if(!Files.exists(downloadDir)) {
+            Files.createDirectory(downloadDir);
+        }
     }
 
     @After
@@ -48,11 +53,7 @@ public class MasterHooks extends DriverFactory {
 
     @After
     public static void clean() {
-        File downloadDir = new File(Constant.PDF_DOWNLOAD_DIRECTORY);
-        File[] files = Optional.ofNullable(downloadDir.listFiles((dir, name) -> name.endsWith("SignTemplate_BigTurnip_290618.pdf")))
-                .orElse(new File[]{});
-        for (File file : files) {
-            file.delete();
-        }
+        Arrays.stream(new File(Constants.DOWNLOAD_DIRECTORY).listFiles())
+                .forEach(File::delete);
     }
 }

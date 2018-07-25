@@ -2,7 +2,7 @@ package pageobjects.Inspections_Page;
 
 import java.io.IOException;
 
-import Utils.Constant;
+import Utils.Constants;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -41,9 +41,8 @@ public class ExportInspectionsPage extends BasePage {
     }
 
     public ExportInspectionsPage verifyFileDownload() throws Exception {
-        String downloadPath = Constant.PDF_DOWNLOAD_DIRECTORY;
-        Assert.assertTrue(isFileDownloaded(downloadPath, "Automation"),
-                "Failed to download Expected document");
+        String downloadPath = Constants.DOWNLOAD_DIRECTORY;
+        Assert.assertTrue(isFileDownloaded(downloadPath), "Failed to download Expected document");
         return new ExportInspectionsPage();
 
     }

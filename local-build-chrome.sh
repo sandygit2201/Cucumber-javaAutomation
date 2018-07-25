@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-
+mkdir -p /tmp/fieldwebautomation
 docker-compose -f docker-compose-local-chrome.yaml up -d
 echo "Waiting for VNC to initialize..." && sleep 10
 

@@ -4,6 +4,7 @@ package Utils;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
+import java.util.HashMap;
 import java.util.Objects;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
@@ -12,7 +13,9 @@ import org.apache.commons.lang3.SystemUtils;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.LocalFileDetector;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -94,7 +97,7 @@ public class DriverFactory {
                     break;
                 case "chrome":
                     System.setProperty("webdriver.chrome.driver", getDriverExecutable("chromedriver"));
-                    driver = new ChromeDriver();
+                    driver = new ChromeDriver(buildLocalChromeOptions());
                     break;
                 case "grid-chrome":
                     driver = new RemoteWebDriver(new URL(HUB_URL), DesiredCapabilities.chrome());
@@ -114,6 +117,21 @@ public class DriverFactory {
         }
 
         return driver;
+    }
+
+    private ChromeOptions buildLocalChromeOptions() {
+        ChromeOptions chromeOptions = new ChromeOptions();
+        setChromeDownloadDirectory(chromeOptions, Constants.DOWNLOAD_DIRECTORY);
+
+        return chromeOptions;
+    }
+
+    private void setChromeDownloadDirectory(ChromeOptions chromeOptions, String downloadDir) {
+        HashMap<String, Object> chromePrefs = new HashMap<>();
+        chromePrefs.put("profile.default_content_settings.popups", 0);
+        chromePrefs.put("download.default_directory", downloadDir);
+        chromeOptions.setExperimentalOption("prefs", chromePrefs);
+        chromeOptions.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
     }
 
     private String getDriverName() throws IOException {

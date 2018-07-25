@@ -1,12 +1,11 @@
 package steps.SendMailSteps;
 
-import cucumber.api.PendingException;
+import static Utils.DriverFactory.sendMail;
+
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-
-import static Utils.DriverFactory.sendMail;
 
 public class SendMailSteps {
     @And("^I click on BLOCK E area$")

@@ -5,8 +5,10 @@ import java.io.File;
 import java.io.IOException;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Objects;
 
-import Utils.Constant;
+import Utils.Constants;
+import Utils.DriverFactory;
 import org.apache.commons.lang.RandomStringUtils;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.util.PDFTextStripper;
@@ -25,8 +27,6 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import Utils.DriverFactory;
-
 public class BasePage extends DriverFactory {
     protected WebDriverWait wait;
     protected JavascriptExecutor jsExecutor;
@@ -42,14 +42,12 @@ public class BasePage extends DriverFactory {
 
 
     public boolean verifyPdfContent(String searchText) throws IOException {
-        File dir = new File(Constant.PDF_DOWNLOAD_DIRECTORY);
-        File[] files = dir.listFiles((dir1, name) -> name.endsWith("Automation_BigTurnip_020718.pdf"));
-        PDDocument report = PDDocument.load(files[0]);
+        File dir = new File(Constants.DOWNLOAD_DIRECTORY);
+        File[] files = dir.listFiles((dir1, name) -> name.endsWith(".pdf"));
+        PDDocument report = PDDocument.load(Objects.requireNonNull(files)[0]);
         PDFTextStripper pdfStripper = new PDFTextStripper();
         String text = pdfStripper.getText(report);
         report.close();
-//        System.out.println(text);
-//        System.out.println(searchText);
         org.testng.Assert.assertTrue(text.contains(searchText));
         return text.contains(searchText);
 
@@ -59,17 +57,10 @@ public class BasePage extends DriverFactory {
      **VERIFY IF FILE IS DOWNLOADED USING FILENAME
      **********************************************************************************/
 
-    public boolean isFileDownloaded(String downloadPath, String fileName) {
-
-        boolean flag = false;
+    public boolean isFileDownloaded(String downloadPath) {
         File dir = new File(downloadPath);
-        File[] dir_contents = dir.listFiles();
-        for (int i = 0; i < dir_contents.length; i++) {
-            if (dir_contents[i].getName().contains(fileName))
-                return flag = true;
-        }
-
-        return flag;
+        File[] dir_contents = dir.listFiles((dir1, name) -> name.endsWith(".pdf"));
+        return dir_contents != null && dir_contents.length > 0;
     }
 
     /**********************************************************************************
