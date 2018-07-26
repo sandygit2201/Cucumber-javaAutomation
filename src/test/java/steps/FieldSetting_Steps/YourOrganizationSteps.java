@@ -1,5 +1,6 @@
 package steps.FieldSetting_Steps;
 
+import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -19,49 +20,64 @@ public class YourOrganizationSteps {
         yourOrg.assertYourOrgPage();
 
     }
-//----------------------To remove user from your organization----------------
 
-
-    @When("^I click on the X mark for an user$")
-    public void iClickOnTheXMark() throws Throwable {
-        yourOrg.removeUser();
+    //----------------------To add user from your organization----------------
+    @Given("^User types Automation User1 in the Add more people search bar$")
+    public void userTypesNewUser_AUtomationInTheAddMorePeopleSearchBar() throws Throwable {
+        yourOrg.clickOnAddMorePeople();
     }
 
-    @Then("^the user should be removed from my Organization$")
-    public void theUserShouldBeRemovedFromMyOrganization() throws Throwable {
-        yourOrg.assertUserRemoved();
+    @When("^User select the user from the drop down$")
+    public void iSelectTheUserFromTheDropDown() throws Throwable {
+        yourOrg.selectUserFromDropDown();
     }
+
+    @Then("^the user should be added to my Org$")
+    public void theUserShouldBeAddedToMyOrg() throws Throwable {
+        yourOrg.verifyIfUserBeenAdded();
+    }
+
 
     //----------------------Change role of an User----------------
 
-    @Given("^I am an Inspector$")
+    @Given("^User Automation User1 is an Inspector$")
     public void iAmAnInspector() throws Throwable {
         yourOrg.assertCurrentRole();
     }
 
 
-    @When("^I click on the role of an Inspector$")
+    @And("^User clicks on the role of an Inspector$")
     public void iClickOnTheRoleOfAnUser() throws Throwable {
         yourOrg.clickOnUserRole();
     }
 
-    @Then("^I should see the available user roles$")
+    @And("^User should see the available user roles$")
     public void iShouldSeeTheAvailableUserRoles() throws Throwable {
         yourOrg.viewRoleOptions();
     }
 
-    @When("^I select a user role$")
+    @When("^User select a user role$")
     public void iSelectAUserRole() throws Throwable {
         yourOrg.selectRole();
     }
 
-    @Then("^the user role for the user should be changed$")
+    @Then("^User role for the user should be changed$")
     public void theUserRoleForTheUserShouldBeChanged() throws Throwable {
         yourOrg.assertRoleChange();
 
     }
 
+//----------------------To remove user from your organization----------------
 
-//    -------------------------------------------------------------------------------
+
+    @When("^I click on the X mark for an Automation User1$")
+    public void iClickOnTheXMark() throws Throwable {
+        yourOrg.removeUser("Automation User1");
+    }
+
+    @Then("^the user Automation User1 should be removed from my Organization$")
+    public void theUserShouldBeRemovedFromMyOrganization() throws Throwable {
+        yourOrg.verifytheUserisRemoved("Automation User1");
+    }
 
 }

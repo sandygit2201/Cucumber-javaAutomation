@@ -1,31 +1,25 @@
 package pageobjects;
 
+
 import java.awt.AWTException;
 import java.io.File;
 import java.io.IOException;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
-
 import Utils.Constants;
 import Utils.DriverFactory;
 import org.apache.commons.lang.RandomStringUtils;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.util.PDFTextStripper;
 import org.junit.Assert;
-import org.openqa.selenium.Alert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.StaleElementReferenceException;
-import org.openqa.selenium.UnhandledAlertException;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+
 
 public class BasePage extends DriverFactory {
     protected WebDriverWait wait;
@@ -34,6 +28,21 @@ public class BasePage extends DriverFactory {
     public BasePage() throws IOException {
         this.wait = new WebDriverWait(driver, 15);
         jsExecutor = ((JavascriptExecutor) driver);
+    }
+
+    /**********************************************************************************
+     **CHECK SORT FOR DROP DOWNS
+     **********************************************************************************/
+
+    public static boolean validateSort(LinkedList<String> dropDownValues) {
+        String prev = ""; // empty string
+        for (final String cur : dropDownValues) {
+            if (cur.compareTo(prev) < 0) {
+                return false;
+            }
+            prev = cur;
+        }
+        return true;
     }
 
     /**********************************************************************************
@@ -61,21 +70,6 @@ public class BasePage extends DriverFactory {
         File dir = new File(downloadPath);
         File[] dir_contents = dir.listFiles((dir1, name) -> name.endsWith(".pdf"));
         return dir_contents != null && dir_contents.length > 0;
-    }
-
-    /**********************************************************************************
-     **CHECK SORT FOR DROP DOWNS
-     **********************************************************************************/
-
-    public static boolean validateSort(LinkedList<String> dropDownValues) {
-        String prev = ""; // empty string
-        for (final String cur : dropDownValues) {
-            if (cur.compareTo(prev) < 0) {
-                return false;
-            }
-            prev = cur;
-        }
-        return true;
     }
 
     protected boolean checkSorting(String xpathExpression) {
