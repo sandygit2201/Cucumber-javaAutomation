@@ -30,3 +30,7 @@ Feature: Event Log
     And I should verify the captured user
 
 
+  Scenario: user should be able to export pdf
+    Given I am on the issues page
+    When I click on the Export button
+

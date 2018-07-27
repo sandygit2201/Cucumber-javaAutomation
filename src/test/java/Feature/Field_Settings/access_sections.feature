@@ -1,4 +1,4 @@
-Feature: As a ADMIN, user should be ale to acess all the sections in the settings page
+Feature: As a ADMIN, user should be able to access all the sections in the settings page
 
 
   Background:
@@ -16,7 +16,6 @@ Feature: As a ADMIN, user should be ale to acess all the sections in the setting
   Scenario: Access Template section
   #      Run browser in full screen
     Given I click on Templates
-    Then I should see the FTUX and close it
     Then I should see the Templates section
 
 

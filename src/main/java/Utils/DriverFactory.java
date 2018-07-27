@@ -97,7 +97,9 @@ public class DriverFactory {
                     break;
                 case "chrome":
                     System.setProperty("webdriver.chrome.driver", getDriverExecutable("chromedriver"));
-                    driver = new ChromeDriver(buildLocalChromeOptions());
+                    driver = new ChromeDriver();
+                    //driver.manage().deleteAllCookies();
+                    driver.manage().window().fullscreen();
                     break;
                 case "grid-chrome":
                     driver = new RemoteWebDriver(new URL(HUB_URL), DesiredCapabilities.chrome());

@@ -1,3 +1,4 @@
+@Test
 Feature: User should be able to interact in Your Organization section
 
   Background:
@@ -15,7 +16,6 @@ Feature: User should be able to interact in Your Organization section
 
 
   Scenario: : Accessing Your Organization section
-
     Given I click on Your Organization
     Then I should see the Your Organization section
 
@@ -23,7 +23,6 @@ Feature: User should be able to interact in Your Organization section
     Given User types Automation User1 in the Add more people search bar
     When User select the user from the drop down
     Then the user should be added to my Org
-
 
   Scenario: Changing user roles
 ##    Automation User1 user should be inspector

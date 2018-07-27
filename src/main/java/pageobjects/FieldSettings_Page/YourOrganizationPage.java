@@ -15,12 +15,23 @@ public class YourOrganizationPage extends BasePage {
     WebElement sectionYourOrg;
     public @FindBy(xpath = "//H1[@class='ng-binding'][text()='Your organization']")
     WebElement assertYourOrgPage;
+
     public @FindBy(xpath = "//INPUT[@class='form-control ng-isolate-scope ui-autocomplete-input']")
     WebElement addMorePeople;
     public @FindBy(xpath = "(//FIELDSET)[1]/../../../../../../../../../../../..//A[@id='ui-id-2']")
     WebElement selectNewUser;
     public @FindBy(xpath = "//span[text()='test test']")
     WebElement verifyAddedUser;
+
+    public @FindBy(xpath = "//")
+    WebElement searchExistingUser;
+
+    public @FindBy(css = "tr:nth-child(10) > td.delete.icon")
+    WebElement removeUser;
+
+    public @FindBy(css = "tr:nth-child(10) > td.user-role.select > div > div > div > div > div > div")
+    WebElement clickOnRole;
+
     public @FindBy(css = "td.user-role.select > div > div > div > div > div > ul > li")
     WebElement assertRoleOptions;
     public @FindBy(css = "td.user-role.select > div > div > div > div > div > ul > li:nth-child(1)")
@@ -54,6 +65,16 @@ public class YourOrganizationPage extends BasePage {
     public YourOrganizationPage clickOnAddMorePeople() throws Exception {
         waitAndClickElement(addMorePeople);
         sendKeysToWebElement(addMorePeople, "Automation User1");
+        return new YourOrganizationPage();
+    }
+
+    public YourOrganizationPage searchExistingUser() throws Exception{
+        waitAndClickElement(searchExistingUser);
+        return new YourOrganizationPage();
+    }
+
+    public YourOrganizationPage removeUser() throws Exception {
+        waitAndClickElement(removeUser);
         return new YourOrganizationPage();
     }
 
