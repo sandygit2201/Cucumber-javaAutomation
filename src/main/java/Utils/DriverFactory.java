@@ -97,9 +97,7 @@ public class DriverFactory {
                     break;
                 case "chrome":
                     System.setProperty("webdriver.chrome.driver", getDriverExecutable("chromedriver"));
-                    driver = new ChromeDriver();
-                    //driver.manage().deleteAllCookies();
-                    driver.manage().window().fullscreen();
+                    driver = new ChromeDriver(buildLocalChromeOptions());
                     break;
                 case "grid-chrome":
                     driver = new RemoteWebDriver(new URL(HUB_URL), DesiredCapabilities.chrome());
@@ -115,6 +113,7 @@ public class DriverFactory {
             driver.manage().window().setSize(new Dimension(1920, 1080));
             driver.manage().window().fullscreen();
             driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
+            Runtime.getRuntime().addShutdownHook(new Thread(driver::quit));
             setupPages();
         }
 
