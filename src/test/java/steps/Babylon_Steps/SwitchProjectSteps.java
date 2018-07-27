@@ -7,23 +7,23 @@ import cucumber.api.java.en.Then;
 import static Utils.DriverFactory.switchProject;
 
 public class SwitchProjectSteps {
-    @Given("^I click on the project list$")
+    @Given("^User clicks on the project list$")
     public void iClickOnTheProjectList() throws Throwable {
         switchProject.clickProjectSelector();
     }
 
-    @And("^I select Web automation project$")
+    @And("^User selects Web automation project$")
     public void iSelectWebAutomationProject() throws Throwable {
         switchProject.selectMyProject();
     }
 
-    @And("^I agree to Terms of Service Update if prompted$")
+    @And("^User agrees to Terms of Service Update if prompted$")
     public void userAgressToTermsOfServiceUpdateIfPrompted() throws Throwable {
         switchProject.checkForServiceUpdatePage();
 
     }
 
-    @Then("^I should be taken to that project$")
+    @Then("^User should be taken to that project$")
     public void iShouldBeTakenToThatProject() throws Throwable {
         switchProject.assertMyProject();
     }
