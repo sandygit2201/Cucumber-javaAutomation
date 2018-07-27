@@ -9,14 +9,14 @@ import cucumber.api.java.en.When;
 import static Utils.DriverFactory.yourOrg;
 
 public class YourOrganizationSteps {
-    @Given("^User clicks on Your Organization$")
+    @Given("^I click on Your Organization$")
     public void iClickOnYourOrganization() throws Throwable {
         yourOrg.clickOnYourOrg();
 
 
     }
 
-    @Then("^User should see the Your Organization section$")
+    @Then("^I should see the Your Organization section$")
     public void iShouldSeeTheYourOrganizationSection() throws Throwable {
         yourOrg.assertYourOrgPage();
 
@@ -71,12 +71,12 @@ public class YourOrganizationSteps {
 //----------------------To remove user from your organization----------------
 
 
-    @When("^User clicks on the X mark for an Automation User1$")
+    @When("^I click on the X mark for an Automation User1$")
     public void iClickOnTheXMark() throws Throwable {
         yourOrg.removeUser("Automation User1");
     }
 
-    @Then("^User Automation User1 should be removed from my Organization$")
+    @Then("^the user Automation User1 should be removed from my Organization$")
     public void theUserShouldBeRemovedFromMyOrganization() throws Throwable {
         yourOrg.verifytheUserisRemoved("Automation User1");
     }

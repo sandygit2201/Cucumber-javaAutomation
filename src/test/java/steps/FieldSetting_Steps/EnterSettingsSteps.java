@@ -6,12 +6,12 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 
 public class EnterSettingsSteps {
-    @Given("^User clicks on Field-Settings$")
+    @Given("^I click on Field-Settings$")
     public void iClickOnFieldSettings() throws Throwable {
         enterSettings.clickFieldSettings();
     }
 
-    @Then("^User should be taken to Settings page$")
+    @Then("^I should be taken to Settings page$")
     public void iShouldBeTakenToSettingsPage() throws Throwable {
         enterSettings.assertSettingsPage();
 

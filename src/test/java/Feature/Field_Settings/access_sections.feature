@@ -21,18 +21,15 @@ Feature: As a ADMIN, user should be able to access all the sections in the setti
 
 #    -------------FIELD DIRECTORY-------------
 
-
   Scenario: Access Your Organization section
     Given I click on Your Organization
     Then I should see the Your Organization section
 
-    # TODO: completing the org you work with section
   Scenario: Access Organization you work with section
     Given I click on Organization you work with
     Then I should see the Organization you work with section
 
     #    -------------NOTIFICATIONS-------------
-
 
   Scenario: Access Notification Settings section
     Given I click on Notification Settings
