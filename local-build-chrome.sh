@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
-mkdir -p /tmp/fieldwebautomation
+
+DOWNLOAD_DIR=/tmp/fieldwebautomation/
+
+mkdir -p $DOWNLOAD_DIR
+chmod -R a+rw $DOWNLOAD_DIR
 docker-compose -f docker-compose-local-chrome.yaml up -d
 echo "Waiting for VNC to initialize..." && sleep 10
 
