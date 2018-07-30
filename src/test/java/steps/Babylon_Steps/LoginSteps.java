@@ -1,7 +1,10 @@
 package steps.Babylon_Steps;
 
+import static org.testng.Assert.assertTrue;
+
+import java.util.regex.Pattern;
+
 import Utils.DriverFactory;
-import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -9,6 +12,7 @@ import cucumber.api.java.en.When;
 
 public class LoginSteps extends DriverFactory {
 
+    private static final Pattern LOGIN_FAILURE = Pattern.compile("^Your login name or password is( still)? incorrect\\.");
 
     @Given("^User navigates to Field$")
     public void user_navigates_to_Field() throws Throwable {
@@ -48,7 +52,11 @@ public class LoginSteps extends DriverFactory {
 
 
     @Then("^User should see the failure message$")
-    public void userShouldSeeTheFailureMessage() throws Throwable {
-        login_page.verifyLoginFailureMessage();
+    public void userShouldSeeTheFailureMessage() {
+        assertTrue(matches(LOGIN_FAILURE, login_page.getLoginFailureMessage()));
+    }
+
+    private boolean matches(Pattern loginFailure, String msg) {
+        return loginFailure.matcher(msg).find();
     }
 }
