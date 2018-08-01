@@ -25,34 +25,5 @@ Feature: As a ADMIN, user should be able to access all the sections in the setti
     Given I click on Your Organization
     Then I should see the Your Organization section
 
-  Scenario: Access Organization you work with section
-    Given I click on Organization you work with
-    Then I should see the Organization you work with section
-
-    #    -------------NOTIFICATIONS-------------
-
-  Scenario: Access Notification Settings section
-    Given I click on Notification Settings
-    Then I should see the Notification Settings section
-
-    #    -------------AREAS-------------
-
-  Scenario: Access Areas and sub-areas section
-    Given I click on Areas and sub-areas
-    Then I should see the Areas and sub-areas section
-
-  Scenario: Access Location details suggestions section
-    Given I click on Location details suggestions
-    Then I should see the Location details suggestions  section
-
-    #    -------------ISSUES-------------
-
-  Scenario: Access Issue types section
-    Given I click on Issue types
-    Then I should see the Issue types section
-
-  Scenario: Access Issue description suggestions section
-    Given I click on Issue description suggestions
-    Then I should see the Issue description suggestions section
 
 
