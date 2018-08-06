@@ -45,9 +45,9 @@ public class SwitchProjectPage extends BasePage {
     public SwitchProjectPage checkForServiceUpdatePage() throws Exception {
 
         try {
+            driver.switchTo().frame("main");
             Thread.sleep(4000);
             if (headingServiceUpdatePage.isDisplayed()) {
-                driver.switchTo().frame("main");
                 waitAndClickElement(checkBoxAgree);
                 waitAndClickElement(buttonSubmit);
             }
