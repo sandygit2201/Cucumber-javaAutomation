@@ -1,12 +1,19 @@
 package pageobjects.IssuesListView_Page;
 
 import java.io.IOException;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
 import pageobjects.BasePage;
+
+import static org.awaitility.Awaitility.*;
+import static org.awaitility.Duration.*;
+import static java.util.concurrent.TimeUnit.*;
+import static org.hamcrest.Matchers.*;
+import static org.junit.Assert.*;
 
 @SuppressWarnings("Duplicates")
 
@@ -61,13 +68,18 @@ public class IssueAssignmentPage extends BasePage {
     }
 
     public IssueAssignmentPage checkIssueNotAssigned() throws Exception {
-        waitUntilWebElementIsVisible(issueNotAssigned);
+//        waitUntilWebElementIsVisible(issueNotAssigned);
+
+        await("Unassigned Issue").atMost(20, TimeUnit.SECONDS)
+                .until(issueNotAssigned::getText, is("Not Assigned"));
         issueNotAssigned.isDisplayed();
         return new IssueAssignmentPage();
     }
 
 
     public IssueAssignmentPage assignToUserInMyOrg() throws Exception {
+        await("Unassigned Issue").atMost(20, TimeUnit.SECONDS)
+                .until(issueNotAssigned::getText, is("Not Assigned"));
         waitAndClickElement(issueNotAssigned);
         waitAndClickElement(assignToUser);
         Thread.sleep(500);
@@ -77,6 +89,8 @@ public class IssueAssignmentPage extends BasePage {
     }
 
     public IssueAssignmentPage assertIssueAssignmentToUser() throws Exception {
+        await("Issue assigned to Automation User").atMost(20, TimeUnit.SECONDS)
+                .until(assertAssignmentToUser::getText, is("Automation User"));
         Assert.assertTrue(assertAssignmentToUser.isDisplayed());
         return new IssueAssignmentPage();
     }
