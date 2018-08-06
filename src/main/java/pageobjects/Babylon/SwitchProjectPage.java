@@ -21,7 +21,7 @@ public class SwitchProjectPage extends BasePage {
     public @FindBy(xpath = "//SPAN[@class='projectChanger-container']/../../../../..//DIV[@id='projectChanger-1879048480']")
     WebElement myProject;
 
-    public @FindBy(css = "div#toolbar_left > h1")
+    public @FindBy(xpath = "//DIV[@class='toolbar clearFloats noprint']//H1[text()='Terms of Service Update']")
     WebElement headingServiceUpdatePage;
 
     public @FindBy(xpath = "//INPUT[@id='acceptTermsOfService']")
