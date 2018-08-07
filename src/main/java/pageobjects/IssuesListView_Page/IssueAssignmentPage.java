@@ -63,14 +63,17 @@ public class IssueAssignmentPage extends BasePage {
 
 
     public IssueAssignmentPage selectIssue() throws Exception {
+        await("Select first Issue").atMost(40, TimeUnit.SECONDS)
+                .until(selectIssue::getText, containsString("Automation Test"));
         waitAndClickElement(selectIssue);
+        Thread.sleep(1000);
         return new IssueAssignmentPage();
     }
 
     public IssueAssignmentPage checkIssueNotAssigned() throws Exception {
-//        waitUntilWebElementIsVisible(issueNotAssigned);
-
-        await("Unassigned Issue").atMost(20, TimeUnit.SECONDS)
+        waitAndClickElement(buttonRefresh);
+        waitUntilPreLoadElementDisappears(By.cssSelector("fm-app > div:nth-child(4) > div > div > div"));
+        await("Unassigned Issue").atMost(60, TimeUnit.SECONDS)
                 .until(issueNotAssigned::getText, is("Not Assigned"));
         issueNotAssigned.isDisplayed();
         return new IssueAssignmentPage();
@@ -78,19 +81,19 @@ public class IssueAssignmentPage extends BasePage {
 
 
     public IssueAssignmentPage assignToUserInMyOrg() throws Exception {
-        await("Unassigned Issue").atMost(20, TimeUnit.SECONDS)
+        await("Unassigned Issue").atMost(40, TimeUnit.SECONDS)
                 .until(issueNotAssigned::getText, is("Not Assigned"));
         waitAndClickElement(issueNotAssigned);
         waitAndClickElement(assignToUser);
-        Thread.sleep(500);
+        Thread.sleep(1000);
         waitAndClickElement(buttonRefresh);
         waitUntilPreLoadElementDisappears(By.cssSelector("fm-app > div:nth-child(4) > div > div > div"));
         return new IssueAssignmentPage();
     }
 
     public IssueAssignmentPage assertIssueAssignmentToUser() throws Exception {
-        await("Issue assigned to Automation User").atMost(20, TimeUnit.SECONDS)
-                .until(assertAssignmentToUser::getText, is("Automation User"));
+        waitAndClickElement(selectIssue);
+        Thread.sleep(1000);
         Assert.assertTrue(assertAssignmentToUser.isDisplayed());
         return new IssueAssignmentPage();
     }

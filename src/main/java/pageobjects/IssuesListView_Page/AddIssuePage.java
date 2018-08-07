@@ -84,7 +84,7 @@ public class AddIssuePage extends BasePage {
     public AddIssuePage clickOnSaveButton() throws Exception {
         Thread.sleep(1000);
         waitAndClickElement(buttonSave);
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         return new AddIssuePage();
     }
 
