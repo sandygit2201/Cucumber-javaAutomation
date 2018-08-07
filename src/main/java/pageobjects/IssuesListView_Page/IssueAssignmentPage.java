@@ -125,6 +125,7 @@ public class IssueAssignmentPage extends BasePage {
     public IssueAssignmentPage assertIssueAssignmentToUserWhileCreatingIssue() throws Exception {
         waitAndClickElement(buttonRefresh);
         waitUntilPreLoadElementDisappears(By.cssSelector("fm-app > div:nth-child(4) > div > div > div"));
+        Thread.sleep(1000);
         waitAndClickElement(selectIssue);
         Assert.assertTrue(assertAssignmentToUser.isDisplayed());
         return new IssueAssignmentPage();
