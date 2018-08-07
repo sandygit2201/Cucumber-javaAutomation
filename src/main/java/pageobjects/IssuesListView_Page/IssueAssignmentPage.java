@@ -63,8 +63,6 @@ public class IssueAssignmentPage extends BasePage {
 
 
     public IssueAssignmentPage selectIssue() throws Exception {
-        await("Select first Issue").atMost(40, TimeUnit.SECONDS)
-                .until(selectIssue::getText, containsString("Automation Test"));
         waitAndClickElement(selectIssue);
         Thread.sleep(1000);
         return new IssueAssignmentPage();
