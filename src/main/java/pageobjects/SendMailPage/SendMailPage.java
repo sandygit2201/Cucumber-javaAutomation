@@ -56,7 +56,7 @@ public class SendMailPage extends BasePage {
     public @FindBy(xpath = "//BUTTON[@type='submit'][text()='Search']")
     WebElement buttonSearch;
 
-    public @FindBy(xpath = "(//SPAN[@ng-non-bindable='true'][text()='Aconex Field Issues for BLOCK E'][text()='Aconex Field Issues for BLOCK E'])[1]")
+    public @FindBy(xpath = "(//TD)[4]//SPAN[@ng-non-bindable='true'][text()='Aconex Field Issues for BLOCK E'][text()='Aconex Field Issues for BLOCK E']")
     WebElement mailSubject;
 
 
@@ -79,6 +79,7 @@ public class SendMailPage extends BasePage {
 
 
     public SendMailPage verifySendButtonEnabled() throws Exception {
+        waitUntilWebElementIsVisible(buttonSendEnabled);
         buttonSendEnabled.isDisplayed();
         return new SendMailPage();
     }
@@ -100,6 +101,7 @@ public class SendMailPage extends BasePage {
     }
 
     public SendMailPage clickOnMailTypeDropDown() throws Exception {
+        Thread.sleep(2000);
         waitAndClickElement(mailTypeDropDown);
         return new SendMailPage();
     }
@@ -164,11 +166,9 @@ public class SendMailPage extends BasePage {
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
-                    mailSubject.isDisplayed();
                     return driver.findElement(By.xpath("(//SPAN[@ng-non-bindable='true'][text()='Aconex Field Issues for BLOCK E'][text()='Aconex Field Issues for BLOCK E'])[1]"));
                 }
         );
-        org.testng.Assert.assertEquals(mailSubject.getText(), "Aconex Field Issues for BLOCK E");
         return new SendMailPage();
     }
 
