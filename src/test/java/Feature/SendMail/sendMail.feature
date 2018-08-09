@@ -31,7 +31,6 @@ Feature: User should be able to send Issues report though mail
   Scenario: User should see the sent mail in Mail module
     Given User clicks on Mail-Sent module
     Then the user should land in the Mail module
-    And the user waits for Ten minutes
     And the user selects today from the date column
     And the user clicks the Search button
     Then the user should see the mail with subject: Aconex Field Issues for BLOCK E

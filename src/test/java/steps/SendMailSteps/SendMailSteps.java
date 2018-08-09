@@ -70,11 +70,6 @@ public class SendMailSteps {
         sendMail.assertMailModule();
     }
 
-    @And("^the user waits for Ten minutes$")
-    public void theUserWaitsForMinutes() throws Throwable {
-        sendMail.waitForSometime();
-    }
-
     @And("^the user selects today from the date column$")
     public void theUserSortsTheDateFromRecentToOld() throws Throwable {
         sendMail.selectDateToToday();

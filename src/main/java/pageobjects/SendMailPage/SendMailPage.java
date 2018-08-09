@@ -1,9 +1,14 @@
 package pageobjects.SendMailPage;
 
 import java.io.IOException;
+import java.time.Duration;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.FluentWait;
 import pageobjects.BasePage;
 
 
@@ -54,8 +59,6 @@ public class SendMailPage extends BasePage {
     public @FindBy(xpath = "(//SPAN[@ng-non-bindable='true'][text()='Aconex Field Issues for BLOCK E'][text()='Aconex Field Issues for BLOCK E'])[1]")
     WebElement mailSubject;
 
-    public @FindBy(css = "tbody#rowPerMailTableBody tr:nth-child(1) > td:nth-child(5) > span")
-    WebElement mailDate;
 
     public @FindBy(css = "tbody#rowPerMailTableBody tr:nth-child(1) > td:nth-child(6) > span")
     WebElement fromUser;
@@ -136,10 +139,6 @@ public class SendMailPage extends BasePage {
         return new SendMailPage();
     }
 
-    public SendMailPage waitForSometime() throws Exception {
-        return new SendMailPage();
-    }
-
 
     public SendMailPage selectDateToToday() throws Exception {
         waitAndClickElement(dropdownDate);
@@ -154,6 +153,21 @@ public class SendMailPage extends BasePage {
     }
 
     public SendMailPage assertMailSubject() throws Exception {
+        FluentWait<WebDriver> wait = new FluentWait<WebDriver>(driver)
+                .withTimeout(Duration.ofMinutes(1))
+                .pollingEvery(Duration.ofSeconds(15))
+                .ignoring(NoSuchElementException.class);
+
+        WebElement element = wait.until(driver -> {
+                    try {
+                        waitAndClickElement(buttonSearch);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    mailSubject.isDisplayed();
+                    return driver.findElement(By.xpath("(//SPAN[@ng-non-bindable='true'][text()='Aconex Field Issues for BLOCK E'][text()='Aconex Field Issues for BLOCK E'])[1]"));
+                }
+        );
         org.testng.Assert.assertEquals(mailSubject.getText(), "Aconex Field Issues for BLOCK E");
         return new SendMailPage();
     }
