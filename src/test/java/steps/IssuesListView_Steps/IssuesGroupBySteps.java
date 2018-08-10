@@ -9,12 +9,12 @@ import static Utils.DriverFactory.issuesGroupBy;
 
 public class IssuesGroupBySteps {
 
-    @Given("^I click on Group by option$")
+    @Given("^User click on Group by option$")
     public void iClickOnGroupByOption() throws Throwable {
         issuesGroupBy.clickGroupBy();
     }
 
-    @And("^I select Location$")
+    @And("^User select Location$")
     public void iSelectLocation() throws Throwable {
         issuesGroupBy.clickLocation();
     }
