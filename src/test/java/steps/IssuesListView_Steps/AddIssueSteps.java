@@ -26,7 +26,7 @@ public class AddIssueSteps {
         addIssue.iEnterIssueType();
     }
 
-    @And("^I enter the Issue description$")
+    @And("^User enter the Issue description$")
     public void iEnterTheIssueDescription() throws Throwable {
         addIssue.iEnterIssueDescription();
     }
@@ -42,12 +42,12 @@ public class AddIssueSteps {
 
     }
 
-    @And("^I select a location detail$")
+    @And("^User select a location detail$")
     public void iSelectALocationDetail() throws Throwable {
         addIssue.dropdownSelectLocation();
     }
 
-    @When("^I click on Save button$")
+    @When("^User click on Save button$")
     public void iClickOnSaveButton() throws Throwable {
         addIssue.clickOnSaveButton();
     }
@@ -57,7 +57,7 @@ public class AddIssueSteps {
         addIssue.verifyIssueSaved();
     }
 
-    @Then("^I click on Issue type$")
+    @Then("^User click on Issue type$")
     public void iClickOnIssueType() throws Throwable {
         addIssue.clickOnIssueType();
 
@@ -69,23 +69,23 @@ public class AddIssueSteps {
 
     }
 
-    @And("^I select a due date$")
+    @And("^User select a due date$")
     public void iSelectADueDate() throws Throwable {
         addIssue.selectDueDate();
     }
 
-    @And("^I add a location detail$")
+    @And("^User add a location detail$")
     public void iAddALocationDetail() throws Throwable {
         addIssue.addLocation();
     }
 
 
-    @When("^I click on the Cancel button$")
+    @When("^User click on the Cancel button$")
     public void iClickOnTheCancelButton() throws Throwable {
         addIssue.cancelIssueButton();
     }
 
-    @Then("^I should see the Assigned To text$")
+    @Then("^User should see the Assigned To text$")
     public void iShouldSeeTheAssignedToLink() throws Throwable {
         addIssue.checkAssignedTo();
     }

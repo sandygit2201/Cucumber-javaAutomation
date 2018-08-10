@@ -7,55 +7,55 @@ Feature: Add issue
     And User enters a valid password
     When User clicks on the login button
     Then User should be taken to the homepage
-    Given I click on the project list
-    And I select Web automation project
-    And I agree to Terms of Service Update if prompted
-    Then I should be taken to that project
+    Given User click on the project list
+    And User select Web automation project
+    And User agree to Terms of Service Update if prompted
+    Then User should be taken to that project
     When User clicks on Field-Issues
-    Then I should close the FTUX
+    Then User should close the FTUX
     Then User should see the issues page
 
   Scenario: Add an Issues by giving custom values
 
-    Given I click on Add Issue button
-    Then I should see the New Issue pane
-    And I select the Issue type
-    And I enter the Issue description
-    And I add a location detail
+    Given User click on Add Issue button
+    Then User should see the New Issue pane
+    And User select the Issue type
+    And User enter the Issue description
+    And User add a location detail
 
     #Select due date for next month
-    And I select a due date
-    When I click on Save button
+    And User select a due date
+    When User click on Save button
     Then the Issue should be saved
 
   Scenario: Add an Issues by selecting dropdown values
 
-    Given I click on Add Issue button
-    Then I should see the New Issue pane
-    And I select the Issue type
-    And I select a Issue description
-    And I select a location detail
+    Given User click on Add Issue button
+    Then User should see the New Issue pane
+    And User select the Issue type
+    And User select a Issue description
+    And User select a location detail
     #Select due date for next month
-    And I select a due date
-    When I click on Save button
+    And User select a due date
+    When User click on Save button
     Then the Issue should be saved
 
 
   Scenario: Issue type is sorted Alphabetically
 
-    Given I click on Add Issue button
-    Then I should see the New Issue pane
-    Then I click on Issue type
+    Given User click on Add Issue button
+    Then User should see the New Issue pane
+    Then User click on Issue type
     Then Issue types should be displayed alphabetically
 
   Scenario: Cancel should not save the items entered in the add issue pane fields
 
-    Given I click on Add Issue button
-    Then I should see the New Issue pane
-    And I select the Issue type
-    And I select a Issue description
-    When I click on the Cancel button
-    Then I should see the Assigned To text
+    Given User click on Add Issue button
+    Then User should see the New Issue pane
+    And User select the Issue type
+    And User select a Issue description
+    When User click on the Cancel button
+    Then User should see the Assigned To text
 
 
 
