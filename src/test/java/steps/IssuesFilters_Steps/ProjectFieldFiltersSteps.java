@@ -33,7 +33,7 @@ public class ProjectFieldFiltersSteps {
         projectFieldFilter.clickApplyButton();
     }
 
-    @Then("^I should see the loading screen$")
+    @Then("^User should see the loading screen$")
     public void iShouldSeeTheLoadingScreen() throws Throwable {
         projectFieldFilter.assertLoadingScreen();
     }

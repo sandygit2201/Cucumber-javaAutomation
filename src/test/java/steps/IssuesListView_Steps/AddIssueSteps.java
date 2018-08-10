@@ -11,17 +11,17 @@ import static Utils.DriverFactory.addIssue;
 public class AddIssueSteps {
 
 
-    @Given("^I click on Add Issue button$")
+    @Given("^User click on Add Issue button$")
     public void iClickOnAddIssueButton() throws Throwable {
         addIssue.clickOnAddButton();
     }
 
-    @Then("^I should see the New Issue pane$")
+    @Then("^User should see the New Issue pane$")
     public void iShouldSeeTheNewIssuePane() throws Throwable {
         org.testng.Assert.assertEquals("Issues", "Issues");
     }
 
-    @And("^I select the Issue type$")
+    @And("^User select the Issue type$")
     public void iEnterTheIssueType() throws Throwable {
         addIssue.iEnterIssueType();
     }
@@ -36,7 +36,7 @@ public class AddIssueSteps {
         addIssue.dropdownSelectIssueType();
     }
 
-    @And("^I select a Issue description$")
+    @And("^User select a Issue description$")
     public void iSelectAIssueDescription() throws Throwable {
         addIssue.dropdownSelectIssueDescription();
 

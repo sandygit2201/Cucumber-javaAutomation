@@ -9,7 +9,7 @@ import org.openqa.selenium.By;
 
 public class RefreshPageSteps extends DriverFactory {
 
-    @Given("^I know the Issue count in Issues page$")
+    @Given("^User know the Issue count in Issues page$")
     public void iKnowTheIssueCountInIssuesPage() throws Throwable {
         refreshButton.iKnowTheIssueCountInIssuesPage();
     }
@@ -25,12 +25,12 @@ public class RefreshPageSteps extends DriverFactory {
     }
 
 
-    @And("^I click on Save button in Issues pane$")
+    @And("^User click on Save button in Issues pane$")
     public void iClickOnSaveButtonInIssuesPane() throws Throwable {
             refreshButton.iClickOnSaveButtonInIssuesPane();
     }
 
-    @Then("^I should see Issue number get updated$")
+    @Then("^User should see Issue number get updated$")
     public void iShouldSeeIssueNumberGetUpdated() throws Throwable {
         refreshButton.iShouldSeeIssueNumberUpdatedBy1();
     }
