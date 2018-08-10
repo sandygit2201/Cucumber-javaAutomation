@@ -71,7 +71,7 @@ public class YourOrganizationSteps {
 //----------------------To remove user from your organization----------------
 
 
-    @When("^I click on the X mark for an Automation User1$")
+    @When("^User click on the X mark for an Automation User1$")
     public void iClickOnTheXMark() throws Throwable {
         yourOrg.removeUser("Automation User1");
     }

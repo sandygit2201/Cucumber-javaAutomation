@@ -6,17 +6,17 @@ Feature: User should be able to interact in Your Organization section
     And User enters a valid password
     When User clicks on the login button
     Then User should be taken to the homepage
-    Given I click on the project list
-    And I select Web automation project
-    And I agree to Terms of Service Update if prompted
-    Then I should be taken to that project
-    Given I click on Field-Settings
-    Then I should be taken to Settings page
+    Given User click on the project list
+    And User select Web automation project
+    And User agree to Terms of Service Update if prompted
+    Then User should be taken to that project
+    Given User click on Field-Settings
+    Then User should be taken to Settings page
 
 
   Scenario: : Accessing Your Organization section
-    Given I click on Your Organization
-    Then I should see the Your Organization section
+    Given User click on Your Organization
+    Then User should see the Your Organization section
 
   Scenario: Adding people into my Organization
     Given User types Automation User1 in the Add more people search bar
@@ -34,7 +34,7 @@ Feature: User should be able to interact in Your Organization section
 
   Scenario: Removing people from my Organization
 
-    Given I click on Your Organization
-    When I click on the X mark for an Automation User1
+    Given User click on Your Organization
+    When User click on the X mark for an Automation User1
     Then the user Automation User1 should be removed from my Organization
 
