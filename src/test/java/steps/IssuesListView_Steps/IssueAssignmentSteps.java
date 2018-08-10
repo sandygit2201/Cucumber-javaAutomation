@@ -8,7 +8,7 @@ import cucumber.api.java.en.When;
 import static Utils.DriverFactory.issueAssignment;
 
 public class IssueAssignmentSteps {
-    @Given("^I select an Issue$")
+    @Given("^User select an Issue$")
     public void iSelectAnIssue() throws Throwable {
         issueAssignment.selectIssue();
     }
@@ -18,7 +18,7 @@ public class IssueAssignmentSteps {
         issueAssignment.checkIssueNotAssigned();
     }
 
-    @And("^I click on it and select Automation User from my org$")
+    @And("^User click on it and select Automation User from my org$")
     public void iClickOnItAndSelectAnUserFromMyOrg() throws Throwable {
         issueAssignment.assignToUserInMyOrg();
     }
@@ -28,7 +28,7 @@ public class IssueAssignmentSteps {
         issueAssignment.assertIssueAssignmentToUser();
     }
 
-    @And("^I click on it and select Majestic Builders$")
+    @And("^User click on it and select Majestic Builders$")
     public void iClickOnItAndSelectAnOrg() throws Throwable {
         issueAssignment.assignToOrg();
     }
@@ -38,12 +38,12 @@ public class IssueAssignmentSteps {
         issueAssignment.assertIssueAssignmentToOrg();
     }
 
-    @And("^I click on Assign to field$")
+    @And("^User click on Assign to field$")
     public void iClickOnAssignToField() throws Throwable {
         issueAssignment.clickAssignTo();
     }
 
-    @And("^I select Automation User from the list$")
+    @And("^User select Automation User from the list$")
     public void iSelectAUserFromTheList() throws Throwable {
         issueAssignment.assignToUserWhenAddingIssue();
     }
@@ -59,7 +59,7 @@ public class IssueAssignmentSteps {
         issueAssignment.assertIssueAssignmentToUserWhileCreatingIssue();
     }
 
-    @And("^I select Majestic Builders from the list$")
+    @And("^User select Majestic Builders from the list$")
     public void iSelectAOrgFromTheList() throws Throwable {
         issueAssignment.assignToOrgWhenAddingIssue();
     }
