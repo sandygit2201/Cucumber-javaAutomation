@@ -8,8 +8,8 @@ Feature: Select Automation Project
     Then User should be taken to the homepage
 
   Scenario: User changes the project to "Web automation"
-    Given I click on the project list
-    And I select Web automation project
-    And I agree to Terms of Service Update if prompted
-    Then I should be taken to that project
+    Given User click on the project list
+    And User select Web automation project
+    And User agree to Terms of Service Update if prompted
+    Then User should be taken to that project
 
