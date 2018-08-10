@@ -7,12 +7,12 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
 public class ExportInspectionSteps {
-    @Given("^I select the first checklist$")
+    @Given("^User select the first checklist$")
     public void iSelectTheFirstChecklist() throws Throwable {
         exportInspections.selectChecklist();
     }
 
-    @When("^I click on the Export button$")
+    @When("^User click on the Export button$")
     public void iClickOnTheExportButton() throws Throwable {
         exportInspections.clickExport();
 

@@ -14,7 +14,7 @@ public class select_inspection_steps {
 
     }
 
-    @Then("^I should close the CL area selector$")
+    @Then("^User should close the CL area selector$")
     public void iShouldCloseTheCLAreaSelector() throws Throwable {
         selectInspection.closeArea();
     }
