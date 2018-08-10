@@ -8,7 +8,7 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
 public class SendMailSteps {
-    @And("^I click on BLOCK E area$")
+    @And("^User click on BLOCK E area$")
     public void iClickOnBLOCKEArea() throws Throwable {
         sendMail.selectArea();
     }
@@ -18,12 +18,12 @@ public class SendMailSteps {
         sendMail.verifySendButtonEnabled();
     }
 
-    @When("^I click on Send Button$")
+    @When("^User click on Send Button$")
     public void iClickOnSendButton() throws Throwable {
         sendMail.clickSendButtonInIssuesPage();
     }
 
-    @Then("^I should see the Send mail modal$")
+    @Then("^User should see the Send mail modal$")
     public void iShouldSeeTheSendMailModal() throws Throwable {
         sendMail.verifySendMailModalDisplayed();
     }
@@ -33,12 +33,12 @@ public class SendMailSteps {
         sendMail.verifySendButtonInModalDisabled();
     }
 
-    @And("^I click on Mail type drop down$")
+    @And("^User click on Mail type drop down$")
     public void iClickOnMailTypeDropDown() throws Throwable {
         sendMail.clickOnMailTypeDropDown();
     }
 
-    @And("^I select Variation mail type$")
+    @And("^User select Variation mail type$")
     public void iSelectVariationMailType() throws Throwable {
         sendMail.clickOnVariationMailType();
     }
@@ -48,7 +48,7 @@ public class SendMailSteps {
         sendMail.verifySendButtonInModalEnabled();
     }
 
-    @And("^when I click on Send button$")
+    @And("^User click on Send button$")
     public void whenIClickOnSendButton() throws Throwable {
         sendMail.clickSendButtonInModal();
 
@@ -65,22 +65,22 @@ public class SendMailSteps {
         sendMail.navigateToMailSentFolder();
     }
 
-    @Then("^the user should land in the Mail module$")
+    @Then("^User should land in the Mail module$")
     public void theUserShouldLandInTheMailModule() throws Throwable {
         sendMail.assertMailModule();
     }
 
-    @And("^the user selects today from the date column$")
+    @And("^User selects today from the date column$")
     public void theUserSortsTheDateFromRecentToOld() throws Throwable {
         sendMail.selectDateToToday();
     }
 
-    @And("^the user clicks the Search button$")
+    @And("^User clicks the Search button$")
     public void theUserClicksTheSearchButton() throws Throwable {
         sendMail.clickSearchButton();
     }
 
-    @Then("^the user should see the mail with subject: Aconex Field Issues for BLOCK E$")
+    @Then("^User should see the mail with subject: Aconex Field Issues for BLOCK E$")
     public void theUserShouldSeeTheMailWithSubjectAconexFieldIssuesForBLOCKE() throws Throwable {
         sendMail.assertMailSubject();
     }
