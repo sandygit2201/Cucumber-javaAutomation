@@ -13,12 +13,12 @@ public class AreaSelectSteps {
         selectArea.assertAreaDropDown();
     }
 
-    @And("^I click on BLOCK A area$")
+    @And("^User click on BLOCK A area$")
     public void iClickOnAnArea() throws Throwable {
         selectArea.selectArea();
     }
 
-    @Then("^I should be taken to that area$")
+    @Then("^User should be taken to that area$")
     public void iShouldBeTakenToThatArea() throws Throwable {
         selectArea.AssertUserSelectedArea();
     }

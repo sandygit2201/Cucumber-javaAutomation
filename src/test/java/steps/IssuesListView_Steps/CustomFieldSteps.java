@@ -19,7 +19,7 @@ public class CustomFieldSteps extends DriverFactory {
         selectCustomField.clickOnFirstDropdownValue();
     }
 
-    @And("^I click on Refresh button$")
+    @And("^User click on Refresh button$")
     public void iClickOnRefreshButton() throws Throwable {
         selectCustomField.clickRefresh();
     }
@@ -30,7 +30,7 @@ public class CustomFieldSteps extends DriverFactory {
     }
 
 
-    @When("^user clicks on the first Issue$")
+    @When("^User clicks on the first Issue$")
     public void userClicksOnTheFirstIssue() throws Throwable {
         selectCustomField.clickOnFirstIssue();
     }
