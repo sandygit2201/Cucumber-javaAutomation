@@ -6,28 +6,27 @@ Feature: User should be able to create a checklist
     And User enters a valid password
     When User clicks on the login button
     Then User should be taken to the homepage
-      Given I click on the project list
-      And I select Web automation project
-      And I agree to Terms of Service Update if prompted
-      Then I should be taken to that project
-    Given I click on Field-Settings
-    Then I should be taken to Settings page
-#      Run browser in full screen
-    Given I click on Templates
+      Given User click on the project list
+      And User select Web automation project
+      And User agree to Terms of Service Update if prompted
+      Then User should be taken to that project
+    Given User click on Field-Settings
+    Then User should be taken to Settings page
+    Given User click on Templates
 #      Then I should see the FTUX and close it
-      Then I should see the Templates section
+      Then User should see the Templates section
 
       Scenario: Create a valid checklist
-        Given I click on Add Template button
-        And I select checklist
-        Then I should see the checklist create page
-        And I add the title
-        And I enter the description
-        Then I select a Category
-        And I enter a item
-        And I select a type
-        And I click on Add button
-        When I click on Publish button
+        Given User click on Add Template button
+        And User select checklist
+        Then User should see the checklist create page
+        And User add the title
+        And User enter the description
+        Then User select a Category
+        And User enter a item
+        And User select a type
+        And User click on Add button
+        When User click on Publish button
         Then the checklist should be created
 
 
