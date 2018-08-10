@@ -174,6 +174,7 @@ public class SendMailPage extends BasePage {
 
 
     public SendMailPage assertMailFromUser() throws Exception {
+        waitUntilWebElementIsVisible(fromUser);
         org.testng.Assert.assertEquals(fromUser.getText(), "Maurice Jenner");
         return new SendMailPage();
     }

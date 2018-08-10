@@ -1,4 +1,3 @@
-@Test
 Feature: User should be able to interact in Your Organization section
 
   Background:

@@ -11,7 +11,6 @@ Feature: User should be able to send Issues report though mail
     And I agree to Terms of Service Update if prompted
     Then I should be taken to that project
 
-
   Scenario: User should be able to send mail when there are assigned issues in an area
     When User clicks on Field-Issues
     Then I should close the FTUX
