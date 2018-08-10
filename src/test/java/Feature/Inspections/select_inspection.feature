@@ -7,14 +7,14 @@ Feature: Access Field module inside Aconex
     And User enters a valid password
     When User clicks on the login button
     Then User should be taken to the homepage
-    Given I click on the project list
-    And I select Web automation project
-    And I agree to Terms of Service Update if prompted
-    Then I should be taken to that project
+    Given User click on the project list
+    And User select Web automation project
+    And User agree to Terms of Service Update if prompted
+    Then User should be taken to that project
 
 
   Scenario: : Enter Field-Inspections
 
     Given User clicks on Field-Inspection
-    Then I should close the CL area selector
+    Then User should close the CL area selector
     Then User should see the Inspection page
