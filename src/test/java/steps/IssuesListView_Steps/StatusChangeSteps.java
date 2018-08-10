@@ -14,20 +14,20 @@ public class StatusChangeSteps {
         statusChange.closeArea();
     }
 
-    @Given("^I find an Open Issue$")
+    @Given("^User find an Open Issue$")
     public void iFindAnOpenIssue() throws Throwable {
         Assert.assertEquals("Open", "Open");
 
     }
 
-    @When("^I tap on the status$")
+    @When("^User tap on the status$")
     public void iTapOnTheStatus() throws Throwable {
         statusChange.clickOnStatus();
 
 
     }
 
-    @When("^I click on RTI$")
+    @When("^User click on RTI$")
     public void iClickOnRTI() throws Throwable {
         statusChange.clickOnReadyToInspect();
     }
