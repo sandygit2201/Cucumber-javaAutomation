@@ -31,7 +31,7 @@ public class AddIssueSteps {
         addIssue.iEnterIssueDescription();
     }
 
-    @And("^I select a Issue type$")
+    @And("^User select a Issue type$")
     public void iSelectAIssueType() throws Throwable {
         addIssue.dropdownSelectIssueType();
     }
