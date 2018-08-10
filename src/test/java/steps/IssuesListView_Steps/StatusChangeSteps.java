@@ -9,7 +9,7 @@ import static Utils.DriverFactory.statusChange;
 
 public class StatusChangeSteps {
 
-    @Then("^I should close the area selector$")
+    @Then("^User should close the area selector$")
     public void iShouldCloseTheAreaSelector() throws Throwable {
         statusChange.closeArea();
     }

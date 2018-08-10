@@ -36,7 +36,7 @@ public class AccessFieldSteps extends DriverFactory {
         accessField.assertIssuesPage();
     }
 
-    @Then("^I should close the FTUX$")
+    @And("^User should close the FTUX$")
     public void iShouldCloseTheFTUX() throws Throwable {
         accessField.closeFTUX();
     }
