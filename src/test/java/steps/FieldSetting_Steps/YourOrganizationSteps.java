@@ -9,14 +9,14 @@ import cucumber.api.java.en.When;
 import static Utils.DriverFactory.yourOrg;
 
 public class YourOrganizationSteps {
-    @Given("^I click on Your Organization$")
+    @Given("^User click on Your Organization$")
     public void iClickOnYourOrganization() throws Throwable {
         yourOrg.clickOnYourOrg();
 
 
     }
 
-    @Then("^I should see the Your Organization section$")
+    @Then("^User should see the Your Organization section$")
     public void iShouldSeeTheYourOrganizationSection() throws Throwable {
         yourOrg.assertYourOrgPage();
 

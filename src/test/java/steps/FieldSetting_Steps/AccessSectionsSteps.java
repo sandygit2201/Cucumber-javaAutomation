@@ -7,7 +7,7 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 
 public class AccessSectionsSteps {
-    @Given("^I click on Templates$")
+    @Given("^User click on Templates$")
     public void iClickOnTemplates() throws Throwable {
         accessSections.clickTemplates();
     }
@@ -17,7 +17,7 @@ public class AccessSectionsSteps {
 accessSections.closeCLFTUX ();
     }
 
-    @Then("^I should see the Templates section$")
+    @Then("^User should see the Templates section$")
     public void iShouldSeeTheTemplatesSection() throws Throwable {
         accessSections.assertTemplatePage();
 

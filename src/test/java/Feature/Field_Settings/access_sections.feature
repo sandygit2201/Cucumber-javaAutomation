@@ -7,23 +7,22 @@ Feature: As a ADMIN, user should be able to access all the sections in the setti
     And User enters a valid password
     When User clicks on the login button
     Then User should be taken to the homepage
-    Given I click on Field-Settings
-    Then I should be taken to Settings page
+    Given User click on Field-Settings
+    Then User should be taken to Settings page
 
 
     #    -------------INSPECTIONS-------------
-  @sanity
+
   Scenario: Access Template section
-  #      Run browser in full screen
-    Given I click on Templates
-    Then I should see the Templates section
+    Given User click on Templates
+    Then User should see the Templates section
 
 
 #    -------------FIELD DIRECTORY-------------
 
   Scenario: Access Your Organization section
-    Given I click on Your Organization
-    Then I should see the Your Organization section
+    Given User click on Your Organization
+    Then User should see the Your Organization section
 
 
 
