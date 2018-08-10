@@ -9,12 +9,12 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
 public class CustomFieldSteps extends DriverFactory {
-    @And("^I click on the first custom field$")
+    @And("^User click on the first custom field$")
     public void iClickOnTheFirstCustomField() throws Throwable {
         selectCustomField.clickOnFirstCustomField();
     }
 
-    @And("^I select the value as High$")
+    @And("^User select the value as High$")
     public void iSelectTheValueAsHigh() throws Throwable {
         selectCustomField.clickOnFirstDropdownValue();
     }
@@ -29,18 +29,12 @@ public class CustomFieldSteps extends DriverFactory {
         selectCustomField.assertCustomFieldWhileCreatingIssue();
     }
 
-
-    @When("^User clicks on the first Issue$")
-    public void userClicksOnTheFirstIssue() throws Throwable {
-        selectCustomField.clickOnFirstIssue();
-    }
-
-    @Given("^I click on Extra Details Collapsible header$")
+    @Given("^User click on Extra Details Collapsible header$")
     public void iClickOnExtraDetailsCollapsibleHeader() throws Throwable {
         selectCustomField.clickExtraDetailCollapseHeader();
     }
 
-    @When("^I select value High from dropdown$")
+    @When("^User select value High from dropdown$")
     public void iSelectValueHighFromDropdown() throws Throwable {
         selectCustomField.selectHighValueFromDropdown();
     }
