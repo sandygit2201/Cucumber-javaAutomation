@@ -73,7 +73,8 @@ public class ProjectFieldFiltersPage extends BasePage {
     }
 
     public ProjectFieldFiltersPage assertProjectFieldFilterResult() throws Exception {
-        List<WebElement> lstItems = driver.findElements(By.xpath("//DIV[@class='issues-list-item clearfix']/self::DIV"));
+        By issuesDisplayed = By.xpath("(//DIV[@class='issues-list-item clearfix'])[position() < 11]");
+        List<WebElement> lstItems = driver.findElements(issuesDisplayed);
         for (WebElement eleItem : lstItems) {
             waitAndClickElement(eleItem);
             waitAndClickElement(extraDetailsSection);
