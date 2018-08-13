@@ -36,7 +36,7 @@ public class CustomFieldPage extends BasePage {
     WebElement clickFirstIssue;
 
 
-    public @FindBy(xpath = "//SPAN[@class='ng-binding ng-scope'][text()='Extra Details (1)']")
+    public @FindBy(xpath = "//SPAN[@class='ng-binding ng-scope'][text()='Extra Details (1) ']")
     WebElement extraDetailCollapse;
 
     public @FindBy(xpath = "//SPAN[@class='ng-binding'][text()='Select...']")
