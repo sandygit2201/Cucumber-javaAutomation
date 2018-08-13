@@ -151,6 +151,7 @@ public class SendMailPage extends BasePage {
 
     public SendMailPage clickSearchButton() throws Exception {
         waitAndClickElement(buttonSearch);
+        Thread.sleep(1000);
         return new SendMailPage();
     }
 
@@ -166,7 +167,7 @@ public class SendMailPage extends BasePage {
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
-                    return driver.findElement(By.xpath("(//SPAN[@ng-non-bindable='true'][text()='Aconex Field Issues for BLOCK E'][text()='Aconex Field Issues for BLOCK E'])[1]"));
+                    return driver.findElement(By.xpath("(//TD)[4]//SPAN[@ng-non-bindable='true'][text()='Aconex Field Issues for BLOCK E'][text()='Aconex Field Issues for BLOCK E']"));
                 }
         );
         return new SendMailPage();
