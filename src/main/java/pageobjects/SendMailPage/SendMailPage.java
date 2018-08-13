@@ -21,7 +21,7 @@ public class SendMailPage extends BasePage {
     public @FindBy(xpath = "(//A[@ng-href=''][text()='BLOCK E'][text()='BLOCK E'])[1]")
     WebElement areaBLOCKE;
 
-    public @FindBy(xpath = "//BUTTON[@class='secondary send auiButton ng-binding ng-scope'][text()='Send']")
+    public @FindBy(xpath = "//BUTTON[@class='send auiButton ng-binding ng-scope'][text()='Send']")
     WebElement buttonSendEnabled;
 
     public @FindBy(xpath = "/html/body/div[1]/div/div/div[3]/div[2]/button[2]")
