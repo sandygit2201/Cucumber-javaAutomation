@@ -49,7 +49,7 @@ public class AddIssuePage extends BasePage {
     public @FindBy(xpath = "//A[@href=''][text()='Automation - East']")
     WebElement dropdownLocation;
 
-    public @FindBy(xpath = "//*[@class=\"secondary ng-binding\"]")
+    public @FindBy(xpath = "//BUTTON[@class='auiButton cancel-button ng-binding'][text()='Cancel']")
     WebElement cancelIssue;
 
     public @FindBy(xpath = "//*[@class=\"title assigned-to-title ng-binding\"]")
