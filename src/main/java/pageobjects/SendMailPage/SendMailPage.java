@@ -39,10 +39,8 @@ public class SendMailPage extends BasePage {
     public @FindBy(css = "div.right > button[type=\"button\"].primary.ng-binding")
     WebElement buttonMailSendEnabled;
 
-
     public @FindBy(xpath = "//DIV[@class='auiToolbar-header ng-binding'][text()='Issues']")
     WebElement assertSendModalDisappear;
-
 
     public @FindBy(xpath = "//DIV[@class='uiButton-label'][text()='Mail']")
     WebElement mailModule;
@@ -58,8 +56,7 @@ public class SendMailPage extends BasePage {
 
     public @FindBy(xpath = "(//TD)[4]//SPAN[@ng-non-bindable='true'][text()='Aconex Field Issues for BLOCK E'][text()='Aconex Field Issues for BLOCK E']")
     WebElement mailSubject;
-
-
+    
     public @FindBy(css = "tbody#rowPerMailTableBody tr:nth-child(1) > td:nth-child(6) > span")
     WebElement fromUser;
 
@@ -71,6 +68,7 @@ public class SendMailPage extends BasePage {
 
     public @FindBy(xpath = "//LI[@ng-repeat='option in qualifierList'][text()='today']")
     WebElement todayDate;
+
 
     public SendMailPage selectArea() throws Exception {
         waitAndClickElement(areaBLOCKE);
@@ -145,13 +143,21 @@ public class SendMailPage extends BasePage {
     public SendMailPage selectDateToToday() throws Exception {
         waitAndClickElement(dropdownDate);
         waitAndClickElement(todayDate);
+        Thread.sleep(500);
         return new SendMailPage();
     }
 
 
     public SendMailPage clickSearchButton() throws Exception {
-        waitAndClickElement(buttonSearch);
-        Thread.sleep(1000);
+        try {
+            if (driver.findElement(By.xpath("//DIV[@class='well no-results-container']")).isDisplayed()) {
+                waitAndClickElement(buttonSearch);
+                Thread.sleep(1000);
+            }
+        } catch (Exception e) {
+            System.out.println("Search result is displayed ");
+        }
+
         return new SendMailPage();
     }
 
