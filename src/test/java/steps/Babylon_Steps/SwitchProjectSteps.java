@@ -18,7 +18,7 @@ public class SwitchProjectSteps {
     }
 
     @And("^User agree to Terms of Service Update if prompted$")
-    public void userAgressToTermsOfServiceUpdateIfPrompted() throws Throwable {
+    public void userAgreesToTermsOfServiceUpdateIfPrompted() throws Throwable {
         switchProject.checkForServiceUpdatePage();
 
     }
