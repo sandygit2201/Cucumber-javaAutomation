@@ -5,7 +5,7 @@ import cucumber.api.java.en.Then;
 
 import static Utils.DriverFactory.selectInspection;
 
-public class select_inspection_steps {
+public class SelectInspectionSteps {
 
     @Given("^User clicks on Field-Inspection$")
     public void userClicksOnFieldInspection() throws Throwable {

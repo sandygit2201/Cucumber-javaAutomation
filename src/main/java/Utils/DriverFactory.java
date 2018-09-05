@@ -55,7 +55,7 @@ public class DriverFactory {
 
 
     public static WebDriver driver;
-    public static LoginPage login_page;
+    public static LoginPage loginPage;
     public static AddIssuePage addIssue;
     public static AccessFieldPage accessField;
     public static CommentsPage addCommentsPage;
@@ -153,7 +153,7 @@ public class DriverFactory {
     }
 
     private void setupPages() {
-        login_page = PageFactory.initElements(driver, LoginPage.class);
+        loginPage = PageFactory.initElements(driver, LoginPage.class);
         accessField = PageFactory.initElements(driver, AccessFieldPage.class);
         addIssue = PageFactory.initElements(driver, AddIssuePage.class);
         addCommentsPage = PageFactory.initElements(driver, CommentsPage.class);

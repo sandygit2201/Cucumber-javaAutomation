@@ -15,45 +15,45 @@ public class LoginSteps extends DriverFactory {
     private static final Pattern LOGIN_FAILURE = Pattern.compile("^Your login name or password is( still)? incorrect\\.");
 
     @Given("^User navigates to Field$")
-    public void user_navigates_to_Field() throws Throwable {
-        login_page.getLoginPage();
+    public void userNavigatesToField() throws Throwable {
+        loginPage.getLoginPage();
     }
 
 
     @And("^User enters a \"([^\"]*)\" username$")
     public void userEntersAUsername(String userName) throws Throwable {
-        login_page.enterUserName(userName);
+        loginPage.enterUserName(userName);
 
     }
 
     @And("^User enters a \"([^\"]*)\" password$")
     public void userEntersAPassword(String password) throws Throwable {
-        login_page.enterPassword(password);
+        loginPage.enterPassword(password);
 
     }
 
     @When("^User clicks on the login button$")
-    public void user_clicks_on_the_login_button() throws Throwable {
-        login_page.clickLoginButton();
+    public void userClicksOnTheLoginButton() throws Throwable {
+        loginPage.clickLoginButton();
 
     }
 
 
     @Then("^User should see the \"([^\"]*)\"$")
     public void userShouldSeeThe(String arg0) throws Throwable {
-        login_page.assertLoginSuccessMessage(arg0);
+        loginPage.assertLoginSuccessMessage(arg0);
     }
 
 
     @Then("^User should see the failure \"(.*)\"$")
-    public void user_should_see_the_failure(String arg1) throws Throwable {
-        login_page.assertLoginFailureMessage(arg1);
+    public void userShouldSeeTheFailure(String arg1) throws Throwable {
+        loginPage.assertLoginFailureMessage(arg1);
     }
 
 
     @Then("^User should see the failure message$")
     public void userShouldSeeTheFailureMessage() {
-        assertTrue(matches(LOGIN_FAILURE, login_page.getLoginFailureMessage()));
+        assertTrue(matches(LOGIN_FAILURE, loginPage.getLoginFailureMessage()));
     }
 
     private boolean matches(Pattern loginFailure, String msg) {
