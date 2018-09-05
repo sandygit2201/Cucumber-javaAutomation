@@ -1,6 +1,5 @@
 package steps.IssuesListView_Steps;
 
-import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -28,12 +27,12 @@ public class IssuesSearchSteps {
 
     @Given("^there is no text entered in the search field$")
     public void thereIsNoTextEnteredInTheSearchField() throws Throwable {
-        issuesSearch.AssertSearchFieldIsBlank();
+        issuesSearch.assertSearchFieldIsBlank();
     }
 
     @Then("^the search button should be enabled$")
     public void theSearchButtonShouldBeEnabled() throws Throwable {
-        issuesSearch.AssertSearchButtonIsEnabled();
+        issuesSearch.assertSearchButtonIsEnabled();
     }
 //
 //    @Then("^User should be able to see searched item in the issues list view$")

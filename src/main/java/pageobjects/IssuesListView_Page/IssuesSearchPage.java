@@ -36,12 +36,12 @@ public class IssuesSearchPage extends BasePage {
     }
 
 
-    public IssuesSearchPage AssertSearchFieldIsBlank() throws Exception {
+    public IssuesSearchPage assertSearchFieldIsBlank() throws Exception {
         issuesSearchField.isDisplayed();
         return new IssuesSearchPage();
     }
 
-    public IssuesSearchPage AssertSearchButtonIsEnabled() throws Exception {
+    public IssuesSearchPage assertSearchButtonIsEnabled() throws Exception {
         buttonSearchEnabled.isDisplayed();
         return new IssuesSearchPage();
     }
