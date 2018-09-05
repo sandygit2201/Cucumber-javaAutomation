@@ -20,7 +20,7 @@ public class RefreshPageSteps extends DriverFactory {
     }
 
     @And("^Issue should be saved$")
-    public void issue_should_be_saved() throws Throwable {
+    public void issueShouldBeSaved() throws Throwable {
         refreshButton.issueShouldBeSaved();
     }
 
