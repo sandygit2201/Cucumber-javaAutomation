@@ -36,13 +36,13 @@ public class EventLogPage extends BasePage {
         return new EventLogPage();
     }
 
-    public EventLogPage AssertEventlogModal() throws InterruptedException, IOException {
+    public EventLogPage assertEventlogModal() throws InterruptedException, IOException {
         eventlogModal.isDisplayed();
         return new EventLogPage();
 
     }
 
-    public EventLogPage AssertCapturedUser() throws InterruptedException, IOException {
+    public EventLogPage assertCapturedUser() throws InterruptedException, IOException {
         waitUntilWebElementIsVisible(capturedUser);
         org.testng.Assert.assertEquals(capturedUser.getText(), "Maurice Jenner\nConglomo Corporation");
         return new EventLogPage();
