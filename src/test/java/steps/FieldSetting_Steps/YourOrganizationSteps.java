@@ -24,7 +24,7 @@ public class YourOrganizationSteps {
 
     //----------------------To add user from your organization----------------
     @Given("^User types Automation User1 in the Add more people search bar$")
-    public void userTypesNewUser_AUtomationInTheAddMorePeopleSearchBar() throws Throwable {
+    public void userTypesNewUserAUtomationInTheAddMorePeopleSearchBar() throws Throwable {
         yourOrg.clickOnAddMorePeople();
     }
 
