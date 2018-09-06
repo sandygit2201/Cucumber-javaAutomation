@@ -48,9 +48,9 @@ public class ExportInspectionsPage extends BasePage {
     }
 
 
-    public boolean verifyPDFContent(String SearchText) throws IOException {
+    public boolean verifyPDFContent(String searchText) throws IOException {
 
-        return verifyPdfContent(SearchText);
+        return verifyPdfContent(searchText);
     }
 
 
