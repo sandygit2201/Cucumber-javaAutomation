@@ -21,10 +21,10 @@ public class AreaSelectPage extends BasePage {
     WebElement assertAreaDropDown;
 
     public @FindBy(xpath = "(//A[@class='ellipsis-text ng-binding'][text()='BLOCK A'][text()='BLOCK A'])[2]")
-    WebElement AreaInNewIssuePane;
+    WebElement areaInNewIssuePane;
 
     public @FindBy(xpath = "(//A[@class='ellipsis-text ng-binding'][text()='BLOCK A'][text()='BLOCK A'])[1]")
-    WebElement AreaSelectedByUser;
+    WebElement areaSelectedByUser;
 
 
     public AreaSelectPage assertAreaDropDown() throws Exception {
@@ -38,14 +38,14 @@ public class AreaSelectPage extends BasePage {
         return new AreaSelectPage();
     }
 
-    public AreaSelectPage AssertUserSelectedArea() throws Exception {
-        AreaSelectedByUser.isDisplayed();
+    public AreaSelectPage assertUserSelectedArea() throws Exception {
+        areaSelectedByUser.isDisplayed();
         return new AreaSelectPage();
 
     }
 
-    public AreaSelectPage AssertAreaInNewIssuePane() throws Exception {
-        Assert.assertEquals(AreaInNewIssuePane.getText(), AreaSelectedByUser.getText());
+    public AreaSelectPage assertAreaInNewIssuePane() throws Exception {
+        Assert.assertEquals(areaInNewIssuePane.getText(), areaSelectedByUser.getText());
         return new AreaSelectPage();
 
     }

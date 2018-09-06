@@ -26,10 +26,10 @@ public class CommentsPage extends BasePage {
     WebElement buttonCloseArea;
 
     public @FindBy(xpath = "//*[@class='issues group']/child::li[1]")
-    WebElement ClickFirstIssue;
+    WebElement clickFirstIssue;
 
     public @FindBy(xpath = "//DIV[@class='view-comment auiReset-font']//P[@class='comment-text auiText-normal ng-binding'][text()='Test Comments']")
-    WebElement AssertAddedComment;
+    WebElement assertAddedComment;
 
     public CommentsPage() throws IOException {
         super();
@@ -37,19 +37,19 @@ public class CommentsPage extends BasePage {
     }
 
 
-    public CommentsPage ClickOnFirstIssue() throws Exception {
-        waitUntilWebElementIsVisible(ClickFirstIssue);
-        waitAndClickElement(ClickFirstIssue);
+    public CommentsPage clickOnFirstIssue() throws Exception {
+        waitUntilWebElementIsVisible(clickFirstIssue);
+        waitAndClickElement(clickFirstIssue);
         return new CommentsPage();
     }
 
-    public CommentsPage ViewCommentSection() throws Exception {
+    public CommentsPage viewCommentSection() throws Exception {
         waitUntilWebElementIsVisible(textFieldComments);
         return new CommentsPage();
     }
 
 
-    public CommentsPage AddComments() throws Exception {
+    public CommentsPage addComments() throws Exception {
         clickOnElementUsingCustomTimeout(textFieldComments, driver, 10);
         Thread.sleep(2000);
         sendKeysToWebElement(textFieldComments, "Test Comments");
@@ -61,8 +61,8 @@ public class CommentsPage extends BasePage {
         return new CommentsPage();
     }
 
-    public CommentsPage AssertComment() throws Exception {
-        Assert.assertEquals(AssertAddedComment.getText(), "Test Comments");
+    public CommentsPage assertComment() throws Exception {
+        Assert.assertEquals(assertAddedComment.getText(), "Test Comments");
         return new CommentsPage();
     }
 }

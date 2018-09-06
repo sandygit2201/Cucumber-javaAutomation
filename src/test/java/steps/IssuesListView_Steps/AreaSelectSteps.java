@@ -1,6 +1,5 @@
 package steps.IssuesListView_Steps;
 
-import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -20,11 +19,11 @@ public class AreaSelectSteps {
 
     @Then("^User should be taken to that area$")
     public void iShouldBeTakenToThatArea() throws Throwable {
-        selectArea.AssertUserSelectedArea();
+        selectArea.assertUserSelectedArea();
     }
 
     @Then("^the area in new issue pane should match the user selected area$")
     public void theAreaInNewIssuePaneShouldMatchTheUserSelectedArea() throws Throwable {
-        selectArea.AssertAreaInNewIssuePane();
+        selectArea.assertAreaInNewIssuePane();
     }
 }
