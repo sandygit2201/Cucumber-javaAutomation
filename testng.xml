@@ -5,7 +5,7 @@
 <suite name="Cucumber Framework">
     <test name="Cucumber Test">
     <classes>
-        <class name = "Runner.MainRunner"/>
+        <class name = "MainRunner"/>
     </classes>
 </test>
 </suite>
