@@ -18,7 +18,7 @@ Give examples
 
 ### Installing
 
-A step by step series of examples that tell you how to get a development env running
+A step by step series of examples that tell you how to get a testing fram env running
 
 Say what the step will be
 
@@ -40,8 +40,17 @@ Give example
 
 Running using Docker
 
+To run docker locally
+
 ```
-Give example
+./local-build-chrome.sh
+
+```
+
+To run docker locally - headless
+
+```
+./quick-build.sh
 
 ```
 
