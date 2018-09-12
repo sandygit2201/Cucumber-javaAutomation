@@ -1,6 +1,6 @@
 # Field web automation
 
-Java automation frmaework for Field automation
+Java automation framework for Field automation
 
 ## Getting Started
 
@@ -30,6 +30,15 @@ Give the example
 End with an example of getting some data out of the system or using it for a little demo
 
 ## Running the tests
+
+Using MainRunner
+
+```
+Give example
+
+```
+
+Running using Docker
 
 ```
 Give example
