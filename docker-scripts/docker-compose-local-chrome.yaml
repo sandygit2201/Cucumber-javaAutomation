@@ -1,0 +1,10 @@
+version: "3"
+services:
+  chrome:
+    image: selenium/standalone-chrome-debug:3.13.0-argon
+    ports:
+    - "4444:4444"
+    - "5900:5900"
+    volumes:
+    - /dev/shm:/dev/shm
+    - /tmp/fieldwebautomation:/home/seluser/Downloads
