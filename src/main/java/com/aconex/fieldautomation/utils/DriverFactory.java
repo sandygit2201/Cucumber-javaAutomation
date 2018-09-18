@@ -1,24 +1,24 @@
 package com.aconex.fieldautomation.utils;
 
 
-import com.aconex.fieldautomation.pageobjects.babylon.LoginPage;
-import com.aconex.fieldautomation.pageobjects.babylon.LogoutPage;
-import com.aconex.fieldautomation.pageobjects.babylon.SwitchProjectPage;
-import com.aconex.fieldautomation.pageobjects.field.general.AccessFieldPage;
-import com.aconex.fieldautomation.pageobjects.field.general.RefreshPage;
-import com.aconex.fieldautomation.pageobjects.field.settings.AccessSectionsPage;
-import com.aconex.fieldautomation.pageobjects.field.settings.EnterSettingsPage;
-import com.aconex.fieldautomation.pageobjects.field.settings.YourOrganizationPage;
-import com.aconex.fieldautomation.pageobjects.inspections.CreateChecklistPage;
-import com.aconex.fieldautomation.pageobjects.inspections.ExportInspectionsPage;
-import com.aconex.fieldautomation.pageobjects.inspections.SelectInspectionPage;
-import com.aconex.fieldautomation.pageobjects.issues.filters.ClearAllFiltersPage;
-import com.aconex.fieldautomation.pageobjects.issues.filters.CollapseFiltersPage;
-import com.aconex.fieldautomation.pageobjects.issues.filters.ProjectFieldFiltersPage;
-import com.aconex.fieldautomation.pageobjects.issues.filters.StatusFiltersPage;
-import com.aconex.fieldautomation.pageobjects.issues.view.grid.AccessGridViewPage;
+import com.aconex.fieldautomation.pageobjects.babylon.Login;
+import com.aconex.fieldautomation.pageobjects.babylon.Logout;
+import com.aconex.fieldautomation.pageobjects.babylon.SwitchProject;
+import com.aconex.fieldautomation.pageobjects.field.general.AccessField;
+import com.aconex.fieldautomation.pageobjects.field.general.Refresh;
+import com.aconex.fieldautomation.pageobjects.field.settings.AccessSections;
+import com.aconex.fieldautomation.pageobjects.field.settings.EnterSettings;
+import com.aconex.fieldautomation.pageobjects.field.settings.YourOrganization;
+import com.aconex.fieldautomation.pageobjects.inspections.CreateChecklist;
+import com.aconex.fieldautomation.pageobjects.inspections.ExportInspections;
+import com.aconex.fieldautomation.pageobjects.inspections.SelectInspection;
+import com.aconex.fieldautomation.pageobjects.issues.filters.ClearAllFilters;
+import com.aconex.fieldautomation.pageobjects.issues.filters.CollapseFilters;
+import com.aconex.fieldautomation.pageobjects.issues.filters.ProjectFieldFilters;
+import com.aconex.fieldautomation.pageobjects.issues.filters.StatusFilters;
+import com.aconex.fieldautomation.pageobjects.issues.view.grid.AccessGridView;
 import com.aconex.fieldautomation.pageobjects.issues.view.list.*;
-import com.aconex.fieldautomation.pageobjects.mail.SendMailPage;
+import com.aconex.fieldautomation.pageobjects.mail.SendMail;
 import org.apache.commons.lang3.SystemUtils;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
@@ -46,34 +46,34 @@ public class DriverFactory {
 
 
     public static WebDriver driver;
-    public static LoginPage loginPage;
-    public static AddIssuePage addIssue;
-    public static AccessFieldPage accessField;
-    public static CommentsPage addCommentsPage;
-    public static PhotoUploadPage photoUpload;
-    public static AreaSelectPage selectArea;
-    public static IssuesSearchPage issuesSearch;
-    public static StatusChangePage statusChange;
-    public static SelectInspectionPage selectInspection;
-    public static EnterSettingsPage enterSettings;
-    public static AccessSectionsPage accessSections;
-    public static CreateChecklistPage createChecklist;
-    public static YourOrganizationPage yourOrg;
-    public static StatusFiltersPage issuesFilters;
-    public static ExportInspectionsPage exportInspections;
-    public static IssueAssignmentPage issueAssignment;
-    public static AccessGridViewPage accessGridView;
-    public static LogoutPage logout;
-    public static SwitchProjectPage switchProject;
-    public static ProjectFieldFiltersPage projectFieldFilter;
-    public static CustomFieldPage selectCustomField;
-    public static RefreshPage refreshButton;
-    public static EventLogPage checkEventLogValues;
-    public static AddIssuePage cancelIssueButton;
-    public static SendMailPage sendMail;
-    public static ClearAllFiltersPage clearAllFilter;
-    public static IssuesGroupByPage issuesGroupBy;
-    public static CollapseFiltersPage filtercollapseicon;
+    public static Login login;
+    public static AddIssue addIssue;
+    public static AccessField accessField;
+    public static Comments addComments;
+    public static PhotoUpload photoUpload;
+    public static AreaSelect selectArea;
+    public static IssuesSearch issuesSearch;
+    public static StatusChange statusChange;
+    public static SelectInspection selectInspection;
+    public static EnterSettings enterSettings;
+    public static AccessSections accessSections;
+    public static CreateChecklist createChecklist;
+    public static YourOrganization yourOrg;
+    public static StatusFilters issuesFilters;
+    public static ExportInspections exportInspections;
+    public static IssueAssignment issueAssignment;
+    public static AccessGridView accessGridView;
+    public static Logout logout;
+    public static SwitchProject switchProject;
+    public static ProjectFieldFilters projectFieldFilter;
+    public static CustomField selectCustomField;
+    public static Refresh refreshButton;
+    public static EventLog checkEventLogValues;
+    public static AddIssue cancelIssueButton;
+    public static SendMail sendMail;
+    public static ClearAllFilters clearAllFilter;
+    public static IssuesGroupBy issuesGroupBy;
+    public static CollapseFilters filtercollapseicon;
 
 
     public WebDriver getDriver() throws IOException {
@@ -144,34 +144,34 @@ public class DriverFactory {
     }
 
     private void setupPages() {
-        loginPage = PageFactory.initElements(driver, LoginPage.class);
-        accessField = PageFactory.initElements(driver, AccessFieldPage.class);
-        addIssue = PageFactory.initElements(driver, AddIssuePage.class);
-        addCommentsPage = PageFactory.initElements(driver, CommentsPage.class);
-        photoUpload = PageFactory.initElements(driver, PhotoUploadPage.class);
-        selectArea = PageFactory.initElements(driver, AreaSelectPage.class);
-        statusChange = PageFactory.initElements(driver, StatusChangePage.class);
-        selectInspection = PageFactory.initElements(driver, SelectInspectionPage.class);
-        enterSettings = PageFactory.initElements(driver, EnterSettingsPage.class);
-        accessSections = PageFactory.initElements(driver, AccessSectionsPage.class);
-        createChecklist = PageFactory.initElements(driver, CreateChecklistPage.class);
-        yourOrg = PageFactory.initElements(driver, YourOrganizationPage.class);
-        issuesFilters = PageFactory.initElements(driver, StatusFiltersPage.class);
-        exportInspections = PageFactory.initElements(driver, ExportInspectionsPage.class);
-        issueAssignment = PageFactory.initElements(driver, IssueAssignmentPage.class);
-        accessGridView = PageFactory.initElements(driver, AccessGridViewPage.class);
-        logout = PageFactory.initElements(driver, LogoutPage.class);
-        issuesSearch = PageFactory.initElements(driver, IssuesSearchPage.class);
-        switchProject = PageFactory.initElements(driver, SwitchProjectPage.class);
-        projectFieldFilter = PageFactory.initElements(driver, ProjectFieldFiltersPage.class);
-        selectCustomField = PageFactory.initElements(driver, CustomFieldPage.class);
-        checkEventLogValues = PageFactory.initElements(driver, EventLogPage.class);
-        cancelIssueButton = PageFactory.initElements(driver, AddIssuePage.class);
-        refreshButton = PageFactory.initElements(driver, RefreshPage.class);
-        sendMail = PageFactory.initElements(driver, SendMailPage.class);
-        clearAllFilter = PageFactory.initElements(driver, ClearAllFiltersPage.class);
-        issuesGroupBy = PageFactory.initElements(driver, IssuesGroupByPage.class);
-        filtercollapseicon = PageFactory.initElements(driver, CollapseFiltersPage.class);
+        login = PageFactory.initElements(driver, Login.class);
+        accessField = PageFactory.initElements(driver, AccessField.class);
+        addIssue = PageFactory.initElements(driver, AddIssue.class);
+        addComments = PageFactory.initElements(driver, Comments.class);
+        photoUpload = PageFactory.initElements(driver, PhotoUpload.class);
+        selectArea = PageFactory.initElements(driver, AreaSelect.class);
+        statusChange = PageFactory.initElements(driver, StatusChange.class);
+        selectInspection = PageFactory.initElements(driver, SelectInspection.class);
+        enterSettings = PageFactory.initElements(driver, EnterSettings.class);
+        accessSections = PageFactory.initElements(driver, AccessSections.class);
+        createChecklist = PageFactory.initElements(driver, CreateChecklist.class);
+        yourOrg = PageFactory.initElements(driver, YourOrganization.class);
+        issuesFilters = PageFactory.initElements(driver, StatusFilters.class);
+        exportInspections = PageFactory.initElements(driver, ExportInspections.class);
+        issueAssignment = PageFactory.initElements(driver, IssueAssignment.class);
+        accessGridView = PageFactory.initElements(driver, AccessGridView.class);
+        logout = PageFactory.initElements(driver, Logout.class);
+        issuesSearch = PageFactory.initElements(driver, IssuesSearch.class);
+        switchProject = PageFactory.initElements(driver, SwitchProject.class);
+        projectFieldFilter = PageFactory.initElements(driver, ProjectFieldFilters.class);
+        selectCustomField = PageFactory.initElements(driver, CustomField.class);
+        checkEventLogValues = PageFactory.initElements(driver, EventLog.class);
+        cancelIssueButton = PageFactory.initElements(driver, AddIssue.class);
+        refreshButton = PageFactory.initElements(driver, Refresh.class);
+        sendMail = PageFactory.initElements(driver, SendMail.class);
+        clearAllFilter = PageFactory.initElements(driver, ClearAllFilters.class);
+        issuesGroupBy = PageFactory.initElements(driver, IssuesGroupBy.class);
+        filtercollapseicon = PageFactory.initElements(driver, CollapseFilters.class);
 
     }
 

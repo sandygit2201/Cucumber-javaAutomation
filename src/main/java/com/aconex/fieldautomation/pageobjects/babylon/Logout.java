@@ -7,7 +7,7 @@ import org.openqa.selenium.support.FindBy;
 
 import java.io.IOException;
 
-public class LogoutPage extends BasePage {
+public class Logout extends BasePage {
 
     @FindBy(id = "logoff")
     private WebElement logoutLink;
@@ -15,17 +15,17 @@ public class LogoutPage extends BasePage {
     @FindBy(id = "btnLogin")
     private WebElement loginButton;
 
-    public LogoutPage() throws IOException {
+    public Logout() throws IOException {
         super();
     }
 
-    public LogoutPage clickLogout() throws InterruptedException {
+    public Logout clickLogout() throws InterruptedException {
         DriverFactory.driver.switchTo().defaultContent();
         waitAndClickElement(logoutLink);
         return this;
     }
 
-    public LogoutPage successfulLogout() {
+    public Logout successfulLogout() {
         waitUntilWebElementIsVisible(loginButton);
         loginButton.isDisplayed();
         return this;

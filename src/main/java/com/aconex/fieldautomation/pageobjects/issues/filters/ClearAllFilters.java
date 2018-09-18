@@ -8,7 +8,7 @@ import org.openqa.selenium.support.FindBy;
 
 import java.io.IOException;
 
-public class ClearAllFiltersPage extends BasePage {
+public class ClearAllFilters extends BasePage {
 
     public @FindBy(xpath = "//input[@type='checkbox'][@value='readytoinspect']")
     WebElement checkboxReadyToInspect;
@@ -28,44 +28,44 @@ public class ClearAllFiltersPage extends BasePage {
     public @FindBy(xpath = "//DIV[@class='clear-all-filter ng-binding ng-scope'][text()='Clear All']")
     WebElement clearAllFilter;
 
-    public ClearAllFiltersPage() throws IOException {
+    public ClearAllFilters() throws IOException {
         super();
     }
 
-    public ClearAllFiltersPage clickReadyToInspectFilter() throws InterruptedException, IOException {
+    public ClearAllFilters clickReadyToInspectFilter() throws InterruptedException, IOException {
         waitAndClickElement(checkboxReadyToInspect);
         waitUntilPreLoadElementDisappears(By.cssSelector("fm-app > div:nth-child(4) > div > div > div"));
-        return new ClearAllFiltersPage();
+        return new ClearAllFilters();
     }
 
-    public ClearAllFiltersPage clickAutomationIssueTypeFilter() throws InterruptedException, IOException {
+    public ClearAllFilters clickAutomationIssueTypeFilter() throws InterruptedException, IOException {
         waitAndClickElement(checkboxAutomation);
         waitUntilPreLoadElementDisappears(By.cssSelector("fm-app > div:nth-child(4) > div > div > div"));
-        return new ClearAllFiltersPage();
+        return new ClearAllFilters();
 
     }
 
-    public ClearAllFiltersPage selectCreatedOnfilter() throws InterruptedException, IOException {
+    public ClearAllFilters selectCreatedOnfilter() throws InterruptedException, IOException {
         waitAndClickElement(dateCreatedOn);
         waitAndClickElement(selectTodayDate);
         waitUntilPreLoadElementDisappears(By.cssSelector("fm-app > div:nth-child(4) > div > div > div"));
-        return new ClearAllFiltersPage();
+        return new ClearAllFilters();
 
     }
 
-    public ClearAllFiltersPage assertFilterCount() throws InterruptedException, IOException {
+    public ClearAllFilters assertFilterCount() throws InterruptedException, IOException {
         org.testng.Assert.assertEquals(assertNumberofFilters.getText(), "Filters (3)");
-        return new ClearAllFiltersPage();
+        return new ClearAllFilters();
     }
 
-    public ClearAllFiltersPage clickOnClearAllFilter() throws InterruptedException, IOException {
+    public ClearAllFilters clickOnClearAllFilter() throws InterruptedException, IOException {
         waitAndClickElement(clearAllFilter);
         waitUntilPreLoadElementDisappears(By.cssSelector("fm-app > div:nth-child(4) > div > div > div"));
-        return new ClearAllFiltersPage();
+        return new ClearAllFilters();
     }
 
-    public ClearAllFiltersPage assertFilterCountAfterClearAll() throws InterruptedException, IOException {
+    public ClearAllFilters assertFilterCountAfterClearAll() throws InterruptedException, IOException {
         org.testng.Assert.assertEquals(assertNumberofFilters.getText(), "Filters ");
-        return new ClearAllFiltersPage();
+        return new ClearAllFilters();
     }
 }

@@ -8,7 +8,7 @@ import org.testng.Assert;
 
 import java.io.IOException;
 
-public class CustomFieldPage extends BasePage {
+public class CustomField extends BasePage {
 
     public @FindBy(xpath = "(//SPAN[@tabindex='-1'])[2]")
     WebElement firstCustomField;
@@ -33,62 +33,62 @@ public class CustomFieldPage extends BasePage {
     public @FindBy(xpath = "(//DIV[@class='text'])[2]")
     WebElement assertHighValue;
 
-    public CustomFieldPage() throws IOException {
+    public CustomField() throws IOException {
         super();
     }
 
-    public CustomFieldPage clickOnFirstCustomField() throws InterruptedException, IOException {
+    public CustomField clickOnFirstCustomField() throws InterruptedException, IOException {
         waitAndClickElement(firstCustomField);
-        return new CustomFieldPage();
+        return new CustomField();
     }
 
-    public CustomFieldPage clickOnFirstDropdownValue() throws InterruptedException, IOException {
+    public CustomField clickOnFirstDropdownValue() throws InterruptedException, IOException {
         waitAndClickElement(dropDownFirstValue);
-        return new CustomFieldPage();
+        return new CustomField();
     }
 
 
-    public CustomFieldPage clickRefresh() throws InterruptedException, IOException {
+    public CustomField clickRefresh() throws InterruptedException, IOException {
         waitAndClickElement(buttonRefresh);
         waitUntilPreLoadElementDisappears(By.cssSelector("fm-app > div:nth-child(4) > div > div > div"));
-        return new CustomFieldPage();
+        return new CustomField();
     }
 
-    public CustomFieldPage assertCustomFieldWhileCreatingIssue() throws Exception {
+    public CustomField assertCustomFieldWhileCreatingIssue() throws Exception {
         waitAndClickElement(firstIssue);
         waitAndClickElement(extraDetailsSection);
         Assert.assertEquals(assertFirstValue.getText(), "High");
-        return new CustomFieldPage();
+        return new CustomField();
     }
 
-    public CustomFieldPage clickOnFirstIssue() throws InterruptedException, IOException {
+    public CustomField clickOnFirstIssue() throws InterruptedException, IOException {
         waitAndClickElement(clickFirstIssue);
-        return new CustomFieldPage();
+        return new CustomField();
     }
 
-    public CustomFieldPage clickExtraDetailCollapseHeader() throws InterruptedException, IOException {
+    public CustomField clickExtraDetailCollapseHeader() throws InterruptedException, IOException {
 
         waitAndClickElement(extraDetailCollapse);
         Thread.sleep(2000);
-        return new CustomFieldPage();
+        return new CustomField();
     }
 
-    public CustomFieldPage selectHighValueFromDropdown() throws InterruptedException, IOException {
+    public CustomField selectHighValueFromDropdown() throws InterruptedException, IOException {
 
         waitUntilWebElementIsVisible(customFieldDropdown);
         waitAndClickElement(customFieldDropdown);
         waitUntilWebElementIsVisible(selectHighfromDropDown);
         waitAndClickElement(selectHighfromDropDown);
-        return new CustomFieldPage();
+        return new CustomField();
     }
 
 
-    public CustomFieldPage assertCustomFieldForExistingIssue() throws InterruptedException, IOException {
+    public CustomField assertCustomFieldForExistingIssue() throws InterruptedException, IOException {
         waitAndClickElement(buttonRefresh);
         waitUntilPreLoadElementDisappears(By.cssSelector("fm-app > div:nth-child(4) > div > div > div"));
         waitAndClickElement(extraDetailCollapse);
         waitUntilWebElementIsVisible(assertHighValue);
         Assert.assertEquals(assertHighValue.getText(), "High");
-        return new CustomFieldPage();
+        return new CustomField();
     }
 }

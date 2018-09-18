@@ -6,7 +6,7 @@ import org.openqa.selenium.support.FindBy;
 
 import java.io.IOException;
 
-public class StatusChangePage extends BasePage {
+public class StatusChange extends BasePage {
 
     public @FindBy(css = "div.status-selector.ng-isolate-scope > div > div > span")
     WebElement iconStatus;
@@ -14,24 +14,25 @@ public class StatusChangePage extends BasePage {
     WebElement iconReadyToInspect;
     public @FindBy(xpath = "    // *[contains (@class, 'close')]")
     WebElement dropdownAreaclose;
-    public StatusChangePage() throws IOException {
+
+    public StatusChange() throws IOException {
         super();
     }
 
-    public StatusChangePage closeArea() throws Exception {
+    public StatusChange closeArea() throws Exception {
         waitAndClickElement(dropdownAreaclose);
-        return new StatusChangePage();
+        return new StatusChange();
     }
 
-    public StatusChangePage clickOnStatus() throws Exception {
+    public StatusChange clickOnStatus() throws Exception {
         waitAndClickElement(iconStatus);
-        return new StatusChangePage();
+        return new StatusChange();
     }
 
-    public StatusChangePage clickOnReadyToInspect() throws Exception {
+    public StatusChange clickOnReadyToInspect() throws Exception {
 
         waitAndClickElement(iconReadyToInspect);
-        return new StatusChangePage();
+        return new StatusChange();
     }
 
 

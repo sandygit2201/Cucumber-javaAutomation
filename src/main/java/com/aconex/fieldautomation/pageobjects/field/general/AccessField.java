@@ -9,7 +9,7 @@ import org.testng.Assert;
 
 import java.io.IOException;
 
-public class AccessFieldPage extends BasePage {
+public class AccessField extends BasePage {
 
 
     public @FindBy(id = "userName")
@@ -40,46 +40,46 @@ public class AccessFieldPage extends BasePage {
     WebElement getUserName;
 
 
-    public AccessFieldPage() throws IOException {
+    public AccessField() throws IOException {
         super();
     }
 
-    public AccessFieldPage enterUserName() throws Exception {
+    public AccessField enterUserName() throws Exception {
         waitAndClickElement(textFieldUserName);
         sendKeysToWebElement(textFieldUserName, "mjenner");
-        return new AccessFieldPage();
+        return new AccessField();
     }
 
 
-    public AccessFieldPage enterPassword() throws Exception {
+    public AccessField enterPassword() throws Exception {
         waitAndClickElement(textFieldPassword);
         sendKeysToWebElement(textFieldPassword, "Auth3nt1c");
-        return new AccessFieldPage();
+        return new AccessField();
     }
 
 
-    public AccessFieldPage verifyUserName() throws Exception {
+    public AccessField verifyUserName() throws Exception {
         waitUntilWebElementIsVisible(getUserName);
         Assert.assertEquals(getUserName.getText(), "Mr Maurice Jenner");
-        return new AccessFieldPage();
+        return new AccessField();
     }
 
-    public AccessFieldPage selectIssues() throws Exception {
+    public AccessField selectIssues() throws Exception {
         waitAndClickElement(field);
         waitAndClickElement(issues);
-        return new AccessFieldPage();
+        return new AccessField();
     }
 
-    public AccessFieldPage closeFTUX() throws Exception {
+    public AccessField closeFTUX() throws Exception {
         DriverFactory.driver.switchTo().frame("main");
         waitAndClickElement(FTUX);
-        return new AccessFieldPage();
+        return new AccessField();
     }
 
-    public AccessFieldPage assertIssuesPage() throws Exception {
+    public AccessField assertIssuesPage() throws Exception {
         waitUntilPreLoadElementDisappears(By.cssSelector("fm-app > div:nth-child(4) > div > div > div"));
         Assert.assertEquals(assertIssuesPage.getText(), "Issues");
-        return new AccessFieldPage();
+        return new AccessField();
     }
 
 

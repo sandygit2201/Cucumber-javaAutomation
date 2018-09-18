@@ -6,7 +6,7 @@ import org.openqa.selenium.support.FindBy;
 
 import java.io.IOException;
 
-public class CollapseFiltersPage extends BasePage {
+public class CollapseFilters extends BasePage {
 
     public @FindBy(className = "issues-filters-list")
     WebElement expandedFilterSection;
@@ -20,29 +20,29 @@ public class CollapseFiltersPage extends BasePage {
     public @FindBy(xpath = "//SPAN[@class='auiIcon chevronUp']")
     WebElement filterExpandIcon;
 
-    public CollapseFiltersPage() throws IOException {
+    public CollapseFilters() throws IOException {
         super();
     }
 
-    public CollapseFiltersPage verifyExpandedFilterPane() throws InterruptedException, IOException {
+    public CollapseFilters verifyExpandedFilterPane() throws InterruptedException, IOException {
         expandedFilterSection.isDisplayed();
-        return new CollapseFiltersPage();
+        return new CollapseFilters();
     }
 
-    public CollapseFiltersPage clickOnFilterCollapseIcon() throws InterruptedException, IOException {
+    public CollapseFilters clickOnFilterCollapseIcon() throws InterruptedException, IOException {
         waitAndClickElement(filterCollapseIcon);
-        return new CollapseFiltersPage();
+        return new CollapseFilters();
 
     }
 
-    public CollapseFiltersPage verifyNoFilterPane() throws InterruptedException, IOException {
+    public CollapseFilters verifyNoFilterPane() throws InterruptedException, IOException {
         noFilterSection.isDisplayed();
-        return new CollapseFiltersPage();
+        return new CollapseFilters();
 
     }
 
-    public CollapseFiltersPage clickOnExpandFilterIcon() throws InterruptedException, IOException {
+    public CollapseFilters clickOnExpandFilterIcon() throws InterruptedException, IOException {
         waitAndClickElement(filterExpandIcon);
-        return new CollapseFiltersPage();
+        return new CollapseFilters();
     }
 }

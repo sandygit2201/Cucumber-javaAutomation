@@ -6,7 +6,7 @@ import org.openqa.selenium.support.FindBy;
 
 import java.io.IOException;
 
-public class LoginPage extends BasePage {
+public class Login extends BasePage {
 
     public @FindBy(id = "userName")
     WebElement textFieldUserName;
@@ -20,45 +20,45 @@ public class LoginPage extends BasePage {
     WebElement assertLoginFailure;
 
 
-    public LoginPage() throws IOException {
+    public Login() throws IOException {
         super();
     }
 
-    public LoginPage getLoginPage() throws IOException {
+    public Login getLoginPage() throws IOException {
         getDriver().get("https://apiprod.aconex.com/Logon");
-        return new LoginPage();
+        return new Login();
 
     }
 
-    public LoginPage enterUserName(String userName) throws Exception {
+    public Login enterUserName(String userName) throws Exception {
         waitAndClickElement(textFieldUserName);
         sendKeysToWebElement(textFieldUserName, userName);
-        return new LoginPage();
+        return new Login();
     }
 
 
-    public LoginPage enterPassword(String password) throws Exception {
+    public Login enterPassword(String password) throws Exception {
         waitAndClickElement(textFieldPassword);
         sendKeysToWebElement(textFieldPassword, password);
-        return new LoginPage();
+        return new Login();
     }
 
 
-    public LoginPage clickLoginButton() throws Exception {
+    public Login clickLoginButton() throws Exception {
         waitAndClickElement(buttonLogin);
-        return new LoginPage();
+        return new Login();
     }
 
-    public LoginPage assertLoginSuccessMessage(String arg0) throws Exception {
+    public Login assertLoginSuccessMessage(String arg0) throws Exception {
         waitUntilWebElementIsVisible(assertLoginSuccess);
         org.testng.Assert.assertEquals(assertLoginSuccess.getText(), arg0);
-        return new LoginPage();
+        return new Login();
     }
 
-    public LoginPage assertLoginFailureMessage(String arg1) throws Exception {
+    public Login assertLoginFailureMessage(String arg1) throws Exception {
         waitUntilWebElementIsVisible(assertLoginFailure);
         org.testng.Assert.assertEquals(assertLoginFailure.getText(), arg1);
-        return new LoginPage();
+        return new Login();
     }
 
     public String getLoginFailureMessage() {

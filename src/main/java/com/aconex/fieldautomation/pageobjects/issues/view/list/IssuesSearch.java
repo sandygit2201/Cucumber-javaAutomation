@@ -6,7 +6,7 @@ import org.openqa.selenium.support.FindBy;
 
 import java.io.IOException;
 
-public class IssuesSearchPage extends BasePage {
+public class IssuesSearch extends BasePage {
 
 
     @FindBy(xpath = "//INPUT[@class='search-input auiField-input large search-filter ng-pristine ng-untouched ng-valid ng-empty']")
@@ -14,35 +14,35 @@ public class IssuesSearchPage extends BasePage {
     @FindBy(xpath = "//BUTTON[@class='auiButton ng-pristine ng-untouched ng-valid ng-binding ng-not-empty'][text()='Search']")
     WebElement buttonSearchEnabled;
 
-    public IssuesSearchPage() throws IOException {
+    public IssuesSearch() throws IOException {
 
         super();
     }
 
-    public IssuesSearchPage clickSearchField() throws Exception {
+    public IssuesSearch clickSearchField() throws Exception {
         waitAndClickElement(issuesSearchField);
-        return new IssuesSearchPage();
+        return new IssuesSearch();
     }
 
-    public IssuesSearchPage enterString() throws Exception {
+    public IssuesSearch enterString() throws Exception {
         sendKeysToWebElement(issuesSearchField, "TestString");
-        return new IssuesSearchPage();
+        return new IssuesSearch();
     }
 
-    public IssuesSearchPage clickSearchButton() throws Exception {
+    public IssuesSearch clickSearchButton() throws Exception {
         waitAndClickElement(buttonSearchEnabled);
-        return new IssuesSearchPage();
+        return new IssuesSearch();
     }
 
 
-    public IssuesSearchPage assertSearchFieldIsBlank() throws Exception {
+    public IssuesSearch assertSearchFieldIsBlank() throws Exception {
         issuesSearchField.isDisplayed();
-        return new IssuesSearchPage();
+        return new IssuesSearch();
     }
 
-    public IssuesSearchPage assertSearchButtonIsEnabled() throws Exception {
+    public IssuesSearch assertSearchButtonIsEnabled() throws Exception {
         buttonSearchEnabled.isDisplayed();
-        return new IssuesSearchPage();
+        return new IssuesSearch();
     }
 
 }

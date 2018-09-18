@@ -6,7 +6,7 @@ import org.openqa.selenium.support.FindBy;
 
 import java.io.IOException;
 
-public class AccessSectionsPage extends BasePage {
+public class AccessSections extends BasePage {
 
     public @FindBy(xpath = "//A[@ui-sref='.checklist-templates'][text()='Templates']")
     WebElement settingsTemplates;
@@ -14,23 +14,24 @@ public class AccessSectionsPage extends BasePage {
     WebElement closeCLFTUX;
     public @FindBy(xpath = "//H1[@class='ng-binding'][text()='Templates']")
     WebElement assertTemplatePage;
-    public AccessSectionsPage() throws IOException {
+
+    public AccessSections() throws IOException {
         super();
     }
 
-    public AccessSectionsPage clickTemplates() throws Exception {
+    public AccessSections clickTemplates() throws Exception {
         waitAndClickElement(settingsTemplates);
-        return new AccessSectionsPage();
+        return new AccessSections();
     }
 
-    public AccessSectionsPage closeCLFTUX() throws Exception {
+    public AccessSections closeCLFTUX() throws Exception {
         waitAndClickElement(closeCLFTUX);
-        return new AccessSectionsPage();
+        return new AccessSections();
     }
 
-    public AccessSectionsPage assertTemplatePage() throws Exception {
+    public AccessSections assertTemplatePage() throws Exception {
         assertTemplatePage.isDisplayed();
-        return new AccessSectionsPage();
+        return new AccessSections();
     }
 
 

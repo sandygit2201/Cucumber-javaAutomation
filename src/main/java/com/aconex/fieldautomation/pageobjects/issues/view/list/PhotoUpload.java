@@ -8,7 +8,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.Objects;
 
-public class PhotoUploadPage extends BasePage {
+public class PhotoUpload extends BasePage {
 
     @FindBy(id = "photo-attachment")
     private WebElement photoFileUpload;
@@ -16,11 +16,11 @@ public class PhotoUploadPage extends BasePage {
     @FindBy(css = "attachment-upload-preview button.primary")
     private WebElement uploadButton;
 
-    public PhotoUploadPage() throws IOException {
+    public PhotoUpload() throws IOException {
         super();
     }
 
-    public PhotoUploadPage uploadPhoto(URL file) throws InterruptedException {
+    public PhotoUpload uploadPhoto(URL file) throws InterruptedException {
         photoFileUpload.sendKeys(Objects.requireNonNull(file).getPath());
         waitAndClickElement(uploadButton);
         return this;

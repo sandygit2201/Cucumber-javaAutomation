@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.time.Duration;
 
 
-public class SendMailPage extends BasePage {
+public class SendMail extends BasePage {
 
     public @FindBy(xpath = "(//A[@ng-href=''][text()='BLOCK E'][text()='BLOCK E'])[1]")
     WebElement areaBLOCKE;
@@ -50,89 +50,89 @@ public class SendMailPage extends BasePage {
     public @FindBy(xpath = "//LI[@ng-repeat='option in qualifierList'][text()='today']")
     WebElement todayDate;
 
-    public SendMailPage() throws IOException {
+    public SendMail() throws IOException {
         super();
     }
 
-    public SendMailPage selectArea() throws Exception {
+    public SendMail selectArea() throws Exception {
         waitAndClickElement(areaBLOCKE);
-        return new SendMailPage();
+        return new SendMail();
     }
 
 
-    public SendMailPage verifySendButtonEnabled() throws Exception {
+    public SendMail verifySendButtonEnabled() throws Exception {
         waitUntilWebElementIsVisible(buttonSendEnabled);
         buttonSendEnabled.isDisplayed();
-        return new SendMailPage();
+        return new SendMail();
     }
 
 
-    public SendMailPage clickSendButtonInIssuesPage() throws Exception {
+    public SendMail clickSendButtonInIssuesPage() throws Exception {
         waitAndClickElement(buttonSendEnabled);
-        return new SendMailPage();
+        return new SendMail();
     }
 
-    public SendMailPage verifySendMailModalDisplayed() throws Exception {
+    public SendMail verifySendMailModalDisplayed() throws Exception {
         assertSendMailModal.isDisplayed();
-        return new SendMailPage();
+        return new SendMail();
     }
 
-    public SendMailPage verifySendButtonInModalDisabled() throws Exception {
+    public SendMail verifySendButtonInModalDisabled() throws Exception {
         buttonMailSendDisabled.isDisplayed();
-        return new SendMailPage();
+        return new SendMail();
     }
 
-    public SendMailPage clickOnMailTypeDropDown() throws Exception {
+    public SendMail clickOnMailTypeDropDown() throws Exception {
         Thread.sleep(2000);
         waitAndClickElement(mailTypeDropDown);
-        return new SendMailPage();
+        return new SendMail();
     }
 
 
-    public SendMailPage clickOnVariationMailType() throws Exception {
+    public SendMail clickOnVariationMailType() throws Exception {
         waitAndClickElement(mailTypeVariation);
-        return new SendMailPage();
+        return new SendMail();
     }
 
-    public SendMailPage verifySendButtonInModalEnabled() throws Exception {
+    public SendMail verifySendButtonInModalEnabled() throws Exception {
         buttonMailSendEnabled.isDisplayed();
-        return new SendMailPage();
+        return new SendMail();
     }
 
-    public SendMailPage clickSendButtonInModal() throws Exception {
+    public SendMail clickSendButtonInModal() throws Exception {
         waitAndClickElement(buttonMailSendEnabled);
-        return new SendMailPage();
+        return new SendMail();
     }
 
-    public SendMailPage assertSendMailModalDisappear() throws Exception {
+    public SendMail assertSendMailModalDisappear() throws Exception {
         assertSendModalDisappear.isDisplayed();
-        return new SendMailPage();
+        return new SendMail();
     }
 
-    public SendMailPage navigateToMailSentFolder() throws Exception {
+    public SendMail navigateToMailSentFolder() throws Exception {
         DriverFactory.driver.switchTo().defaultContent();
         waitAndClickElement(mailModule);
         waitAndClickElement(sentFolder);
         DriverFactory.driver.switchTo().frame("frameMain");
-        return new SendMailPage();
+        return new SendMail();
     }
 
 
-    public SendMailPage assertMailModule() throws Exception {
+    public SendMail assertMailModule() throws Exception {
         assertMailModule.isDisplayed();
-        return new SendMailPage();
+        return new SendMail();
     }
 
 
-    public SendMailPage selectDateToToday() throws Exception {
+    public SendMail selectDateToToday() throws Exception {
         waitAndClickElement(dropdownDate);
         waitAndClickElement(todayDate);
         Thread.sleep(500);
-        return new SendMailPage();
+        return new SendMail();
     }
 
 
-    public SendMailPage clickSearchButton() throws Exception {
+    public SendMail clickSearchButton() throws Exception {
         try {
             if (DriverFactory.driver.findElement(By.xpath("//DIV[@class='well no-results-container']")).isDisplayed()) {
                 waitAndClickElement(buttonSearch);
@@ -142,10 +142,10 @@ public class SendMailPage extends BasePage {
             System.out.println("Search result is displayed ");
         }
 
-        return new SendMailPage();
+        return new SendMail();
     }
 
-    public SendMailPage assertMailSubject() throws Exception {
+    public SendMail assertMailSubject() throws Exception {
         FluentWait<WebDriver> wait = new FluentWait<WebDriver>(DriverFactory.driver)
                 .withTimeout(Duration.ofMinutes(1))
                 .pollingEvery(Duration.ofSeconds(15))
@@ -160,19 +160,19 @@ public class SendMailPage extends BasePage {
                     return driver.findElement(By.xpath("(//TD)[4]//SPAN[@ng-non-bindable='true'][text()='Aconex Field Issues for BLOCK E'][text()='Aconex Field Issues for BLOCK E']"));
                 }
         );
-        return new SendMailPage();
+        return new SendMail();
     }
 
 
-    public SendMailPage assertMailFromUser() throws Exception {
+    public SendMail assertMailFromUser() throws Exception {
         waitUntilWebElementIsVisible(fromUser);
         org.testng.Assert.assertEquals(fromUser.getText(), "Maurice Jenner");
-        return new SendMailPage();
+        return new SendMail();
     }
 
-    public SendMailPage assertMailVariation() throws Exception {
+    public SendMail assertMailVariation() throws Exception {
         org.testng.Assert.assertEquals(typeVariation.getText(), "Variation");
-        return new SendMailPage();
+        return new SendMail();
     }
 
 }

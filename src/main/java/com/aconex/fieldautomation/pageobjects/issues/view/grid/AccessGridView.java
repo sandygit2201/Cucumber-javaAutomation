@@ -7,7 +7,7 @@ import org.openqa.selenium.support.FindBy;
 
 import java.io.IOException;
 
-public class AccessGridViewPage extends BasePage {
+public class AccessGridView extends BasePage {
 
 
     public @FindBy(css = "div.display-mode > div.table-view-button")
@@ -15,24 +15,24 @@ public class AccessGridViewPage extends BasePage {
     public @FindBy(css = "div.auiToolbar-right.ng-scope > button")
     WebElement button_EditMode;
 
-    public AccessGridViewPage() throws IOException {
+    public AccessGridView() throws IOException {
         super();
     }
 
-    public AccessGridViewPage preLoaderPage() throws InterruptedException, IOException {
+    public AccessGridView preLoaderPage() throws InterruptedException, IOException {
         waitUntilPreLoadElementDisappears(By.cssSelector("fm-app > div:nth-child(4) > div > div > div"));
-        return new AccessGridViewPage();
+        return new AccessGridView();
     }
 
-    public AccessGridViewPage accessGridView() throws InterruptedException, IOException {
+    public AccessGridView accessGridView() throws InterruptedException, IOException {
         waitAndClickElement(button_GridView);
-        return new AccessGridViewPage();
+        return new AccessGridView();
 
     }
 
-    public AccessGridViewPage verifytheGridView() throws InterruptedException, IOException {
+    public AccessGridView verifytheGridView() throws InterruptedException, IOException {
         button_EditMode.isDisplayed();
-        return new AccessGridViewPage();
+        return new AccessGridView();
 
     }
 

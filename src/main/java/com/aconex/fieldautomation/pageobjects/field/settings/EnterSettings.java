@@ -7,7 +7,7 @@ import org.openqa.selenium.support.FindBy;
 
 import java.io.IOException;
 
-public class EnterSettingsPage extends BasePage {
+public class EnterSettings extends BasePage {
 
     public @FindBy(className = "ic-FIELD")
     WebElement field;
@@ -16,24 +16,24 @@ public class EnterSettingsPage extends BasePage {
     public @FindBy(xpath = "//DIV[@class='auiToolbar-header ng-binding'][text()='Settings']")
     WebElement assertFieldSettingPage;
 
-    public EnterSettingsPage() throws IOException {
+    public EnterSettings() throws IOException {
         super();
 
     }
 
-    public EnterSettingsPage clickFieldSettings() throws Exception {
+    public EnterSettings clickFieldSettings() throws Exception {
 
         waitAndClickElement(field);
         waitAndClickElement(settings);
-        return new EnterSettingsPage();
+        return new EnterSettings();
     }
 
 
-    public EnterSettingsPage assertSettingsPage() throws Exception {
+    public EnterSettings assertSettingsPage() throws Exception {
 
         DriverFactory.driver.switchTo().frame("main");
         Thread.sleep(1000);
         assertFieldSettingPage.isDisplayed();
-        return new EnterSettingsPage();
+        return new EnterSettings();
     }
 }

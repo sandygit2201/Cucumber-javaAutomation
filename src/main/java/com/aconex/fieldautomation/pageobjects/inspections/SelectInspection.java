@@ -7,7 +7,7 @@ import org.openqa.selenium.support.FindBy;
 
 import java.io.IOException;
 
-public class SelectInspectionPage extends BasePage {
+public class SelectInspection extends BasePage {
 
     public @FindBy(className = "ic-FIELD")
     WebElement field;
@@ -17,32 +17,33 @@ public class SelectInspectionPage extends BasePage {
     WebElement buttonCloseArea;
     public @FindBy(xpath = "//DIV[@class='auiToolbar-header ng-binding'][text()='Inspections']")
     WebElement assertInspection;
-    public SelectInspectionPage() throws IOException {
+
+    public SelectInspection() throws IOException {
         super();
     }
 
-    public SelectInspectionPage clickField() throws Exception {
+    public SelectInspection clickField() throws Exception {
 
         waitAndClickElement(field);
-        return new SelectInspectionPage();
+        return new SelectInspection();
     }
 
 
-    public SelectInspectionPage clickInspections() throws Exception {
+    public SelectInspection clickInspections() throws Exception {
 
         waitAndClickElement(checklist);
-        return new SelectInspectionPage();
+        return new SelectInspection();
     }
 
-    public SelectInspectionPage closeArea() throws Exception {
+    public SelectInspection closeArea() throws Exception {
         DriverFactory.driver.switchTo().frame("main");
         waitAndClickElement(buttonCloseArea);
-        return new SelectInspectionPage();
+        return new SelectInspection();
     }
 
-    public SelectInspectionPage assertInspectionPage() throws Exception {
+    public SelectInspection assertInspectionPage() throws Exception {
         assertInspection.isDisplayed();
-        return new SelectInspectionPage();
+        return new SelectInspection();
     }
 
 
