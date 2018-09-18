@@ -7,7 +7,7 @@ import org.testng.Assert;
 
 import java.io.IOException;
 
-public class IssuesGroupByPage extends BasePage {
+public class IssuesGroupBy extends BasePage {
     public @FindBy(xpath = "//BUTTON[@uib-dropdown-toggle='uib-dropdown-toggle'][text()='Group by: None']")
     WebElement selectGroupbyOption;
     public @FindBy(xpath = "(//A[@class='item ng-binding'][text()='Location'][text()='Location'])[2]")
@@ -17,24 +17,24 @@ public class IssuesGroupByPage extends BasePage {
     public @FindBy(xpath = "(//A[@class='ellipsis-text ng-binding'][text()='BW6003-Residential'][text()='BW6003-Residential'])[2]")
     WebElement textLocationInIssuesDetailsView;
 
-    public IssuesGroupByPage() throws IOException {
+    public IssuesGroupBy() throws IOException {
         super();
     }
 
-    public IssuesGroupByPage clickGroupBy() throws Exception {
+    public IssuesGroupBy clickGroupBy() throws Exception {
         waitAndClickElement(selectGroupbyOption);
-        return new IssuesGroupByPage();
+        return new IssuesGroupBy();
     }
 
 
-    public IssuesGroupByPage clickLocation() throws Exception {
+    public IssuesGroupBy clickLocation() throws Exception {
         waitAndClickElement(selectLocationOption);
-        return new IssuesGroupByPage();
+        return new IssuesGroupBy();
     }
 
-    public IssuesGroupByPage assertLocationResult() throws Exception {
+    public IssuesGroupBy assertLocationResult() throws Exception {
         Assert.assertEquals(textLocationInIssuesListView.getText(), textLocationInIssuesDetailsView.getText().toUpperCase());
-        return new IssuesGroupByPage();
+        return new IssuesGroupBy();
     }
 
 }

@@ -9,7 +9,7 @@ import org.testng.Assert;
 import java.io.IOException;
 import java.util.Optional;
 
-public class YourOrganizationPage extends BasePage {
+public class YourOrganization extends BasePage {
 
     public @FindBy(css = "div:nth-child(1) > ul > li:nth-child(1) > a ")
     WebElement sectionYourOrg;
@@ -48,72 +48,72 @@ public class YourOrganizationPage extends BasePage {
     WebElement successMessage;
 
 
-    public YourOrganizationPage() throws IOException {
+    public YourOrganization() throws IOException {
         super();
     }
 
-    public YourOrganizationPage clickOnYourOrg() throws Exception {
+    public YourOrganization clickOnYourOrg() throws Exception {
         waitAndClickElement(sectionYourOrg);
-        return new YourOrganizationPage();
+        return new YourOrganization();
     }
 
-    public YourOrganizationPage assertYourOrgPage() throws Exception {
+    public YourOrganization assertYourOrgPage() throws Exception {
         assertYourOrgPage.isDisplayed();
-        return new YourOrganizationPage();
+        return new YourOrganization();
     }
 
-    public YourOrganizationPage clickOnAddMorePeople() throws Exception {
+    public YourOrganization clickOnAddMorePeople() throws Exception {
         waitAndClickElement(addMorePeople);
         sendKeysToWebElement(addMorePeople, "Automation User1");
-        return new YourOrganizationPage();
+        return new YourOrganization();
     }
 
-    public YourOrganizationPage searchExistingUser() throws Exception {
+    public YourOrganization searchExistingUser() throws Exception {
         waitAndClickElement(searchExistingUser);
-        return new YourOrganizationPage();
+        return new YourOrganization();
     }
 
-    public YourOrganizationPage removeUser() throws Exception {
+    public YourOrganization removeUser() throws Exception {
         waitAndClickElement(removeUser);
-        return new YourOrganizationPage();
+        return new YourOrganization();
     }
 
-    public YourOrganizationPage selectUserFromDropDown() throws Exception {
+    public YourOrganization selectUserFromDropDown() throws Exception {
         waitAndClickElement(selectNewUser);
-        return new YourOrganizationPage();
+        return new YourOrganization();
     }
 
-    public YourOrganizationPage verifyIfUserBeenAdded() throws Exception {
+    public YourOrganization verifyIfUserBeenAdded() throws Exception {
         verifyAddedUser.isDisplayed();
-        return new YourOrganizationPage();
+        return new YourOrganization();
     }
 
-    public YourOrganizationPage assertCurrentRole() throws Exception {
+    public YourOrganization assertCurrentRole() throws Exception {
         assertCurrentRole.isDisplayed();
-        return new YourOrganizationPage();
+        return new YourOrganization();
     }
 
-    public YourOrganizationPage clickOnUserRole() throws Exception {
+    public YourOrganization clickOnUserRole() throws Exception {
         waitAndClickElement(assertCurrentRole);
-        return new YourOrganizationPage();
+        return new YourOrganization();
     }
 
-    public YourOrganizationPage viewRoleOptions() throws Exception {
+    public YourOrganization viewRoleOptions() throws Exception {
         assertRoleOptions.isDisplayed();
-        return new YourOrganizationPage();
+        return new YourOrganization();
     }
 
-    public YourOrganizationPage selectRole() throws Exception {
+    public YourOrganization selectRole() throws Exception {
         waitAndClickElement(selectRole);
-        return new YourOrganizationPage();
+        return new YourOrganization();
     }
 
-    public YourOrganizationPage assertRoleChange() throws Exception {
+    public YourOrganization assertRoleChange() throws Exception {
         assertRoleChange.isDisplayed();
-        return new YourOrganizationPage();
+        return new YourOrganization();
     }
 
-    public YourOrganizationPage removeUser(String user) throws Exception {
+    public YourOrganization removeUser(String user) throws Exception {
         Optional<WebElement> requiredRow = driver.findElements(By.cssSelector(".fieldset-group tr"))
                 .stream()
                 .filter(e ->
@@ -121,14 +121,14 @@ public class YourOrganizationPage extends BasePage {
                 )
                 .findFirst();
         requiredRow.ifPresent(e -> e.findElement(By.cssSelector(".delete.icon")).click());
-        return new YourOrganizationPage();
+        return new YourOrganization();
     }
 
 
-    public YourOrganizationPage verifytheUserisRemoved(String user) throws Exception {
+    public YourOrganization verifytheUserisRemoved(String user) throws Exception {
         waitUntilWebElementIsVisible(successMessage);
         Assert.assertTrue(userIsRemoved(user), "Expected user to be removed, but he was still there ");
-        return new YourOrganizationPage();
+        return new YourOrganization();
     }
 
     private boolean userIsRemoved(String user) {

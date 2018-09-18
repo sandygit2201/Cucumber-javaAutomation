@@ -7,7 +7,7 @@ import org.testng.Assert;
 
 import java.io.IOException;
 
-public class AreaSelectPage extends BasePage {
+public class AreaSelect extends BasePage {
 
     public @FindBy(xpath = "// *[contains (@data-areaid, '271341877551153756')]")
     WebElement areaBLOCKA;
@@ -20,30 +20,30 @@ public class AreaSelectPage extends BasePage {
     public @FindBy(xpath = "(//A[@class='ellipsis-text ng-binding'][text()='BLOCK A'][text()='BLOCK A'])[1]")
     WebElement areaSelectedByUser;
 
-    public AreaSelectPage() throws IOException {
+    public AreaSelect() throws IOException {
         super();
     }
 
-    public AreaSelectPage assertAreaDropDown() throws Exception {
+    public AreaSelect assertAreaDropDown() throws Exception {
         assertAreaDropDown.isDisplayed();
-        return new AreaSelectPage();
+        return new AreaSelect();
     }
 
 
-    public AreaSelectPage selectArea() throws Exception {
+    public AreaSelect selectArea() throws Exception {
         waitAndClickElement(areaBLOCKA);
-        return new AreaSelectPage();
+        return new AreaSelect();
     }
 
-    public AreaSelectPage assertUserSelectedArea() throws Exception {
+    public AreaSelect assertUserSelectedArea() throws Exception {
         areaSelectedByUser.isDisplayed();
-        return new AreaSelectPage();
+        return new AreaSelect();
 
     }
 
-    public AreaSelectPage assertAreaInNewIssuePane() throws Exception {
+    public AreaSelect assertAreaInNewIssuePane() throws Exception {
         Assert.assertEquals(areaInNewIssuePane.getText(), areaSelectedByUser.getText());
-        return new AreaSelectPage();
+        return new AreaSelect();
 
     }
 

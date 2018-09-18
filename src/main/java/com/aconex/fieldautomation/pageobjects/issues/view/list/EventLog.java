@@ -6,7 +6,7 @@ import org.openqa.selenium.support.FindBy;
 
 import java.io.IOException;
 
-public class EventLogPage extends BasePage {
+public class EventLog extends BasePage {
 
     public @FindBy(xpath = "(//DIV[@class='auiCollapsibleSection-header'])[4]")
     WebElement eventsCollapsableSection;
@@ -22,29 +22,29 @@ public class EventLogPage extends BasePage {
     WebElement eventlogModal;
 
 
-    public EventLogPage() throws IOException {
+    public EventLog() throws IOException {
         super();
     }
 
-    public EventLogPage clickEventsHeader() throws InterruptedException, IOException {
+    public EventLog clickEventsHeader() throws InterruptedException, IOException {
         waitAndClickElement(eventsCollapsableSection);
-        return new EventLogPage();
+        return new EventLog();
     }
 
-    public EventLogPage clickEventLogButton() throws InterruptedException, IOException {
+    public EventLog clickEventLogButton() throws InterruptedException, IOException {
         waitAndClickElement(eventLogButton);
-        return new EventLogPage();
+        return new EventLog();
     }
 
-    public EventLogPage assertEventlogModal() throws InterruptedException, IOException {
+    public EventLog assertEventlogModal() throws InterruptedException, IOException {
         eventlogModal.isDisplayed();
-        return new EventLogPage();
+        return new EventLog();
 
     }
 
-    public EventLogPage assertCapturedUser() throws InterruptedException, IOException {
+    public EventLog assertCapturedUser() throws InterruptedException, IOException {
         waitUntilWebElementIsVisible(capturedUser);
         org.testng.Assert.assertEquals(capturedUser.getText(), "Maurice Jenner\nConglomo Corporation");
-        return new EventLogPage();
+        return new EventLog();
     }
 }

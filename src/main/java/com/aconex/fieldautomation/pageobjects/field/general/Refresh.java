@@ -8,7 +8,7 @@ import org.openqa.selenium.support.FindBy;
 
 import java.io.IOException;
 
-public class RefreshPage extends BasePage {
+public class Refresh extends BasePage {
 
     public @FindBy(css = ".primary> span")
     WebElement buttonSave;
@@ -21,38 +21,38 @@ public class RefreshPage extends BasePage {
     String preAddIssueCount;
     String postAddIssueVal;
 
-    public RefreshPage() throws IOException {
+    public Refresh() throws IOException {
         super();
     }
 
-    public RefreshPage iKnowTheIssueCountInIssuesPage() throws Exception {
+    public Refresh iKnowTheIssueCountInIssuesPage() throws Exception {
         preAddIssueCount = DriverFactory.driver.findElement(By.cssSelector(".issue-number.ng-binding")).getText();
-        return new RefreshPage();
+        return new Refresh();
     }
 
-    public RefreshPage iClickOnSaveButtonInIssuesPane() throws Exception {
+    public Refresh iClickOnSaveButtonInIssuesPane() throws Exception {
         waitAndClickElement(buttonSave);
         Thread.sleep(1000);
-        return new RefreshPage();
+        return new Refresh();
     }
 
-    public RefreshPage issueShouldBeSaved() throws Exception {
+    public Refresh issueShouldBeSaved() throws Exception {
         waitUntilWebElementIsVisible(growler);
         growler.isDisplayed();
-        return new RefreshPage();
+        return new Refresh();
     }
 
-    public RefreshPage clickOnRefreshButton() throws Exception {
+    public Refresh clickOnRefreshButton() throws Exception {
         waitAndClickElement(refreshButton);
-        return new RefreshPage();
+        return new Refresh();
     }
 
-    public RefreshPage iShouldSeeIssueNumberUpdatedBy1() throws Exception {
+    public Refresh iShouldSeeIssueNumberUpdatedBy1() throws Exception {
         postAddIssueVal = DriverFactory.driver.findElement(By.cssSelector(".issue-number.ng-binding")).getText();
         if (!preAddIssueCount.equals(postAddIssueVal)) {
-            return new RefreshPage();
+            return new Refresh();
         } else
-            return new RefreshPage();
+            return new Refresh();
     }
 
 

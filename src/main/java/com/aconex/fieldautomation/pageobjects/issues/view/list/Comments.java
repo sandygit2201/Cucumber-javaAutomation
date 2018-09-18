@@ -8,7 +8,7 @@ import org.testng.Assert;
 
 import java.io.IOException;
 
-public class CommentsPage extends BasePage {
+public class Comments extends BasePage {
 
 
     public @FindBy(css = "textarea#content")
@@ -32,38 +32,38 @@ public class CommentsPage extends BasePage {
     public @FindBy(xpath = "//DIV[@class='view-comment auiReset-font']//P[@class='comment-text auiText-normal ng-binding'][text()='Test Comments']")
     WebElement assertAddedComment;
 
-    public CommentsPage() throws IOException {
+    public Comments() throws IOException {
         super();
 
     }
 
 
-    public CommentsPage clickOnFirstIssue() throws Exception {
+    public Comments clickOnFirstIssue() throws Exception {
         waitUntilWebElementIsVisible(clickFirstIssue);
         waitAndClickElement(clickFirstIssue);
-        return new CommentsPage();
+        return new Comments();
     }
 
-    public CommentsPage viewCommentSection() throws Exception {
+    public Comments viewCommentSection() throws Exception {
         waitUntilWebElementIsVisible(textFieldComments);
-        return new CommentsPage();
+        return new Comments();
     }
 
 
-    public CommentsPage addComments() throws Exception {
+    public Comments addComments() throws Exception {
         clickOnElementUsingCustomTimeout(textFieldComments, DriverFactory.driver, 10);
         Thread.sleep(2000);
         sendKeysToWebElement(textFieldComments, "Test Comments");
-        return new CommentsPage();
+        return new Comments();
     }
 
-    public CommentsPage postComment() throws Exception {
+    public Comments postComment() throws Exception {
         clickOnElementUsingCustomTimeout(buttonPost, DriverFactory.driver, 10);
-        return new CommentsPage();
+        return new Comments();
     }
 
-    public CommentsPage assertComment() throws Exception {
+    public Comments assertComment() throws Exception {
         Assert.assertEquals(assertAddedComment.getText(), "Test Comments");
-        return new CommentsPage();
+        return new Comments();
     }
 }

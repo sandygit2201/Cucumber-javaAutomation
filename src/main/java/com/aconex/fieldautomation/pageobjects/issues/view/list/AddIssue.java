@@ -7,7 +7,7 @@ import org.openqa.selenium.support.FindBy;
 
 import java.io.IOException;
 
-public class AddIssuePage extends BasePage {
+public class AddIssue extends BasePage {
 
 
     public @FindBy(className = "add-issue")
@@ -56,96 +56,96 @@ public class AddIssuePage extends BasePage {
     WebElement checkAssignedToField;
 
 
-    public AddIssuePage() throws IOException {
+    public AddIssue() throws IOException {
         super();
     }
 
 
-    public AddIssuePage clickOnAddButton() throws IOException, InterruptedException {
+    public AddIssue clickOnAddButton() throws IOException, InterruptedException {
         waitUntilPreLoadElementDisappears(By.cssSelector("fm-app > div:nth-child(4) > div > div > div"));
         waitAndClickElement(buttonAdd);
-        return new AddIssuePage();
+        return new AddIssue();
     }
 
 
-    public AddIssuePage iEnterIssueType() throws Exception {
+    public AddIssue iEnterIssueType() throws Exception {
         waitAndClickElement(textFieldIssueType);
         waitAndClickElement(textFieldAutomationIssueType);
-        return new AddIssuePage();
+        return new AddIssue();
     }
 
 
-    public AddIssuePage iEnterIssueDescription() throws Exception {
+    public AddIssue iEnterIssueDescription() throws Exception {
         sendKeysToWebElement(textFieldDescription, "Automation Test");
-        return new AddIssuePage();
+        return new AddIssue();
     }
 
 
-    public AddIssuePage clickOnSaveButton() throws Exception {
+    public AddIssue clickOnSaveButton() throws Exception {
         Thread.sleep(1000);
         waitAndClickElement(buttonSave);
         Thread.sleep(2000);
-        return new AddIssuePage();
+        return new AddIssue();
     }
 
-    public AddIssuePage verifyIssueSaved() throws Exception {
+    public AddIssue verifyIssueSaved() throws Exception {
         waitUntilWebElementIsVisible(growler);
         growler.isDisplayed();
-        return new AddIssuePage();
+        return new AddIssue();
     }
 
-    public AddIssuePage clickOnIssueType() throws Exception {
+    public AddIssue clickOnIssueType() throws Exception {
         waitAndClickElement(textFieldIssueType);
-        return new AddIssuePage();
+        return new AddIssue();
     }
 
-    public AddIssuePage assertIssueTypeOrder() throws Exception {
+    public AddIssue assertIssueTypeOrder() throws Exception {
         boolean CheckOrder = checkSorting("(//INPUT[@type='search'])[4]/following-sibling::UL");
-        return new AddIssuePage();
+        return new AddIssue();
 
     }
 
-    public AddIssuePage selectDueDate() throws Exception {
+    public AddIssue selectDueDate() throws Exception {
         waitAndClickElement(iconDueDate);
         waitAndClickElement(iconNextMonth);
         waitAndClickElement(numeralDateRandom);
-        return new AddIssuePage();
+        return new AddIssue();
     }
 
 
-    public AddIssuePage addLocation() throws Exception {
+    public AddIssue addLocation() throws Exception {
         sendKeysToWebElement(textFieldLocation, "Automation Location");
-        return new AddIssuePage();
+        return new AddIssue();
     }
 
 
-    public AddIssuePage dropdownSelectIssueType() throws Exception {
+    public AddIssue dropdownSelectIssueType() throws Exception {
         waitAndClickElement(textFieldIssueType);
         waitAndClickElement(dropdownIssueType);
-        return new AddIssuePage();
+        return new AddIssue();
     }
 
-    public AddIssuePage dropdownSelectIssueDescription() throws Exception {
+    public AddIssue dropdownSelectIssueDescription() throws Exception {
         waitAndClickElement(textFieldDescription);
         waitAndClickElement(dropdownIssueDescription);
-        return new AddIssuePage();
+        return new AddIssue();
     }
 
-    public AddIssuePage dropdownSelectLocation() throws Exception {
+    public AddIssue dropdownSelectLocation() throws Exception {
         waitAndClickElement(textFieldLocation);
         waitAndClickElement(dropdownLocation);
-        return new AddIssuePage();
+        return new AddIssue();
     }
 
-    public AddIssuePage cancelIssueButton() throws Exception {
+    public AddIssue cancelIssueButton() throws Exception {
         waitAndClickElement(cancelIssue);
-        return new AddIssuePage();
+        return new AddIssue();
 
     }
 
-    public AddIssuePage checkAssignedTo() throws Exception {
+    public AddIssue checkAssignedTo() throws Exception {
         waitUntilWebElementIsVisible(checkAssignedToField);
-        return new AddIssuePage();
+        return new AddIssue();
     }
 
 

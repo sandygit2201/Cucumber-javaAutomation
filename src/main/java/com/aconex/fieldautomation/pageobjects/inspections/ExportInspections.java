@@ -11,7 +11,7 @@ import org.testng.Assert;
 import java.io.IOException;
 
 
-public class ExportInspectionsPage extends BasePage {
+public class ExportInspections extends BasePage {
 
 
     public @FindBy(xpath = "//DIV[@class='checklist-checklist clearfix edit-title-enabled ng-scope']//DIV[@class='title ng-binding'][text()='Automation Template']")
@@ -19,29 +19,29 @@ public class ExportInspectionsPage extends BasePage {
     public @FindBy(css = "div.checklist-details-export-pdf.col-md-6.no-padding.ng-isolate-scope > button")
     WebElement buttonExport;
 
-    public ExportInspectionsPage() throws IOException {
+    public ExportInspections() throws IOException {
     }
 
-    public ExportInspectionsPage selectChecklist() throws Exception {
+    public ExportInspections selectChecklist() throws Exception {
         Thread.sleep(1000);
         clickOnElementUsingCustomTimeout(selectChecklist, DriverFactory.driver, 10);
-        return new ExportInspectionsPage();
+        return new ExportInspections();
 
     }
 
-    public ExportInspectionsPage clickExport() throws Exception {
+    public ExportInspections clickExport() throws Exception {
 
         waitAndClickElement(buttonExport);
         Thread.sleep(200);
         waitUntilPreLoadElementDisappears(By.className("fm-app > div:nth-child(4) > div > div > div"));
-        return new ExportInspectionsPage();
+        return new ExportInspections();
 
     }
 
-    public ExportInspectionsPage verifyFileDownload() throws Exception {
+    public ExportInspections verifyFileDownload() throws Exception {
         String downloadPath = Constants.DOWNLOAD_DIRECTORY;
         Assert.assertTrue(isFileDownloaded(downloadPath), "Failed to download Expected document");
-        return new ExportInspectionsPage();
+        return new ExportInspections();
 
     }
 

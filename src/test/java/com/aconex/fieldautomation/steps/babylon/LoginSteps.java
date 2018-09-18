@@ -16,44 +16,44 @@ public class LoginSteps extends DriverFactory {
 
     @Given("^User navigates to Field$")
     public void userNavigatesToField() throws Throwable {
-        loginPage.getLoginPage();
+        login.getLoginPage();
     }
 
 
     @And("^User enters a \"([^\"]*)\" username$")
     public void userEntersAUsername(String userName) throws Throwable {
-        loginPage.enterUserName(userName);
+        login.enterUserName(userName);
 
     }
 
     @And("^User enters a \"([^\"]*)\" password$")
     public void userEntersAPassword(String password) throws Throwable {
-        loginPage.enterPassword(password);
+        login.enterPassword(password);
 
     }
 
     @When("^User clicks on the login button$")
     public void userClicksOnTheLoginButton() throws Throwable {
-        loginPage.clickLoginButton();
+        login.clickLoginButton();
 
     }
 
 
     @Then("^User should see the \"([^\"]*)\"$")
     public void userShouldSeeThe(String arg0) throws Throwable {
-        loginPage.assertLoginSuccessMessage(arg0);
+        login.assertLoginSuccessMessage(arg0);
     }
 
 
     @Then("^User should see the failure \"(.*)\"$")
     public void userShouldSeeTheFailure(String arg1) throws Throwable {
-        loginPage.assertLoginFailureMessage(arg1);
+        login.assertLoginFailureMessage(arg1);
     }
 
 
     @Then("^User should see the failure message$")
     public void userShouldSeeTheFailureMessage() {
-        assertTrue(matches(LOGIN_FAILURE, loginPage.getLoginFailureMessage()));
+        assertTrue(matches(LOGIN_FAILURE, login.getLoginFailureMessage()));
     }
 
     private boolean matches(Pattern loginFailure, String msg) {

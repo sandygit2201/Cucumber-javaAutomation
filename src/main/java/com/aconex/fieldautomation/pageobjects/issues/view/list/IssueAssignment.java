@@ -14,7 +14,7 @@ import static org.hamcrest.Matchers.is;
 
 @SuppressWarnings("Duplicates")
 
-public class IssueAssignmentPage extends BasePage {
+public class IssueAssignment extends BasePage {
 
 
     public @FindBy(xpath = "(//DIV[@class='issues-list-item clearfix'])[1]")
@@ -45,27 +45,27 @@ public class IssueAssignmentPage extends BasePage {
             "| highlight: $select.search'][text()='Majestic Builders']")
     WebElement assignToOrgWhileAddingIssue;
 
-    public IssueAssignmentPage() throws IOException {
+    public IssueAssignment() throws IOException {
         super();
     }
 
-    public IssueAssignmentPage selectIssue() throws Exception {
+    public IssueAssignment selectIssue() throws Exception {
         waitAndClickElement(selectIssue);
         Thread.sleep(1000);
-        return new IssueAssignmentPage();
+        return new IssueAssignment();
     }
 
-    public IssueAssignmentPage checkIssueNotAssigned() throws Exception {
+    public IssueAssignment checkIssueNotAssigned() throws Exception {
         waitAndClickElement(buttonRefresh);
         waitUntilPreLoadElementDisappears(By.cssSelector("fm-app > div:nth-child(4) > div > div > div"));
         await("Unassigned Issue").atMost(60, TimeUnit.SECONDS)
                 .until(issueNotAssigned::getText, is("Not Assigned"));
         issueNotAssigned.isDisplayed();
-        return new IssueAssignmentPage();
+        return new IssueAssignment();
     }
 
 
-    public IssueAssignmentPage assignToUserInMyOrg() throws Exception {
+    public IssueAssignment assignToUserInMyOrg() throws Exception {
         await("Unassigned Issue").atMost(40, TimeUnit.SECONDS)
                 .until(issueNotAssigned::getText, is("Not Assigned"));
         waitAndClickElement(issueNotAssigned);
@@ -73,63 +73,63 @@ public class IssueAssignmentPage extends BasePage {
         Thread.sleep(1000);
         waitAndClickElement(buttonRefresh);
         waitUntilPreLoadElementDisappears(By.cssSelector("fm-app > div:nth-child(4) > div > div > div"));
-        return new IssueAssignmentPage();
+        return new IssueAssignment();
     }
 
-    public IssueAssignmentPage assertIssueAssignmentToUser() throws Exception {
+    public IssueAssignment assertIssueAssignmentToUser() throws Exception {
         waitAndClickElement(selectIssue);
         Thread.sleep(1000);
         Assert.assertTrue(assertAssignmentToUser.isDisplayed());
-        return new IssueAssignmentPage();
+        return new IssueAssignment();
     }
 
 
-    public IssueAssignmentPage assignToOrg() throws Exception {
+    public IssueAssignment assignToOrg() throws Exception {
         waitAndClickElement(issueNotAssigned);
         waitAndClickElement(assignToOrg);
         Thread.sleep(1000);
         waitAndClickElement(buttonRefresh);
         waitUntilPreLoadElementDisappears(By.cssSelector("fm-app > div:nth-child(4) > div > div > div"));
-        return new IssueAssignmentPage();
+        return new IssueAssignment();
     }
 
-    public IssueAssignmentPage assertIssueAssignmentToOrg() throws Exception {
+    public IssueAssignment assertIssueAssignmentToOrg() throws Exception {
         Assert.assertTrue(assertAssignmentToOrg.isDisplayed());
-        return new IssueAssignmentPage();
+        return new IssueAssignment();
     }
 
 
-    public IssueAssignmentPage clickAssignTo() throws Exception {
+    public IssueAssignment clickAssignTo() throws Exception {
         waitAndClickElement(dropdownAssignTo);
-        return new IssueAssignmentPage();
+        return new IssueAssignment();
     }
 
-    public IssueAssignmentPage assignToUserWhenAddingIssue() throws Exception {
+    public IssueAssignment assignToUserWhenAddingIssue() throws Exception {
         waitAndClickElement(assignToUserWhileAddingIssue);
-        return new IssueAssignmentPage();
+        return new IssueAssignment();
     }
 
-    public IssueAssignmentPage assertIssueAssignmentToUserWhileCreatingIssue() throws Exception {
+    public IssueAssignment assertIssueAssignmentToUserWhileCreatingIssue() throws Exception {
         waitAndClickElement(buttonRefresh);
         waitUntilPreLoadElementDisappears(By.cssSelector("fm-app > div:nth-child(4) > div > div > div"));
         Thread.sleep(1000);
         waitAndClickElement(selectIssue);
         Assert.assertTrue(assertAssignmentToUser.isDisplayed());
-        return new IssueAssignmentPage();
+        return new IssueAssignment();
     }
 
-    public IssueAssignmentPage assignToOrgWhenAddingIssue() throws Exception {
+    public IssueAssignment assignToOrgWhenAddingIssue() throws Exception {
         waitAndClickElement(assignToOrgWhileAddingIssue);
-        return new IssueAssignmentPage();
+        return new IssueAssignment();
     }
 
-    public IssueAssignmentPage assertIssueAssignmentToOrgWhileCreatingIssue() throws Exception {
+    public IssueAssignment assertIssueAssignmentToOrgWhileCreatingIssue() throws Exception {
         waitAndClickElement(buttonRefresh);
         waitUntilPreLoadElementDisappears(By.cssSelector("fm-app > div:nth-child(4) > div > div > div"));
         waitUntilWebElementIsVisible(selectIssue);
         waitAndClickElement(selectIssue);
         Assert.assertTrue(assertAssignmentToOrg.isDisplayed());
-        return new IssueAssignmentPage();
+        return new IssueAssignment();
     }
 }
 

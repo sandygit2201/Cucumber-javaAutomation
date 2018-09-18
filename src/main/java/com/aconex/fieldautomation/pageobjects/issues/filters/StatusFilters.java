@@ -13,7 +13,7 @@ import java.util.List;
 @SuppressWarnings("Duplicates")
 
 
-public class StatusFiltersPage extends BasePage {
+public class StatusFilters extends BasePage {
 
 
     public @FindBy(xpath = "//SPAN[@class='ng-binding'][text()='Open']/preceding-sibling::INPUT")
@@ -29,88 +29,88 @@ public class StatusFiltersPage extends BasePage {
     public @FindBy(css = "div.auiToolbar-left > div.refresh-issues")
     WebElement buttonRefresh;
 
-    public StatusFiltersPage() throws IOException {
+    public StatusFilters() throws IOException {
         super();
     }
 
-    public StatusFiltersPage clickOnOpenStatus() throws Exception {
+    public StatusFilters clickOnOpenStatus() throws Exception {
         clickOnElementUsingCustomTimeout(filterOpen, DriverFactory.driver, 10);
         waitUntilPreLoadElementDisappears(By.cssSelector("fm-app > div:nth-child(4) > div > div > div"));
         clickOnElementUsingCustomTimeout(buttonRefresh, DriverFactory.driver, 10);
         waitUntilPreLoadElementDisappears(By.cssSelector("fm-app > div:nth-child(4) > div > div > div"));
-        return new StatusFiltersPage();
+        return new StatusFilters();
     }
 
-    public StatusFiltersPage clickOnReadyToInspectStatus() throws Exception {
+    public StatusFilters clickOnReadyToInspectStatus() throws Exception {
         clickOnElementUsingCustomTimeout(filterReadyToInspect, DriverFactory.driver, 10);
         waitUntilPreLoadElementDisappears(By.cssSelector("fm-app > div:nth-child(4) > div > div > div"));
         clickOnElementUsingCustomTimeout(buttonRefresh, DriverFactory.driver, 10);
         waitUntilPreLoadElementDisappears(By.cssSelector("fm-app > div:nth-child(4) > div > div > div"));
-        return new StatusFiltersPage();
+        return new StatusFilters();
     }
 
-    public StatusFiltersPage clickOnInDisputeStatus() throws Exception {
+    public StatusFilters clickOnInDisputeStatus() throws Exception {
         clickOnElementUsingCustomTimeout(filterInDispute, DriverFactory.driver, 10);
         waitUntilPreLoadElementDisappears(By.cssSelector("fm-app > div:nth-child(4) > div > div > div"));
         clickOnElementUsingCustomTimeout(buttonRefresh, DriverFactory.driver, 10);
         waitUntilPreLoadElementDisappears(By.cssSelector("fm-app > div:nth-child(4) > div > div > div"));
-        return new StatusFiltersPage();
+        return new StatusFilters();
     }
 
-    public StatusFiltersPage clickOnClosedStatus() throws Exception {
+    public StatusFilters clickOnClosedStatus() throws Exception {
         clickOnElementUsingCustomTimeout(filterClosed, DriverFactory.driver, 10);
         waitUntilPreLoadElementDisappears(By.cssSelector("fm-app > div:nth-child(4) > div > div > div"));
         clickOnElementUsingCustomTimeout(buttonRefresh, DriverFactory.driver, 10);
         waitUntilPreLoadElementDisappears(By.cssSelector("fm-app > div:nth-child(4) > div > div > div"));
-        return new StatusFiltersPage();
+        return new StatusFilters();
     }
 
-    public StatusFiltersPage clickOnWorkDoneStatus() throws Exception {
+    public StatusFilters clickOnWorkDoneStatus() throws Exception {
         clickOnElementUsingCustomTimeout(filterWorkDone, DriverFactory.driver, 10);
         waitUntilPreLoadElementDisappears(By.cssSelector("fm-app > div:nth-child(4) > div > div > div"));
         clickOnElementUsingCustomTimeout(buttonRefresh, DriverFactory.driver, 10);
         waitUntilPreLoadElementDisappears(By.cssSelector("fm-app > div:nth-child(4) > div > div > div"));
-        return new StatusFiltersPage();
+        return new StatusFilters();
     }
 
-    public StatusFiltersPage assertOpenFilter() throws Exception {
+    public StatusFilters assertOpenFilter() throws Exception {
         List<WebElement> lstItems = DriverFactory.driver.findElements(By.xpath("//div[@class='issue-status-group']//span"));
         for (WebElement eleItem : lstItems) {
             Assert.assertEquals(eleItem.getText(), "OPEN");
         }
-        return new StatusFiltersPage();
+        return new StatusFilters();
     }
 
-    public StatusFiltersPage assertReadyToInspectFilter() throws Exception {
+    public StatusFilters assertReadyToInspectFilter() throws Exception {
         List<WebElement> lstItems = DriverFactory.driver.findElements(By.xpath("//div[@class='issue-status-group']//span"));
         for (WebElement eleItem : lstItems) {
             Assert.assertEquals(eleItem.getText(), "READY TO INSPECT");
         }
-        return new StatusFiltersPage();
+        return new StatusFilters();
     }
 
-    public StatusFiltersPage assertInDisputeFilter() throws Exception {
+    public StatusFilters assertInDisputeFilter() throws Exception {
         List<WebElement> lstItems = DriverFactory.driver.findElements(By.xpath("//div[@class='issue-status-group']//span"));
         for (WebElement eleItem : lstItems) {
             Assert.assertEquals(eleItem.getText(), "IN DISPUTE");
         }
-        return new StatusFiltersPage();
+        return new StatusFilters();
     }
 
-    public StatusFiltersPage assertClosedFilter() throws Exception {
+    public StatusFilters assertClosedFilter() throws Exception {
         List<WebElement> lstItems = DriverFactory.driver.findElements(By.xpath("//div[@class='issue-status-group']//span"));
         for (WebElement eleItem : lstItems) {
             Assert.assertEquals(eleItem.getText(), "CLOSED");
         }
-        return new StatusFiltersPage();
+        return new StatusFilters();
     }
 
-    public StatusFiltersPage assertWorkDoneFilter() throws Exception {
+    public StatusFilters assertWorkDoneFilter() throws Exception {
         List<WebElement> lstItems = DriverFactory.driver.findElements(By.xpath("//div[@class='issue-status-group']//span"));
         for (WebElement eleItem : lstItems) {
             Assert.assertEquals(eleItem.getText(), "WORK DONE");
         }
-        return new StatusFiltersPage();
+        return new StatusFilters();
     }
 }
 

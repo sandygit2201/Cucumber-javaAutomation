@@ -6,7 +6,7 @@ import org.openqa.selenium.support.FindBy;
 
 import java.io.IOException;
 
-public class CreateChecklistPage extends BasePage {
+public class CreateChecklist extends BasePage {
 
 
     public @FindBy(id = "new-template")
@@ -38,87 +38,87 @@ public class CreateChecklistPage extends BasePage {
     public @FindBy(css = "div.right-growler.ng-scope > div > div > div")
     WebElement assertChecklistCreation;
 
-    public CreateChecklistPage() throws IOException {
+    public CreateChecklist() throws IOException {
         super();
 
     }
 
-    public CreateChecklistPage clickAddTemplate() throws Exception {
+    public CreateChecklist clickAddTemplate() throws Exception {
         waitAndClickElement(buttonAddTemplate);
-        return new CreateChecklistPage();
+        return new CreateChecklist();
     }
 
-    public CreateChecklistPage clickChecklist() throws Exception {
+    public CreateChecklist clickChecklist() throws Exception {
 
         waitAndClickElement(optionChecklist);
         Thread.sleep(1000);
-        return new CreateChecklistPage();
+        return new CreateChecklist();
 
     }
 
-    public CreateChecklistPage assertCLCreatePage() throws Exception {
+    public CreateChecklist assertCLCreatePage() throws Exception {
         assertChecklistCreatePage.isDisplayed();
-        return new CreateChecklistPage();
+        return new CreateChecklist();
 
     }
 
 
-    public CreateChecklistPage addTitle() throws Exception {
+    public CreateChecklist addTitle() throws Exception {
         waitAndClickElement(textTitle);
         sendKeysToWebElement(textTitle, "Checklist_Title_Test " + genUniqueInt());
-        return new CreateChecklistPage();
+        return new CreateChecklist();
 
     }
 
 
-    public CreateChecklistPage addDescription() throws Exception {
+    public CreateChecklist addDescription() throws Exception {
 
         waitAndClickElement(textDesc);
         sendKeysToWebElement(textDesc, "Checklist_Description_Test " + genUniqueInt());
-        return new CreateChecklistPage();
+        return new CreateChecklist();
 
     }
 
 
-    public CreateChecklistPage selectCategory() throws Exception {
+    public CreateChecklist selectCategory() throws Exception {
 
         waitAndClickElement(clickCategory);
         waitAndClickElement(automationCategory);
-        return new CreateChecklistPage();
+        return new CreateChecklist();
     }
 
 
-    public CreateChecklistPage addItemText() throws Exception {
+    public CreateChecklist addItemText() throws Exception {
         waitAndClickElement(textAddItem);
         sendKeysToWebElement(textAddItem, "Automation Test");
-        return new CreateChecklistPage();
+        return new CreateChecklist();
 
     }
 
-    public CreateChecklistPage clickSelectType() throws Exception {
+    public CreateChecklist clickSelectType() throws Exception {
         waitAndClickElement(buttonSelectType);
         waitAndClickElement(textSelectType);
-        return new CreateChecklistPage();
+        return new CreateChecklist();
 
     }
 
 
-    public CreateChecklistPage clickAddItem() throws Exception {
+    public CreateChecklist clickAddItem() throws Exception {
         waitAndClickElement(buttonAddItem);
-        return new CreateChecklistPage();
+        return new CreateChecklist();
 
     }
 
-    public CreateChecklistPage clickPublish() throws Exception {
+    public CreateChecklist clickPublish() throws Exception {
         waitAndClickElement(buttonPublish);
-        return new CreateChecklistPage();
+        return new CreateChecklist();
 
     }
 
-    public CreateChecklistPage assertChecklistCreation() throws Exception {
+    public CreateChecklist assertChecklistCreation() throws Exception {
         waitUntilWebElementIsVisible(assertChecklistCreation);
         org.testng.Assert.assertEquals(assertChecklistCreation.getText(), "Checklist template has been saved successfully.");
-        return new CreateChecklistPage();
+        return new CreateChecklist();
 
     }
 

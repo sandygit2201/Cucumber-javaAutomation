@@ -10,7 +10,7 @@ import org.testng.Assert;
 import java.io.IOException;
 import java.util.List;
 
-public class ProjectFieldFiltersPage extends BasePage {
+public class ProjectFieldFilters extends BasePage {
 
     public @FindBy(css = "div.custom-fields-filter-link.ng-scope > span")
     WebElement filterExtraDetails;
@@ -29,43 +29,43 @@ public class ProjectFieldFiltersPage extends BasePage {
     public @FindBy(xpath = "(//DIV[@class='readonly-view ng-scope'])[5]")
     WebElement assertFirstValue;
 
-    public ProjectFieldFiltersPage() throws IOException {
+    public ProjectFieldFilters() throws IOException {
         super();
     }
 
-    public ProjectFieldFiltersPage clickOnExtraDetails() throws Exception {
+    public ProjectFieldFilters clickOnExtraDetails() throws Exception {
         waitAndClickElement(filterExtraDetails);
-        return new ProjectFieldFiltersPage();
+        return new ProjectFieldFilters();
     }
 
 
-    public ProjectFieldFiltersPage viewExtraDetailsModal() throws Exception {
+    public ProjectFieldFilters viewExtraDetailsModal() throws Exception {
         Assert.assertEquals(modalExtraDetails.getText(), "Extra details");
-        return new ProjectFieldFiltersPage();
+        return new ProjectFieldFilters();
     }
 
-    public ProjectFieldFiltersPage clickOnFirstProjectField() throws Exception {
+    public ProjectFieldFilters clickOnFirstProjectField() throws Exception {
         waitAndClickElement(selectFirstProjectField);
-        return new ProjectFieldFiltersPage();
+        return new ProjectFieldFilters();
     }
 
-    public ProjectFieldFiltersPage selectFirstValue() throws Exception {
+    public ProjectFieldFilters selectFirstValue() throws Exception {
         waitAndClickElement(checkboxFirstValue);
-        return new ProjectFieldFiltersPage();
+        return new ProjectFieldFilters();
     }
 
-    public ProjectFieldFiltersPage clickApplyButton() throws Exception {
+    public ProjectFieldFilters clickApplyButton() throws Exception {
         waitAndClickElement(buttonApply);
-        return new ProjectFieldFiltersPage();
+        return new ProjectFieldFilters();
     }
 
-    public ProjectFieldFiltersPage assertLoadingScreen() throws Exception {
+    public ProjectFieldFilters assertLoadingScreen() throws Exception {
         loaderPageLoader.isDisplayed();
         waitUntilPreLoadElementDisappears(By.cssSelector("fm-app > div:nth-child(4) > div > div > div"));
-        return new ProjectFieldFiltersPage();
+        return new ProjectFieldFilters();
     }
 
-    public ProjectFieldFiltersPage assertProjectFieldFilterResult() throws Exception {
+    public ProjectFieldFilters assertProjectFieldFilterResult() throws Exception {
         By issuesDisplayed = By.xpath("(//DIV[@class='issues-list-item clearfix'])[position() < 11]");
         List<WebElement> lstItems = DriverFactory.driver.findElements(issuesDisplayed);
         for (WebElement eleItem : lstItems) {
@@ -73,7 +73,7 @@ public class ProjectFieldFiltersPage extends BasePage {
             waitAndClickElement(extraDetailsSection);
             Assert.assertEquals(assertFirstValue.getText(), "High");
         }
-        return new ProjectFieldFiltersPage();
+        return new ProjectFieldFilters();
 
     }
 }
