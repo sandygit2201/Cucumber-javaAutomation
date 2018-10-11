@@ -1,16 +1,17 @@
 package com.aconex.fieldautomation.steps.issues.view.list;
 
-import com.aconex.fieldautomation.utils.DriverFactory;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
 
 import java.net.URL;
 
+import static com.aconex.fieldautomation.utils.UIComponents.photoUpload;
+
 public class PhotoUploadSteps {
     @And("^the user uploads a photo$")
     public void theUserShouldSelectThePhoto() throws Throwable {
         URL photo = getPhotoAttachment();
-        DriverFactory.photoUpload.uploadPhoto(photo);
+        photoUpload.uploadPhoto(photo);
     }
 
     @Then("^the added photo should be visible$")

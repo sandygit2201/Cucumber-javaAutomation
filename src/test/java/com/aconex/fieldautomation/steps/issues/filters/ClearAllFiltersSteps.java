@@ -1,12 +1,13 @@
 package com.aconex.fieldautomation.steps.issues.filters;
 
-import com.aconex.fieldautomation.utils.DriverFactory;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
-public class ClearAllFiltersSteps extends DriverFactory {
+import static com.aconex.fieldautomation.utils.UIComponents.clearAllFilter;
+
+public class ClearAllFiltersSteps {
     @Given("^User clicks on Ready to Inspect filter$")
     public void userClicksOnReadyToInspectFilter() throws Throwable {
         clearAllFilter.clickReadyToInspectFilter();

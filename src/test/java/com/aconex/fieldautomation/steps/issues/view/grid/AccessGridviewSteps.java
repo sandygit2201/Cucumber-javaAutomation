@@ -1,11 +1,12 @@
 package com.aconex.fieldautomation.steps.issues.view.grid;
 
-import com.aconex.fieldautomation.utils.DriverFactory;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
-public class AccessGridviewSteps extends DriverFactory {
+import static com.aconex.fieldautomation.utils.UIComponents.accessGridView;
+
+public class AccessGridviewSteps {
     @When("^User click on grid view button$")
     public void userClickOnGridViewButton() throws Throwable {
         accessGridView.accessGridView();

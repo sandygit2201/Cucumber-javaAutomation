@@ -1,6 +1,5 @@
 package com.aconex.fieldautomation.steps.babylon;
 
-import com.aconex.fieldautomation.utils.DriverFactory;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -8,9 +7,10 @@ import cucumber.api.java.en.When;
 
 import java.util.regex.Pattern;
 
+import static com.aconex.fieldautomation.utils.UIComponents.login;
 import static org.testng.Assert.assertTrue;
 
-public class LoginSteps extends DriverFactory {
+public class LoginSteps {
 
     private static final Pattern LOGIN_FAILURE = Pattern.compile("^Your login name or password is( still)? incorrect\\.");
 

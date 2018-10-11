@@ -8,6 +8,7 @@ import cucumber.api.java.Before;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
 
 import java.io.File;
 import java.io.IOException;
@@ -17,8 +18,10 @@ import java.nio.file.Paths;
 import java.util.Arrays;
 
 
-public class MasterHooks extends DriverFactory {
+public class MasterHooks {
 
+
+    private WebDriver driver;
 
     @After
     public static void clean() {
@@ -28,7 +31,7 @@ public class MasterHooks extends DriverFactory {
 
     @Before
     public void setup() throws IOException {
-        driver = getDriver();
+        driver = new DriverFactory().getDriver();
         Path downloadDir = Paths.get(Constants.DOWNLOAD_DIRECTORY);
         if (!Files.exists(downloadDir)) {
             Files.createDirectory(downloadDir);

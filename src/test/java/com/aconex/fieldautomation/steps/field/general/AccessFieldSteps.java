@@ -1,11 +1,12 @@
 package com.aconex.fieldautomation.steps.field.general;
 
-import com.aconex.fieldautomation.utils.DriverFactory;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
-public class AccessFieldSteps extends DriverFactory {
+import static com.aconex.fieldautomation.utils.UIComponents.accessField;
+
+public class AccessFieldSteps {
     @And("^User enters a valid username$")
     public void userEntersAValidUsername() throws Throwable {
         accessField.enterUserName();

@@ -1,11 +1,12 @@
 package com.aconex.fieldautomation.steps.issues.view.list;
 
-import com.aconex.fieldautomation.utils.DriverFactory;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
-public class EventLogSteps extends DriverFactory {
+import static com.aconex.fieldautomation.utils.UIComponents.checkEventLogValues;
+
+public class EventLogSteps {
     @When("^User click on Event log Collapsible header$")
     public void iClickOnEventlogCollapsibleHeader() throws Throwable {
         checkEventLogValues.clickEventsHeader();

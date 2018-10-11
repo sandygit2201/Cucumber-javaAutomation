@@ -3,7 +3,7 @@ package com.aconex.fieldautomation.steps.issues.filters;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
-import static com.aconex.fieldautomation.utils.DriverFactory.issuesFilters;
+import static com.aconex.fieldautomation.utils.UIComponents.issuesFilters;
 
 public class StatusFiltersSteps {
     @When("^User select Open status$")

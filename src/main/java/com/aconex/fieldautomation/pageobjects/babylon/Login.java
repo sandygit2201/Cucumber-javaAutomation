@@ -25,7 +25,7 @@ public class Login extends BasePage {
     }
 
     public Login getLoginPage() throws IOException {
-        getDriver().get("https://apiprod.aconex.com/Logon");
+        this.driver.get("https://apiprod.aconex.com/Logon");
         return new Login();
 
     }

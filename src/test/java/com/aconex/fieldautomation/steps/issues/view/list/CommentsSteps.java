@@ -4,7 +4,8 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
-import static com.aconex.fieldautomation.utils.DriverFactory.addComments;
+import static com.aconex.fieldautomation.utils.UIComponents.addComments;
+
 
 public class CommentsSteps {
     @Given("^User clicks on the first Issue$")

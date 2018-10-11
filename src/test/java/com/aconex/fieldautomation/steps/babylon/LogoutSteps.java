@@ -1,11 +1,12 @@
 package com.aconex.fieldautomation.steps.babylon;
 
-import com.aconex.fieldautomation.utils.DriverFactory;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
+import static com.aconex.fieldautomation.utils.UIComponents.logout;
 
-public class LogoutSteps extends DriverFactory {
+
+public class LogoutSteps {
 
     @When("^user clicks on logout link$")
     public void userClicksOnLogoutLink() throws Throwable {

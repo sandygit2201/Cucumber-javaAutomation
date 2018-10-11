@@ -1,13 +1,14 @@
 package com.aconex.fieldautomation.steps.issues.view.list;
 
 
-import com.aconex.fieldautomation.utils.DriverFactory;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
-public class CustomFieldSteps extends DriverFactory {
+import static com.aconex.fieldautomation.utils.UIComponents.selectCustomField;
+
+public class CustomFieldSteps {
     @And("^User click on the first custom field$")
     public void iClickOnTheFirstCustomField() throws Throwable {
         selectCustomField.clickOnFirstCustomField();

@@ -21,7 +21,10 @@ import java.util.List;
 import java.util.Objects;
 
 
-public class BasePage extends DriverFactory {
+public class BasePage {
+
+    protected WebDriver driver = DriverFactory.driver;
+
     protected WebDriverWait wait;
     protected JavascriptExecutor jsExecutor;
 
