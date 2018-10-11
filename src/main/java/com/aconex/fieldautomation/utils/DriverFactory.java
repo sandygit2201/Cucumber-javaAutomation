@@ -1,30 +1,6 @@
 package com.aconex.fieldautomation.utils;
 
 
-import com.aconex.fieldautomation.pageobjects.babylon.Login;
-import com.aconex.fieldautomation.pageobjects.babylon.Logout;
-import com.aconex.fieldautomation.pageobjects.babylon.SwitchProject;
-import com.aconex.fieldautomation.pageobjects.field.general.AccessField;
-import com.aconex.fieldautomation.pageobjects.field.general.Refresh;
-import com.aconex.fieldautomation.pageobjects.field.settings.AccessSections;
-import com.aconex.fieldautomation.pageobjects.field.settings.EnterSettings;
-import com.aconex.fieldautomation.pageobjects.field.settings.YourOrganization;
-import com.aconex.fieldautomation.pageobjects.inspections.CreateChecklist;
-import com.aconex.fieldautomation.pageobjects.inspections.ExportInspections;
-import com.aconex.fieldautomation.pageobjects.inspections.SelectInspection;
-import com.aconex.fieldautomation.pageobjects.issues.filters.ClearAllFilters;
-import com.aconex.fieldautomation.pageobjects.issues.filters.CollapseFilters;
-import com.aconex.fieldautomation.pageobjects.issues.filters.ProjectFieldFilters;
-import com.aconex.fieldautomation.pageobjects.issues.filters.StatusFilters;
-import com.aconex.fieldautomation.pageobjects.issues.view.grid.AccessGridView;
-import com.aconex.fieldautomation.pageobjects.issues.view.list.*;
-import com.aconex.fieldautomation.pageobjects.mail.SendMail;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.remote.RemoteWebDriver;
-import org.openqa.selenium.support.PageFactory;
 import org.apache.commons.lang3.SystemUtils;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;

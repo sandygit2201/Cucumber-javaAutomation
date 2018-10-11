@@ -1,7 +1,6 @@
 package com.aconex.fieldautomation.utils;
 
 import com.aconex.fieldautomation.pageobjects.babylon.Login;
-import com.aconex.fieldautomation.pageobjects.babylon.Login;
 import com.aconex.fieldautomation.pageobjects.babylon.Logout;
 import com.aconex.fieldautomation.pageobjects.babylon.SwitchProject;
 import com.aconex.fieldautomation.pageobjects.field.general.AccessField;
