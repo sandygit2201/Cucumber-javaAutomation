@@ -14,7 +14,7 @@ public class SwitchProject extends BasePage {
 
     public @FindBy(css = "div#nav span.nav-project > span")
     WebElement projectSelector;
-    public @FindBy(xpath = "//SPAN[@class='projectChanger-container']/../../../../..//DIV[@id='projectChanger-1879048480']")
+    public @FindBy(xpath = "//DIV[@class='uiPanel projectChanger-list projectChanger-overflow']//DIV[@id='projectChanger-1879048480']")
     WebElement myProject;
     public @FindBy(xpath = "//DIV[@class='toolbar clearFloats noprint']//H1[text()='Terms of Service Update']")
     WebElement headingServiceUpdatePage;
