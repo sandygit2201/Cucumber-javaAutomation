@@ -5,7 +5,7 @@
 <suite name="Cucumber Framework">
     <test name="Cucumber Test">
     <classes>
-        <class name = "MainRunner"/>
+        <class name = "com.aconex.fieldautomation.runner.MainRunner"/>
     </classes>
 </test>
 </suite>
