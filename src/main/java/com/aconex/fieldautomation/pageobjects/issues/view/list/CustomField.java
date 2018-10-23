@@ -1,5 +1,6 @@
 package com.aconex.fieldautomation.pageobjects.issues.view.list;
 
+import com.aconex.fieldautomation.helper.Waiter;
 import com.aconex.fieldautomation.pageobjects.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -10,17 +11,19 @@ import java.io.IOException;
 
 public class CustomField extends BasePage {
 
+    Waiter waiter = new Waiter(driver);
+
     public @FindBy(xpath = "(//SPAN[@tabindex='-1'])[2]")
     WebElement firstCustomField;
     public @FindBy(xpath = "(//INPUT[@type='search'])[3]/..//DIV[@ng-bind-html='label | highlight: $select.search'][text()='High']")
     WebElement dropDownFirstValue;
     public @FindBy(css = "div.auiToolbar-left > div.refresh-issues")
     WebElement buttonRefresh;
-    public @FindBy(xpath = "(//DIV[@class='issues-list-item clearfix'])[1]")
+    public @FindBy(css = ".issues.group li:first-child")
     WebElement firstIssue;
-    public @FindBy(xpath = "(//SPAN[@class='auiIcon auiCollapsibleSection-headerArrow chevronRight'])[1]")
+    public @FindBy(css = ".extra-details .chevronRight")
     WebElement extraDetailsSection;
-    public @FindBy(xpath = "(//DIV[@class='readonly-view ng-scope'])[5]")
+    public @FindBy(css = ".extra-details .value")
     WebElement assertFirstValue;
     public @FindBy(xpath = "//*[@class='issues group']/child::li[1]")
     WebElement clickFirstIssue;
@@ -56,7 +59,9 @@ public class CustomField extends BasePage {
 
     public CustomField assertCustomFieldWhileCreatingIssue() throws Exception {
         waitAndClickElement(firstIssue);
+        waiter.hasElement(By.cssSelector(".extra-details"), 5);
         waitAndClickElement(extraDetailsSection);
+        waiter.hasElement(assertFirstValue,5);
         Assert.assertEquals(assertFirstValue.getText(), "High");
         return new CustomField();
     }
