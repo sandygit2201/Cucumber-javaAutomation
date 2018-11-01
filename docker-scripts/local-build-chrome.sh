@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+
 DOWNLOAD_DIR=/tmp/fieldwebautomation/
 
 mkdir -p $DOWNLOAD_DIR
