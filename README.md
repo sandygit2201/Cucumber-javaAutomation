@@ -104,7 +104,7 @@ To run docker locally - headless
 To run through maven 
 
 ```
-    $mvn clean test
+$mvn clean test
 ```
 ### Break down into end to end tests
 
@@ -123,14 +123,17 @@ To run through maven
 We use GIT for versioning 
 Before working on the repo we create a separate branch and then merge it to the master branch
 
-Common Git commands that we use - 
-Git checkout <branchname> 
-Git commit -m "messagetobefilled"
-Git add <filename>
-Git push <branchname>
-Git merge 
-Git revert <commitid> 
-
+##Common Git commands that we use -
+```
+$git checkout <branchname> 
+$git commit -m "messagetobefilled"
+$git add <filename>
+$git push <branchname>
+$git merge 
+$git revert <commitid> 
+```
 ## Authors
 
-Field QA Team (Sony, Sesha, Mohan, Sandipan) 
+Field QA Team (Sony, Sesha, Mohan, Sandipan)  
+
+**ReadMe file is work in progress** 
