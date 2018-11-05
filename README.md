@@ -66,7 +66,7 @@ We need to Create a Folder structure as following
 
 ## Running the tests
 
-Using MainRunner 
+Using MainRunner - Right Click + Run 
 
 MainRunner is the Runner Class which handles the execution of multiple feature files in cucumber
 
@@ -85,36 +85,22 @@ Screenshot attached -
 
 ![](images/Mainrunner.png)
 
-Running using Docker
 
-
-To run docker locally
-
+## From the terminal
 
 ```
-./local-build-chrome.sh
+$./local-build-chrome.sh - To run docker locally
 
+$./quick-build.sh - To run docker locally - headless
+
+$mvn clean test -To run through maven 
 ```
 
 
-To run docker locally - headless
-
-
-```
-./quick-build.sh
-
-```
-
-To run through maven 
-
-```
-$mvn clean test
-```
 ### Break down into end to end tests
 
 
 ### And coding style
-
 
 ```
 1.    Class name example – ClassNameExample
@@ -127,7 +113,7 @@ $mvn clean test
 We use GIT for versioning 
 Before working on the repo we create a separate branch and then merge it to the master branch
 
-##Common Git commands that we use -
+#### Common Git commands that we use -
 ```
 $git checkout <branchname> 
 $git commit -m "messagetobefilled"
