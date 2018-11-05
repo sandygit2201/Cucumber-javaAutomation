@@ -124,6 +124,6 @@ $git revert <commitid>
 ```
 ## Authors
 
-Field QA Team (Sony, Sesha, Mohan, Sandipan)  
+Field QA Team
 
 **ReadMe file is work in progress** 
