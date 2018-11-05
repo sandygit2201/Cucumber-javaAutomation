@@ -52,6 +52,8 @@ A step by step series of examples that tell you how to get a testing from env ru
 
 Screenshot of the Folder structure - 
 
+![](images/FolderStructure.png)
+
 
 
 ```
@@ -80,6 +82,8 @@ public class MainRunner extends AbstractTestNGCucumberTests {
 }
 ```
 Screenshot attached - 
+
+![](images/Mainrunner.png)
 
 Running using Docker
 
