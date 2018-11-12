@@ -14,7 +14,7 @@ public class Login extends BasePage {
     WebElement textFieldPassword;
     public @FindBy(id = "login")
     WebElement buttonLogin;
-    public @FindBy(css = "a#logoff")
+    public @FindBy(xpath = "//DIV[@class='bicon ic-TASK']")
     WebElement assertLoginSuccess;
     public @FindBy(css = "form[name=\"sll\"] div.logon-messages > ul > li > div:nth-child(1) > div")
     WebElement assertLoginFailure;
