@@ -9,11 +9,14 @@ import java.io.IOException;
 
 public class Logout extends BasePage {
 
-    @FindBy(id = "logoff")
+    @FindBy(css = "#logoff[href='/Logon?Action=Logoff']")
     private WebElement logoutLink;
 
     @FindBy(id = "btnLogin")
     private WebElement loginButton;
+
+    @FindBy (css= "#nav-info.nav-user")
+    private WebElement UserNameInfo;
 
     public Logout() throws IOException {
         super();
@@ -21,6 +24,7 @@ public class Logout extends BasePage {
 
     public Logout clickLogout() throws InterruptedException {
         DriverFactory.driver.switchTo().defaultContent();
+        waitAndClickElement(UserNameInfo);
         waitAndClickElement(logoutLink);
         return this;
     }

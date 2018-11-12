@@ -13,8 +13,8 @@ Feature: Log into Babylon
 
     Examples:
       | Username | Password  | message |
-      | mjenner  | Auth3nt1c | Logout  |
-      | poleary  | Auth3nt1c | Logout  |
+      | mjenner  | Auth3nt1c | Tasks  |
+      | poleary  | Auth3nt1c | Tasks  |
 
 
   Scenario Outline: Unsuccessful Babylon Login - Incorrect Username and Password
