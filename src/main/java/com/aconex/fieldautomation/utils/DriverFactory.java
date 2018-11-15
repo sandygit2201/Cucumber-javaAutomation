@@ -11,7 +11,6 @@ import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.LocalFileDetector;
 import org.openqa.selenium.remote.RemoteWebDriver;
-import utils.ConfigReader;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -25,7 +24,6 @@ public final class DriverFactory {
 
     private static final String HUB_URL = "http://localhost:4444/wd/hub";
     private static final String DRIVER_ENV_VAR = "DRIVER";
-    private ConfigReader configReader;
 
     public static WebDriver driver;
 
@@ -55,6 +53,7 @@ public final class DriverFactory {
                     throw new RuntimeException("Unable to load browser for '" + browserName + "'");
             }
             driver.manage().window().setSize(new Dimension(1920, 1080));
+            driver.manage().window().fullscreen();
             driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
             Runtime.getRuntime().addShutdownHook(new Thread(driver::quit));
         }
@@ -78,11 +77,15 @@ public final class DriverFactory {
     }
 
     private String getDriverName() throws IOException {
-
-        configReader = new ConfigReader();
         String envVar = System.getenv(DRIVER_ENV_VAR);
-        return (envVar != null) ? envVar : configReader.getBrowser();
+        if (envVar != null) {
+            return envVar;
+        }
 
+        Properties p = new Properties();
+        InputStream input = getClass().getClassLoader().getResourceAsStream("config.properties");
+        p.load(input);
+        return p.getProperty("browser");
     }
 
     private String getDriverExecutable(String executable) {
