@@ -8,15 +8,15 @@ import java.io.IOException;
 
 public class Login extends BasePage {
 
-    public @FindBy(id = "userName")
+    private @FindBy(id = "userName")
     WebElement textFieldUserName;
-    public @FindBy(id = "password")
+    private  @FindBy(id = "password")
     WebElement textFieldPassword;
-    public @FindBy(id = "login")
+    private @FindBy(id = "login")
     WebElement buttonLogin;
-    public @FindBy(xpath = "//DIV[@class='bicon ic-TASK']")
+    private @FindBy(xpath = "//DIV[@class='bicon ic-TASK']")
     WebElement assertLoginSuccess;
-    public @FindBy(css = "form[name=\"sll\"] div.logon-messages > ul > li > div:nth-child(1) > div")
+    private @FindBy(css = "form[name=\"sll\"] div.logon-messages > ul > li > div:nth-child(1) > div")
     WebElement assertLoginFailure;
 
 
@@ -25,7 +25,7 @@ public class Login extends BasePage {
     }
 
     public Login getLoginPage() throws IOException {
-        this.driver.get("https://apiprod.aconex.com/Logon");
+        invokeURL();
         return new Login();
 
     }

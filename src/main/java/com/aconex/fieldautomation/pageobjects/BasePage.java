@@ -12,6 +12,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import utils.ConfigReader;
 
 import java.awt.*;
 import java.io.File;
@@ -27,6 +28,13 @@ public class BasePage {
 
     protected WebDriverWait wait;
     protected JavascriptExecutor jsExecutor;
+
+    public void invokeURL(){
+
+        ConfigReader configReader = new ConfigReader();
+        this.driver.get(configReader.getUrl());
+
+    }
 
     public BasePage() throws IOException {
         this.wait = new WebDriverWait(driver, 15);
