@@ -1,5 +1,6 @@
 package com.aconex.fieldautomation.steps.babylon;
 
+import com.aconex.fieldautomation.utils.ConfigReader;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -16,7 +17,8 @@ public class LoginSteps {
 
     @Given("^User navigates to Field$")
     public void userNavigatesToField() throws Throwable {
-        login.getLoginPage();
+
+        login.getLoginPage(new ConfigReader().getUrl());
     }
 
 

@@ -44,23 +44,23 @@ public class AccessField extends BasePage {
         super();
     }
 
-    public AccessField enterUserName() throws Exception {
+    public AccessField enterUserName(String userName) throws Exception {
         waitAndClickElement(textFieldUserName);
-        sendKeysToWebElement(textFieldUserName, "mjenner");
+        sendKeysToWebElement(textFieldUserName, userName);
         return new AccessField();
     }
 
 
-    public AccessField enterPassword() throws Exception {
+    public AccessField enterPassword(String password) throws Exception {
         waitAndClickElement(textFieldPassword);
-        sendKeysToWebElement(textFieldPassword, "Auth3nt1c");
+        sendKeysToWebElement(textFieldPassword, password);
         return new AccessField();
     }
 
 
-    public AccessField verifyUserName() throws Exception {
+    public AccessField verifyUserName(String fullName) throws Exception {
         waitUntilWebElementIsVisible(getUserName);
-        Assert.assertEquals(getUserName.getText(), "Mr Maurice Jenner");
+        Assert.assertEquals(getUserName.getText(), fullName);
         return new AccessField();
     }
 

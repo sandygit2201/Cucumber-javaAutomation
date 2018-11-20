@@ -25,6 +25,6 @@ public class SwitchProjectSteps {
 
     @Then("^User should be taken to that project$")
     public void iShouldBeTakenToThatProject() throws Throwable {
-        switchProject.assertMyProject();
+        switchProject.assertMyProject("Web automation");
     }
 }

@@ -9,19 +9,19 @@ import static com.aconex.fieldautomation.utils.UIComponents.accessField;
 public class AccessFieldSteps {
     @And("^User enters a valid username$")
     public void userEntersAValidUsername() throws Throwable {
-        accessField.enterUserName();
+        accessField.enterUserName("mjenner");
 
     }
 
     @And("^User enters a valid password$")
     public void userEntersAValidPassword() throws Throwable {
-        accessField.enterPassword();
+        accessField.enterPassword("Auth3nt1c");
 
     }
 
     @Then("^User should be taken to the homepage$")
     public void userShouldBeTakenToTheHomepage() throws Throwable {
-        accessField.verifyUserName();
+        accessField.verifyUserName("Mr Maurice Jenner");
 
     }
 

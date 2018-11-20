@@ -11,6 +11,7 @@ import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.LocalFileDetector;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import store.DataStore;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -78,14 +79,8 @@ public final class DriverFactory {
 
     private String getDriverName() throws IOException {
         String envVar = System.getenv(DRIVER_ENV_VAR);
-        if (envVar != null) {
-            return envVar;
-        }
-
-        Properties p = new Properties();
-        InputStream input = getClass().getClassLoader().getResourceAsStream("config.properties");
-        p.load(input);
-        return p.getProperty("browser");
+        String browser = (envVar != null) ? envVar : new ConfigReader().getBrowser();
+        return browser;
     }
 
     private String getDriverExecutable(String executable) {

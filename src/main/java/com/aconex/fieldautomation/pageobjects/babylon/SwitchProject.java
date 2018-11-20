@@ -12,7 +12,7 @@ import java.io.IOException;
 public class SwitchProject extends BasePage {
 
 
-    public @FindBy(css = "div#nav span.nav-project > span")
+    public @FindBy(css = "span.projectChanger-container")
     WebElement projectSelector;
     public @FindBy(xpath = "//DIV[@class='uiPanel projectChanger-list projectChanger-overflow']//DIV[@id='projectChanger-1879048480']")
     WebElement myProject;
@@ -57,8 +57,8 @@ public class SwitchProject extends BasePage {
     }
 
 
-    public SwitchProject assertMyProject() throws InterruptedException, IOException {
-        Assert.assertEquals(projectSelector.getText(), "Web automation");
+    public SwitchProject assertMyProject(String projectName) throws InterruptedException, IOException {
+        Assert.assertEquals(projectSelector.getText(), projectName);
         return new SwitchProject();
     }
 
