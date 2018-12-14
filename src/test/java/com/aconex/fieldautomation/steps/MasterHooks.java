@@ -1,6 +1,7 @@
 package com.aconex.fieldautomation.steps;
 
 import com.aconex.fieldautomation.utils.Constants;
+import com.aconex.fieldautomation.utils.DataStoreUtils;
 import com.aconex.fieldautomation.utils.DriverFactory;
 import cucumber.api.Scenario;
 import cucumber.api.java.After;
@@ -9,6 +10,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+import store.DataStore;
 
 import java.io.File;
 import java.io.IOException;
@@ -37,6 +39,13 @@ public class MasterHooks {
             Files.createDirectory(downloadDir);
         }
     }
+
+
+    @Before
+    public void clearDataStore(Scenario scenario){
+        DataStore.clearUserMap();
+    }
+
 
     @After
     public void tearDownAndScreenshotonFailure(Scenario scenario) {

@@ -6,6 +6,7 @@ import cucumber.api.java.en.When;
 
 import static com.aconex.fieldautomation.utils.UIComponents.accessField;
 
+
 public class AccessFieldSteps {
     @And("^User enters a valid username$")
     public void userEntersAValidUsername() throws Throwable {

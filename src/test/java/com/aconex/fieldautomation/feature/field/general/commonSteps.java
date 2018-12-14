@@ -31,7 +31,6 @@ public class commonSteps {
 
         User user = DataStore.getUser(userName);
         login.getLoginPage(new ConfigReader().getUrl());
-//        login.getLoginPage("https://apiprod.aconex.com/Logon");
         accessField.enterUserName(user.getUserName());
         accessField.enterPassword(user.getPassword());
         login.clickLoginButton();
